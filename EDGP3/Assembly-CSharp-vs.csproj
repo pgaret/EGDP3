@@ -46,7 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Peregrin&apos;s Work\AccelerometerInput.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\Enemy.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\EnemyBullet.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Play.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\PlayerBullet.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\Ship1.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\Ship2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
