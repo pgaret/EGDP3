@@ -12,14 +12,14 @@ public class Enemy : MonoBehaviour {
 	float attackTimer = 0;
 
 	bool affinity = false;
-	
+	private Vector3 target;
 
 
 	// Use this for initialization
 	void Start () {
-		Vector3 pos = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width / 3, Screen.height / height));
+		Vector3 pos = Camera.main.ScreenToWorldPoint (new Vector3 (10, 10));
 		pos.z = 0;
-		transform.position = pos;
+		//transform.position = pos;
 	
 	}
 	
@@ -40,6 +40,14 @@ public class Enemy : MonoBehaviour {
 		{
 			if (bullets[i].renderer.bounds.Intersects(transform.renderer.bounds)) Destroy (gameObject);
 		}
+		float step = speed * Time.deltaTime;
+		//transform.rotation = Quaternion.Lerp(transform.rotation,qr,Time.deltaTime*turnspeed);
+		transform.position = Vector3.MoveTowards(transform.position, target, step);
 
 	}
+	public void changeloc(Vector3 a){
+		target = a;
+
+	}
+
 }

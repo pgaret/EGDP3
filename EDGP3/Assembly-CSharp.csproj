@@ -53,6 +53,8 @@
      <Compile Include="Assets\Peregrin&apos;s Work\PlayerBullet.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Ship1.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Ship2.cs" />
+     <Compile Include="Assets\manager.cs" />
+     <Compile Include="Assets\spawn.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
