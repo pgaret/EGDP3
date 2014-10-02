@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Ship2 : MonoBehaviour {
+//NOT BEING USED SHIP1 IS ON BOTH PLAYERS!!!!!!!!!!!
 	
 	public float speed;
 	public Transform projectile;

@@ -6,10 +6,10 @@ public class Ship1 : MonoBehaviour {
 	public float speed;
 	public Transform projectile;
 	public bool shipType;
-	public int ammo = 0;
-	public Sprite Red;
-	public Sprite RedB;
-	public Sprite RedA;
+	public int ammo;
+	public Sprite Attack;
+	public Sprite TypeB;
+	public Sprite TypeA;
 	
 	float attackTimer = .5f;
 	float attackCD = 0;
@@ -19,28 +19,35 @@ public class Ship1 : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		shipType = false;
-		Vector3 pos = Camera.main.ScreenToWorldPoint (new Vector3(Screen.width * 7 / 8, Screen.height / 2, 0));
-		pos.z = 0;
-		transform.position = pos;
-		gameObject.GetComponent<SpriteRenderer> ().sprite = RedA;
-		
-	}
-	
-	void OnGUI()
-	{
-		GUI.Box (new Rect (Screen.width / 3, Screen.height / 4, Screen.width / 3, Screen.height / 8), "Player 1 Ammo: " + ammo.ToString() + "  Player 2 Ammo: " + GameObject.Find ("Ship2").GetComponent<Ship2> ().ammo.ToString ());
+		//Determines starting position, attacking/defending, and sprite depending on which player is controlling the ship.
+		if (transform.tag == "Ship1")
+		{
+			shipType = false;
+			Vector3 pos = Camera.main.ScreenToWorldPoint (new Vector3(Screen.width * 7 / 8, Screen.height / 8, 0));
+			pos.z = 0;
+			transform.position = pos;
+			gameObject.GetComponent<SpriteRenderer> ().sprite = TypeA;
+		}
+		if (transform.tag == "Ship2")
+		{
+			ammo = 10;
+			shipType = true;
+			Vector3 pos = Camera.main.ScreenToWorldPoint (new Vector3(Screen.width / 8, Screen.height / 8, 0));
+			pos.z = 0;
+			transform.position = pos;
+		}
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log (Camera.main.pixelRect);
 		if (shipType == false)
 		{
-			if (affinity == true) gameObject.GetComponent<SpriteRenderer>().sprite = RedA;
-			else gameObject.GetComponent<SpriteRenderer>().sprite = RedB;
+			if (affinity == true) gameObject.GetComponent<SpriteRenderer>().sprite = TypeA;
+			else gameObject.GetComponent<SpriteRenderer>().sprite = TypeB;
 		}
-		if (shipType == true) gameObject.GetComponent<SpriteRenderer>().sprite = Red;
+		if (shipType == true) gameObject.GetComponent<SpriteRenderer>().sprite = Attack;
 		if (shipType == false)
 		{
 			GameObject[] bulletA = GameObject.FindGameObjectsWithTag ("BulletA");
@@ -70,13 +77,6 @@ public class Ship1 : MonoBehaviour {
 					Destroy(bulletB[i].gameObject);
 				}
 			}
-
-			if (ammo == 10)
-			{
-				shipType = true;
-				GameObject.Find ("Ship2").GetComponent<Ship2>().shipType = false;
-				GameObject.Find ("Ship2").GetComponent<Ship2>().ammo = 0;
-			}
 			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
 			{
 				affinity = !affinity;
@@ -89,12 +89,6 @@ public class Ship1 : MonoBehaviour {
 				Instantiate (projectile, transform.position, Quaternion.identity);
 				attackCD = Time.time;
 				ammo -= 1;
-			}
-			if (ammo == 0)
-			{
-				shipType = false;
-				GameObject.Find ("Ship2").GetComponent<Ship2>().shipType = true;
-				GameObject.Find ("Ship2").GetComponent<Ship2>().ammo = 10;
 			}
 			
 			GameObject[] bulletA = GameObject.FindGameObjectsWithTag ("BulletA");
@@ -114,10 +108,19 @@ public class Ship1 : MonoBehaviour {
 				}
 			}
 		}
-		if (Input.GetKey(KeyCode.W)) transform.Translate(Vector3.up*Time.deltaTime*speed);
-		if (Input.GetKey(KeyCode.A)) transform.Translate(Vector3.left*Time.deltaTime*speed);
-		if (Input.GetKey(KeyCode.S)) transform.Translate(Vector3.down*Time.deltaTime*speed);
-		if (Input.GetKey(KeyCode.D)) transform.Translate(Vector3.right*Time.deltaTime*speed);
-		
+		if (transform.tag == "Player1")
+		{
+			if (Input.GetKey(KeyCode.W)) transform.Translate(Vector3.up*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.A)) transform.Translate(Vector3.left*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.S)) transform.Translate(Vector3.down*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.D)) transform.Translate(Vector3.right*Time.deltaTime*speed);
+		}
+		else if (transform.tag == "Player2")
+		{
+			if (Input.GetKey(KeyCode.UpArrow)) transform.Translate(Vector3.up*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.LeftArrow)) transform.Translate(Vector3.left*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.DownArrow)) transform.Translate(Vector3.down*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.RightArrow)) transform.Translate(Vector3.right*Time.deltaTime*speed);
+		}
 	}
 }
