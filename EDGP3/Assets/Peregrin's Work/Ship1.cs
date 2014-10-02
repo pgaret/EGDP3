@@ -108,14 +108,15 @@ public class Ship1 : MonoBehaviour {
 				}
 			}
 		}
-		if (transform.tag == "Player1")
+
+		if (transform.tag == "Ship1")
 		{
 			if (Input.GetKey(KeyCode.W)) transform.Translate(Vector3.up*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.A)) transform.Translate(Vector3.left*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.S)) transform.Translate(Vector3.down*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.D)) transform.Translate(Vector3.right*Time.deltaTime*speed);
 		}
-		else if (transform.tag == "Player2")
+		else if (transform.tag == "Ship2")
 		{
 			if (Input.GetKey(KeyCode.UpArrow)) transform.Translate(Vector3.up*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.LeftArrow)) transform.Translate(Vector3.left*Time.deltaTime*speed);
