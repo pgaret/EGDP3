@@ -18,8 +18,11 @@ public class GUIManager : MonoBehaviour {
 	public Transform target2;
 
 	//GUI style for in-game HUD
-	public GUIStyle style;	
-
+	public GUIStyle style;
+	
+	public Texture PKT;
+	public Texture TKT;
+	public Texture MMT;
 	
 	//Modes 0, 1, 2, 3 = Title Screen, Character Selection, Game, Death
 	private int mode = 0;
@@ -28,6 +31,16 @@ public class GUIManager : MonoBehaviour {
 	Transform player2;
 	Transform player1Cursor;
 	Transform player2Cursor;
+	Transform PKIcon;
+	Transform MMIcon;
+	Transform TKIcon;
+
+	Vector3 pos;
+	Vector3 mPos;
+	Vector3 cPos;
+	
+	int player1Select = -1;
+	int player2Select = -1;
 	
 	// Use this for initialization
 	void Start ()
@@ -38,6 +51,12 @@ public class GUIManager : MonoBehaviour {
 		player2Cursor = Instantiate (target2) as Transform;
 		player1Cursor.renderer.sortingOrder = 1;
 		player2Cursor.renderer.sortingOrder = 1;
+
+		pos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+		mPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+		cPos = Camera.main.ScreenToWorldPoint (player2Cursor.renderer.bounds.center);
+		mPos.z = 0;
+		cPos.z = 0;
 	}
 	
 	void OnGUI()
@@ -46,26 +65,32 @@ public class GUIManager : MonoBehaviour {
 		{
 			if (Event.current.type == EventType.KeyDown)
 			{
-				Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+				
 				mode = 1;
-				Instantiate(PK, new Vector3(-pos.x / 2, pos.y / 4), Quaternion.identity);
-				Instantiate (MM, new Vector3(pos.x / 2, pos.y / 4), Quaternion.identity);
-				Instantiate (TK, new Vector3(-pos.x / 2, -pos.y / 4), Quaternion.identity);
+				PKIcon = Instantiate(PK, new Vector3(-pos.x / 2, pos.y / 4), Quaternion.identity) as Transform;
+				MMIcon = Instantiate (MM, new Vector3(pos.x / 2, pos.y / 4), Quaternion.identity) as Transform;
+				TKIcon = Instantiate (TK, new Vector3(-pos.x / 2, -pos.y / 4), Quaternion.identity) as Transform;
 			}
 		}
 		if (mode == 1)
 		{
-			int playerOne;
-			int playerTwo;
+			if (player1Select == 0) GUI.Box (new Rect(Screen.width / 5, Screen.height * 4 / 5, Screen.width / 5, Screen.width / 5), PKT);
+			if (player1Select == 1) GUI.Box (new Rect(Screen.width / 5, Screen.height * 4 / 5, Screen.width / 5, Screen.width / 5), MMT);
+			if (player1Select == 2) GUI.Box (new Rect(Screen.width / 5, Screen.height * 4 / 5, Screen.width / 5, Screen.width / 5), TKT);
+			if (player2Select == 0) GUI.Box (new Rect(Screen.width * 3 / 5, Screen.height * 4 / 5, Screen.width / 5, Screen.width / 5), PKT);
+			if (player2Select == 1) GUI.Box (new Rect(Screen.width * 3 / 5, Screen.height * 4 / 5, Screen.width / 5, Screen.width / 5), MMT);
+			if (player2Select == 2) GUI.Box (new Rect(Screen.width * 3 / 5, Screen.height * 4 / 5, Screen.width / 5, Screen.width / 5), TKT);
 		}
 		if (mode == 2)
 		{
+			player1 = GameObject.FindGameObjectWithTag("Player1").transform;
+			player2 = GameObject.FindGameObjectWithTag("Player2").transform;
 			GUI.Box (new Rect (Screen.width * 5 / 6, 0, Screen.width / 6, Screen.height), 
 					 "Ammo1:\n\n" + 
-					 player1.GetComponent<Ship1>().ammo.ToString()+"\n\n\n\n" + 
+					 player1.GetComponent<PlayerStats>().ammo.ToString()+"\n\n\n\n" + 
 					 "Lives: \n\n\n\n"+
 					 "Ammo2: \n\n" + 
-					 player2.GetComponent<Ship1>().ammo.ToString(), style);
+					 player2.GetComponent<PlayerStats>().ammo.ToString(), style);
 		}
 		
 	}
@@ -73,9 +98,40 @@ public class GUIManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey(KeyCode.Escape)) Application.Quit();
-		Vector3 pos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		pos.z = 0;
-		player1Cursor.position = pos;
-		player2Cursor.position += new Vector3 (Input.GetAxis ("Horizontal")*Time.deltaTime*10, Input.GetAxis ("Vertical")*Time.deltaTime*10, 0);
+		if (mode == 1)
+		{
+			if (Input.GetMouseButtonDown(0) && PKIcon.renderer.bounds.Contains(mPos) && player1Select != 0) player1Select = 0;
+			if (Input.GetMouseButtonDown(0) && MMIcon.renderer.bounds.Contains(mPos) && player1Select != 1) player1Select = 1;
+			if (Input.GetMouseButtonDown(0) && TKIcon.renderer.bounds.Contains(mPos) && player1Select != 2) player1Select = 2;
+			if (Input.GetButtonDown("Fire1") && PKIcon.renderer.bounds.Contains(cPos) && player2Select != 0) player2Select = 0;
+			if (Input.GetButtonDown("Fire1") && MMIcon.renderer.bounds.Contains(cPos) && player2Select != 1) player2Select = 1;
+			if (Input.GetButtonDown("Fire1") && TKIcon.renderer.bounds.Contains(cPos) && player2Select != 2) player2Select = 2;
+
+			if (player1 != null && player2 != null)
+			{
+				player1.transform.tag = "Player1";
+				player2.transform.tag = "Player2";
+				Destroy (PKIcon.gameObject);
+				Destroy(MMIcon.gameObject);
+				Destroy (TKIcon.gameObject);
+				Destroy (player1Cursor.gameObject);
+				Destroy (player2Cursor.gameObject);
+				mode = 2;
+			}
+			//			int playerOne;
+			//			int playerTwo;
+		}
+		if (mode < 2)
+		{
+			pos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+			mPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			cPos = player2Cursor.transform.position;
+			mPos.z = 0;
+			cPos.z = 0;
+			mPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			mPos.z = 0;
+			player1Cursor.position = mPos;
+			player2Cursor.position += new Vector3 (Input.GetAxis ("Horizontal")*Time.deltaTime*10, Input.GetAxis ("Vertical")*Time.deltaTime*10, 0);
+		}
 	}
 }

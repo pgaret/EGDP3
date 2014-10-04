@@ -49,10 +49,11 @@
      <Compile Include="Assets\Peregrin&apos;s Work\Enemy.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\EnemyBullet.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\GUIManager.cs" />
-     <Compile Include="Assets\Peregrin&apos;s Work\Play.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\MirrorMage.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\PlayerBullet.cs" />
-     <Compile Include="Assets\Peregrin&apos;s Work\Ship1.cs" />
-     <Compile Include="Assets\Peregrin&apos;s Work\Ship2.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\PlayerStats.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\PunchKnight.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\Tinker.cs" />
      <Compile Include="Assets\manager.cs" />
      <Compile Include="Assets\spawn.cs" />
   </ItemGroup>

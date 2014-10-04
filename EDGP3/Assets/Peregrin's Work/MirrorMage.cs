@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Play : MonoBehaviour {
+public class MirrorMage : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -11,6 +11,5 @@ public class Play : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		transform.Rotate (Vector3.forward);
 	}
 }

@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ship2 : MonoBehaviour {
-//NOT BEING USED SHIP1 IS ON BOTH PLAYERS!!!!!!!!!!!
+public class Tinker : MonoBehaviour {
 	
 	public float speed;
 	public Transform projectile;
@@ -67,13 +66,7 @@ public class Ship2 : MonoBehaviour {
 					Destroy(bulletB[i].gameObject);
 				}
 			}
-			
-			if (ammo == 10)
-			{
-				shipType = true;
-				GameObject.Find ("Ship1").GetComponent<Ship1>().shipType = false;
-				GameObject.Find ("Ship1").GetComponent<Ship1>().ammo = 0;
-			}
+
 			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
 			{
 				affinity = !affinity;
@@ -87,12 +80,7 @@ public class Ship2 : MonoBehaviour {
 				attackCD = Time.time;
 				ammo -= 1;
 			}
-			if (ammo == 0) 
-			{
-				shipType = false;
-				GameObject.Find ("Ship1").GetComponent<Ship1>().shipType = true;
-				GameObject.Find ("Ship1").GetComponent<Ship1>().ammo = 10;
-			}
+
 
 			GameObject[] bulletA = GameObject.FindGameObjectsWithTag ("BulletA");
 			GameObject[] bulletB = GameObject.FindGameObjectsWithTag ("BulletB");

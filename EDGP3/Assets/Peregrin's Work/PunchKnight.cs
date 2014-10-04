@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ship1 : MonoBehaviour {
+public class PunchKnight : MonoBehaviour {
 	
 	public float speed;
 	public Transform projectile;
@@ -11,16 +11,19 @@ public class Ship1 : MonoBehaviour {
 	public Sprite TypeB;
 	public Sprite TypeA;
 	
-	float attackTimer = .5f;
+	float attackTimer = .1f;
 	float attackCD = 0;
 
 	bool affinity = false;
-	GameObject ship2;
+
+	bool start = false;
 	
 	// Use this for initialization
 	void Start () {
 		//Determines starting position, attacking/defending, and sprite depending on which player is controlling the ship.
-		if (transform.tag == "Ship1")
+		if (GameObject.FindGameObjectWithTag("Player1") == null) transform.tag = "Player1";
+		else transform.tag = "Player2";
+		if (transform.tag == "Player2")
 		{
 			shipType = false;
 			Vector3 pos = Camera.main.ScreenToWorldPoint (new Vector3(Screen.width * 7 / 8, Screen.height / 8, 0));
@@ -28,7 +31,7 @@ public class Ship1 : MonoBehaviour {
 			transform.position = pos;
 			gameObject.GetComponent<SpriteRenderer> ().sprite = TypeA;
 		}
-		if (transform.tag == "Ship2")
+		if (transform.tag == "Player1")
 		{
 			ammo = 10;
 			shipType = true;
@@ -36,12 +39,19 @@ public class Ship1 : MonoBehaviour {
 			pos.z = 0;
 			transform.position = pos;
 		}
+		
+		
+	}
+	
+	void GetStarted()
+	{
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (Camera.main.pixelRect);
+		GetStarted();
+		transform.GetComponent<PlayerStats>().ammo = ammo;
 		if (shipType == false)
 		{
 			if (affinity == true) gameObject.GetComponent<SpriteRenderer>().sprite = TypeA;
@@ -86,7 +96,7 @@ public class Ship1 : MonoBehaviour {
 		{	
 			if (Input.GetKey(KeyCode.Space) && attackTimer < Time.time - attackCD && ammo > 0)
 			{
-				Instantiate (projectile, transform.position, Quaternion.identity);
+				foreach (Transform child in transform) Instantiate (projectile, child.position, Quaternion.identity);
 				attackCD = Time.time;
 				ammo -= 1;
 			}
@@ -109,14 +119,14 @@ public class Ship1 : MonoBehaviour {
 			}
 		}
 
-		if (transform.tag == "Ship1")
+		if (transform.tag == "Player1")
 		{
 			if (Input.GetKey(KeyCode.W)) transform.Translate(Vector3.up*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.A)) transform.Translate(Vector3.left*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.S)) transform.Translate(Vector3.down*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.D)) transform.Translate(Vector3.right*Time.deltaTime*speed);
 		}
-		else if (transform.tag == "Ship2")
+		else if (transform.tag == "Player2")
 		{
 			if (Input.GetKey(KeyCode.UpArrow)) transform.Translate(Vector3.up*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.LeftArrow)) transform.Translate(Vector3.left*Time.deltaTime*speed);
