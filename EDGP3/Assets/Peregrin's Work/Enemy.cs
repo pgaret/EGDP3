@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour {
 	public Transform projectileA;
 	public Transform projectileB;
 	public float attackCD = 1;
+	public bool fire = false;
 
 	float attackTimer = 0;
 
@@ -29,7 +30,7 @@ public class Enemy : MonoBehaviour {
 		if (random == 0) affinity = false;
 		else affinity = true;
 
-		if (attackCD < Time.time - attackTimer)
+		if (attackCD < Time.time - attackTimer && fire == true)
 		{
 			if (affinity == false) Instantiate(projectileA, transform.position, Quaternion.identity);
 			else Instantiate(projectileB, transform.position, Quaternion.identity);
@@ -43,10 +44,19 @@ public class Enemy : MonoBehaviour {
 		float step = speed * Time.deltaTime;
 		//transform.rotation = Quaternion.Lerp(transform.rotation,qr,Time.deltaTime*turnspeed);
 		transform.position = Vector3.MoveTowards(transform.position, target, step);
-
+		checker ();
+	}
+	void checker(){
+		if(transform.position == target){
+			Destroy(gameObject);
+		}
 	}
 	public void changeloc(Vector3 a){
 		target = a;
+
+	}
+	public void fireset(bool a){
+		fire = a;
 
 	}
 
