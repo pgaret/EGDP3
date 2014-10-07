@@ -1,17 +1,19 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
 	public float speed;
 	public float height;
-	public Transform projectileA;
-	public Transform projectileB;
+	public GameObject projectileA;
+	public GameObject projectileB;
 	public float attackCD = 1;
 	public bool fire = false;
-
+	public int attacktype = 0;
 	float attackTimer = 0;
-
+	private GameObject shippe1;
+	private GameObject shippe2;
+	private GameObject shippeatk;
 	bool affinity = false;
 	private Vector3 target;
 
@@ -21,7 +23,13 @@ public class Enemy : MonoBehaviour {
 		Vector3 pos = Camera.main.ScreenToWorldPoint (new Vector3 (10, 10));
 		pos.z = 0;
 		//transform.position = pos;
-	
+		shippe1 = GameObject.Find ("Ship1");
+		shippe2 = GameObject.Find ("Ship2");
+		transform.rotation = Quaternion.Euler(new Vector3(180,0,0));
+
+		int random = Random.Range (0, 2);
+		if (random == 0) shippeatk = shippe1;
+		else shippeatk = shippe2;
 	}
 	
 	// Update is called once per frame
@@ -30,10 +38,47 @@ public class Enemy : MonoBehaviour {
 		if (random == 0) affinity = false;
 		else affinity = true;
 
-		if (attackCD < Time.time - attackTimer && fire == true)
-		{
-			if (affinity == false) Instantiate(projectileA, transform.position, Quaternion.identity);
-			else Instantiate(projectileB, transform.position, Quaternion.identity);
+
+
+		if (attackCD < Time.time - attackTimer && fire == true){
+				GameObject bullet;
+			if (attacktype == 0){
+
+				if (affinity == false){
+					bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
+
+				}
+				else {
+					bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
+
+
+					}
+				bullet.GetComponent<EnemyBullet>().setatktype(attacktype);
+			}else if(attacktype == 1){
+				rotations();
+				if (affinity == false) {
+
+					bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
+					Transform a = transform;
+
+					Quaternion up = Quaternion.Euler( new Vector3(0, 0,a.rotation.z + 10));
+					bullet = Instantiate(projectileA, transform.position, up) as GameObject;
+					Quaternion down = Quaternion.Euler( new Vector3(0, 0,a.rotation.z - 10));
+					bullet = Instantiate(projectileA, transform.position, down) as GameObject;
+
+				}
+				else {
+					bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
+					Transform a = transform;
+					Quaternion up = Quaternion.Euler( new Vector3(0, 0,a.rotation.z + 10));
+					bullet = Instantiate(projectileB, transform.position, up) as GameObject;
+					Quaternion down = Quaternion.Euler( new Vector3(0, 0,a.rotation.z - 10));
+					bullet = Instantiate(projectileB, transform.position, down) as GameObject;
+
+				}
+
+			}
+
 			attackTimer = Time.time;
 		}
 		GameObject[] bullets = GameObject.FindGameObjectsWithTag ("BulletC");
@@ -59,5 +104,13 @@ public class Enemy : MonoBehaviour {
 		fire = a;
 
 	}
+	void rotations(){
+		float angle = 0;
+		GameObject bullet;
+		Vector3 relative = transform.InverseTransformPoint(shippeatk.transform.position);
+		angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
+		transform.Rotate(0,0, -angle);
+	}
+
 
 }

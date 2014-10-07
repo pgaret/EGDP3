@@ -10,7 +10,7 @@ public class spawn : MonoBehaviour {
 	int y = 10;
 	// Use this for initialization
 	void Start () {
-		Diagonal(11,1);
+		Diagonal(1,1,1);
 		
 	}
 	
@@ -19,8 +19,8 @@ public class spawn : MonoBehaviour {
 		
 	}
 
-	public void Diagonal(int numene,int dir){
-
+	public void Diagonal(int numene,int dir,int type){
+		numene += 6;
 		for(int i = numene; i > 6; i--){
 			GameObject test;
 			if(dir == 0)
@@ -28,6 +28,7 @@ public class spawn : MonoBehaviour {
 			else
 				test = Instantiate(enemy, new Vector3(-i, i, 0), Quaternion.identity) as GameObject;
 			test.GetComponent<Enemy>().changeloc(new Vector3(i, -i, 0));
+			test.GetComponent<Enemy>().attacktype = type;
 		}
 	}
 	
