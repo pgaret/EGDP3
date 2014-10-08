@@ -1,8 +1,16 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="..\..\flocking\Assets\Flock.cs">
     <Files>
       <File FileName="..\..\flocking\Assets\Flock.cs" Line="24" Column="49" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Peregrin's Work\PunchKnight.cs">
+    <Files>
+      <File FileName="Assets\Peregrin's Work\GUIManager.cs" Line="146" Column="30" />
+      <File FileName="Assets\Peregrin's Work\PunchKnight.cs" Line="127" Column="39" />
+>>>>>>> 79bcc23cb12e6e164b5e371c55d91c9e32d42213
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

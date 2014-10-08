@@ -45,7 +45,7 @@ public class GUIManager : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		Screen.SetResolution (600, 800, false);
+		Screen.SetResolution (960, 720, false);
 		Screen.showCursor = false;
 		player1Cursor = Instantiate (target1) as Transform;
 		player2Cursor = Instantiate (target2) as Transform;
@@ -63,6 +63,7 @@ public class GUIManager : MonoBehaviour {
 	{
 		if (mode == 0)
 		{
+			GUI.Box (new Rect(Screen.width / 3, Screen.height / 3, Screen.width / 3, Screen.height / 3), "Press any key to start...", style);
 			if (Event.current.type == EventType.KeyDown)
 			{
 				
@@ -74,6 +75,7 @@ public class GUIManager : MonoBehaviour {
 		}
 		if (mode == 1)
 		{
+			GUI.Box (new Rect(Screen.width / 3, Screen.height / 8, Screen.width / 3, Screen.height / 8), "Pick your character!", style);
 			if (player1Select == 0) GUI.Box (new Rect(Screen.width / 5, Screen.height * 4 / 5, Screen.width / 5, Screen.width / 5), PKT);
 			if (player1Select == 1) GUI.Box (new Rect(Screen.width / 5, Screen.height * 4 / 5, Screen.width / 5, Screen.width / 5), MMT);
 			if (player1Select == 2) GUI.Box (new Rect(Screen.width / 5, Screen.height * 4 / 5, Screen.width / 5, Screen.width / 5), TKT);
@@ -81,16 +83,19 @@ public class GUIManager : MonoBehaviour {
 			if (player2Select == 1) GUI.Box (new Rect(Screen.width * 3 / 5, Screen.height * 4 / 5, Screen.width / 5, Screen.width / 5), MMT);
 			if (player2Select == 2) GUI.Box (new Rect(Screen.width * 3 / 5, Screen.height * 4 / 5, Screen.width / 5, Screen.width / 5), TKT);
 		}
-		if (mode == 2)
+		if (mode == 2 && player1 != null)
 		{
 			player1 = GameObject.FindGameObjectWithTag("Player1").transform;
 			player2 = GameObject.FindGameObjectWithTag("Player2").transform;
-			GUI.Box (new Rect (Screen.width * 5 / 6, 0, Screen.width / 6, Screen.height), 
-					 "Ammo1:\n\n" + 
-					 player1.GetComponent<PlayerStats>().ammo.ToString()+"\n\n\n\n" + 
-					 "Lives: \n\n\n\n"+
-					 "Ammo2: \n\n" + 
-					 player2.GetComponent<PlayerStats>().ammo.ToString(), style);
+			GUI.Box (new Rect (0, 0, Screen.width / 4, Screen.height), 
+			         "PLAYER 1: \n\n\nLives: \n\n\n\n"+
+					 "Ammo:\n\n" + 
+					 player1.GetComponent<PlayerStats>().ammo.ToString()+"\n\n\n\n", style);
+
+			GUI.Box (new Rect (Screen.width * 3 / 4, 0, Screen.width / 4, Screen.height),  
+			         "PLAYER 2: \n\n\nLives: \n\n\n\n"+
+			         "Ammo: \n\n" + 
+			         player2.GetComponent<PlayerStats>().ammo.ToString(), style);
 		}
 		
 	}
@@ -106,9 +111,16 @@ public class GUIManager : MonoBehaviour {
 			if (Input.GetButtonDown("Fire1") && PKIcon.renderer.bounds.Contains(cPos) && player2Select != 0) player2Select = 0;
 			if (Input.GetButtonDown("Fire1") && MMIcon.renderer.bounds.Contains(cPos) && player2Select != 1) player2Select = 1;
 			if (Input.GetButtonDown("Fire1") && TKIcon.renderer.bounds.Contains(cPos) && player2Select != 2) player2Select = 2;
+			if (Input.GetKeyDown(KeyCode.RightShift)) player2Select = 0;
 
-			if (player1 != null && player2 != null)
+			if (player1Select != -1 && player2Select != -1)
 			{
+				if (player1Select == 0) player1 = Instantiate(PunchKnight) as Transform;
+				if (player1Select == 1) player1 = Instantiate(MirrorMage) as Transform;
+				if (player1Select == 2) player1 = Instantiate(Tinker) as Transform;
+				if (player2Select == 0) player2 = Instantiate(PunchKnight) as Transform;
+				if (player2Select == 1) player2 = Instantiate(MirrorMage) as Transform;
+				if (player2Select == 2) player2 = Instantiate(Tinker) as Transform;
 				player1.transform.tag = "Player1";
 				player2.transform.tag = "Player2";
 				Destroy (PKIcon.gameObject);
