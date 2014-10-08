@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PunchKnight : MonoBehaviour {
@@ -20,9 +20,11 @@ public class PunchKnight : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		//Determines starting position, attacking/defending, and sprite depending on which player is controlling the ship.
+		//Determines whether player is 1 or 2
 		if (GameObject.FindGameObjectWithTag("Player1") == null) transform.tag = "Player1";
 		else transform.tag = "Player2";
+		
+		//Determines starting position, attacking/defending, and sprite depending on which player is controlling the ship.
 		if (transform.tag == "Player2")
 		{
 			shipType = false;
@@ -33,7 +35,7 @@ public class PunchKnight : MonoBehaviour {
 		}
 		if (transform.tag == "Player1")
 		{
-			ammo = 10;
+			ammo = 100;
 			shipType = true;
 			Vector3 pos = Camera.main.ScreenToWorldPoint (new Vector3(Screen.width / 8, Screen.height / 8, 0));
 			pos.z = 0;
@@ -43,14 +45,8 @@ public class PunchKnight : MonoBehaviour {
 		
 	}
 	
-	void GetStarted()
-	{
-
-	}
-	
 	// Update is called once per frame
 	void Update () {
-		GetStarted();
 		transform.GetComponent<PlayerStats>().ammo = ammo;
 		if (shipType == false)
 		{
@@ -126,12 +122,9 @@ public class PunchKnight : MonoBehaviour {
 			if (Input.GetKey(KeyCode.S)) transform.Translate(Vector3.down*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.D)) transform.Translate(Vector3.right*Time.deltaTime*speed);
 		}
-		else if (transform.tag == "Player2")
+		if (transform.tag == "Player2")
 		{
-			if (Input.GetKey(KeyCode.UpArrow)) transform.Translate(Vector3.up*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.LeftArrow)) transform.Translate(Vector3.left*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.DownArrow)) transform.Translate(Vector3.down*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.RightArrow)) transform.Translate(Vector3.right*Time.deltaTime*speed);
+			transform.position += new Vector3 (Input.GetAxis ("Horizontal")*Time.deltaTime*10, Input.GetAxis ("Vertical")*Time.deltaTime*10, 0);
 		}
 	}
 }
