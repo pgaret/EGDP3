@@ -61,18 +61,18 @@ public class Enemy : MonoBehaviour {
 					bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
 					Transform a = transform;
 
-					Quaternion up = Quaternion.Euler( new Vector3(0, 0,a.rotation.z + 10));
+					Quaternion up = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z + 10));
 					bullet = Instantiate(projectileA, transform.position, up) as GameObject;
-					Quaternion down = Quaternion.Euler( new Vector3(0, 0,a.rotation.z - 10));
+					Quaternion down = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z - 10));
 					bullet = Instantiate(projectileA, transform.position, down) as GameObject;
 
 				}
 				else {
 					bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
 					Transform a = transform;
-					Quaternion up = Quaternion.Euler( new Vector3(0, 0,a.rotation.z + 10));
+					Quaternion up = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z + 10));
 					bullet = Instantiate(projectileB, transform.position, up) as GameObject;
-					Quaternion down = Quaternion.Euler( new Vector3(0, 0,a.rotation.z - 10));
+					Quaternion down = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z - 10));
 					bullet = Instantiate(projectileB, transform.position, down) as GameObject;
 
 				}
