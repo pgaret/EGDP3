@@ -53,6 +53,8 @@
      <Compile Include="Assets\Peregrin&apos;s Work\EnemyBullet.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\GUIManager.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\MirrorMage.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\PKShield.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\PKSpecial.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\PlayerBullet.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\PlayerStats.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\PunchKnight.cs" />

@@ -5,18 +5,23 @@ public class PunchKnight : MonoBehaviour {
 	
 	public float speed;
 	public Transform projectile;
-	public bool shipType;
+	public Transform special;
+	public Transform shield;
+	public string shipType;
 	public int ammo;
 	public Sprite Attack;
-	public Sprite TypeB;
-	public Sprite TypeA;
 	
 	float attackTimer = .1f;
 	float attackCD = 0;
+	
+	float swapCountdown = 2f;
+	float swapCountdownTimer;
+	
+	float swapCDTimer;
+	float swapCD = 1f;
+	float specialTimer = 0;
 
-	bool affinity = false;
-
-	bool start = false;
+	char affinity = 'A';
 	
 	// Use this for initialization
 	void Start () {
@@ -27,17 +32,17 @@ public class PunchKnight : MonoBehaviour {
 		//Determines starting position, attacking/defending, and sprite depending on which player is controlling the ship.
 		if (transform.tag == "Player2")
 		{
-			shipType = false;
-			Vector3 pos = Camera.main.ScreenToWorldPoint (new Vector3(Screen.width * 7 / 8, Screen.height / 8, 0));
+			transform.GetComponent<PlayerStats>().role = "Defender";
+			Shield ();
+			Vector3 pos = new Vector3(0, 0);
 			pos.z = 0;
 			transform.position = pos;
-			gameObject.GetComponent<SpriteRenderer> ().sprite = TypeA;
 		}
 		if (transform.tag == "Player1")
 		{
 			ammo = 100;
-			shipType = true;
-			Vector3 pos = Camera.main.ScreenToWorldPoint (new Vector3(Screen.width / 8, Screen.height / 8, 0));
+			transform.GetComponent<PlayerStats>().role = "Attacker";
+			Vector3 pos = new Vector3 (0, 0);
 			pos.z = 0;
 			transform.position = pos;
 		}
@@ -45,27 +50,35 @@ public class PunchKnight : MonoBehaviour {
 		
 	}
 	
+	void Special()
+	{
+		ammo -= 100;
+		specialTimer = Time.time + 2f;
+	}
+	
+	public void Shield()
+	{
+		Instantiate(shield, transform.position, Quaternion.identity);
+	}
+	
 	// Update is called once per frame
 	void Update () {
+		shipType = transform.GetComponent<PlayerStats>().role;
 		transform.GetComponent<PlayerStats>().ammo = ammo;
-		if (shipType == false)
-		{
-			if (affinity == true) gameObject.GetComponent<SpriteRenderer>().sprite = TypeA;
-			else gameObject.GetComponent<SpriteRenderer>().sprite = TypeB;
-		}
-		if (shipType == true) gameObject.GetComponent<SpriteRenderer>().sprite = Attack;
-		if (shipType == false)
+		transform.GetComponent<PlayerStats>().affinity = affinity;
+		
+		if (shipType == "Defender")
 		{
 			GameObject[] bulletA = GameObject.FindGameObjectsWithTag ("BulletA");
 			GameObject[] bulletB = GameObject.FindGameObjectsWithTag ("BulletB");
 
 			for (int i = 0; i < bulletA.Length; i++)
 			{
-				if (bulletA[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && affinity == false)
+				if (bulletA[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && affinity == 'B')
 				{
 					Destroy (bulletA[i].gameObject);
 				}
-				else if (bulletA[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && affinity == true)
+				else if (bulletA[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && affinity == 'A')
 				{
 					ammo += 1;
 					Destroy (bulletA[i].gameObject);
@@ -73,22 +86,23 @@ public class PunchKnight : MonoBehaviour {
 			}
 			for (int i = 0; i < bulletB.Length; i++)
 			{
-				if (bulletB[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && affinity == false)
+				if (bulletB[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && affinity == 'B')
 				{
 					ammo += 1;
 					Destroy(bulletB[i].gameObject);
 				}
-				else if (bulletB[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && affinity == true)
+				else if (bulletB[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && affinity == 'A')
 				{
 					Destroy(bulletB[i].gameObject);
 				}
 			}
 			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
 			{
-				affinity = !affinity;
+				if (affinity == 'A') affinity = 'B';
+				else affinity = 'A';
 			}
 		}
-		else
+		else if (shipType == "Attacker")
 		{	
 			if (Input.GetKey(KeyCode.Space) && attackTimer < Time.time - attackCD && ammo > 0)
 			{
@@ -115,16 +129,61 @@ public class PunchKnight : MonoBehaviour {
 			}
 		}
 
+		if (Time.time - swapCountdownTimer > .49 && Time.time - swapCountdownTimer < .51 && swapCountdownTimer != 0)
+		{
+			swapCountdownTimer = 0;
+		}
+		
+		if (specialTimer - Time.time <= .5f && specialTimer - Time.time > 0)
+		{
+			for (float i = 0; i < specialTimer; i += .5f)
+			{
+				Debug.Log (i+" "+specialTimer);
+				Instantiate(special, transform.position, Quaternion.identity);
+			}
+			specialTimer -= .5f;
+		}
+		
 		if (transform.tag == "Player1")
 		{
 			if (Input.GetKey(KeyCode.W)) transform.Translate(Vector3.up*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.A)) transform.Translate(Vector3.left*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.S)) transform.Translate(Vector3.down*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.D)) transform.Translate(Vector3.right*Time.deltaTime*speed);
+			if (Input.GetKey (KeyCode.X) && ammo >= 100) Special();
+			if (Input.GetKey (KeyCode.Z) && transform.GetComponent<PlayerStats>().swapRole == "no" && Time.time - swapCDTimer >= 0)
+			{
+				GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
+				transform.GetComponent<PlayerStats>().swapRole = "pending";
+				if (player2.GetComponent<PlayerStats>().swapRole == "pending")
+				{
+					transform.GetComponent<PlayerStats>().Swap();
+					player2.transform.GetComponent<PlayerStats>().Swap();
+					swapCDTimer = Time.time + swapCD;	
+				}
+				else swapCountdownTimer = Time.time + swapCountdown;
+			}
 		}
 		if (transform.tag == "Player2")
 		{
-			transform.position += new Vector3 (Input.GetAxis ("Horizontal")*Time.deltaTime*10, Input.GetAxis ("Vertical")*Time.deltaTime*10, 0);
+			GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
+			if (Input.GetButton("XboxFire1") || Input.GetKey(KeyCode.Tab) && transform.GetComponent<PlayerStats>().swapRole == "no" && Time.time - swapCDTimer >= 0)
+			{
+				transform.GetComponent<PlayerStats>().swapRole = "pending";
+				if (player1.GetComponent<PlayerStats>().swapRole == "pending")
+				{
+					transform.GetComponent<PlayerStats>().Swap();
+					player1.transform.GetComponent<PlayerStats>().Swap();
+					swapCDTimer = Time.time + swapCD;		
+				}
+				else swapCountdownTimer = Time.time + swapCountdown;
+			}
+			transform.position += new Vector3(Input.GetAxis("XboxHorizontal")*Time.deltaTime*10, Input.GetAxis("XboxVertical")*Time.deltaTime*10, 0);
+			if (Input.GetKey(KeyCode.UpArrow)) transform.Translate(Vector3.up*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.LeftArrow)) transform.Translate(Vector3.left*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.DownArrow)) transform.Translate(Vector3.down*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.RightArrow)) transform.Translate(Vector3.right*Time.deltaTime*speed);
 		}
+
 	}
 }

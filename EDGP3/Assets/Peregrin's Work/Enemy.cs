@@ -23,8 +23,8 @@ public class Enemy : MonoBehaviour {
 		Vector3 pos = Camera.main.ScreenToWorldPoint (new Vector3 (10, 10));
 		pos.z = 0;
 		//transform.position = pos;
-		shippe1 = GameObject.Find ("Ship1");
-		shippe2 = GameObject.Find ("Ship2");
+		shippe1 = GameObject.FindWithTag ("Player1");
+		shippe2 = GameObject.FindWithTag ("Player2");
 		transform.rotation = Quaternion.Euler(new Vector3(180,0,0));
 
 		int random = Random.Range (0, 2);

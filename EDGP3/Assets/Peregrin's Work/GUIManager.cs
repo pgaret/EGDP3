@@ -83,19 +83,23 @@ public class GUIManager : MonoBehaviour {
 			if (player2Select == 1) GUI.Box (new Rect(Screen.width * 3 / 5, Screen.height * 4 / 5, Screen.width / 5, Screen.width / 5), MMT);
 			if (player2Select == 2) GUI.Box (new Rect(Screen.width * 3 / 5, Screen.height * 4 / 5, Screen.width / 5, Screen.width / 5), TKT);
 		}
-		if (mode == 2 && player1 != null)
+		if (mode == 2 && player1 != null && player2 != null)
 		{
 			player1 = GameObject.FindGameObjectWithTag("Player1").transform;
 			player2 = GameObject.FindGameObjectWithTag("Player2").transform;
 			GUI.Box (new Rect (0, 0, Screen.width / 4, Screen.height), 
 			         "PLAYER 1: \n\n\nLives: \n\n\n\n"+
 					 "Ammo:\n\n" + 
-					 player1.GetComponent<PlayerStats>().ammo.ToString()+"\n\n\n\n", style);
+					 player1.GetComponent<PlayerStats>().ammo.ToString()+"\n\n\n\n"+
+					 "Swap: "+player1.GetComponent<PlayerStats>().swapRole, style);					 
 
 			GUI.Box (new Rect (Screen.width * 3 / 4, 0, Screen.width / 4, Screen.height),  
 			         "PLAYER 2: \n\n\nLives: \n\n\n\n"+
 			         "Ammo: \n\n" + 
-			         player2.GetComponent<PlayerStats>().ammo.ToString(), style);
+			         player2.GetComponent<PlayerStats>().ammo.ToString()+"\n\n\n\n"+
+			          "Swap: "+player2.GetComponent<PlayerStats>().swapRole, style);
+			         
+			
 		}
 		
 	}
@@ -108,9 +112,10 @@ public class GUIManager : MonoBehaviour {
 			if (Input.GetMouseButtonDown(0) && PKIcon.renderer.bounds.Contains(mPos) && player1Select != 0) player1Select = 0;
 			if (Input.GetMouseButtonDown(0) && MMIcon.renderer.bounds.Contains(mPos) && player1Select != 1) player1Select = 1;
 			if (Input.GetMouseButtonDown(0) && TKIcon.renderer.bounds.Contains(mPos) && player1Select != 2) player1Select = 2;
-			if (Input.GetButtonDown("Fire1") && PKIcon.renderer.bounds.Contains(cPos) && player2Select != 0) player2Select = 0;
-			if (Input.GetButtonDown("Fire1") && MMIcon.renderer.bounds.Contains(cPos) && player2Select != 1) player2Select = 1;
-			if (Input.GetButtonDown("Fire1") && TKIcon.renderer.bounds.Contains(cPos) && player2Select != 2) player2Select = 2;
+			if (Input.GetButtonDown("XboxFire1") && PKIcon.renderer.bounds.Contains(cPos) && player2Select != 0) player2Select = 0;
+			if (Input.GetButtonDown("XboxFire1") && MMIcon.renderer.bounds.Contains(cPos) && player2Select != 1) player2Select = 1;
+			if (Input.GetButtonDown("XboxFire1") && TKIcon.renderer.bounds.Contains(cPos) && player2Select != 2) player2Select = 2;
+			if (Input.GetKey (KeyCode.Tab)) player2Select = 0;
 			if (Input.GetKeyDown(KeyCode.RightShift)) player2Select = 0;
 
 			if (player1Select != -1 && player2Select != -1)
@@ -143,7 +148,11 @@ public class GUIManager : MonoBehaviour {
 			mPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			mPos.z = 0;
 			player1Cursor.position = mPos;
-			player2Cursor.position += new Vector3 (Input.GetAxis ("Horizontal")*Time.deltaTime*10, Input.GetAxis ("Vertical")*Time.deltaTime*10, 0);
+			player2Cursor.position += new Vector3 (Input.GetAxis ("XboxHorizontal")*Time.deltaTime*10, Input.GetAxis ("XboxVertical")*Time.deltaTime*10, 0);
+			if (Input.GetKey(KeyCode.UpArrow)) player2Cursor.transform.Translate(Vector3.up*Time.deltaTime*10);
+			if (Input.GetKey(KeyCode.LeftArrow)) player2Cursor.transform.Translate(Vector3.left*Time.deltaTime*10);
+			if (Input.GetKey(KeyCode.DownArrow)) player2Cursor.transform.Translate(Vector3.down*Time.deltaTime*10);
+			if (Input.GetKey(KeyCode.RightArrow)) player2Cursor.transform.Translate(Vector3.right*Time.deltaTime*10);
 		}
 	}
 }
