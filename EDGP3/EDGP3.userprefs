@@ -1,10 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Peregrin's Work\Enemy.cs">
     <Files>
       <File FileName="Assets\Peregrin's Work\EnemyBullet.cs" Line="35" Column="40" />
       <File FileName="Assets\Peregrin's Work\Enemy.cs" Line="93" Column="5" />
       <File FileName="Assets\Dusty\spawn.cs" Line="13" Column="17" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Peregrin's Work\PlayerStats.cs">
+    <Files>
+      <File FileName="Assets\Peregrin's Work\PunchKnight.cs" Line="55" Column="3" />
+      <File FileName="Assets\Peregrin's Work\GUIManager.cs" Line="93" Column="37" />
+      <File FileName="Assets\Peregrin's Work\PlayerStats.cs" Line="23" Column="19" />
+>>>>>>> 401ad3be2b87ec268131a53e7824d3fc52aea174
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
