@@ -10,7 +10,7 @@ public class spawn : MonoBehaviour {
 	int y = 10;
 	// Use this for initialization
 	void Start () {
-		Diagonal(1,1,1);
+		Diagonal(1,1,3);
 		
 	}
 	

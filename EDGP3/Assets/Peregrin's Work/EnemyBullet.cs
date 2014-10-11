@@ -10,9 +10,11 @@ public class EnemyBullet : MonoBehaviour {
 	public int bulletrange = 30;
 	private Vector3 startPos;
 	float timer;
-	
+	float fireTime;
+	float Y;
 	// Use this for initialization
 	void Start () {
+		fireTime = Time.time;
 		startPos = transform.position;
 		timer = Time.time;
 		int random = Random.Range (0, 2);
@@ -28,10 +30,19 @@ public class EnemyBullet : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
-
-		rigidbody2D.AddForce(transform.up * bulletspeed);
-		rigidbody2D.velocity = Vector3.zero;
-
+		if(bullettype != 2){
+			rigidbody2D.AddForce(transform.up * bulletspeed);
+			rigidbody2D.velocity = Vector3.zero;
+		}
+		else if (bullettype == 2){
+			Y = Mathf.Sin((Time.time-fireTime)*10)*3;
+			transform.position = new Vector3(transform.position.x, Y, transform.position.z);
+			rigidbody2D.AddForce(transform.up * bulletspeed*1.5f);
+			rigidbody2D.velocity = Vector3.zero;
+			
+			
+			
+		}
 		
 	}
 	public void setatktype(int a){

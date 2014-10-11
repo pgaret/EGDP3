@@ -23,8 +23,8 @@ public class Enemy : MonoBehaviour {
 		Vector3 pos = Camera.main.ScreenToWorldPoint (new Vector3 (10, 10));
 		pos.z = 0;
 		//transform.position = pos;
-		shippe1 = GameObject.Find ("Ship1");
-		shippe2 = GameObject.Find ("Ship2");
+		shippe1 = GameObject.FindGameObjectWithTag ("Player1");
+		shippe2 = GameObject.FindGameObjectWithTag ("Player2");
 		transform.rotation = Quaternion.Euler(new Vector3(180,0,0));
 
 		int random = Random.Range (0, 2);
@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour {
 
 
 					}
-				bullet.GetComponent<EnemyBullet>().setatktype(attacktype);
+
 			}else if(attacktype == 1){
 				rotations();
 				if (affinity == false) {
@@ -63,6 +63,7 @@ public class Enemy : MonoBehaviour {
 
 					Quaternion up = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z + 10));
 					bullet = Instantiate(projectileA, transform.position, up) as GameObject;
+
 					Quaternion down = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z - 10));
 					bullet = Instantiate(projectileA, transform.position, down) as GameObject;
 
@@ -70,13 +71,32 @@ public class Enemy : MonoBehaviour {
 				else {
 					bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
 					Transform a = transform;
+
 					Quaternion up = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z + 10));
 					bullet = Instantiate(projectileB, transform.position, up) as GameObject;
+
 					Quaternion down = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z - 10));
 					bullet = Instantiate(projectileB, transform.position, down) as GameObject;
 
 				}
 
+			}else if(attacktype == 2){
+				rotations();
+				if (affinity == false) {
+					bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
+					bullet.GetComponent<EnemyBullet>().setatktype(attacktype);
+				}else {
+					bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
+					bullet.GetComponent<EnemyBullet>().setatktype(attacktype);
+				}
+			}else if(attacktype == 3){
+
+				for(int i = 0; i <360 ; i += 20){
+					Transform a = transform;
+					
+					Quaternion up = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z + i));
+					bullet = Instantiate(projectileA, transform.position, up) as GameObject;
+				}
 			}
 
 			attackTimer = Time.time;
