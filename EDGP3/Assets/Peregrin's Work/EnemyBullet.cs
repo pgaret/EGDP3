@@ -18,8 +18,7 @@ public class EnemyBullet : MonoBehaviour {
 		startPos = transform.position;
 		timer = Time.time;
 		int random = Random.Range (0, 2);
-		if (random == 0) clickedPoint = GameObject.Find ("Ship1").transform.position;
-		if (random == 1) clickedPoint = GameObject.Find ("Ship2").transform.position;
+
 
 	}
 	

@@ -132,7 +132,5 @@ public class Enemy : MonoBehaviour {
 		transform.Rotate(0,0, -angle);
 	}
 
-	void OnTriggerExit2(Collider2D other) {
-		Destroy (gameObject);
-	}
+
 }

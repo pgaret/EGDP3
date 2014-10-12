@@ -41,10 +41,11 @@ public class GUIManager : MonoBehaviour {
 	
 	int player1Select = -1;
 	int player2Select = -1;
-	
+	GameObject boxy;
 	// Use this for initialization
 	void Start ()
 	{
+		boxy = GameObject.FindGameObjectWithTag("Manager");
 		Screen.SetResolution (960, 720, false);
 		Screen.showCursor = false;
 		player1Cursor = Instantiate (target1) as Transform;
@@ -134,6 +135,7 @@ public class GUIManager : MonoBehaviour {
 				Destroy (player1Cursor.gameObject);
 				Destroy (player2Cursor.gameObject);
 				mode = 2;
+				boxy.GetComponent<spawn>().starter();
 			}
 			//			int playerOne;
 			//			int playerTwo;
