@@ -18,8 +18,11 @@ public class Boxy : MonoBehaviour {
 		}
 	}
 	void OnTriggerExit(Collider other){
-		if(other.gameObject.tag == "EnemyShipA"){
-			other.gameObject.GetComponent<Enemy>().fireset(false);
-		}
+
+		Destroy (other.gameObject);
+
 	} 
+
+
+
 }

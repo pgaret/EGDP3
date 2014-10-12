@@ -25,20 +25,16 @@ public class EnemyBullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float distance = Vector3.Distance(startPos,transform.position);
-		if(distance >=bulletrange)
-		{
-			Destroy(gameObject);
-		}
+
 		if(bullettype != 2){
-			rigidbody2D.AddForce(transform.up * bulletspeed);
-			rigidbody2D.velocity = Vector3.zero;
+			rigidbody.AddForce(transform.up * bulletspeed);
+			rigidbody.velocity = Vector3.zero;
 		}
 		else if (bullettype == 2){
 			Y = Mathf.Sin((Time.time-fireTime)*10)*3;
 			transform.position = new Vector3(transform.position.x, Y, transform.position.z);
-			rigidbody2D.AddForce(transform.up * bulletspeed*1.5f);
-			rigidbody2D.velocity = Vector3.zero;
+			rigidbody.AddForce(transform.up * bulletspeed*1.5f);
+			rigidbody.velocity = Vector3.zero;
 			
 			
 			
@@ -49,4 +45,6 @@ public class EnemyBullet : MonoBehaviour {
 		bullettype = a;
 
 	}
+
+
 }
