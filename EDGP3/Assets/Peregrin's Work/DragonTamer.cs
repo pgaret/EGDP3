@@ -1,12 +1,11 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
-public class PunchKnight : MonoBehaviour {
+public class DragonTamer : MonoBehaviour {
 	
 	public float speed;
 	public Transform projectile;
 	public Transform special;
-	public Transform shield;
 	public string shipType;
 	public int ammo;
 	public Sprite Attack;
@@ -20,7 +19,8 @@ public class PunchKnight : MonoBehaviour {
 	float swapCDTimer;
 	float swapCD = 1f;
 	float specialTimer = 0;
-
+	int specialCounter = 0;
+	
 	char affinity = 'A';
 	
 	// Use this for initialization
@@ -52,13 +52,12 @@ public class PunchKnight : MonoBehaviour {
 	
 	void Special()
 	{
-		ammo -= 100;
-		specialTimer = Time.time + 2f;
+		Instantiate (special, transform.position, Quaternion.identity);
 	}
 	
 	public void Shield()
 	{
-		Instantiate(shield);
+		
 	}
 	
 	// Update is called once per frame
@@ -70,26 +69,19 @@ public class PunchKnight : MonoBehaviour {
 		if (shipType == "Defender")
 		{
 
+			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+			{
+				if (affinity == 'A') affinity = 'B';
+				else affinity = 'A';
+			}
 		}
 		else if (shipType == "Attacker")
 		{	
-			if (transform.tag == "Player1")
+			if (Input.GetKey(KeyCode.Space) && attackTimer < Time.time - attackCD && ammo > 0)
 			{
-				if (Input.GetKey(KeyCode.Space) && attackTimer < Time.time - attackCD && ammo > 0)
-				{
-					foreach (Transform child in transform) Instantiate (projectile, child.position, Quaternion.identity);
-					attackCD = Time.time;
-					ammo -= 1;
-				}
-			}
-			else
-			{
-				if (Input.GetButton("XboxFire1") && attackTimer < Time.time - attackCD && ammo > 0)
-				{
-					foreach (Transform child in transform) Instantiate (projectile, child.position, Quaternion.identity);
-					attackCD = Time.time;
-					ammo -= 1;
-				}
+				foreach (Transform child in transform) Instantiate (projectile, child.position, Quaternion.identity);
+				attackCD = Time.time;
+				ammo -= 1;
 			}
 			
 			GameObject[] bulletA = GameObject.FindGameObjectsWithTag ("BulletA");
@@ -109,20 +101,10 @@ public class PunchKnight : MonoBehaviour {
 				}
 			}
 		}
-
+		
 		if (Time.time - swapCountdownTimer > .49 && Time.time - swapCountdownTimer < .51 && swapCountdownTimer != 0)
 		{
 			swapCountdownTimer = 0;
-		}
-		
-		if (specialTimer - Time.time <= .5f && specialTimer - Time.time > 0)
-		{
-			for (float i = 0; i < specialTimer; i += .5f)
-			{
-				Debug.Log (i+" "+specialTimer);
-				Instantiate(special, transform.position, Quaternion.identity);
-			}
-			specialTimer -= .5f;
 		}
 		
 		if (transform.tag == "Player1")
@@ -148,7 +130,7 @@ public class PunchKnight : MonoBehaviour {
 		if (transform.tag == "Player2")
 		{
 			GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
-			if (Input.GetButton("XboxFire3") || Input.GetKey(KeyCode.Tab) && transform.GetComponent<PlayerStats>().swapRole == "no" && Time.time - swapCDTimer >= 0)
+			if (Input.GetButton("XboxFire1") || Input.GetKey(KeyCode.Tab) && transform.GetComponent<PlayerStats>().swapRole == "no" && Time.time - swapCDTimer >= 0)
 			{
 				transform.GetComponent<PlayerStats>().swapRole = "pending";
 				if (player1.GetComponent<PlayerStats>().swapRole == "pending")
@@ -165,6 +147,6 @@ public class PunchKnight : MonoBehaviour {
 			if (Input.GetKey(KeyCode.DownArrow)) transform.Translate(Vector3.down*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.RightArrow)) transform.Translate(Vector3.right*Time.deltaTime*speed);
 		}
-
+		
 	}
 }

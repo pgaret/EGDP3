@@ -50,6 +50,8 @@
      <Compile Include="Assets\Dusty\Boxy.cs" />
      <Compile Include="Assets\Dusty\manager.cs" />
      <Compile Include="Assets\Dusty\spawn.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\Dragon.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\DragonTamer.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Enemy.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\EnemyBullet.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\GUIManager.cs" />
