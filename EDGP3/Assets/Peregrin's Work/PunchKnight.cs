@@ -8,7 +8,6 @@ public class PunchKnight : MonoBehaviour {
 	public Transform special;
 	public Transform shield;
 	public string shipType;
-	public int ammo;
 	public Sprite Attack;
 	
 	float attackTimer = .1f;
@@ -19,9 +18,9 @@ public class PunchKnight : MonoBehaviour {
 	
 	float swapCDTimer;
 	float swapCD = 1f;
+	
 	float specialTimer = 0;
-
-	char affinity = 'A';
+	float specialCounter = 0;
 	
 	// Use this for initialization
 	void Start () {
@@ -40,7 +39,7 @@ public class PunchKnight : MonoBehaviour {
 		}
 		if (transform.tag == "Player1")
 		{
-			ammo = 100;
+			transform.GetComponent<PlayerStats>().ammo = 100;
 			transform.GetComponent<PlayerStats>().role = "Attacker";
 			Vector3 pos = new Vector3 (0, 0);
 			pos.z = 0;
@@ -52,8 +51,9 @@ public class PunchKnight : MonoBehaviour {
 	
 	void Special()
 	{
-		ammo -= 100;
-		specialTimer = Time.time + 2f;
+		transform.GetComponent<PlayerStats>().ammo -= 100;
+		specialTimer = Time.time + 2.1f;
+		specialCounter = 2f;
 	}
 	
 	public void Shield()
@@ -64,31 +64,28 @@ public class PunchKnight : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		shipType = transform.GetComponent<PlayerStats>().role;
-		transform.GetComponent<PlayerStats>().ammo = ammo;
-		transform.GetComponent<PlayerStats>().affinity = affinity;
-		
-		if (shipType == "Defender")
-		{
 
-		}
-		else if (shipType == "Attacker")
+		if (shipType == "Attacker")
 		{	
 			if (transform.tag == "Player1")
 			{
-				if (Input.GetKey(KeyCode.Space) && attackTimer < Time.time - attackCD && ammo > 0)
+				if (Input.GetKey(KeyCode.Space) && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0)
 				{
-					foreach (Transform child in transform) Instantiate (projectile, child.position, Quaternion.identity);
+					foreach (Transform child in transform) 
+					{
+						if (child.name != "PunchTag") Instantiate (projectile, child.position, Quaternion.identity);
+					}
 					attackCD = Time.time;
-					ammo -= 1;
+					transform.GetComponent<PlayerStats>().ammo -= 1;
 				}
 			}
 			else
 			{
-				if (Input.GetButton("XboxFire1") && attackTimer < Time.time - attackCD && ammo > 0)
+				if (Input.GetButton("XboxFire1") && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0)
 				{
 					foreach (Transform child in transform) Instantiate (projectile, child.position, Quaternion.identity);
 					attackCD = Time.time;
-					ammo -= 1;
+					transform.GetComponent<PlayerStats>().ammo -= 1;
 				}
 			}
 			
@@ -115,14 +112,22 @@ public class PunchKnight : MonoBehaviour {
 			swapCountdownTimer = 0;
 		}
 		
-		if (specialTimer - Time.time <= .5f && specialTimer - Time.time > 0)
+		if (specialTimer - Time.time <= specialCounter  && specialTimer - Time.time > 0)
 		{
-			for (float i = 0; i < specialTimer; i += .5f)
+			Transform instance;
+			for (float i = 0; i < specialCounter; i += .5f)
 			{
-				Debug.Log (i+" "+specialTimer);
-				Instantiate(special, transform.position, Quaternion.identity);
+//				Debug.Log (i+" "+specialTimer);
+				instance = (Transform)Instantiate(special, transform.position, Quaternion.identity);
+				if (i == 0) instance.GetComponent<PKSpecial>().rotation = 13;
+				if (i == .5) instance.GetComponent<PKSpecial>().rotation = -13;
+				if (i == 1) instance.GetComponent<PKSpecial>().rotation = 25;
+				if (i == 1.5) instance.GetComponent<PKSpecial>().rotation = -25;
 			}
-			specialTimer -= .5f;
+			instance = (Transform)Instantiate(special, transform.position, Quaternion.identity);
+			instance.GetComponent<PKSpecial>().rotation = 0;
+			
+			specialCounter -= .5f;
 		}
 		
 		if (transform.tag == "Player1")
@@ -131,7 +136,7 @@ public class PunchKnight : MonoBehaviour {
 			if (Input.GetKey(KeyCode.A)) transform.Translate(Vector3.left*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.S)) transform.Translate(Vector3.down*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.D)) transform.Translate(Vector3.right*Time.deltaTime*speed);
-			if (Input.GetKey (KeyCode.X) && ammo >= 100) Special();
+			if (Input.GetKey (KeyCode.X) && transform.GetComponent<PlayerStats>().ammo >= 100) Special();
 			if (Input.GetKey (KeyCode.Z) && transform.GetComponent<PlayerStats>().swapRole == "no" && Time.time - swapCDTimer >= 0)
 			{
 				GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
@@ -160,10 +165,10 @@ public class PunchKnight : MonoBehaviour {
 				else swapCountdownTimer = Time.time + swapCountdown;
 			}
 			transform.position += new Vector3(Input.GetAxis("XboxHorizontal")*Time.deltaTime*10, Input.GetAxis("XboxVertical")*Time.deltaTime*10, 0);
-			if (Input.GetKey(KeyCode.UpArrow)) transform.Translate(Vector3.up*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.LeftArrow)) transform.Translate(Vector3.left*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.DownArrow)) transform.Translate(Vector3.down*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.RightArrow)) transform.Translate(Vector3.right*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.UpArrow)) transform.Translate(Vector3.up*Time.deltaTime*5);
+			if (Input.GetKey(KeyCode.LeftArrow)) transform.Translate(Vector3.left*Time.deltaTime*5);
+			if (Input.GetKey(KeyCode.DownArrow)) transform.Translate(Vector3.down*Time.deltaTime*5);
+			if (Input.GetKey(KeyCode.RightArrow)) transform.Translate(Vector3.right*Time.deltaTime*5);
 		}
 
 	}
