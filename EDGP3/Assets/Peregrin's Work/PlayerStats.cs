@@ -15,6 +15,7 @@ public class PlayerStats : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		swapRole = "no";
+		affinity = 'A';
 	
 	}
 	

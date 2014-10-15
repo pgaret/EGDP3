@@ -18,8 +18,9 @@ public class DragonTamer : MonoBehaviour {
 	
 	float swapCDTimer;
 	float swapCD = 1f;
-	float specialTimer = 0;
-	int specialCounter = 0;
+
+//	float specialTimer = 0;
+//	int specialCounter = 0;
 	
 	char affinity = 'A';
 	
