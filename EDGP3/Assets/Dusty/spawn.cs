@@ -68,11 +68,25 @@ public class spawn : MonoBehaviour {
 			test.GetComponent<Enemy>().attacktype = type;
 		}
 	}
+	public void Setpath(int numene,int dir,int type,int path){
+		numene += 6;
+		for(int i = numene; i > 6; i--){
+			GameObject test;
+			if(dir == 0)
+				test = Instantiate(enemy, new Vector3(i, i, 0), Quaternion.identity) as GameObject;
+			else
+				test = Instantiate(enemy, new Vector3(-i, i, 0), Quaternion.identity) as GameObject;
+			test.GetComponent<Enemy>().path = path;
+			//test.GetComponent<Enemy>().changeloc(new Vector3(i, -i, 0));
+			test.GetComponent<Enemy>().attacktype = type;
+		}
+	}
 	void WaveM(int i){
 		if(i == 0){
-			Diagonal(2,1,3);
-			Down (1,0,3);
-			Side (1,0,3,1);
+			//Diagonal(2,1,3);
+			Down (1,0,5);
+			//Side (1,0,3,1);
+			//Setpath(2,0,3,1);
 		}
 	}
 	
