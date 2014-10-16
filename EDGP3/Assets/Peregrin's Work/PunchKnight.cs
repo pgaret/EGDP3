@@ -81,10 +81,12 @@ public class PunchKnight : MonoBehaviour {
 			}
 			else
 			{
-				if (Input.GetButton("XboxFire1") && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0)
+				if (Input.GetButton("XboxFire1") || Input.GetKey(KeyCode.Space) && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0)
 				{
-					foreach (Transform child in transform) Instantiate (projectile, child.position, Quaternion.identity);
-					attackCD = Time.time;
+					foreach (Transform child in transform) 
+					{
+						if (child.name != "PunchTag") Instantiate (projectile, child.position, Quaternion.identity);
+					}					attackCD = Time.time;
 					transform.GetComponent<PlayerStats>().ammo -= 1;
 				}
 			}

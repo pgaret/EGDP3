@@ -8,6 +8,9 @@ public class GUIManager : MonoBehaviour {
 	public Transform MirrorMage;
 	public Transform Tinker;
 	public Transform DragonTamer;
+	
+	//Backgrounds
+	public Transform Background1;
 
 	//Icons for team select
 	public Transform PK;
@@ -24,6 +27,7 @@ public class GUIManager : MonoBehaviour {
 	public GUIStyle player2Style;
 	public GUIStyle style;
 	
+	//Textures for boxes in team select
 	public Texture PKT;
 	public Texture TKT;
 	public Texture MMT;
@@ -40,6 +44,7 @@ public class GUIManager : MonoBehaviour {
 	Transform MMIcon;
 	Transform TKIcon;
 	Transform DTIcon;
+	Transform background;
 
 	Vector3 pos;
 	Vector3 mPos;
@@ -140,6 +145,9 @@ public class GUIManager : MonoBehaviour {
 
 			if (player1Select != -1 && player2Select != -1 && begin == true)
 			{
+				background = (Transform)Instantiate (Background1);
+				background.transform.localScale = new Vector3(1.6f, 1.6f);
+				
 				if (player1Select == 0) player1 = Instantiate(PunchKnight) as Transform;
 				if (player1Select == 1) player1 = Instantiate(MirrorMage) as Transform;
 				if (player1Select == 2) player1 = Instantiate(Tinker) as Transform;

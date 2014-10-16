@@ -1,14 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DragonTamer : MonoBehaviour {
 	
 	public float speed;
+	public float dragDist;
 	public Transform projectile;
 	public Transform special;
+	public Transform shield;
 	public string shipType;
-	public int ammo;
 	public Sprite Attack;
+	public Vector3 prevLoc1;
+	public Vector3 prevLoc2;
+	public Vector3 prevLoc3;
+	public Vector3 prevLoc4;	
 	
 	float attackTimer = .1f;
 	float attackCD = 0;
@@ -18,11 +24,11 @@ public class DragonTamer : MonoBehaviour {
 	
 	float swapCDTimer;
 	float swapCD = 1f;
-
-//	float specialTimer = 0;
-//	int specialCounter = 0;
 	
-	char affinity = 'A';
+	float specialTimer = 0;
+	float specialCounter = 0;
+	
+	List<Transform> dragons = new List<Transform>();
 	
 	// Use this for initialization
 	void Start () {
@@ -41,48 +47,66 @@ public class DragonTamer : MonoBehaviour {
 		}
 		if (transform.tag == "Player1")
 		{
-			ammo = 100;
+			transform.GetComponent<PlayerStats>().ammo = 100;
 			transform.GetComponent<PlayerStats>().role = "Attacker";
 			Vector3 pos = new Vector3 (0, 0);
 			pos.z = 0;
 			transform.position = pos;
 		}
-		
+		Vector3 position = transform.position;
+		position.x -= transform.renderer.bounds.extents.x*2;
+		prevLoc1 = position;
+		dragons.Add((Transform)(Instantiate (special, prevLoc1, Quaternion.identity)));
+		position.x -= transform.renderer.bounds.extents.x*3;
+		prevLoc2 = position;
+		dragons.Add((Transform)(Instantiate (special, prevLoc2, Quaternion.identity)));
 		
 	}
 	
 	void Special()
 	{
-		Instantiate (special, transform.position, Quaternion.identity);
+		transform.GetComponent<PlayerStats>().ammo -= 100;
+		specialTimer = Time.time + 2.1f;
+		specialCounter = 2f;
 	}
 	
 	public void Shield()
 	{
-		
+		Instantiate(shield);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		shipType = transform.GetComponent<PlayerStats>().role;
-		transform.GetComponent<PlayerStats>().ammo = ammo;
-		transform.GetComponent<PlayerStats>().affinity = affinity;
 		
-		if (shipType == "Defender")
+		for (int i = 0; i < dragons.Count; i++)
 		{
-
-			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
-			{
-				if (affinity == 'A') affinity = 'B';
-				else affinity = 'A';
-			}
+			if((Vector3.Distance (dragons[i].position, transform.position) > i + dragDist)) dragons[i].position = Vector3.MoveTowards(dragons[i].position, transform.position, .5f);
+			Debug.Log (Vector3.Distance (dragons[i].position, transform.position));
 		}
-		else if (shipType == "Attacker")
+		
+		if (shipType == "Attacker")
 		{	
-			if (Input.GetKey(KeyCode.Space) && attackTimer < Time.time - attackCD && ammo > 0)
+			if (transform.tag == "Player1")
 			{
-				foreach (Transform child in transform) Instantiate (projectile, child.position, Quaternion.identity);
-				attackCD = Time.time;
-				ammo -= 1;
+				if (Input.GetKey(KeyCode.Space) && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0)
+				{
+					foreach (Transform child in transform) 
+					{
+						if (child.name != "PunchTag") Instantiate (projectile, child.position, Quaternion.identity);
+					}
+					attackCD = Time.time;
+					transform.GetComponent<PlayerStats>().ammo -= 1;
+				}
+			}
+			else
+			{
+				if (Input.GetButton("XboxFire1") && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0)
+				{
+					foreach (Transform child in transform) Instantiate (projectile, child.position, Quaternion.identity);
+					attackCD = Time.time;
+					transform.GetComponent<PlayerStats>().ammo -= 1;
+				}
 			}
 			
 			GameObject[] bulletA = GameObject.FindGameObjectsWithTag ("BulletA");
@@ -108,13 +132,31 @@ public class DragonTamer : MonoBehaviour {
 			swapCountdownTimer = 0;
 		}
 		
+		if (specialTimer - Time.time <= specialCounter  && specialTimer - Time.time > 0)
+		{
+			Transform instance;
+			for (float i = 0; i < specialCounter; i += .5f)
+			{
+				//				Debug.Log (i+" "+specialTimer);
+				instance = (Transform)Instantiate(special, transform.position, Quaternion.identity);
+				if (i == 0) instance.GetComponent<PKSpecial>().rotation = 13;
+				if (i == .5) instance.GetComponent<PKSpecial>().rotation = -13;
+				if (i == 1) instance.GetComponent<PKSpecial>().rotation = 25;
+				if (i == 1.5) instance.GetComponent<PKSpecial>().rotation = -25;
+			}
+			instance = (Transform)Instantiate(special, transform.position, Quaternion.identity);
+			instance.GetComponent<PKSpecial>().rotation = 0;
+			
+			specialCounter -= .5f;
+		}
+		
 		if (transform.tag == "Player1")
 		{
 			if (Input.GetKey(KeyCode.W)) transform.Translate(Vector3.up*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.A)) transform.Translate(Vector3.left*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.S)) transform.Translate(Vector3.down*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.D)) transform.Translate(Vector3.right*Time.deltaTime*speed);
-			if (Input.GetKey (KeyCode.X) && ammo >= 100) Special();
+			if (Input.GetKey (KeyCode.X) && transform.GetComponent<PlayerStats>().ammo >= 100) Special();
 			if (Input.GetKey (KeyCode.Z) && transform.GetComponent<PlayerStats>().swapRole == "no" && Time.time - swapCDTimer >= 0)
 			{
 				GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
@@ -131,7 +173,7 @@ public class DragonTamer : MonoBehaviour {
 		if (transform.tag == "Player2")
 		{
 			GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
-			if (Input.GetButton("XboxFire1") || Input.GetKey(KeyCode.Tab) && transform.GetComponent<PlayerStats>().swapRole == "no" && Time.time - swapCDTimer >= 0)
+			if (Input.GetButton("XboxFire3") || Input.GetKey(KeyCode.Tab) && transform.GetComponent<PlayerStats>().swapRole == "no" && Time.time - swapCDTimer >= 0)
 			{
 				transform.GetComponent<PlayerStats>().swapRole = "pending";
 				if (player1.GetComponent<PlayerStats>().swapRole == "pending")
@@ -143,10 +185,10 @@ public class DragonTamer : MonoBehaviour {
 				else swapCountdownTimer = Time.time + swapCountdown;
 			}
 			transform.position += new Vector3(Input.GetAxis("XboxHorizontal")*Time.deltaTime*10, Input.GetAxis("XboxVertical")*Time.deltaTime*10, 0);
-			if (Input.GetKey(KeyCode.UpArrow)) transform.Translate(Vector3.up*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.LeftArrow)) transform.Translate(Vector3.left*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.DownArrow)) transform.Translate(Vector3.down*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.RightArrow)) transform.Translate(Vector3.right*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.UpArrow)) transform.Translate(Vector3.up*Time.deltaTime*5);
+			if (Input.GetKey(KeyCode.LeftArrow)) transform.Translate(Vector3.left*Time.deltaTime*5);
+			if (Input.GetKey(KeyCode.DownArrow)) transform.Translate(Vector3.down*Time.deltaTime*5);
+			if (Input.GetKey(KeyCode.RightArrow)) transform.Translate(Vector3.right*Time.deltaTime*5);
 		}
 		
 	}
