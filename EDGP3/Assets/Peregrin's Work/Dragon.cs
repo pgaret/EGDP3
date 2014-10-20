@@ -3,14 +3,16 @@ using System.Collections;
 
 public class Dragon : MonoBehaviour {
 
+	public bool dead = false;
+
 	Transform parent;
+	float lifeSpan = 5.0f;
+	float startTime;
 
 	// Use this for initialization
-	void Start () {
-//		if (GameObject.FindGameObjectWithTag("Player1").name == "DragonTamer(Clone)" && GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerStats>().role == "Attacker") transform.parent = GameObject.FindGameObjectWithTag("Player1").transform;
-//		else transform.parent = GameObject.FindGameObjectWithTag("Player2").transform;
-//		Debug.Log (transform.parent);
-	
+	void Start ()
+	{
+		startTime = Time.time;
 	}
 	
 	void BulletCheck()
@@ -45,8 +47,9 @@ public class Dragon : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-//		Debug.Log (transform.parent);
-	
+	void Update ()
+	{
+//		Debug.Log (Time.time+"  "+startTime+" "+lifeSpan);
+		if (Time.time - lifeSpan >= startTime) dead = true;
 	}
 }

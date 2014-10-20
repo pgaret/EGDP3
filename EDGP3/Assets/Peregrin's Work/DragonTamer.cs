@@ -19,14 +19,12 @@ public class DragonTamer : MonoBehaviour {
 	float attackTimer = .1f;
 	float attackCD = 0;
 	
-	float swapCountdown = 2f;
-	float swapCountdownTimer;
-	
 	float swapCDTimer;
 	float swapCD = 1f;
 	
-	float specialTimer = 0;
-	float specialCounter = 0;
+	float specialTimer;
+	float specialCD = 1;
+	bool specialActivate = false;
 	
 	List<Transform> dragons = new List<Transform>();
 	
@@ -53,21 +51,23 @@ public class DragonTamer : MonoBehaviour {
 			pos.z = 0;
 			transform.position = pos;
 		}
+		
+	}
+	
+	void Dragon()
+	{
 		Vector3 position = transform.position;
-		position.x -= transform.renderer.bounds.extents.x*2;
+		position.x -= transform.renderer.bounds.extents.x*dragons.Count;
 		prevLoc1 = position;
 		dragons.Add((Transform)(Instantiate (special, prevLoc1, Quaternion.identity)));
-		position.x -= transform.renderer.bounds.extents.x*3;
-		prevLoc2 = position;
-		dragons.Add((Transform)(Instantiate (special, prevLoc2, Quaternion.identity)));
 		
 	}
 	
 	void Special()
 	{
-		transform.GetComponent<PlayerStats>().ammo -= 100;
-		specialTimer = Time.time + 2.1f;
-		specialCounter = 2f;
+		transform.GetComponent<PlayerStats>().ammo -= 10;
+		specialActivate = true;
+		specialTimer = specialCD + Time.time;
 	}
 	
 	public void Shield()
@@ -82,7 +82,11 @@ public class DragonTamer : MonoBehaviour {
 		for (int i = 0; i < dragons.Count; i++)
 		{
 			if((Vector3.Distance (dragons[i].position, transform.position) > i + dragDist)) dragons[i].position = Vector3.MoveTowards(dragons[i].position, transform.position, .5f);
-			Debug.Log (Vector3.Distance (dragons[i].position, transform.position));
+			if (dragons[i].GetComponent<Dragon>().dead == true)
+			{
+				Destroy (dragons[i].gameObject);
+				dragons.RemoveAt(i);
+			}
 		}
 		
 		if (shipType == "Attacker")
@@ -127,27 +131,14 @@ public class DragonTamer : MonoBehaviour {
 			}
 		}
 		
-		if (Time.time - swapCountdownTimer > .49 && Time.time - swapCountdownTimer < .51 && swapCountdownTimer != 0)
+		if (specialActivate == true)
 		{
-			swapCountdownTimer = 0;
-		}
-		
-		if (specialTimer - Time.time <= specialCounter  && specialTimer - Time.time > 0)
-		{
-			Transform instance;
-			for (float i = 0; i < specialCounter; i += .5f)
+			if (Input.GetKeyUp(KeyCode.X)) specialActivate = false;
+			else if (Time.time > specialTimer)
 			{
-				//				Debug.Log (i+" "+specialTimer);
-				instance = (Transform)Instantiate(special, transform.position, Quaternion.identity);
-				if (i == 0) instance.GetComponent<PKSpecial>().rotation = 13;
-				if (i == .5) instance.GetComponent<PKSpecial>().rotation = -13;
-				if (i == 1) instance.GetComponent<PKSpecial>().rotation = 25;
-				if (i == 1.5) instance.GetComponent<PKSpecial>().rotation = -25;
+				Dragon();
+				specialActivate = false;
 			}
-			instance = (Transform)Instantiate(special, transform.position, Quaternion.identity);
-			instance.GetComponent<PKSpecial>().rotation = 0;
-			
-			specialCounter -= .5f;
 		}
 		
 		if (transform.tag == "Player1")
@@ -156,7 +147,7 @@ public class DragonTamer : MonoBehaviour {
 			if (Input.GetKey(KeyCode.A)) transform.Translate(Vector3.left*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.S)) transform.Translate(Vector3.down*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.D)) transform.Translate(Vector3.right*Time.deltaTime*speed);
-			if (Input.GetKey (KeyCode.X) && transform.GetComponent<PlayerStats>().ammo >= 100) Special();
+			if (Input.GetKey (KeyCode.X) && transform.GetComponent<PlayerStats>().ammo >= 10 && specialActivate == false) Special();
 			if (Input.GetKey (KeyCode.Z) && transform.GetComponent<PlayerStats>().swapRole == "no" && Time.time - swapCDTimer >= 0)
 			{
 				GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
@@ -167,7 +158,6 @@ public class DragonTamer : MonoBehaviour {
 					player2.transform.GetComponent<PlayerStats>().Swap();
 					swapCDTimer = Time.time + swapCD;	
 				}
-				else swapCountdownTimer = Time.time + swapCountdown;
 			}
 		}
 		if (transform.tag == "Player2")
@@ -182,7 +172,6 @@ public class DragonTamer : MonoBehaviour {
 					player1.transform.GetComponent<PlayerStats>().Swap();
 					swapCDTimer = Time.time + swapCD;		
 				}
-				else swapCountdownTimer = Time.time + swapCountdown;
 			}
 			transform.position += new Vector3(Input.GetAxis("XboxHorizontal")*Time.deltaTime*10, Input.GetAxis("XboxVertical")*Time.deltaTime*10, 0);
 			if (Input.GetKey(KeyCode.UpArrow)) transform.Translate(Vector3.up*Time.deltaTime*5);
