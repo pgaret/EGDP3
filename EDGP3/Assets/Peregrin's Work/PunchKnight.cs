@@ -8,7 +8,8 @@ public class PunchKnight : MonoBehaviour {
 	public Transform special;
 	public Transform shield;
 	public string shipType;
-	public Sprite Attack;
+	public Sprite punchLeft;
+	public Sprite punchRight;
 	
 	float attackTimer = .1f;
 	float attackCD = 0;
@@ -21,6 +22,8 @@ public class PunchKnight : MonoBehaviour {
 	
 	float specialTimer = 0;
 	float specialCounter = 0;
+	
+	Animator anim;
 	
 	// Use this for initialization
 	void Start () {
@@ -45,6 +48,8 @@ public class PunchKnight : MonoBehaviour {
 			pos.z = 0;
 			transform.position = pos;
 		}
+		
+		anim = GetComponent<Animator>();
 		
 		
 	}
@@ -71,12 +76,22 @@ public class PunchKnight : MonoBehaviour {
 			{
 				if (Input.GetKey(KeyCode.Space) && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0)
 				{
-					foreach (Transform child in transform) 
+					foreach (Transform child in transform)
 					{
-						if (child.name != "PunchTag") Instantiate (projectile, child.position, Quaternion.identity);
+						Transform thePunch;
+						if (child.name == "Left")
+						{
+							thePunch = (Transform)Instantiate (projectile, child.position, Quaternion.identity);
+							thePunch.GetComponent<SpriteRenderer>().sprite = punchLeft;
+						}
+						else if (child.name == "Right")
+						{
+							thePunch = (Transform)Instantiate (projectile, child.position, Quaternion.identity);
+							thePunch.GetComponent<SpriteRenderer>().sprite = punchRight;
+						}
+						attackCD = Time.time;
+						transform.GetComponent<PlayerStats>().ammo -= 1;
 					}
-					attackCD = Time.time;
-					transform.GetComponent<PlayerStats>().ammo -= 1;
 				}
 			}
 			else
@@ -85,8 +100,20 @@ public class PunchKnight : MonoBehaviour {
 				{
 					foreach (Transform child in transform) 
 					{
-						if (child.name != "PunchTag") Instantiate (projectile, child.position, Quaternion.identity);
-					}					attackCD = Time.time;
+						Transform thePunch;
+						Debug.Log (child.name);
+						if (child.name == "Left")
+						{
+							thePunch = (Transform)Instantiate (projectile, child.position, Quaternion.identity);
+							thePunch.GetComponent<SpriteRenderer>().sprite = punchLeft;
+						}
+						else if (child.name == "Right")
+						{
+							thePunch = (Transform)Instantiate (projectile, child.position, Quaternion.identity);
+							thePunch.GetComponent<SpriteRenderer>().sprite = punchRight;
+						}
+					}
+					attackCD = Time.time;
 					transform.GetComponent<PlayerStats>().ammo -= 1;
 				}
 			}
@@ -134,6 +161,16 @@ public class PunchKnight : MonoBehaviour {
 		
 		if (transform.tag == "Player1")
 		{
+			if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && !Input.GetKey (KeyCode.Space)) anim.SetBool("move!shoot", true);
+			else anim.SetBool("move!shoot", false);
+			
+			if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && Input.GetKey (KeyCode.Space)) anim.SetBool("moveshoot", true);
+			else anim.SetBool("moveshoot", false);
+			
+			if ((!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D)) && Input.GetKey (KeyCode.Space)) anim.SetBool("shoot!move", true);
+			else anim.SetBool("shoot!move", false);
+			
+			
 			if (Input.GetKey(KeyCode.W)) transform.Translate(Vector3.up*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.A)) transform.Translate(Vector3.left*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.S)) transform.Translate(Vector3.down*Time.deltaTime*speed);
