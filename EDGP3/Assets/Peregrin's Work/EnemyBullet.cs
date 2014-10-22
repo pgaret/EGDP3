@@ -17,7 +17,6 @@ public class EnemyBullet : MonoBehaviour {
 		fireTime = Time.time;
 		startPos = transform.position;
 		timer = Time.time;
-		int random = Random.Range (0, 2);
 
 
 	}

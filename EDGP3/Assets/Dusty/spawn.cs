@@ -6,6 +6,7 @@ using System.IO;
 
 public class spawn : MonoBehaviour {
 	public GameObject enemy;
+	public GameObject Bossa;
 	int x = 10;
 	int y = 10;
 	public float enter;
@@ -33,6 +34,11 @@ public class spawn : MonoBehaviour {
 		time = Time.time;
 		summon = true;
 	}
+	/*
+	 * numene is amount of enemies that spawn
+	 * start is the position in which the enemy spawns in the X axis
+	 * type is enemy/bullet type
+	 */
 	public void Down(int numene,int start,int type){
 		numene += 6;
 		for(int i = numene; i > 6; i--){
@@ -42,7 +48,13 @@ public class spawn : MonoBehaviour {
 			test.GetComponent<Enemy>().attacktype = type;
 		}
 	}
-	public void Side(int numene,int start,int type,int dir){
+	/*
+	 * numene is amount of enemies that spawn
+	 * start is the position in which the enemy spawns in the Y axis
+	 * dir is either 0 or 1 for direction
+	 * type is enemy/bullet type
+	 */
+	public void Side(int numene,int start,int dir,int type){
 		numene += 7;
 		int a;
 		if(dir == 0){
@@ -56,6 +68,11 @@ public class spawn : MonoBehaviour {
 			test.GetComponent<Enemy>().attacktype = type;
 		}
 	}
+	/*
+	 * numene is amount of enemies that spawn
+	 * dir is either 0 or 1 for direction
+	 * type is enemy/bullet type
+	 */
 	public void Diagonal(int numene,int dir,int type){
 		numene += 6;
 		for(int i = numene; i > 6; i--){
@@ -68,7 +85,13 @@ public class spawn : MonoBehaviour {
 			test.GetComponent<Enemy>().attacktype = type;
 		}
 	}
-	public void Setpath(int numene,int dir,int type,int path){
+	/*
+	 * numene is amount of enemies that spawn
+	 * dir is either 0 or 1 for direction
+	 * path should be always set to 1, if we ever decide on another path, this is inplace for different special paths
+	 * type is enemy/bullet type
+	 */
+	public void Setpath(int numene,int dir,int path,int type){
 		numene += 6;
 		for(int i = numene; i > 6; i--){
 			GameObject test;
@@ -81,13 +104,40 @@ public class spawn : MonoBehaviour {
 			test.GetComponent<Enemy>().attacktype = type;
 		}
 	}
+	public void Boss1(){
+		GameObject test;
+		test = Instantiate(Bossa, new Vector3(0, 6, 0), Quaternion.identity) as GameObject;
+		test.GetComponent<Boss1>().changeloc(new Vector3(0, 4, 0));
+	}
 	void WaveM(int i){
 		if(i == 0){
+			//Diagonal(2,1,3);
+			Boss1 ();
+			//Side (1,0,3,1);
+			//Setpath(2,0,3,1);
+		}
+		if(i == 1){
 			//Diagonal(2,1,3);
 			Down (1,0,5);
 			//Side (1,0,3,1);
 			//Setpath(2,0,3,1);
 		}
+	}
+	public void RandomSummon(){
+		int random = Random.Range (0, 3);
+		if (random == 0) {
+			Diagonal(2,Random.Range (0, 1),Random.Range (0, 4));
+		}
+		else if(random == 1){
+			Side(2,Random.Range (0, 5),Random.Range (0, 1),Random.Range (0, 4));
+		}
+		else if(random == 2){
+			Down(2,Random.Range (-4, 4),Random.Range (0, 4));
+		}
+		else {
+			Setpath(2,Random.Range (0, 1),1,Random.Range (0, 4));
+		}
+
 	}
 	
 }

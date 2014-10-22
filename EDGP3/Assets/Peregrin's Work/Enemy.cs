@@ -118,7 +118,7 @@ public class Enemy : MonoBehaviour {
 				}
 
 			}else if(attacktype == 5){
-				Transform a = transform;
+
 				for(int j = 0; j < 13; j++){
 
 					random = Random.Range (0, 2);
@@ -181,7 +181,6 @@ public class Enemy : MonoBehaviour {
 	}
 	void rotations(){
 		float angle = 0;
-		GameObject bullet;
 		Vector3 relative = transform.InverseTransformPoint(shippeatk.transform.position);
 		angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
 		transform.Rotate(0,0, -angle);

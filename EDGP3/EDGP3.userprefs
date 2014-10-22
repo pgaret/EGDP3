@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Peregrin's Work\DragonTamer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Dusty\spawn.cs">
     <Files>
-      <File FileName="Assets\Peregrin's Work\DragonTamer.cs" Line="88" Column="25" />
-      <File FileName="Assets\Peregrin's Work\Dragon.cs" Line="25" Column="21" />
+      <File FileName="Assets\Dusty\Boss1.cs" Line="26" Column="4" />
+      <File FileName="Assets\Peregrin's Work\Enemy.cs" Line="33" Column="28" />
+      <File FileName="Assets\Dusty\spawn.cs" Line="101" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
