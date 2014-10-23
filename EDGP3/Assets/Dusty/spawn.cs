@@ -9,6 +9,7 @@ public class spawn : MonoBehaviour {
 	public GameObject Bossa;
 	int x = 10;
 	int y = 10;
+	float[] EnterTimes;
 	public float enter;
 	float time;
 	int i = 0;
@@ -17,14 +18,16 @@ public class spawn : MonoBehaviour {
 	void Start () {
 
 		time = Time.time;
+		EnterTimes = new float[2];
+		EnterTimes[0] = 1f;
+		EnterTimes[1] = 3f;
 
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if(time + enter <= Time.time && summon){
+		if(i < EnterTimes.Length && EnterTimes[i] + enter <= Time.time && summon){
 			WaveM(i);
 			time = Time.time;
 			i++;
