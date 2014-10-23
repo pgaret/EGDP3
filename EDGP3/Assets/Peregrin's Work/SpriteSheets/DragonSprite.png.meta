@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 80e816be4c850d54295a46d8801a4bad
+guid: 8a7556a75f7f66d498c86282d06ce1f3
 TextureImporter:
   fileIDToRecycleName:
-    21300000: CoinSprite_0
-    21300002: CoinSprite_1
-    21300004: CoinSprite_2
-    21300006: CoinSprite_3
-    21300008: CoinSprite_4
+    21300000: DragonSprite_0
+    21300002: DragonSprite_1
+    21300004: DragonSprite_2
+    21300006: DragonSprite_3
+    21300008: DragonSprite_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -48,53 +48,53 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: CoinSprite_0
+    - name: DragonSprite_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 19
-        height: 22
+        x: 5
+        y: 3
+        width: 38
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: CoinSprite_1
+    - name: DragonSprite_1
       rect:
         serializedVersion: 2
-        x: 19
-        y: 0
-        width: 19
-        height: 22
+        x: 43
+        y: 3
+        width: 38
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: CoinSprite_2
+    - name: DragonSprite_2
       rect:
         serializedVersion: 2
-        x: 38
-        y: 0
-        width: 19
-        height: 22
+        x: 81
+        y: 3
+        width: 38
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: CoinSprite_3
+    - name: DragonSprite_3
       rect:
         serializedVersion: 2
-        x: 57
-        y: 0
-        width: 19
-        height: 22
+        x: 119
+        y: 3
+        width: 38
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: CoinSprite_4
+    - name: DragonSprite_4
       rect:
         serializedVersion: 2
-        x: 76
-        y: 0
-        width: 19
-        height: 22
+        x: 157
+        y: 3
+        width: 38
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -1,23 +1,22 @@
 fileFormatVersion: 2
-guid: 4afde3029de15de4ab6ef53fd0e878c6
+guid: 3b5c89c5a8ba94a47988eb3daa271539
 TextureImporter:
   fileIDToRecycleName:
-    21300000: KnightSprite_0
-    21300002: KnightSprite_1
-    21300004: KnightSprite_2
-    21300006: KnightSprite_3
-    21300008: KnightSprite_4
-    21300010: KnightSprite_5
-    21300012: KnightSprite_6
-    21300014: KnightSprite_7
-    21300016: KnightSprite_8
-    21300018: KnightSprite_9
-    21300020: KnightSprite_10
-    21300022: KnightSprite_11
-    21300024: KnightSprite_12
-    21300026: KnightSprite_13
-    21300028: KnightSprite_14
-    21300030: KnightSprite_15
+    21300000: TamerSprite_0
+    21300002: TamerSprite_1
+    21300004: TamerSprite_2
+    21300006: TamerSprite_3
+    21300008: TamerSprite_4
+    21300010: TamerSprite_5
+    21300012: TamerSprite_6
+    21300014: TamerSprite_7
+    21300016: TamerSprite_8
+    21300018: TamerSprite_9
+    21300020: TamerSprite_10
+    21300022: TamerSprite_11
+    21300024: TamerSprite_12
+    21300026: TamerSprite_13
+    21300028: TamerSprite_14
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -59,163 +58,153 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: KnightSprite_0
+    - name: TamerSprite_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 12
         y: 212
-        width: 36
-        height: 58
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_1
+    - name: TamerSprite_1
       rect:
         serializedVersion: 2
-        x: 57
+        x: 59
         y: 212
-        width: 36
-        height: 58
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_2
+    - name: TamerSprite_2
       rect:
         serializedVersion: 2
-        x: 102
-        y: 216
-        width: 20
+        x: 110
+        y: 214
+        width: 28
         height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_3
+    - name: TamerSprite_3
       rect:
         serializedVersion: 2
-        x: 128
-        y: 216
-        width: 20
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_4
-      rect:
-        serializedVersion: 2
-        x: 10
+        x: 12
         y: 144
-        width: 36
-        height: 58
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_5
+    - name: TamerSprite_4
       rect:
         serializedVersion: 2
-        x: 58
+        x: 60
         y: 144
-        width: 36
-        height: 58
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_6
+    - name: TamerSprite_5
       rect:
         serializedVersion: 2
         x: 106
         y: 144
         width: 36
-        height: 58
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_7
+    - name: TamerSprite_6
       rect:
         serializedVersion: 2
         x: 154
         y: 144
         width: 36
-        height: 58
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_8
+    - name: TamerSprite_7
       rect:
         serializedVersion: 2
-        x: 10
+        x: 12
         y: 76
-        width: 36
-        height: 58
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_9
+    - name: TamerSprite_8
       rect:
         serializedVersion: 2
-        x: 58
+        x: 60
         y: 76
-        width: 36
-        height: 56
+        width: 34
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_10
+    - name: TamerSprite_9
       rect:
         serializedVersion: 2
-        x: 106
+        x: 108
         y: 76
-        width: 36
-        height: 58
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_11
+    - name: TamerSprite_10
       rect:
         serializedVersion: 2
         x: 154
         y: 76
-        width: 36
-        height: 56
+        width: 34
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_12
+    - name: TamerSprite_11
       rect:
         serializedVersion: 2
-        x: 10
+        x: 12
         y: 10
-        width: 36
-        height: 58
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_13
+    - name: TamerSprite_12
       rect:
         serializedVersion: 2
-        x: 58
+        x: 60
         y: 10
-        width: 36
-        height: 56
+        width: 34
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_14
+    - name: TamerSprite_13
       rect:
         serializedVersion: 2
         x: 106
         y: 10
         width: 36
-        height: 58
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KnightSprite_15
+    - name: TamerSprite_14
       rect:
         serializedVersion: 2
         x: 154
         y: 10
         width: 36
-        height: 56
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
