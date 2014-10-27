@@ -1,7 +1,61 @@
 fileFormatVersion: 2
 guid: 312ec22bb90d1dd46b94921a8403aea1
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: BatSprite_0
+    21300002: BatSprite_1
+    21300004: BatSprite_2
+    21300006: BatSprite_3
+    21300008: BatSprite_4
+    21300010: BatSprite_5
+    21300012: BatSprite_6
+    21300014: BatSprite_7
+    21300016: BatSprite_8
+    21300018: BatSprite_9
+    21300020: BatSprite_10
+    21300022: BatSprite_11
+    21300024: BatSprite_12
+    21300026: BatSprite_13
+    21300028: BatSprite_14
+    21300030: BatSprite_15
+    21300032: BatSprite_16
+    21300034: BatSprite_17
+    21300036: BatSprite_18
+    21300038: BatSprite_19
+    21300040: BatSprite_20
+    21300042: BatSprite_21
+    21300044: BatSprite_22
+    21300046: BatSprite_23
+    21300048: BatSprite_24
+    21300050: BatSprite_25
+    21300052: BatSprite_26
+    21300054: BatSprite_27
+    21300056: BatSprite_28
+    21300058: BatSprite_29
+    21300060: BatSprite_30
+    21300062: BatSprite_31
+    21300064: BatSprite_32
+    21300066: BatSprite_33
+    21300068: BatSprite_34
+    21300070: BatSprite_35
+    21300072: BatSprite_36
+    21300074: BatSprite_37
+    21300076: BatSprite_38
+    21300078: BatSprite_39
+    21300080: BatSprite_40
+    21300082: BatSprite_41
+    21300084: BatSprite_42
+    21300086: BatSprite_43
+    21300088: BatSprite_44
+    21300090: BatSprite_45
+    21300092: BatSprite_46
+    21300094: BatSprite_47
+    21300096: BatSprite_48
+    21300098: BatSprite_49
+    21300100: BatSprite_50
+    21300102: BatSprite_51
+    21300104: BatSprite_52
+    21300106: BatSprite_53
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,9 +79,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -42,6 +96,546 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: BatSprite_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 256
+        width: 60
+        height: 40
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 258
+        width: 76
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_2
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 244
+        width: 64
+        height: 50
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_3
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 256
+        width: 60
+        height: 40
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 258
+        width: 76
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_5
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 244
+        width: 64
+        height: 50
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_6
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 256
+        width: 60
+        height: 40
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_7
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 258
+        width: 76
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_8
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 244
+        width: 64
+        height: 50
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_9
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 214
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_10
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 214
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_11
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 214
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_12
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 214
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_13
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 214
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_14
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 214
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_15
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 214
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_16
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 214
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_17
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 214
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_18
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 152
+        width: 60
+        height: 40
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_19
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 154
+        width: 76
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_20
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 140
+        width: 64
+        height: 50
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_21
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 152
+        width: 60
+        height: 40
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_22
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 154
+        width: 76
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_23
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 140
+        width: 64
+        height: 50
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_24
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 152
+        width: 60
+        height: 40
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_25
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 154
+        width: 76
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_26
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 140
+        width: 64
+        height: 50
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_27
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 110
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_28
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 110
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_29
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 110
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_30
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 110
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_31
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 110
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_32
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 110
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_33
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 110
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_34
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 110
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_35
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 110
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_36
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 54
+        width: 60
+        height: 40
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_37
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 56
+        width: 76
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_38
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 42
+        width: 64
+        height: 50
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_39
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 54
+        width: 60
+        height: 40
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_40
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 56
+        width: 76
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_41
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 42
+        width: 64
+        height: 50
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_42
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 54
+        width: 60
+        height: 40
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_43
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 56
+        width: 76
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_44
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 42
+        width: 64
+        height: 50
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_45
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 12
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_46
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 12
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_47
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 12
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_48
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 12
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_49
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 12
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_50
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 12
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_51
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 12
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_52
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 12
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BatSprite_53
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 12
+        width: 28
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

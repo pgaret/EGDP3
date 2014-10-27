@@ -96,7 +96,7 @@ public class PunchKnight : MonoBehaviour {
 			}
 			else
 			{
-				if (Input.GetButton("XboxFire1") || Input.GetKey(KeyCode.Space) && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0)
+				if (Input.GetButton("XboxFire1") || Input.GetKey(KeyCode.Keypad0) && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0)
 				{
 					foreach (Transform child in transform) 
 					{
@@ -170,7 +170,6 @@ public class PunchKnight : MonoBehaviour {
 			if ((!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D)) && Input.GetKey (KeyCode.Space)) anim.SetBool("shoot!move", true);
 			else anim.SetBool("shoot!move", false);
 			
-			
 			if (Input.GetKey(KeyCode.W)) transform.Translate(Vector3.up*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.A)) transform.Translate(Vector3.left*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.S)) transform.Translate(Vector3.down*Time.deltaTime*speed);
@@ -191,6 +190,15 @@ public class PunchKnight : MonoBehaviour {
 		}
 		if (transform.tag == "Player2")
 		{
+			if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)) && !Input.GetKey (KeyCode.Space)) anim.SetBool("move!shoot", true);
+			else anim.SetBool("move!shoot", false);
+			
+			if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)) && Input.GetKey (KeyCode.Space)) anim.SetBool("moveshoot", true);
+			else anim.SetBool("moveshoot", false);
+			
+			if ((!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.RightArrow)) && Input.GetKey (KeyCode.Space)) anim.SetBool("shoot!move", true);
+			else anim.SetBool("shoot!move", false);
+		
 			GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
 			if (Input.GetButton("XboxFire3") || Input.GetKey(KeyCode.Tab) && transform.GetComponent<PlayerStats>().swapRole == "no" && Time.time - swapCDTimer >= 0)
 			{

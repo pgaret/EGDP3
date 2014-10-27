@@ -26,6 +26,8 @@ public class DragonTamer : MonoBehaviour {
 	float specialCD = 1;
 	bool specialActivate = false;
 	
+	Animator anim;
+	
 	List<Transform> dragons = new List<Transform>();
 	
 	// Use this for initialization
@@ -51,6 +53,8 @@ public class DragonTamer : MonoBehaviour {
 			pos.z = 0;
 			transform.position = pos;
 		}
+		
+		anim = GetComponent<Animator>();
 		
 	}
 	
