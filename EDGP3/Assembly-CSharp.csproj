@@ -53,6 +53,7 @@
      <Compile Include="Assets\Dusty\manager.cs" />
      <Compile Include="Assets\Dusty\spawn.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Background.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\Scripts\DTShield.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Dragon.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\DragonTamer.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Enemy.cs" />

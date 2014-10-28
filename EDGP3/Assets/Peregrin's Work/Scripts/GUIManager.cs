@@ -165,7 +165,7 @@ public class GUIManager : MonoBehaviour {
 			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && MMIcon.renderer.bounds.Contains(cPos) && player2Select != 1) player2Select = 1;
 			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && TKIcon.renderer.bounds.Contains(cPos) && player2Select != 2) player2Select = 2;
 			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && DTIcon.renderer.bounds.Contains(cPos) && player2Select != 3) player2Select = 3;
-			if (Input.GetKey (KeyCode.Tab)) player2Select = 2;
+			if (Input.GetKey (KeyCode.Tab)) player2Select = 0;
 			if (Input.GetKeyDown(KeyCode.RightShift)) player2Select = 3;
 
 			if (player1Select != -1 && player2Select != -1 && begin == true)
