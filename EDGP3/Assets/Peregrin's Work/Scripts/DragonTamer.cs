@@ -14,7 +14,9 @@ public class DragonTamer : MonoBehaviour {
 	public Vector3 prevLoc1;
 	public Vector3 prevLoc2;
 	public Vector3 prevLoc3;
-	public Vector3 prevLoc4;	
+	public Vector3 prevLoc4;
+
+	public List<Transform> dragons = new List<Transform>();
 	
 	float attackTimer = .1f;
 	float attackCD = 0;
@@ -26,9 +28,7 @@ public class DragonTamer : MonoBehaviour {
 	float specialCD = 1;
 	bool specialActivate = false;
 	
-	Animator anim;
-	
-	List<Transform> dragons = new List<Transform>();
+	Animator anim;	
 	
 	// Use this for initialization
 	void Start () {
@@ -61,7 +61,7 @@ public class DragonTamer : MonoBehaviour {
 	void Dragon()
 	{
 		Vector3 position = transform.position;
-		position.x -= transform.renderer.bounds.extents.x*dragons.Count;
+		position.x -= special.transform.renderer.bounds.extents.x*dragons.Count / 4;
 		prevLoc1 = position;
 		dragons.Add((Transform)(Instantiate (special, prevLoc1, Quaternion.identity)));
 		
@@ -76,7 +76,7 @@ public class DragonTamer : MonoBehaviour {
 	
 	public void Shield()
 	{
-		Instantiate(shield);
+		foreach (Transform dragon in dragons) Instantiate (shield);
 	}
 	
 	// Update is called once per frame
@@ -97,11 +97,12 @@ public class DragonTamer : MonoBehaviour {
 		{	
 			if (transform.tag == "Player1")
 			{
-				if (Input.GetKey(KeyCode.Space) && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0)
+				if (Input.GetKey(KeyCode.Space) && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0 && dragons.Count > 0)
 				{
-					foreach (Transform child in transform) 
+					foreach (Transform dragon in dragons) 
 					{
-						if (child.name != "PunchTag") Instantiate (projectile, child.position, Quaternion.identity);
+						Transform bullet = (Transform)Instantiate(projectile, dragon.position, Quaternion.identity);
+						bullet.GetComponent<SpriteRenderer>().sprite = Attack;
 					}
 					attackCD = Time.time;
 					transform.GetComponent<PlayerStats>().ammo -= 1;
@@ -109,9 +110,13 @@ public class DragonTamer : MonoBehaviour {
 			}
 			else
 			{
-				if (Input.GetButton("XboxFire1") && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0)
+				if (Input.GetButton("XboxFire1") || Input.GetKey(KeyCode.Keypad0) && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0 && dragons.Count > 0)
 				{
-					foreach (Transform child in transform) Instantiate (projectile, child.position, Quaternion.identity);
+					foreach (Transform dragon in dragons) 
+					{
+						GameObject bullet = (GameObject)Instantiate(projectile, dragon.position, Quaternion.identity);
+						bullet.GetComponent<SpriteRenderer>().sprite = Attack;
+					}
 					attackCD = Time.time;
 					transform.GetComponent<PlayerStats>().ammo -= 1;
 				}

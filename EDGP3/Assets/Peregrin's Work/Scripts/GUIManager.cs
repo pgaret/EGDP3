@@ -135,14 +135,14 @@ public class GUIManager : MonoBehaviour {
 			
 			//Player 1 HUD
 			GUI.Box (new Rect (0, 0, Screen.width / 4, Screen.height), player1HUD, style);			 
-			GUI.Box (new Rect(Screen.width / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().lives.ToString(), style);
-			GUI.Box (new Rect(Screen.width / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().ammo.ToString(), style);
+			GUI.Box (new Rect(Screen.width / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().lives.ToString(), style);
+			GUI.Box (new Rect(Screen.width / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().ammo.ToString(), style);
 			GUI.Box (new Rect(Screen.width / 25, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), "123,456", style);
 			
 			//Player 2 HUD
 			GUI.Box (new Rect (Screen.width * 3 / 4, 0, Screen.width / 4, Screen.height), player2HUD, style);
-			GUI.Box (new Rect(Screen.width * 6 / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().lives.ToString(), style);
-			GUI.Box (new Rect(Screen.width * 6 / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().lives.ToString(), style);
+			GUI.Box (new Rect(Screen.width * 6 / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().lives.ToString(), style);
+			GUI.Box (new Rect(Screen.width * 6 / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().ammo.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 82 / 100, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), "789, 012", style);
 			         
 			

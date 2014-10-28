@@ -23,6 +23,7 @@ public class PlayerBullet : MonoBehaviour {
 	void Update () {
 		
 		transform.Translate (Vector3.up*Time.deltaTime*10);
+		Debug.Log (transform.position);
 		if (!transform.renderer.isVisible) Destroy (gameObject);
 		
 	}

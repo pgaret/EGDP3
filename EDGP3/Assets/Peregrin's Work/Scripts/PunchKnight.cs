@@ -96,8 +96,9 @@ public class PunchKnight : MonoBehaviour {
 			}
 			else
 			{
-				if (Input.GetButton("XboxFire1") || Input.GetKey(KeyCode.Keypad0) && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0)
+				if (Input.GetButton("XboxFire1") || Input.GetKey(KeyCode.Backspace) && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0)
 				{
+					Debug.Log("SHOOTING");
 					foreach (Transform child in transform) 
 					{
 						Transform thePunch;
