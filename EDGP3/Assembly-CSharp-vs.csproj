@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Boxy2.cs" />
      <Compile Include="Assets\Dusty\Boss1.cs" />
+     <Compile Include="Assets\Dusty\Boss2.cs" />
      <Compile Include="Assets\Dusty\Boxy.cs" />
      <Compile Include="Assets\Dusty\manager.cs" />
      <Compile Include="Assets\Dusty\spawn.cs" />
