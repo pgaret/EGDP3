@@ -6,7 +6,7 @@ public class Dragon : MonoBehaviour {
 	public bool dead = false;
 
 	Transform parent;
-	float lifeSpan = 5.0f;
+	float lifeSpan = 15.0f;
 	float startTime;
 
 	// Use this for initialization

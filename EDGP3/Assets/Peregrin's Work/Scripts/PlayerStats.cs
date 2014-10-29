@@ -30,6 +30,19 @@ public class PlayerStats : MonoBehaviour {
 			if (role == "Defender")transform.GetComponent<PunchKnight>().Shield();
 
 		}
+		if (transform.name == "DragonTamer(Clone)")
+		{
+			if (role != "Defender")
+			{
+				for (int i = 0; i < transform.childCount; i++)
+				{
+					if (transform.GetChild(i).name == "Shield(Clone") Destroy (transform.GetChild(i).gameObject);
+				}
+			}
+			if (role == "Defender")transform.GetComponent<DragonTamer>().Shield();
+			
+		}
+		
 	}
 	
 	// Update is called once per frame
