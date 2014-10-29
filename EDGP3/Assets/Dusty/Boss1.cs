@@ -21,7 +21,7 @@ public class Boss1 : MonoBehaviour {
 		time2 = Time.time;
 		time3 = Time.time;
 		Master = GameObject.FindGameObjectWithTag("Manager");
-		transform.rotation = Quaternion.Euler(new Vector3(180,0,0));
+		//transform.rotation = Quaternion.Euler(new Vector3(180,0,0));
 	}
 	
 	// Update is called once per frame

@@ -30,7 +30,7 @@ public class Boss2 : MonoBehaviour {
 		Master = GameObject.FindGameObjectWithTag("Manager");
 		shippe1 = GameObject.FindGameObjectWithTag ("Player1");
 		shippe2 = GameObject.FindGameObjectWithTag ("Player2");
-		transform.rotation = Quaternion.Euler(new Vector3(180,0,0));
+		//transform.rotation = Quaternion.Euler(new Vector3(180,0,0));
 		path = new Vector3[4];
 		path[0] = new Vector3(0,4,0);
 		path[1] = new Vector3(0,0,0);

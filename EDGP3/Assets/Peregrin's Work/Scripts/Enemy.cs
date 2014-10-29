@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour {
 		//transform.position = pos;
 		shippe1 = GameObject.FindGameObjectWithTag ("Player1");
 		shippe2 = GameObject.FindGameObjectWithTag ("Player2");
-		transform.rotation = Quaternion.Euler(new Vector3(180,0,0));
+		//transform.rotation = Quaternion.Euler(new Vector3(180,0,0));
 
 		int random = Random.Range (0, 2);
 		if (random == 0) shippeatk = shippe1;
@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour {
 					}
 
 			}else if(attacktype == 1){
-				rotations();
+				//rotations();
 				if (affinity == false) {
 
 					bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
@@ -82,7 +82,7 @@ public class Enemy : MonoBehaviour {
 				}
 
 			}else if(attacktype == 2){
-				rotations();
+				//rotations();
 				if (affinity == false) {
 					bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
 					bullet.GetComponent<EnemyBullet>().setatktype(attacktype);
@@ -104,7 +104,7 @@ public class Enemy : MonoBehaviour {
 					}
 				}
 			}else if(attacktype == 4){
-				rotations();
+				//rotations();
 				Transform a = transform;
 				for(int j = 0; j < 3; j++){
 					int i = Random.Range (-10, 10);

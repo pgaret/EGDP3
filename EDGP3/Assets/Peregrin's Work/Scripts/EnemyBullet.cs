@@ -25,23 +25,23 @@ public class EnemyBullet : MonoBehaviour {
 	void Update () {
 
 		if(bullettype != 2 && bullettype != 4 ){
-			rigidbody.AddForce(transform.up * bulletspeed);
+			rigidbody.AddForce(-transform.up * bulletspeed);
 			rigidbody.velocity = Vector3.zero;
 		}
 		else if (bullettype == 2){
 			Y = Mathf.Sin((Time.time-fireTime)*10)*3;
 			transform.position = new Vector3(transform.position.x, Y, transform.position.z);
-			rigidbody.AddForce(transform.up * bulletspeed*1.5f);
+			rigidbody.AddForce(-transform.up * bulletspeed);
 			rigidbody.velocity = Vector3.zero;
 			
 			
 			
 		}else if (bullettype == 4){
 			if(timer + .2f >= Time.time){
-				rigidbody.AddForce(-transform.up * bulletspeed);
+				rigidbody.AddForce(transform.up * bulletspeed);
 
 			}else{
-				rigidbody.AddForce(transform.up * bulletspeed);
+				rigidbody.AddForce(-transform.up * bulletspeed);
 
 			}
 			rigidbody.velocity = Vector3.zero;
