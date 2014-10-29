@@ -104,5 +104,8 @@ public class Boss2 : MonoBehaviour {
 		angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
 		transform.Rotate(0,0, -angle);
 	}
+	public void sethealth(int a){
+		health = a;
+	}
 }
 

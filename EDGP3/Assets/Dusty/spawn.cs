@@ -117,15 +117,17 @@ public class spawn : MonoBehaviour {
 		test = Instantiate(Bossa, new Vector3(0, 6, 0), Quaternion.identity) as GameObject;
 		test.GetComponent<Boss1>().changeloc(new Vector3(0, 4, 0));
 	}
-	public void Boss2(){
+	public void Boss2(int health){
 		GameObject test;
 		test = Instantiate(Bossb, new Vector3(0, 6, 0), Quaternion.identity) as GameObject;
+		test.GetComponent<Boss2>().sethealth(health);
 		//test.GetComponent<Boss1>().changeloc(new Vector3(0, 4, 0));
 	}
+
 	void WaveM(int i){
 		if(i == 0){
 			//Diagonal(2,1,3);
-			Boss2 ();
+			Boss2 (10);
 			//Side (1,0,3,1);
 			//Setpath(2,0,3,1);
 		}
