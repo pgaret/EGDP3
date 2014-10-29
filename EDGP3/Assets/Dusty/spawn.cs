@@ -7,6 +7,7 @@ using System.IO;
 public class spawn : MonoBehaviour {
 	public GameObject enemy;
 	public GameObject Bossa;
+	public GameObject Bossb;
 	int x = 10;
 	int y = 10;
 	float[] EnterTimes;
@@ -116,16 +117,21 @@ public class spawn : MonoBehaviour {
 		test = Instantiate(Bossa, new Vector3(0, 6, 0), Quaternion.identity) as GameObject;
 		test.GetComponent<Boss1>().changeloc(new Vector3(0, 4, 0));
 	}
+	public void Boss2(){
+		GameObject test;
+		test = Instantiate(Bossb, new Vector3(0, 6, 0), Quaternion.identity) as GameObject;
+		//test.GetComponent<Boss1>().changeloc(new Vector3(0, 4, 0));
+	}
 	void WaveM(int i){
 		if(i == 0){
 			//Diagonal(2,1,3);
-			Boss1 ();
+			Boss2 ();
 			//Side (1,0,3,1);
 			//Setpath(2,0,3,1);
 		}
 		if(i == 1){
 			//Diagonal(2,1,3);
-			Down (1,0,5);
+			//Down (1,0,5);
 			//Side (1,0,3,1);
 			//Setpath(2,0,3,1);
 		}
