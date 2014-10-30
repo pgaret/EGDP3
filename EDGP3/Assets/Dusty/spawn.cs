@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Text;
 using System.IO; 
 
 
 public class spawn : MonoBehaviour {
-	public GameObject enemy;
+	public GameObject[] enemy = new GameObject[4];
 	public GameObject Bossa;
 	public GameObject Bossb;
 	int x = 10;
@@ -47,7 +47,7 @@ public class spawn : MonoBehaviour {
 		numene += 6;
 		for(int i = numene; i > 6; i--){
 			GameObject test;
-			test = Instantiate(enemy, new Vector3(start, i, 0), Quaternion.identity) as GameObject;
+			test = Instantiate(enemy[type], new Vector3(start, i, 0), Quaternion.identity) as GameObject;
 			test.GetComponent<Enemy>().changeloc(new Vector3(start, -i, 0));
 			test.GetComponent<Enemy>().attacktype = type;
 		}
@@ -67,7 +67,7 @@ public class spawn : MonoBehaviour {
 			a = -1;
 		for(int i = numene; i > 7; i--){
 			GameObject test;
-			test = Instantiate(enemy, new Vector3(i*a, start, 0), Quaternion.identity) as GameObject;
+			test = Instantiate(enemy[type], new Vector3(i*a, start, 0), Quaternion.identity) as GameObject;
 			test.GetComponent<Enemy>().changeloc(new Vector3(-i*a, start, 0));
 			test.GetComponent<Enemy>().attacktype = type;
 		}
@@ -82,9 +82,9 @@ public class spawn : MonoBehaviour {
 		for(int i = numene; i > 6; i--){
 			GameObject test;
 			if(dir == 0)
-				test = Instantiate(enemy, new Vector3(i, i, 0), Quaternion.identity) as GameObject;
+				test = Instantiate(enemy[type], new Vector3(i, i, 0), Quaternion.identity) as GameObject;
 			else
-				test = Instantiate(enemy, new Vector3(-i, i, 0), Quaternion.identity) as GameObject;
+				test = Instantiate(enemy[type], new Vector3(-i, i, 0), Quaternion.identity) as GameObject;
 
 			if(dir == 0)
 				test.GetComponent<Enemy>().changeloc(new Vector3(-i, -i, 0));
@@ -104,9 +104,9 @@ public class spawn : MonoBehaviour {
 		for(int i = numene; i > 6; i--){
 			GameObject test;
 			if(dir == 0)
-				test = Instantiate(enemy, new Vector3(i, i, 0), Quaternion.identity) as GameObject;
+				test = Instantiate(enemy[type], new Vector3(i, i, 0), Quaternion.identity) as GameObject;
 			else
-				test = Instantiate(enemy, new Vector3(-i, i, 0), Quaternion.identity) as GameObject;
+				test = Instantiate(enemy[type], new Vector3(-i, i, 0), Quaternion.identity) as GameObject;
 			test.GetComponent<Enemy>().path = path;
 			//test.GetComponent<Enemy>().changeloc(new Vector3(i, -i, 0));
 			test.GetComponent<Enemy>().attacktype = type;
@@ -126,8 +126,8 @@ public class spawn : MonoBehaviour {
 
 	void WaveM(int i){
 		if(i == 0){
-			//Diagonal(2,1,3);
-			Boss2 (10);
+			Diagonal(2,1,2);
+			//Boss2 (10);
 			//Side (1,0,3,1);
 			//Setpath(2,0,3,1);
 		}

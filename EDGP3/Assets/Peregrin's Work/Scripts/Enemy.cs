@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour {
 		checker (point);
 		if (attackCD < Time.time - attackTimer && fire == true){
 				GameObject bullet;
+			//Down Attack
 			if (attacktype == 0){
 
 				if (affinity == false){
@@ -54,42 +55,63 @@ public class Enemy : MonoBehaviour {
 
 
 					}
-
+				//cone attack
 			}else if(attacktype == 1){
 				//rotations();
 				if (affinity == false) {
+					float angle = 0;
+					Vector3 relative = transform.InverseTransformPoint(shippeatk.transform.position);
+					angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
+
+
 
 					bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
-					Transform a = transform;
+					bullet.transform.Rotate(0,0,-angle+180);
 
-					Quaternion up = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z + 10));
-					bullet = Instantiate(projectileA, transform.position, up) as GameObject;
 
-					Quaternion down = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z - 10));
-					bullet = Instantiate(projectileA, transform.position, down) as GameObject;
+					bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
+					bullet.transform.Rotate(0,0,-angle+10+180);
+
+
+					bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
+					bullet.transform.Rotate(0,0,-angle-10+180);
 
 				}
 				else {
+					float angle = 0;
+					Vector3 relative = transform.InverseTransformPoint(shippeatk.transform.position);
+					angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
+					
+					
+					
 					bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
-					Transform a = transform;
-
-					Quaternion up = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z + 10));
-					bullet = Instantiate(projectileB, transform.position, up) as GameObject;
-
-					Quaternion down = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z - 10));
-					bullet = Instantiate(projectileB, transform.position, down) as GameObject;
+					bullet.transform.Rotate(0,0,-angle+180);
+					
+					
+					bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
+					bullet.transform.Rotate(0,0,-angle+10+180);
+					
+					
+					bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
+					bullet.transform.Rotate(0,0,-angle-10+180);
 
 				}
-
+				//Wave Attack
 			}else if(attacktype == 2){
 				//rotations();
+				float angle = 0;
+				Vector3 relative = transform.InverseTransformPoint(shippeatk.transform.position);
+				angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
 				if (affinity == false) {
 					bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
 					bullet.GetComponent<EnemyBullet>().setatktype(attacktype);
+					bullet.transform.Rotate(0,0,-angle+180);
 				}else {
 					bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
 					bullet.GetComponent<EnemyBullet>().setatktype(attacktype);
+					bullet.transform.Rotate(0,0,-angle+180);
 				}
+				//Radius Attack
 			}else if(attacktype == 3){
 
 				for(int i = 0; i <360 ; i += 20){
@@ -103,6 +125,7 @@ public class Enemy : MonoBehaviour {
 						bullet = Instantiate(projectileB, transform.position, up) as GameObject;
 					}
 				}
+				//Sprinkler Attack
 			}else if(attacktype == 4){
 				//rotations();
 				Transform a = transform;
@@ -116,7 +139,7 @@ public class Enemy : MonoBehaviour {
 					}
 					bullet.GetComponent<EnemyBullet>().setatktype(attacktype);
 				}
-
+				//Rain Attack
 			}else if(attacktype == 5){
 
 				for(int j = 0; j < 13; j++){

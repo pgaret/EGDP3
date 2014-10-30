@@ -24,19 +24,11 @@ public class EnemyBullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(bullettype != 2 && bullettype != 4 ){
+		if(bullettype != 4 ){
 			rigidbody.AddForce(-transform.up * bulletspeed);
 			rigidbody.velocity = Vector3.zero;
 		}
-		else if (bullettype == 2){
-			Y = Mathf.Sin((Time.time-fireTime)*10)*3;
-			transform.position = new Vector3(transform.position.x, Y, transform.position.z);
-			rigidbody.AddForce(-transform.up * bulletspeed);
-			rigidbody.velocity = Vector3.zero;
-			
-			
-			
-		}else if (bullettype == 4){
+		else if (bullettype == 4){
 			if(timer + .2f >= Time.time){
 				rigidbody.AddForce(transform.up * bulletspeed);
 
