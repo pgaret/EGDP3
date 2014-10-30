@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour {
 
 	public float speed;
 	public float height;
+	public float health;
 	public GameObject projectileA;
 	public GameObject projectileB;
 	public float attackCD = 1;

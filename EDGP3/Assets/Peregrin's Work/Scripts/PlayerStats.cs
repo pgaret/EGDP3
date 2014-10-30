@@ -34,9 +34,13 @@ public class PlayerStats : MonoBehaviour {
 		{
 			if (role != "Defender")
 			{
-				for (int i = 0; i < transform.childCount; i++)
+				GameObject[] dragons = GameObject.FindGameObjectsWithTag("Dragon");
+				for (int i = 0; i < dragons.Length; i++)
 				{
-					if (transform.GetChild(i).name == "Shield(Clone") Destroy (transform.GetChild(i).gameObject);
+					for (int j = 0; j < dragons[i].transform.childCount; j++)
+					{
+						if (dragons[i].transform.GetChild(j).name == "DTShield(Clone") Destroy (dragons[i].transform.GetChild(j).gameObject);
+					}	
 				}
 			}
 			if (role == "Defender")transform.GetComponent<DragonTamer>().Shield();
@@ -46,7 +50,17 @@ public class PlayerStats : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update ()
+	{
+		GameObject[] bullets = GameObject.FindGameObjectsWithTag("BulletA");
+		foreach (GameObject bullet in bullets)
+		{
+			if (bullet.renderer.bounds.Intersects(renderer.bounds)) lives -= 1;
+		}
+		bullets = GameObject.FindGameObjectsWithTag("BulletB");
+		foreach (GameObject bullet in bullets)
+		{
+			if (bullet.renderer.bounds.Intersects(renderer.bounds)) lives -= 1;
+		}
 	}
 }

@@ -7,6 +7,7 @@ public class DragonTamer : MonoBehaviour {
 	public float speed;
 	public float dragonSpeed;
 	public float dragDist;
+	public float dragSpawn;
 	public Transform projectile;
 	public Transform special;
 	public Transform shield;
@@ -62,7 +63,7 @@ public class DragonTamer : MonoBehaviour {
 	void Dragon()
 	{
 		Vector3 position = transform.position;
-		position.x -= special.transform.renderer.bounds.extents.x*dragons.Count + dragDist;
+		position.x -= (special.transform.renderer.bounds.extents.x*dragons.Count*3 + 1)* dragSpawn;
 		prevLoc1 = position;
 		dragons.Add((Transform)(Instantiate (special, prevLoc1, Quaternion.identity)));
 		

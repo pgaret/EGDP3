@@ -10,7 +10,12 @@ public class GUIManager : MonoBehaviour {
 	public Transform DragonTamer;
 	
 	//Backgrounds
-	public Transform Background1;
+	public Transform Background;
+	public Sprite Background1;
+	public Sprite Background1B;
+	public Sprite Background2;
+	public Sprite Background2B;
+	public int gameMode;
 	
 	//HUD
 	//Dragon
@@ -64,8 +69,8 @@ public class GUIManager : MonoBehaviour {
 	Transform DTIcon;
 	
 	//Background
-	Transform background;
-	
+	Transform level1BG;
+		
 	//Player HUDS
 	Texture player1HUD;
 	Texture player2HUD;
@@ -152,6 +157,9 @@ public class GUIManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKey(KeyCode.Alpha1)) gameMode = 0;
+		else if (Input.GetKey(KeyCode.Alpha2)) gameMode = 1;
+	
 		Screen.showCursor = false;
 		
 		if (Input.GetKey(KeyCode.Escape)) Application.Quit();
@@ -170,8 +178,8 @@ public class GUIManager : MonoBehaviour {
 
 			if (player1Select != -1 && player2Select != -1 && begin == true)
 			{
-				background = (Transform)Instantiate (Background1);
-				background.transform.localScale = new Vector3(1.6f, 1.6f);
+				level1BG = (Transform)Instantiate (Background);
+				level1BG.transform.localScale = new Vector3(1.6f, 1.6f);
 				
 				if (player1Select == 0)
 				{

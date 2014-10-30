@@ -13,7 +13,7 @@ public class DTShield : MonoBehaviour {
 		GameObject option1 = GameObject.FindGameObjectWithTag("Player1");
 		GameObject option2 = GameObject.FindGameObjectWithTag("Player2");
 		if (option1.GetComponent<PlayerStats>().role == "Defender" && option1.name == "DragonTamer(Clone)") parent = option1;
-		else parent = option2;
+		else if (option2.name == "DragonTamer(Clone") parent = option2;
 		GameObject[] dragons = GameObject.FindGameObjectsWithTag("Dragon");
 		for (int i = 0; i < dragons.Length; i++)
 		{
