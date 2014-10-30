@@ -4,6 +4,8 @@ using System.Collections;
 public class PKShield : MonoBehaviour {
 	
 	public GUIStyle style;
+	public Sprite A;
+	public Sprite B;
 	
 	Transform parent;
 
@@ -66,8 +68,16 @@ public class PKShield : MonoBehaviour {
 		}
 		if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
 		{
-			if (transform.parent.GetComponent<PlayerStats>().affinity == 'A') transform.parent.GetComponent<PlayerStats>().affinity = 'B';
-			else transform.parent.GetComponent<PlayerStats>().affinity = 'A';
+			if (parent.GetComponent<PlayerStats>().affinity == 'A')
+			{
+				parent.GetComponent<PlayerStats>().affinity = 'B';
+				GetComponent<SpriteRenderer>().sprite = B;
+			}
+			else
+			{
+				parent.GetComponent<PlayerStats>().affinity = 'A';
+				GetComponent<SpriteRenderer>().sprite = A;
+			}
 		}
 		
 		

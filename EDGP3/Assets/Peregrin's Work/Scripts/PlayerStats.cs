@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerStats : MonoBehaviour {
 
 	public int ammo;
-	public int health;
+	public int health = 5;
 	public int lives;
 	public char affinity;
 	public string role;

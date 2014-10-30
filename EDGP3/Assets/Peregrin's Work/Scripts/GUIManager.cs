@@ -119,9 +119,16 @@ public class GUIManager : MonoBehaviour {
 		}
 		if (mode == 1)
 		{
+			style.fontSize = 48;
+			
 			if (player1Select != -1 && player2Select != -1)
 			{
-				if (GUI.Button (new Rect(Screen.width / 2, Screen.height * 3 / 4, Screen.width / 4, Screen.height / 8), "Begin")) begin = true;
+
+				if (GUI.Button (new Rect(Screen.width * 2 / 5, Screen.height * 3 / 4, Screen.width / 5, Screen.height / 8), "Begin", style))
+				{
+					begin = true;
+					style.fontSize = 0;
+				}
 			}
 			GUI.Box (new Rect(Screen.width / 3, Screen.height / 15, Screen.width / 3, Screen.height / 8), "Pick your character!", style);
 			if (player1Select == 0) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, PKT.width, PKT.height), PKT);
@@ -139,15 +146,16 @@ public class GUIManager : MonoBehaviour {
 			player2 = GameObject.FindGameObjectWithTag("Player2").transform;
 			
 			//Player 1 HUD
-			GUI.Box (new Rect (0, 0, Screen.width / 4, Screen.height), player1HUD, style);			 
-			GUI.Box (new Rect(Screen.width / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().lives.ToString(), style);
-			GUI.Box (new Rect(Screen.width / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().ammo.ToString(), style);
+			GUI.Box (new Rect (0, 0, Screen.width / 4, Screen.height), player1HUD, style);
+			style.fontSize = 48	;		 
+			GUI.Box (new Rect(Screen.width * 1.1f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().lives.ToString(), style);
+			GUI.Box (new Rect(Screen.width * 1.1f / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().ammo.ToString(), style);
 			GUI.Box (new Rect(Screen.width / 25, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), "123,456", style);
 			
 			//Player 2 HUD
 			GUI.Box (new Rect (Screen.width * 3 / 4, 0, Screen.width / 4, Screen.height), player2HUD, style);
-			GUI.Box (new Rect(Screen.width * 6 / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().lives.ToString(), style);
-			GUI.Box (new Rect(Screen.width * 6 / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().ammo.ToString(), style);
+			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().lives.ToString(), style);
+			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().ammo.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 82 / 100, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), "789, 012", style);
 			         
 			
@@ -157,8 +165,7 @@ public class GUIManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey(KeyCode.Alpha1)) gameMode = 0;
-		else if (Input.GetKey(KeyCode.Alpha2)) gameMode = 1;
+		if (GameObject.Find ("Manager").GetComponent<spawn>().i == 2) gameMode = 1;
 	
 		Screen.showCursor = false;
 		

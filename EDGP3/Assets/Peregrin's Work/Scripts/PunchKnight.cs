@@ -29,7 +29,7 @@ public class PunchKnight : MonoBehaviour {
 	void Start () {
 		//Determines whether player is 1 or 2
 		if (GameObject.FindGameObjectWithTag("Player1") == null) transform.tag = "Player1";
-		else transform.tag = "Player2";
+		if (transform.tag == null) transform.tag = "Player2";
 		
 		//Determines starting position, attacking/defending, and sprite depending on which player is controlling the ship.
 		if (transform.tag == "Player2")

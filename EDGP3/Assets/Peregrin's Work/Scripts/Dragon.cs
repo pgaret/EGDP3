@@ -4,6 +4,7 @@ using System.Collections;
 public class Dragon : MonoBehaviour {
 
 	public bool dead = false;
+	public bool specialDragon = false;
 
 	Transform parent;
 	float lifeSpan = 15.0f;
@@ -50,6 +51,6 @@ public class Dragon : MonoBehaviour {
 	void Update ()
 	{
 //		Debug.Log (Time.time+"  "+startTime+" "+lifeSpan);
-		if (Time.time - lifeSpan >= startTime) dead = true;
+		if (Time.time - lifeSpan >= startTime && specialDragon == false) dead = true;
 	}
 }

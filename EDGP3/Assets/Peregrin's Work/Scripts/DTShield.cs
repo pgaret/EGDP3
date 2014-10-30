@@ -3,7 +3,10 @@ using System.Collections;
 
 public class DTShield : MonoBehaviour {
 
-	public GameObject parent;
+	public Sprite A;
+	public Sprite B;
+
+	GameObject parent;
 	
 	public GUIStyle style;
 
@@ -13,7 +16,10 @@ public class DTShield : MonoBehaviour {
 		GameObject option1 = GameObject.FindGameObjectWithTag("Player1");
 		GameObject option2 = GameObject.FindGameObjectWithTag("Player2");
 		if (option1.GetComponent<PlayerStats>().role == "Defender" && option1.name == "DragonTamer(Clone)") parent = option1;
-		else if (option2.name == "DragonTamer(Clone") parent = option2;
+		Debug.Log (option1.GetComponent<PlayerStats>().role + " " + option1.name);
+		if (option2.GetComponent<PlayerStats>().role == "Defender" && option2.name == "DragonTamer(Clone)") parent = option2;
+		Debug.Log (option2.GetComponent<PlayerStats>().role + " " + option2.name);
+		Debug.Log (parent.name);
 		GameObject[] dragons = GameObject.FindGameObjectsWithTag("Dragon");
 		for (int i = 0; i < dragons.Length; i++)
 		{
@@ -65,8 +71,16 @@ public class DTShield : MonoBehaviour {
 		}
 		if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
 		{
-			if (parent.GetComponent<PlayerStats>().affinity == 'A') parent.GetComponent<PlayerStats>().affinity = 'B';
-			else parent.GetComponent<PlayerStats>().affinity = 'A';
+			if (parent.GetComponent<PlayerStats>().affinity == 'A')
+			{
+				parent.GetComponent<PlayerStats>().affinity = 'B';
+				GetComponent<SpriteRenderer>().sprite = B;
+			}
+			else
+			{
+				parent.GetComponent<PlayerStats>().affinity = 'A';
+				GetComponent<SpriteRenderer>().sprite = A;
+			}
 		}
 	}
 }

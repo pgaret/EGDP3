@@ -36,12 +36,13 @@ public class DragonTamer : MonoBehaviour {
 	void Start () {
 		//Determines whether player is 1 or 2
 		if (GameObject.FindGameObjectWithTag("Player1") == null) transform.tag = "Player1";
-		else transform.tag = "Player2";
+		if (transform.tag == null) transform.tag = "Player2";
 		
 		//Determines starting position, attacking/defending, and sprite depending on which player is controlling the ship.
 		if (transform.tag == "Player2")
 		{
 			transform.GetComponent<PlayerStats>().role = "Defender";
+			Dragon();
 			Shield ();
 			Vector3 pos = new Vector3(0, 0);
 			pos.z = 0;
@@ -66,7 +67,7 @@ public class DragonTamer : MonoBehaviour {
 		position.x -= (special.transform.renderer.bounds.extents.x*dragons.Count*3 + 1)* dragSpawn;
 		prevLoc1 = position;
 		dragons.Add((Transform)(Instantiate (special, prevLoc1, Quaternion.identity)));
-		
+		if (dragons.Count == 1) dragons[0].GetComponent<Dragon>().specialDragon = true;
 	}
 	
 	void Special()

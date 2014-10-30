@@ -13,15 +13,16 @@ public class spawn : MonoBehaviour {
 	float[] EnterTimes;
 	public float enter;
 	float time;
-	int i = 0;
+	public int i = 0;
 	public bool summon = false;
 	// Use this for initialization
 	void Start () {
 
 		time = Time.time;
-		EnterTimes = new float[2];
-		EnterTimes[0] = 1f;
-		EnterTimes[1] = 3f;
+		EnterTimes = new float[3];
+		EnterTimes[0] = 4f;
+		EnterTimes[1] = 8f;
+		EnterTimes[2] = 12f;
 
 	}
 	
@@ -132,6 +133,13 @@ public class spawn : MonoBehaviour {
 			//Setpath(2,0,3,1);
 		}
 		if(i == 1){
+			//Diagonal(2,1,3);
+			//Down (1,0,5);
+			Side (1,0,3,1);
+			//Setpath(2,0,3,1);
+		}
+		if (i == 2){
+			Boss2(10);
 			//Diagonal(2,1,3);
 			//Down (1,0,5);
 			//Side (1,0,3,1);
