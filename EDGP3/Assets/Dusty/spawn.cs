@@ -19,10 +19,12 @@ public class spawn : MonoBehaviour {
 	void Start () {
 
 		time = Time.time;
-		EnterTimes = new float[3];
-		EnterTimes[0] = 4f;
-		EnterTimes[1] = 8f;
-		EnterTimes[2] = 12f;
+		EnterTimes = new float[6];
+		EnterTimes[0] = 5f;
+		EnterTimes[1] = 10f;
+		EnterTimes[2] = 15f;
+		EnterTimes[3] = 30f;
+		EnterTimes[4] = 45f;
 
 	}
 	
@@ -127,23 +129,30 @@ public class spawn : MonoBehaviour {
 
 	void WaveM(int i){
 		if(i == 0){
-			Diagonal(2,1,2);
-			//Boss2 (10);
-			//Side (1,0,3,1);
-			//Setpath(2,0,3,1);
+			Diagonal(1,1,2);
+			Side (1,0,3,1);
+			Setpath(1,0,3,1);
 		}
 		if(i == 1){
-			//Diagonal(2,1,3);
-			//Down (1,0,5);
+			Diagonal(2,1,3);
+			Down (1,0,2);
 			Side (1,0,3,1);
-			//Setpath(2,0,3,1);
+			Setpath(2,0,3,1);
 		}
 		if (i == 2){
-			Boss2(10);
-			//Diagonal(2,1,3);
-			//Down (1,0,5);
-			//Side (1,0,3,1);
-			//Setpath(2,0,3,1);
+			Diagonal(2,1,3);
+			Down (2,0,2);
+			Side (2,0,3,1);
+			Setpath(2,0,3,1);
+		}
+		if (i == 3){
+			Diagonal(3,1,3);
+			Down (2,0,2);
+			Side (3,0,3,1);
+			Setpath(2,0,3,1);
+		}
+		if (i == 4){
+			Boss1();
 		}
 	}
 	public void RandomSummon(){

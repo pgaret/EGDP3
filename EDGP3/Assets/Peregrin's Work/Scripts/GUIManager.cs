@@ -19,12 +19,13 @@ public class GUIManager : MonoBehaviour {
 	
 	//HUD
 	//Dragon
-	public Texture DTP1;
-	public Texture DTP2;
+	public Transform DTP1;
+	public Transform DTP2;
+	public Transform gameOver;
 	
 	//Punch
-	public Texture PKP1;
-	public Texture PKP2;
+	public Transform PKP1;
+	public Transform PKP2;
 	//Mirror
 //	public Transform MMHUD;
 	//Tinker
@@ -145,20 +146,24 @@ public class GUIManager : MonoBehaviour {
 			player1 = GameObject.FindGameObjectWithTag("Player1").transform;
 			player2 = GameObject.FindGameObjectWithTag("Player2").transform;
 			
+			//Check for death
+//			if (player1.GetComponent<PlayerStats>().lives <= 0 || player2.GetComponent<PlayerStats>().lives <= 0)
+//			{
+//				Instantiate (gameOver);
+//				mode = 3;
+//			}
+			
 			//Player 1 HUD
-			GUI.Box (new Rect (0, 0, Screen.width / 4, Screen.height), player1HUD, style);
 			style.fontSize = 48	;		 
 			GUI.Box (new Rect(Screen.width * 1.1f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().lives.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 1.1f / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().ammo.ToString(), style);
 			GUI.Box (new Rect(Screen.width / 25, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), "123,456", style);
 			
 			//Player 2 HUD
-			GUI.Box (new Rect (Screen.width * 3 / 4, 0, Screen.width / 4, Screen.height), player2HUD, style);
 			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().lives.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().ammo.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 82 / 100, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), "789, 012", style);
-			         
-			
+       		
 		}
 		
 	}
@@ -185,13 +190,14 @@ public class GUIManager : MonoBehaviour {
 
 			if (player1Select != -1 && player2Select != -1 && begin == true)
 			{
+				
 				level1BG = (Transform)Instantiate (Background);
 				level1BG.transform.localScale = new Vector3(1.6f, 1.6f);
 				
 				if (player1Select == 0)
 				{
 					player1 = Instantiate(PunchKnight) as Transform;
-					player1HUD = PKP1;
+					Instantiate (PKP1);
 				}
 				if (player1Select == 1)
 				{
@@ -204,12 +210,12 @@ public class GUIManager : MonoBehaviour {
 				if (player1Select == 3)
 				{
 					player1 = Instantiate(DragonTamer) as Transform;
-					player1HUD = DTP1;
+					Instantiate (DTP1);
 				}
 				if (player2Select == 0)
 				{
 					player2 = Instantiate(PunchKnight) as Transform;
-					player2HUD = PKP2;
+					Instantiate(PKP2);
 				}
 				if (player2Select == 1)
 				{
@@ -222,7 +228,7 @@ public class GUIManager : MonoBehaviour {
 				if (player2Select == 3)
 				{
 					player2 = Instantiate(DragonTamer) as Transform;
-					player2HUD = DTP2;
+					Instantiate(DTP2);
 				}
 				player1.transform.tag = "Player1";
 				player2.transform.tag = "Player2";

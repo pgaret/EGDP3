@@ -15,7 +15,12 @@ public class Background : MonoBehaviour {
 		GameObject cam = GameObject.Find ("Main Camera");
 		mode = cam.GetComponent<GUIManager>().gameMode;
 		if (mode == 0) transform.GetComponent<SpriteRenderer>().sprite = cam.GetComponent<GUIManager>().Background1;
-		if (mode == 1) transform.GetComponent<SpriteRenderer>().sprite = cam.GetComponent<GUIManager>().Background1B;
+		if (mode == 1)
+		{
+			transform.GetComponent<SpriteRenderer>().sprite = cam.GetComponent<GUIManager>().Background1B;
+			GameObject[] bgs  = GameObject.FindGameObjectsWithTag("Background");
+			foreach (GameObject bg in bgs) bg.GetComponent<Background>().scrollSpeed = bg.GetComponent<Background>().scrollSpeed* 2;
+		}
 		
 		transform.localScale = new Vector3(1.6f, 1.6f);
 		GetComponent<SpriteRenderer>().sortingOrder = -1;
@@ -24,8 +29,6 @@ public class Background : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-
-		
 		if (mode == 0 || mode == 2 || mode == 4)
 		{
 			transform.Translate (Vector3.down*Time.deltaTime*scrollSpeed);

@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour {
 	public float health;
 	public GameObject projectileA;
 	public GameObject projectileB;
+	public GameObject coin;
 	public float attackCD = 1;
 	public bool fire = false;
 	public int attacktype = 0;
@@ -169,7 +170,11 @@ public class Enemy : MonoBehaviour {
 		GameObject[] bullets = GameObject.FindGameObjectsWithTag ("BulletC");
 		for (int i = 0; i < bullets.Length; i++)
 		{
-			if (bullets[i].renderer.bounds.Intersects(transform.renderer.bounds)) Destroy (gameObject);
+			if (bullets[i].renderer.bounds.Intersects(transform.renderer.bounds))
+			{
+				Destroy (gameObject);
+				Instantiate(coin, transform.position, Quaternion.identity);
+			}
 		}
 		float step = speed * Time.deltaTime;
 		//transform.rotation = Quaternion.Lerp(transform.rotation,qr,Time.deltaTime*turnspeed);

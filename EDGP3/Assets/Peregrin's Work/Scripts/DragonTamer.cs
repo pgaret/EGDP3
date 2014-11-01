@@ -20,44 +20,22 @@ public class DragonTamer : MonoBehaviour {
 
 	public List<Transform> dragons = new List<Transform>();
 	
-	float attackTimer = .1f;
-	float attackCD = 0;
-	
-	float swapCDTimer;
-	float swapCD = 1f;
-	
 	float specialTimer;
 	float specialCD = 1;
 	bool specialActivate = false;
 	
-	Animator anim;	
-	
 	// Use this for initialization
 	void Start () {
-		//Determines whether player is 1 or 2
-		if (GameObject.FindGameObjectWithTag("Player1") == null) transform.tag = "Player1";
-		if (transform.tag == null) transform.tag = "Player2";
-		
-		//Determines starting position, attacking/defending, and sprite depending on which player is controlling the ship.
+		//Instantiates the dragon and shield
 		if (transform.tag == "Player2")
 		{
-			transform.GetComponent<PlayerStats>().role = "Defender";
 			Dragon();
 			Shield ();
-			Vector3 pos = new Vector3(0, 0);
-			pos.z = 0;
-			transform.position = pos;
 		}
 		if (transform.tag == "Player1")
 		{
-			transform.GetComponent<PlayerStats>().ammo = 100;
-			transform.GetComponent<PlayerStats>().role = "Attacker";
-			Vector3 pos = new Vector3 (0, 0);
-			pos.z = 0;
-			transform.position = pos;
+			Dragon ();
 		}
-		
-		anim = GetComponent<Animator>();
 		
 	}
 	
@@ -98,34 +76,23 @@ public class DragonTamer : MonoBehaviour {
 		
 		if (shipType == "Attacker")
 		{
-			if (Input.GetKey (KeyCode.X) && transform.GetComponent<PlayerStats>().ammo >= 10 && dragons.Count < 4 && specialActivate == false) Special();	
-			if (transform.tag == "Player1")
+			if (GetComponent<PlayerStats>().specialBool == true)
 			{
-				if (Input.GetKey(KeyCode.Space) && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0 && dragons.Count > 0)
-				{
-					foreach (Transform dragon in dragons) 
-					{
-						Transform bullet = (Transform)Instantiate(projectile, dragon.position, Quaternion.identity);
-						bullet.GetComponent<SpriteRenderer>().sprite = Attack;
-					}
-					attackCD = Time.time;
-					transform.GetComponent<PlayerStats>().ammo -= 1;
-				}
+				Special();
+				GetComponent<PlayerStats>().specialBool = false;
 			}
-			else
+
+			if (GetComponent<PlayerStats>().shootBool == true)
 			{
-				if (Input.GetButton("XboxFire1") || Input.GetKey(KeyCode.Keypad0) && attackTimer < Time.time - attackCD && transform.GetComponent<PlayerStats>().ammo > 0 && dragons.Count > 0)
+				foreach (Transform dragon in dragons) 
 				{
-					foreach (Transform dragon in dragons) 
-					{
-						GameObject bullet = (GameObject)Instantiate(projectile, dragon.position, Quaternion.identity);
-						bullet.GetComponent<SpriteRenderer>().sprite = Attack;
-					}
-					attackCD = Time.time;
-					transform.GetComponent<PlayerStats>().ammo -= 1;
+					Transform bullet = (Transform)Instantiate(projectile, dragon.position, Quaternion.identity);
+					bullet.GetComponent<SpriteRenderer>().sprite = Attack;
 				}
+				transform.GetComponent<PlayerStats>().ammo -= 1;
+				GetComponent<PlayerStats>().shootBool = false;
 			}
-			
+
 			GameObject[] bulletA = GameObject.FindGameObjectsWithTag ("BulletA");
 			GameObject[] bulletB = GameObject.FindGameObjectsWithTag ("BulletB");
 			for (int i = 0; i < bulletA.Length; i++)
@@ -153,62 +120,6 @@ public class DragonTamer : MonoBehaviour {
 				specialActivate = false;
 			}
 		}
-		
-		if (transform.tag == "Player1")
-		{
-			if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && !Input.GetKey (KeyCode.Space)) anim.SetBool("move!shoot", true);
-			else anim.SetBool("move!shoot", false);
-			
-			if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && Input.GetKey (KeyCode.Space)) anim.SetBool("moveshoot", true);
-			else anim.SetBool("moveshoot", false);
-			
-			if ((!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D)) && Input.GetKey (KeyCode.Space)) anim.SetBool("shoot!move", true);
-			else anim.SetBool("shoot!move", false);
-			
-			if (Input.GetKey(KeyCode.W)) transform.Translate(Vector3.up*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.A)) transform.Translate(Vector3.left*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.S)) transform.Translate(Vector3.down*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.D)) transform.Translate(Vector3.right*Time.deltaTime*speed);
-			if (Input.GetKey (KeyCode.Z) && transform.GetComponent<PlayerStats>().swapRole == "no" && Time.time - swapCDTimer >= 0)
-			{
-				GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
-				transform.GetComponent<PlayerStats>().swapRole = "pending";
-				if (player2.GetComponent<PlayerStats>().swapRole == "pending")
-				{
-					transform.GetComponent<PlayerStats>().Swap();
-					player2.transform.GetComponent<PlayerStats>().Swap();
-					swapCDTimer = Time.time + swapCD;	
-				}
-			}
-		}
-		if (transform.tag == "Player2")
-		{
-			if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)) && !Input.GetKey (KeyCode.Space)) anim.SetBool("move!shoot", true);
-			else anim.SetBool("move!shoot", false);
-			
-			if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)) && Input.GetKey (KeyCode.Space)) anim.SetBool("moveshoot", true);
-			else anim.SetBool("moveshoot", false);
-			
-			if ((!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.RightArrow)) && Input.GetKey (KeyCode.Space)) anim.SetBool("shoot!move", true);
-			else anim.SetBool("shoot!move", false);
-			
-			GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
-			if (Input.GetButton("XboxFire3") || Input.GetKey(KeyCode.Tab) && transform.GetComponent<PlayerStats>().swapRole == "no" && Time.time - swapCDTimer >= 0)
-			{
-				transform.GetComponent<PlayerStats>().swapRole = "pending";
-				if (player1.GetComponent<PlayerStats>().swapRole == "pending")
-				{
-					transform.GetComponent<PlayerStats>().Swap();
-					player1.transform.GetComponent<PlayerStats>().Swap();
-					swapCDTimer = Time.time + swapCD;		
-				}
-			}
-			transform.position += new Vector3(Input.GetAxis("XboxHorizontal")*Time.deltaTime*10, Input.GetAxis("XboxVertical")*Time.deltaTime*10, 0);
-			if (Input.GetKey(KeyCode.UpArrow)) transform.Translate(Vector3.up*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.LeftArrow)) transform.Translate(Vector3.left*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.DownArrow)) transform.Translate(Vector3.down*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.RightArrow)) transform.Translate(Vector3.right*Time.deltaTime*speed);
-		}
-		
+
 	}
 }
