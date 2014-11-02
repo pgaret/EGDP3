@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class GUIManager : MonoBehaviour {
@@ -17,6 +17,8 @@ public class GUIManager : MonoBehaviour {
 	public Sprite Background2B;
 	public int gameMode;
 	
+	public Transform tutorial;
+	
 	//HUD
 	//Dragon
 	public Transform DTP1;
@@ -27,9 +29,9 @@ public class GUIManager : MonoBehaviour {
 	public Transform PKP1;
 	public Transform PKP2;
 	//Mirror
-//	public Transform MMHUD;
+    //public Transform MMHUD;
 	//Tinker
-//	public Transform TKHUD;
+    //public Transform TKHUD;
 
 	//Icons for team select
 	public Transform PK;
@@ -113,9 +115,10 @@ public class GUIManager : MonoBehaviour {
 			{
 				mode = 1;
 				PKIcon = Instantiate(PK, new Vector3(0, pos.y / 5), Quaternion.identity) as Transform;
-				MMIcon = Instantiate (MM, new Vector3(0, pos.y * 2 / 5), Quaternion.identity) as Transform;
-				TKIcon = Instantiate (TK, new Vector3(0, 0), Quaternion.identity) as Transform;
-				DTIcon = Instantiate(DT, new Vector3(0, -pos.y / 5), Quaternion.identity) as Transform;
+				MMIcon = Instantiate (MM, new Vector3(0, -pos.y * 2 / 5), Quaternion.identity) as Transform;
+				TKIcon = Instantiate (TK, new Vector3(0, -pos.y / 5), Quaternion.identity) as Transform;
+				DTIcon = Instantiate(DT, new Vector3(0, 0), Quaternion.identity) as Transform;
+				
 			}
 		}
 		if (mode == 1)
@@ -132,14 +135,26 @@ public class GUIManager : MonoBehaviour {
 				}
 			}
 			GUI.Box (new Rect(Screen.width / 3, Screen.height / 15, Screen.width / 3, Screen.height / 8), "Pick your character!", style);
-			if (player1Select == 0) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, PKT.width, PKT.height), PKT);
-			if (player1Select == 1) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, MMT.width, MMT.height), MMT);
-			if (player1Select == 2) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, TKT.width, TKT.height), TKT);
-			if (player1Select == 3) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, DTT.width, DTT.height), DTT);
-			if (player2Select == 0) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, PKT.width, PKT.height), PKT);
-			if (player2Select == 1) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, MMT.width, MMT.height), MMT);
-			if (player2Select == 2) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, TKT.width, TKT.height), TKT);
-			if (player2Select == 3) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, DTT.width, DTT.height), DTT);
+			if (player1Select == 0) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, PKT.width, PKT.height), PKT, style);
+			if (player1Select == 1) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, MMT.width, MMT.height), MMT, style);
+			if (player1Select == 2) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, TKT.width, TKT.height), TKT, style);
+			if (player1Select == 3) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, DTT.width, DTT.height), DTT, style);
+			if (player2Select == 0) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, PKT.width, PKT.height), PKT, style);
+			if (player2Select == 1) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, MMT.width, MMT.height), MMT, style);
+			if (player2Select == 2) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, TKT.width, TKT.height), TKT, style);
+			if (player2Select == 3) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, DTT.width, DTT.height), DTT, style);
+			
+			if (GUI.Button (new Rect(Screen.width / 2.35f, Screen.height / 5, Screen.width / 7, Screen.height / 10), "Tutorial"))
+			{
+				mode = 3;
+				Destroy (PKIcon.gameObject);
+				Destroy(MMIcon.gameObject);
+				Destroy (TKIcon.gameObject);
+				Destroy (DTIcon.gameObject);
+				Destroy (player1Cursor.gameObject);
+				Destroy (player2Cursor.gameObject);
+				Instantiate(tutorial);
+			}
 		}
 		if (mode == 2 && player1 != null && player2 != null)
 		{
@@ -154,16 +169,20 @@ public class GUIManager : MonoBehaviour {
 //			}
 			
 			//Player 1 HUD
-			style.fontSize = 48	;		 
+			style.fontSize = 24;
+			GUI.Box (new Rect(Screen.width / 20, Screen.height * 5.5f / 8, Screen.width / 8, Screen.height / 10), player1.GetComponent<PlayerStats>().swapRole, style);
+			style.fontSize = 48	;	 
 			GUI.Box (new Rect(Screen.width * 1.1f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().lives.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 1.1f / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().ammo.ToString(), style);
 			GUI.Box (new Rect(Screen.width / 25, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), "123,456", style);
 			
 			//Player 2 HUD
+			style.fontSize = 24;
+			GUI.Box (new Rect(Screen.width * 6.5f / 8, Screen.height * 5.5f / 8, Screen.width / 8, Screen.height / 10), player2.GetComponent<PlayerStats>().swapRole, style);
+			style.fontSize = 48;
 			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().lives.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().ammo.ToString(), style);
-			GUI.Box (new Rect(Screen.width * 82 / 100, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), "789, 012", style);
-       		
+			GUI.Box (new Rect(Screen.width * 82 / 100, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), "789, 012", style);	
 		}
 		
 	}
@@ -198,6 +217,7 @@ public class GUIManager : MonoBehaviour {
 				{
 					player1 = Instantiate(PunchKnight) as Transform;
 					Instantiate (PKP1);
+					
 				}
 				if (player1Select == 1)
 				{

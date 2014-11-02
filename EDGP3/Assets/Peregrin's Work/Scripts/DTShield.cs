@@ -32,12 +32,12 @@ public class DTShield : MonoBehaviour {
 		}
 	}
 	
-	void OnGUI()
-	{
-		Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
-		Vector3 max = new Vector3(Screen.width, Screen.height);
-		GUI.Box (new Rect(pos.x, max.y - pos.y, 50, 50), parent.GetComponent<PlayerStats>().affinity.ToString(), style);
-	}
+//	void OnGUI()
+//	{
+//		Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
+//		Vector3 max = new Vector3(Screen.width, Screen.height);
+//		GUI.Box (new Rect(pos.x, max.y - pos.y, 50, 50), parent.GetComponent<PlayerStats>().affinity.ToString(), style);
+//	}
 	
 	// Update is called once per frame
 	void Update ()

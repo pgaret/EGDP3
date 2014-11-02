@@ -22,9 +22,12 @@ public class PunchKnight : MonoBehaviour {
 	
 	void Special()
 	{
-		transform.GetComponent<PlayerStats>().ammo -= 100;
-		specialTimer = Time.time + 2.1f;
-		specialCounter = 2f;
+		if (GetComponent<PlayerStats>().ammo >= 100)
+		{
+			transform.GetComponent<PlayerStats>().ammo -= 100;
+			specialTimer = Time.time + 2.1f;
+			specialCounter = 2f;
+		}
 	}
 	
 	public void Shield()
@@ -90,9 +93,12 @@ public class PunchKnight : MonoBehaviour {
 				if (i == .5) instance.GetComponent<PKSpecial>().rotation = -13;
 				if (i == 1) instance.GetComponent<PKSpecial>().rotation = 25;
 				if (i == 1.5) instance.GetComponent<PKSpecial>().rotation = -25;
+				if (instance.GetComponent<PKSpecial>().rotation > 0) instance.GetComponent<SpriteRenderer>().sprite = punchLeft;
+				else instance.GetComponent<SpriteRenderer>().sprite = punchRight;
 			}
 			instance = (Transform)Instantiate(special, transform.position, Quaternion.identity);
 			instance.GetComponent<PKSpecial>().rotation = 0;
+			instance.GetComponent<SpriteRenderer>().sprite = punchLeft;
 			
 			specialCounter -= .5f;
 		}

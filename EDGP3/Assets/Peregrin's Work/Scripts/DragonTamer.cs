@@ -113,12 +113,8 @@ public class DragonTamer : MonoBehaviour {
 		
 		if (specialActivate == true)
 		{
-			if (Input.GetKeyUp(KeyCode.X)) specialActivate = false;
-			else if (Time.time > specialTimer)
-			{
-				Dragon();
-				specialActivate = false;
-			}
+			Dragon();
+			specialActivate = false;
 		}
 
 	}

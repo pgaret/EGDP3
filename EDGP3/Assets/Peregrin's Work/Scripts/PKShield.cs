@@ -23,20 +23,21 @@ public class PKShield : MonoBehaviour {
 			transform.parent = option2.transform;
 			transform.position = new Vector3(transform.parent.renderer.bounds.center.x, transform.parent.renderer.bounds.center.y + transform.parent.renderer.bounds.extents.y + transform.renderer.bounds.extents.y);	
 		}
+		transform.localScale = new Vector3(2f, 1.5f);
 	}
 	
-	void OnGUI()
-	{
-		Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
-		Vector3 max = new Vector3(Screen.width, Screen.height);
-		GUI.Box (new Rect(pos.x, max.y - pos.y, 50, 50), transform.parent.GetComponent<PlayerStats>().affinity.ToString(), style);
-	}
+//	void OnGUI()
+//	{
+//		Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
+//		Vector3 max = new Vector3(Screen.width, Screen.height);
+//		GUI.Box (new Rect(pos.x, max.y - pos.y, 50, 50), transform.parent.GetComponent<PlayerStats>().affinity.ToString(), style);
+//	}
 	
 	// Update is called once per frame
 	void Update () {
 		transform.position = new Vector3(transform.parent.renderer.bounds.center.x, transform.parent.renderer.bounds.center.y + transform.parent.renderer.bounds.extents.y + transform.renderer.bounds.extents.y);
-		Vector3 scale = new Vector3(.001f, .001f);
-		Vector3 finalScale = new Vector3(1.01f, 1.01f);
+		Vector3 scale = new Vector3(.002f, .002f);
+		Vector3 finalScale = new Vector3(.7f, .5f);
 		if (transform.localScale.x > finalScale.x && transform.localScale.y > finalScale.y) transform.localScale -= scale;
 		
 		GameObject[] bulletA = GameObject.FindGameObjectsWithTag ("BulletA");
@@ -66,20 +67,15 @@ public class PKShield : MonoBehaviour {
 				Destroy(bulletB[i].gameObject);
 			}
 		}
-		if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+
+		if (transform.parent.GetComponent<PlayerStats>().affinity == 'A')
 		{
-			if (parent.GetComponent<PlayerStats>().affinity == 'A')
-			{
-				parent.GetComponent<PlayerStats>().affinity = 'B';
-				GetComponent<SpriteRenderer>().sprite = B;
-			}
-			else
-			{
-				parent.GetComponent<PlayerStats>().affinity = 'A';
-				GetComponent<SpriteRenderer>().sprite = A;
-			}
+			GetComponent<SpriteRenderer>().sprite = A;
 		}
-		
+		else
+		{
+			GetComponent<SpriteRenderer>().sprite = B;
+		}		
 		
 	}
 }
