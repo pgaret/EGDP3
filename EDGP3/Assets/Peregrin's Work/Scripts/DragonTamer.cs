@@ -13,10 +13,6 @@ public class DragonTamer : MonoBehaviour {
 	public Transform shield;
 	public string shipType;
 	public Sprite Attack;
-	public Vector3 prevLoc1;
-	public Vector3 prevLoc2;
-	public Vector3 prevLoc3;
-	public Vector3 prevLoc4;
 
 	public List<Transform> dragons = new List<Transform>();
 	
@@ -26,38 +22,17 @@ public class DragonTamer : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		//Instantiates the dragon and shield
-		if (transform.tag == "Player2")
-		{
-			Dragon();
-			Shield ();
-		}
-		if (transform.tag == "Player1")
-		{
-			Dragon ();
-		}
+		Dragon();
 		
 	}
 	
 	void Dragon()
 	{
+		transform.GetComponent<PlayerStats>().ammo -= 10;
 		Vector3 position = transform.position;
 		position.x -= (special.transform.renderer.bounds.extents.x*dragons.Count*3 + 1)* dragSpawn;
-		prevLoc1 = position;
-		dragons.Add((Transform)(Instantiate (special, prevLoc1, Quaternion.identity)));
+		dragons.Add((Transform)(Instantiate (special, position, Quaternion.identity)));
 		if (dragons.Count == 1) dragons[0].GetComponent<Dragon>().specialDragon = true;
-	}
-	
-	void Special()
-	{
-//		transform.GetComponent<PlayerStats>().ammo -= 10;
-		specialActivate = true;
-		specialTimer = specialCD + Time.time;
-	}
-	
-	public void Shield()
-	{
-		foreach (Transform dragon in dragons) Instantiate (shield);
 	}
 	
 	// Update is called once per frame
@@ -66,7 +41,7 @@ public class DragonTamer : MonoBehaviour {
 		
 		for (int i = 0; i < dragons.Count; i++)
 		{
-			if((Vector3.Distance (dragons[i].position, transform.position) > i + dragDist)) dragons[i].position = Vector3.MoveTowards(dragons[i].position, transform.position, Time.deltaTime*dragonSpeed);
+			if((Vector3.Distance (dragons[i].position, transform.position) > (i+1)*dragDist)) dragons[i].position = Vector3.MoveTowards(dragons[i].position, transform.position, Time.deltaTime*dragonSpeed);
 			if (dragons[i].GetComponent<Dragon>().dead == true)
 			{
 				Destroy (dragons[i].gameObject);
@@ -76,9 +51,9 @@ public class DragonTamer : MonoBehaviour {
 		
 		if (shipType == "Attacker")
 		{
-			if (GetComponent<PlayerStats>().specialBool == true)
+			if (GetComponent<PlayerStats>().specialBool == true && dragons.Count < 4)
 			{
-				Special();
+				Dragon ();
 				GetComponent<PlayerStats>().specialBool = false;
 			}
 
@@ -109,12 +84,6 @@ public class DragonTamer : MonoBehaviour {
 					Destroy(bulletB[i].gameObject);
 				}
 			}
-		}
-		
-		if (specialActivate == true)
-		{
-			Dragon();
-			specialActivate = false;
 		}
 
 	}

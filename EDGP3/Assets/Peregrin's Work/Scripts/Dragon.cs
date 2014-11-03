@@ -6,7 +6,7 @@ public class Dragon : MonoBehaviour {
 	public bool dead = false;
 	public bool specialDragon = false;
 
-	Transform parent;
+	GameObject parent;
 	float lifeSpan = 15.0f;
 	float startTime;
 
@@ -14,6 +14,11 @@ public class Dragon : MonoBehaviour {
 	void Start ()
 	{
 		startTime = Time.time;
+		
+		GameObject option1 = GameObject.FindGameObjectWithTag("Player1");
+		if (option1.GetComponent<PlayerStats>().role == "Attacker") parent = option1;
+		else parent = GameObject.FindGameObjectWithTag("Player2");
+		
 	}
 	
 	void BulletCheck()
@@ -23,11 +28,7 @@ public class Dragon : MonoBehaviour {
 		
 		for (int i = 0; i < bulletA.Length; i++)
 		{
-			if (bulletA[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && parent.GetComponent<PlayerStats>().affinity == 'B')
-			{
-				Destroy (bulletA[i].gameObject);
-			}
-			else if (bulletA[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && parent.GetComponent<PlayerStats>().affinity == 'A')
+			if (bulletA[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && parent.GetComponent<PlayerStats>().affinity == 'A')
 			{
 				parent.GetComponent<PlayerStats>().ammo += 1;
 				Destroy (bulletA[i].gameObject);
@@ -40,10 +41,6 @@ public class Dragon : MonoBehaviour {
 				parent.GetComponent<PlayerStats>().ammo += 1;
 				Destroy(bulletB[i].gameObject);
 			}
-			else if (bulletB[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && parent.GetComponent<PlayerStats>().affinity == 'A')
-			{
-				Destroy(bulletB[i].gameObject);
-			}
 		}
 	}
 	
@@ -52,5 +49,7 @@ public class Dragon : MonoBehaviour {
 	{
 //		Debug.Log (Time.time+"  "+startTime+" "+lifeSpan);
 		if (Time.time - lifeSpan >= startTime && specialDragon == false) dead = true;
+		
+		if (parent.GetComponent<PlayerStats>().role == "Defender") BulletCheck();
 	}
 }

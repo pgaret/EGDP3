@@ -15,8 +15,14 @@ public class GUIManager : MonoBehaviour {
 	public Sprite Background1B;
 	public Sprite Background2;
 	public Sprite Background2B;
-	public int gameMode;
+	Transform level1BG;
 	
+	//Level mode (boss vs normal)
+	public int gameMode;
+	//Modes 0, 1, 2, 3, 4 = Title Screen, Character Selection, Game, Death, Tutorial
+	private int mode = 0;
+	
+	//Tutorial script holding thingy
 	public Transform tutorial;
 	
 	//HUD
@@ -29,9 +35,12 @@ public class GUIManager : MonoBehaviour {
 	public Transform PKP1;
 	public Transform PKP2;
 	//Mirror
-    //public Transform MMHUD;
+    //public Transform MMP1;
+    //public Transform MMP2;
+    
 	//Tinker
-    //public Transform TKHUD;
+    //public Transform TKP1;
+	//public Transform TKP2;
 
 	//Icons for team select
 	public Transform PK;
@@ -53,9 +62,6 @@ public class GUIManager : MonoBehaviour {
 	public GUIStyle player1Style;
 	public GUIStyle player2Style;
 	public GUIStyle style;
-	
-	//Modes 0, 1, 2, 3 = Title Screen, Character Selection, Game, Death
-	private int mode = 0;
 
 	//Holds the current player value, if both are filled then the game can begin
 	Transform player1;
@@ -72,11 +78,7 @@ public class GUIManager : MonoBehaviour {
 	Transform DTIcon;
 	
 	//Background
-	Transform level1BG;
-		
-	//Player HUDS
-	Texture player1HUD;
-	Texture player2HUD;
+
 
 	//Cursor position stuff
 	Vector3 pos;
@@ -104,6 +106,8 @@ public class GUIManager : MonoBehaviour {
 		cPos = Camera.main.ScreenToWorldPoint (player2Cursor.renderer.bounds.center);
 		mPos.z = 0;
 		cPos.z = 0;
+		
+		
 	}
 	
 	void OnGUI()
@@ -111,7 +115,7 @@ public class GUIManager : MonoBehaviour {
 		if (mode == 0)
 		{
 			GUI.Box (new Rect(Screen.width / 3, Screen.height / 3, Screen.width / 3, Screen.height / 3), "Press any key to start...", style);
-			if (Event.current.type == EventType.KeyDown)
+			if (Event.current.type == EventType.KeyDown || Input.GetButton("XboxFire1") || Input.GetButton("XboxFire2") || Input.GetButton("XboxFire3") || Input.GetButton("XboxFire4"))
 			{
 				mode = 1;
 				PKIcon = Instantiate(PK, new Vector3(0, pos.y / 5), Quaternion.identity) as Transform;

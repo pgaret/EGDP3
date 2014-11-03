@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerStats : MonoBehaviour {
 
+	//Basic stats
 	public int ammo;
 	public int lives;
 	public int score;
@@ -10,30 +11,40 @@ public class PlayerStats : MonoBehaviour {
 	public char affinity;
 	public string role;
 	
+	//Affinity swapping stuff (A vs B)
+	public Texture AffinityA;
+	public Texture AffinityB;
+	float affinityCD = .1f;
+	float affinityTimer;
+	
+	//Speed and movement testing for animation purposes
 	public float speed;
-	bool isMoving;	
+	bool isMoving;
 
+	//Boundaries of the screen
+	GameObject top;
+	GameObject left;
+	GameObject right;
+	GameObject down;
+
+	//Can we shoot?  How long has it been since we last shot?  Time to shoot!
 	public float shootCD;
 	public bool shootBool;
 	float shootTimer;
 	
+	//Special stuff (are we in tutorial, when did we last use the special, etc)
 	public float specialCD;
 	public bool specialBool;
 	public bool tutSpecial = false;
 	float specialTimer;
 	
+	//Role Swapping stuff (attacker vs defender)
 	public string swapRole;
 	public float swapCD = .5f;
 	float swapTimer = 2f;
 	
-	float affinityCD = .1f;
-	float affinityTimer;
-	
 	private Animator anim;
 	private GameObject bar;
-	
-	public Texture AffinityA;
-	public Texture AffinityB;
 
 	// Use this for initialization
 	void Start () {
@@ -44,6 +55,11 @@ public class PlayerStats : MonoBehaviour {
 		points = 0;
 		score = 0;
 		
+		top = GameObject.Find ("Up");
+		down = GameObject.Find ("Down");
+		left = GameObject.Find("Left");
+		right = GameObject.Find ("Right");
+		
 		//Determines whether player is 1 or 2
 		if (GameObject.FindGameObjectWithTag("Player1") == null) transform.tag = "Player1";
 		Debug.Log (transform.tag);
@@ -53,12 +69,6 @@ public class PlayerStats : MonoBehaviour {
 		if (transform.tag == "Player2")
 		{
 			role = "Defender";
-//			if (!tutSpecial)
-///			{
-///				Vector3 pos = new Vector3(0, 0);
-//				pos.z = 0;
-//				transform.position = pos;
-//			}
 			bar = GameObject.FindGameObjectWithTag("Bar2");
 			affinityTimer = Time.time;
 		}
@@ -66,12 +76,6 @@ public class PlayerStats : MonoBehaviour {
 		{
 			ammo = 100;
 			role = "Attacker";
-//			if (!tutSpecial)
-///			{
-//				Vector3 pos = new Vector3 (0, 0);
-//				pos.z = 0;
-//				transform.position = pos;
-//			}
 			bar = GameObject.FindGameObjectWithTag("Bar1");
 		}
 		//Access the animator so I can animate the character
@@ -95,18 +99,7 @@ public class PlayerStats : MonoBehaviour {
 		}
 		if (transform.name == "DragonTamer(Clone)")
 		{
-			if (role != "Defender")
-			{
-				GameObject[] dragons = GameObject.FindGameObjectsWithTag("Dragon");
-				for (int i = 0; i < dragons.Length; i++)
-				{
-					for (int j = 0; j < dragons[i].transform.childCount; j++)
-					{
-						if (dragons[i].transform.GetChild(j).name == "DTShield(Clone") Destroy (dragons[i].transform.GetChild(j).gameObject);
-					}	
-				}
-			}
-			if (role == "Defender")transform.GetComponent<DragonTamer>().Shield();
+
 			
 		}
 		
@@ -154,10 +147,10 @@ public class PlayerStats : MonoBehaviour {
 		if (transform.tag == "Player1")
 		{
 			//Movement
-			if (Input.GetKey(KeyCode.W)) transform.Translate(Vector3.up*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.A)) transform.Translate(Vector3.left*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.S)) transform.Translate(Vector3.down*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.D)) transform.Translate(Vector3.right*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.W) && transform.position.y < top.transform.position.y) transform.Translate(Vector3.up*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.A) && transform.position.x > left.transform.position.x) transform.Translate(Vector3.left*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.S) && transform.position.y > down.transform.position.y) transform.Translate(Vector3.down*Time.deltaTime*speed);
+			if (Input.GetKey(KeyCode.D) && transform.position.x < right.transform.position.x) transform.Translate(Vector3.right*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S)) isMoving = true;
 			else isMoving = false;
 			//Swap
@@ -207,10 +200,10 @@ public class PlayerStats : MonoBehaviour {
 		else
 		{
 			//Movement
-			if (Input.GetAxis("XboxVertical") > 0) transform.Translate(Vector3.up*Time.deltaTime*speed);
-			if (Input.GetAxis ("XboxHorizontal") < 0) transform.Translate(Vector3.left*Time.deltaTime*speed);
-			if (Input.GetAxis ("XboxVertical") < 0) transform.Translate(Vector3.down*Time.deltaTime*speed);
-			if (Input.GetAxis ("XboxHorizontal") > 0) transform.Translate(Vector3.right*Time.deltaTime*speed);
+			if (Input.GetAxis("XboxVertical") > 0 && transform.position.y < top.transform.position.y) transform.Translate(Vector3.up*Time.deltaTime*speed);
+			if (Input.GetAxis ("XboxHorizontal") < 0 && transform.position.x > left.transform.position.x) transform.Translate(Vector3.left*Time.deltaTime*speed);
+			if (Input.GetAxis ("XboxVertical") < 0 && transform.position.y > down.transform.position.y) transform.Translate(Vector3.down*Time.deltaTime*speed);
+			if (Input.GetAxis ("XboxHorizontal") > 0 && transform.position.x < right.transform.position.x) transform.Translate(Vector3.right*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("XboxVertical") > 0 || Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis ("XboxHorizontal") < 0 || Input.GetKey(KeyCode.DownArrow) || Input.GetAxis ("XboxVertical") < 0 || Input.GetKey(KeyCode.RightArrow) || Input.GetAxis ("XboxHorizontal") > 0) isMoving = true;
 			else isMoving = false;
 			//Swap
