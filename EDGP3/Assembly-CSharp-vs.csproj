@@ -59,6 +59,7 @@
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\DragonTamer.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Enemy.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\EnemyBullet.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Fog.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\GUIManager.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\MirrorMage.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\PKShield.cs" />

@@ -45,11 +45,7 @@ public class PKShield : MonoBehaviour {
 		
 		for (int i = 0; i < bulletA.Length; i++)
 		{
-			if (bulletA[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && transform.parent.GetComponent<PlayerStats>().affinity == 'B')
-			{
-				Destroy (bulletA[i].gameObject);
-			}
-			else if (bulletA[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && transform.parent.GetComponent<PlayerStats>().affinity == 'A')
+			if (bulletA[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && transform.parent.GetComponent<PlayerStats>().affinity == 'A')
 			{
 				transform.parent.GetComponent<PlayerStats>().ammo += 1;
 				Destroy (bulletA[i].gameObject);
@@ -60,10 +56,6 @@ public class PKShield : MonoBehaviour {
 			if (bulletB[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && transform.parent.GetComponent<PlayerStats>().affinity == 'B')
 			{
 				transform.parent.GetComponent<PlayerStats>().ammo += 1;
-				Destroy(bulletB[i].gameObject);
-			}
-			else if (bulletB[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && transform.parent.GetComponent<PlayerStats>().affinity == 'A')
-			{
 				Destroy(bulletB[i].gameObject);
 			}
 		}

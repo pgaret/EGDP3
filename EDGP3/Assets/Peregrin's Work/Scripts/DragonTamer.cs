@@ -8,6 +8,7 @@ public class DragonTamer : MonoBehaviour {
 	public float dragonSpeed;
 	public float dragDist;
 	public float dragSpawn;
+	public int dragCost;
 	public Transform projectile;
 	public Transform special;
 	public Transform shield;
@@ -28,7 +29,7 @@ public class DragonTamer : MonoBehaviour {
 	
 	void Dragon()
 	{
-		transform.GetComponent<PlayerStats>().ammo -= 10;
+		transform.GetComponent<PlayerStats>().ammo -= dragCost;
 		Vector3 position = transform.position;
 		position.x -= (special.transform.renderer.bounds.extents.x*dragons.Count*3 + 1)* dragSpawn;
 		dragons.Add((Transform)(Instantiate (special, position, Quaternion.identity)));
@@ -51,7 +52,7 @@ public class DragonTamer : MonoBehaviour {
 		
 		if (shipType == "Attacker")
 		{
-			if (GetComponent<PlayerStats>().specialBool == true && dragons.Count < 4)
+			if (GetComponent<PlayerStats>().specialBool == true && dragons.Count < 4 && transform.GetComponent<PlayerStats>().ammo >= dragCost)
 			{
 				Dragon ();
 				GetComponent<PlayerStats>().specialBool = false;

@@ -23,10 +23,10 @@ public class spawn : MonoBehaviour {
 		EnterTimes = new float[6];
 		EnterTimes[0] = 1f;
 		EnterTimes[1] = 15f;
-		EnterTimes[2] = 30f;
-		EnterTimes[3] = 45f;
-		EnterTimes[4] = 60f;
-		EnterTimes[5] = 75f;
+		EnterTimes[2] = 22;
+		EnterTimes[3] = 29f;
+		EnterTimes[4] = 36f;
+		EnterTimes[5] = 45f;
 
 	}
 	
