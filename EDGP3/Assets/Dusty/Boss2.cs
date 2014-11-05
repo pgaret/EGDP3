@@ -54,8 +54,8 @@ public class Boss2 : MonoBehaviour {
 			}
 		}
 		if(summoncd <= Time.time - time1 && rush == false){
-			Master.GetComponent<spawn>().RandomSummon();
-			Master.GetComponent<spawn>().RandomSummon();
+			//Master.GetComponent<spawn>().RandomSummon();
+			//Master.GetComponent<spawn>().RandomSummon();
 			time1 = Time.time;
 		}
 		if(firecd <= Time.time - time2 && rush == false){
@@ -105,6 +105,7 @@ public class Boss2 : MonoBehaviour {
 		if(health/maxhealth < .6f){
 			phase = 1;
 		}
+
 	}
 	public void changeloc(Vector3 a){
 		target = a;
