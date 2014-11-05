@@ -15,6 +15,7 @@ public class spawn : MonoBehaviour {
 	float time;
 	public int i = 0;
 	public bool summon = false;
+	public int stage = 0;
 	// Use this for initialization
 	void Start () {
 
@@ -31,8 +32,13 @@ public class spawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(i < EnterTimes.Length && EnterTimes[i] + enter <= Time.time - time && summon){
-			WaveM(i);
+		if(i < EnterTimes.Length && EnterTimes[i] <= Time.time - time && summon && stage == 0){
+			WaveS1(i);
+			time = Time.time;
+			i++;
+		}
+		if(i < EnterTimes.Length && EnterTimes[i] <= Time.time - time && summon && stage == 1){
+			WaveS2(i);
 			time = Time.time;
 			i++;
 		}
@@ -120,14 +126,14 @@ public class spawn : MonoBehaviour {
 		test = Instantiate(Bossa, new Vector3(0, 6, 0), Quaternion.identity) as GameObject;
 		test.GetComponent<Boss1>().changeloc(new Vector3(0, 4, 0));
 	}
-	public void Boss2(int health){
+	public void Boss2(float health){
 		GameObject test;
 		test = Instantiate(Bossb, new Vector3(0, 6, 0), Quaternion.identity) as GameObject;
 		test.GetComponent<Boss2>().sethealth(health);
 		//test.GetComponent<Boss1>().changeloc(new Vector3(0, 4, 0));
 	}
 
-	void WaveM(int i){
+	void WaveS1(int i){
 		if(i == 0){
 //			Diagonal(3,1,2);
 //			Side (1,0,3,1);
@@ -159,6 +165,11 @@ public class spawn : MonoBehaviour {
 		}
 		if (i == 5){
 			Boss1();
+		}
+	}
+	void WaveS2(int i){
+		if (i == 0){
+			Boss2(10f);
 		}
 	}
 	public void RandomSummon(){

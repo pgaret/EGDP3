@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class Boss2 : MonoBehaviour {
-	public int health;
+	public float health;
+	public float maxhealth;
 	public float summoncd,firecd,raincd,ramcd;
 	public float time1,time2,time3,time4;
 	public bool alive;
@@ -20,6 +21,7 @@ public class Boss2 : MonoBehaviour {
 	public bool rush;
 	float acc = 0;
 	float step;
+	public int phase = 0;
 	// Use this for initialization
 	void Start () {
 		rush = false;
@@ -42,20 +44,23 @@ public class Boss2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(rush == false){
-			step = speed * Time.deltaTime;
-			transform.position = Vector3.MoveTowards(transform.position, target, step);
+		step = speed * Time.deltaTime;
+		transform.position = Vector3.MoveTowards(transform.position, target, step);
+		if(rush == false && phase >= 1){
 			if(transform.position == target){
 				int random = Random.Range (0, 4);
 				changeloc(path[random]);
+				fireradius();
 			}
 		}
 		if(summoncd <= Time.time - time1 && rush == false){
+			Master.GetComponent<spawn>().RandomSummon();
 			Master.GetComponent<spawn>().RandomSummon();
 			time1 = Time.time;
 		}
 		if(firecd <= Time.time - time2 && rush == false){
 			//Master.GetComponent<spawn>().RandomSummon();
+			firecone();
 			time2 = Time.time;
 		}
 		if(raincd <= Time.time - time3 && rush == false){
@@ -79,7 +84,7 @@ public class Boss2 : MonoBehaviour {
 			}
 			time3 = Time.time;
 		}
-		if(ramcd <= Time.time - time4 && rush == false){
+		if(ramcd <= Time.time - time4 && rush == false && phase == 2){
 			rush = true;
 			int random = Random.Range (0, 2);
 			if (random == 0) shippeatk = shippe1;
@@ -90,8 +95,15 @@ public class Boss2 : MonoBehaviour {
 		}
 		if(rush){
 			step = (speed + acc) * Time.deltaTime;
-			acc += 1.4f;
+			acc += 2f;
 			rigidbody.AddForce(transform.up * step);
+		}
+		//Health phases
+		if(health/maxhealth < .3f){
+			phase = 2;
+		}else
+		if(health/maxhealth < .6f){
+			phase = 1;
 		}
 	}
 	public void changeloc(Vector3 a){
@@ -104,7 +116,65 @@ public class Boss2 : MonoBehaviour {
 		angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
 		transform.Rotate(0,0, -angle);
 	}
-	public void sethealth(int a){
+	void firecone(){
+		GameObject bullet;
+		int random = Random.Range (0, 2);
+		if (random == 0) affinity = false;
+		else affinity = true;
+		random = Random.Range (0, 2);
+		if (random == 0) shippeatk = shippe1;
+		else shippeatk = shippe2;
+		if (affinity == false) {
+			float angle = 0;
+			Vector3 relative = transform.InverseTransformPoint(shippeatk.transform.position);
+			angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
+			bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
+			bullet.transform.Rotate(0,0,-angle+180);
+			bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
+			bullet.transform.Rotate(0,0,-angle+10+180);
+			bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
+			bullet.transform.Rotate(0,0,-angle-10+180);
+			bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
+			bullet.transform.Rotate(0,0,-angle+15+180);
+			bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
+			bullet.transform.Rotate(0,0,-angle-15+180);
+			
+		}else {
+			float angle = 0;
+			Vector3 relative = transform.InverseTransformPoint(shippeatk.transform.position);
+			angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
+			bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
+			bullet.transform.Rotate(0,0,-angle+180);
+			bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
+			bullet.transform.Rotate(0,0,-angle+10+180);
+			bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
+			bullet.transform.Rotate(0,0,-angle-10+180);
+			bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
+			bullet.transform.Rotate(0,0,-angle+15+180);
+			bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
+			bullet.transform.Rotate(0,0,-angle-15+180);
+			
+		}
+	}
+	void fireradius(){
+		GameObject bullet;
+		int random = Random.Range (0, 2);
+		if (random == 0) affinity = false;
+		else affinity = true;
+		for(int i = 0; i <360 ; i += 20){
+			Transform a = transform;
+			Quaternion up = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z + i));
+			if (affinity == false) {
+				bullet = Instantiate(projectileA, transform.position, up) as GameObject;
+			}else {
+				bullet = Instantiate(projectileB, transform.position, up) as GameObject;
+			}
+		}
+	}
+	public void subhealth(){
+		health--;
+	}
+	public void sethealth(float a){
 		health = a;
 	}
 }

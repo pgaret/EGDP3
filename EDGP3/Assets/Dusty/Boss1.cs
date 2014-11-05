@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Boss1 : MonoBehaviour {
-	public int health;
+	public float health;
 	public float summoncd,firecd,raincd;
 	public float time1,time2,time3;
 	public bool alive;
@@ -58,6 +58,9 @@ public class Boss1 : MonoBehaviour {
 			time3 = Time.time;
 		}
 
+	}
+	public void subhealth(){
+		health--;
 	}
 	public void changeloc(Vector3 a){
 		target = a;
