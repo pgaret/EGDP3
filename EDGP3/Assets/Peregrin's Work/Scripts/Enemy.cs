@@ -173,6 +173,7 @@ public class Enemy : MonoBehaviour {
 			if (bullets[i].renderer.bounds.Intersects(transform.renderer.bounds))
 			{
 				Destroy (gameObject);
+				GameObject.Find ("Sound").GetComponent<SoundManager>().PlaySound("Explosion");
 				Instantiate(coin, transform.position, Quaternion.identity);
 			}
 		}

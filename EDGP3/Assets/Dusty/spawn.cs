@@ -20,7 +20,7 @@ public class spawn : MonoBehaviour {
 	void Start () {
 
 		time = Time.time;
-		EnterTimes = new float[6];
+		EnterTimes = new float[10];
 		EnterTimes[0] = 2f;
 		EnterTimes[1] = 10f;
 		EnterTimes[2] = 22f;
@@ -30,13 +30,13 @@ public class spawn : MonoBehaviour {
 		EnterTimes[6] = 56f;
 		EnterTimes[7] = 62f;
 		EnterTimes[8] = 70f;
-		EnterTimes[8] = 80f;
+		EnterTimes[9] = 80f;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (Mathf.RoundToInt(Time.time));
+//		Debug.Log (Mathf.RoundToInt(Time.time));
 		if(i < EnterTimes.Length && EnterTimes[i] <= Time.time - time && summon && stage == 0){
 			WaveS1(i);
 			i++;

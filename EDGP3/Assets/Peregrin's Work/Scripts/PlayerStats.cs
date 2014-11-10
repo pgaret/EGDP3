@@ -44,6 +44,7 @@ public class PlayerStats : MonoBehaviour {
 	
 	private Animator anim;
 	private GameObject bar;
+	private GameObject sound;
 
 	// Use this for initialization
 	void Start () {
@@ -58,6 +59,9 @@ public class PlayerStats : MonoBehaviour {
 		down = GameObject.Find ("Down");
 		left = GameObject.Find("Left");
 		right = GameObject.Find ("Right");
+		sound = GameObject.Find ("Sound");
+		
+		
 		
 		//Determines whether player is 1 or 2
 		if (GameObject.FindGameObjectWithTag("Player1") == null) transform.tag = "Player1";
@@ -103,12 +107,14 @@ public class PlayerStats : MonoBehaviour {
 	
 	public void GotCoin()
 	{
-		bar.transform.localScale += new Vector3(0, .1f, 0);
+		bar.transform.localScale += new Vector3(0, .01f, 0);
+		sound.GetComponent<SoundManager>().PlaySound("Powerup");
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		Debug.Log (points);
 	
 		//If hit with bullets, lose life
 		GameObject[] bullets = GameObject.FindGameObjectsWithTag("BulletA");
@@ -137,9 +143,18 @@ public class PlayerStats : MonoBehaviour {
 			{
 				points += 1;
 				coin.GetComponent<Coin>().MoveTowards(bar.transform.position, transform);
+				sound.GetComponent<SoundManager>().PlaySound("coin");
+				
 			}
 		}
-		if (swapRole == "pending" && Time.time > swapTimer) swapRole = "no";
+		if (swapRole == "pending")
+		{
+			if (Time.time > swapTimer)
+			{
+				swapRole = "no";
+				sound.GetComponent<SoundManager>().StopSound("Pending");
+			}
+		}
 		//Input shenanigans
 		if (transform.tag == "Player1")
 		{
@@ -155,6 +170,8 @@ public class PlayerStats : MonoBehaviour {
 			{
 				GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
 				swapRole = "pending";
+				sound.GetComponent<SoundManager>().PlaySound("Pending");
+				sound.GetComponent<SoundManager>().LoopSound("Pending");
 				if (player2.GetComponent<PlayerStats>().swapRole == "pending")
 				{
 					Swap();
@@ -211,6 +228,8 @@ public class PlayerStats : MonoBehaviour {
 			{
 				GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
 				swapRole = "pending";
+				sound.GetComponent<SoundManager>().PlaySound("Pending");
+				sound.GetComponent<SoundManager>().LoopSound("Pending");
 				if (player1.GetComponent<PlayerStats>().swapRole == "pending")
 				{
 					Swap();

@@ -34,7 +34,7 @@ public class SoundManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-	
+		
 	}
 	
 	public void PlaySound(string soundName)
@@ -42,5 +42,16 @@ public class SoundManager : MonoBehaviour {
 		SoundBehavior behavior = sources[soundName];
 		behavior.source.clip = clips[behavior.index]; 
 		behavior.source.Play();
+	}
+	
+	public void StopSound(string soundName)
+	{
+		SoundBehavior behavior = sources[soundName];
+		behavior.source.Stop ();
+	}
+	public void LoopSound(string soundName)
+	{
+		SoundBehavior behavior = sources[soundName];
+		behavior.source.loop = true;
 	}
 }
