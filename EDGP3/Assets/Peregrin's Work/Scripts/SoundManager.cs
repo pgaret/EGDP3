@@ -15,9 +15,7 @@ public class SoundBehavior{
 
 public class SoundManager : MonoBehaviour {
 
-	public string[] names;
 	public AudioClip[] clips;
-	
 	
 	public Dictionary<string, SoundBehavior> sources = new Dictionary<string, SoundBehavior>();
 
@@ -27,8 +25,8 @@ public class SoundManager : MonoBehaviour {
 		
 		for (int i = 0; i < clips.Length; i++)
 		{
-			sources.Add(names[i], new SoundBehavior());
-			sources[names[i]].Constructor(GetComponents<AudioSource>()[i], i);
+			sources.Add(clips[i].name, new SoundBehavior());
+			sources[clips[i].name].Constructor(GetComponents<AudioSource>()[i], i);
 		}
 		
 	}

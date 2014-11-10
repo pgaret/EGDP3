@@ -193,7 +193,8 @@ public class GUIManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (GameObject.Find ("Manager").GetComponent<spawn>().i == 4) gameMode = 1;
+	
+		if (Time.time - GameObject.Find ("Manager").GetComponent<spawn>().time >= 30f) gameMode = 1;
 	
 		Screen.showCursor = false;
 		
