@@ -18,8 +18,6 @@ public class DragonTamer : MonoBehaviour {
 	public List<Transform> dragons = new List<Transform>();
 	
 	float specialTimer;
-	float specialCD = 1;
-	bool specialActivate = false;
 	
 	// Use this for initialization
 	void Start () {

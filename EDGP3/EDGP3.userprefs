@@ -1,20 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Dusty\Boxy.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Peregrin's Work\Scripts\GUIManager.cs">
     <Files>
-<<<<<<< HEAD
-      <File FileName="Assets\Peregrin's Work\Scripts\Tutorial.cs" Line="80" Column="4" />
-      <File FileName="Assets\Peregrin's Work\Scripts\PlayerStats.cs" Line="1" Column="1" />
       <File FileName="Assets\Peregrin's Work\Scripts\GUIManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Dusty\spawn.cs" Line="1" Column="1" />
-      <File FileName="Assets\Peregrin's Work\Scripts\Fog.cs" Line="29" Column="4" />
-=======
-      <File FileName="Assets\Dusty\Boss2.cs" Line="100" Column="4" />
-      <File FileName="Assets\Dusty\Boss1.cs" Line="62" Column="26" />
-      <File FileName="Assets\Peregrin's Work\Scripts\Enemy.cs" Line="61" Column="30" />
-      <File FileName="Assets\Dusty\spawn.cs" Line="131" Column="27" />
-      <File FileName="Assets\Dusty\Boxy.cs" Line="24" Column="24" />
->>>>>>> e12095ed70aeda389138c9254c4c855bacb91e45
+      <File FileName="Assets\Peregrin's Work\Scripts\PlayerStats.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

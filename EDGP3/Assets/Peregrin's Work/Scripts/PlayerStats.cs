@@ -14,8 +14,6 @@ public class PlayerStats : MonoBehaviour {
 	//Affinity swapping stuff (A vs B)
 	public Texture AffinityA;
 	public Texture AffinityB;
-	public float affinityCD = .1f;
-	float affinityTimer;
 	
 	//Speed and movement testing for animation purposes
 	public float speed;
@@ -70,7 +68,6 @@ public class PlayerStats : MonoBehaviour {
 		{
 			role = "Defender";
 			bar = GameObject.FindGameObjectWithTag("Bar2");
-			affinityTimer = Time.time;
 		}
 		if (transform.tag == "Player1")
 		{
@@ -89,7 +86,6 @@ public class PlayerStats : MonoBehaviour {
 		swapRole = "no";
 		if (role == "Attacker") role = "Defender";
 		else role = "Attacker";
-		if (role == "Defender") affinityTimer = Time.time;
 		//Things that happen specific to chars as a result of role swapping
 		if (transform.name == "PunchKnight(Clone)")
 		{
@@ -155,7 +151,7 @@ public class PlayerStats : MonoBehaviour {
 			if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S)) isMoving = true;
 			else isMoving = false;
 			//Swap
-			if (Input.GetKey (KeyCode.Z) && swapRole == "no" && Time.time > swapTimer && tutSwap == false)
+			if (Input.GetKeyUp (KeyCode.Z) && swapRole == "no" && tutSwap == false)
 			{
 				GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
 				swapRole = "pending";
@@ -184,11 +180,10 @@ public class PlayerStats : MonoBehaviour {
 				}
 			}
 			//Defender inputs
-			else if (affinityTimer < Time.time && Input.GetKey(KeyCode.Space))
+			else if (Input.GetKeyUp(KeyCode.Space))
 			{
 				if (affinity == 'A') affinity = 'B';
 				else affinity = 'A';
-				affinityTimer = affinityCD + Time.time;
 			}
 			//Animation stuff
 			if (isMoving && !shootBool) anim.SetBool("move!shoot", true);
@@ -212,7 +207,7 @@ public class PlayerStats : MonoBehaviour {
 //			if (Input.GetButton("XboxFire1")) Debug.Log ("Fire1");
 //		    if (Input.GetButton("XboxFire2")) Debug.Log ("Fire2");
 //		    if (Input.GetButton("XboxFire3")) Debug.Log ("Fire3");
-			if (Input.GetButton("XboxFire2") && swapRole == "no" && Time.time > swapTimer && tutSwap == false)
+			if ((Input.GetButton("XboxFire2") || Input.GetKeyUp(KeyCode.P)) && swapRole == "no" && tutSwap == false)
 			{
 				GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
 				swapRole = "pending";
@@ -239,11 +234,10 @@ public class PlayerStats : MonoBehaviour {
 				}
 			}
 			//Defender inputs
-			else if (affinityTimer < Time.time && Input.GetButton ("XboxFire1"))
+			else if (Input.GetButtonUp ("XboxFire1"))
 			{
 				if (affinity == 'A') affinity = 'B';
 				else affinity = 'A';
-				affinityTimer = Time.time + affinityCD;
 			}
 			//Animation stuff
 			if (isMoving && !shootBool) anim.SetBool("move!shoot", true);

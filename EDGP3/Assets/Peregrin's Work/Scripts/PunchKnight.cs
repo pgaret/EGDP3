@@ -11,13 +11,15 @@ public class PunchKnight : MonoBehaviour {
 	public Sprite punchLeft;
 	public Sprite punchRight;
 	
+	GameObject sound;
+	
 	float specialTimer = 0;
 	float specialCounter = 0;
 	
 	// Use this for initialization
 	void Start () {
-		if (transform.tag == "Player2") Shield ();
-		
+		sound = GameObject.Find ("Sound");
+		if (transform.tag == "Player2") Shield ();	
 	}
 	
 	void Special()
@@ -42,6 +44,7 @@ public class PunchKnight : MonoBehaviour {
 
 		if (GetComponent<PlayerStats>().shootBool == true)
 		{
+			sound.GetComponent<SoundManager>().PlaySound("punch");
 			foreach (Transform child in transform)
 			{
 				Transform thePunch;
