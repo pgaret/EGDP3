@@ -175,16 +175,16 @@ public class spawn : MonoBehaviour {
 	public void RandomSummon(){
 		int random = Random.Range (0, 3);
 		if (random == 0) {
-			Diagonal(2,Random.Range (0, 1),Random.Range (0, 4));
+			Diagonal(2,Random.Range (0, 1),Random.Range (0, 5));
 		}
 		else if(random == 1){
-			Side(2,Random.Range (0, 5),Random.Range (0, 1),Random.Range (0, 4));
+			Side(2,Random.Range (1, 5),Random.Range (0, 1),Random.Range (0, 5));
 		}
 		else if(random == 2){
-			Down(2,Random.Range (-4, 4),Random.Range (0, 4));
+			Down(2,Random.Range (-3, 3),Random.Range (0, 5));
 		}
 		else {
-			Setpath(2,Random.Range (0, 1),1,Random.Range (0, 4));
+			Setpath(2,Random.Range (0, 1),1,Random.Range (0, 5));
 		}
 
 	}
