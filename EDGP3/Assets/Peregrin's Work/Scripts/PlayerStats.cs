@@ -14,8 +14,6 @@ public class PlayerStats : MonoBehaviour {
 	//Affinity swapping stuff (A vs B)
 	public Texture AffinityA;
 	public Texture AffinityB;
-	public float affinityCD = .1f;
-	float affinityTimer;
 	
 	//Speed and movement testing for animation purposes
 	public float speed;
@@ -46,6 +44,7 @@ public class PlayerStats : MonoBehaviour {
 	
 	private Animator anim;
 	private GameObject bar;
+	private GameObject sound;
 
 	// Use this for initialization
 	void Start () {
@@ -60,6 +59,9 @@ public class PlayerStats : MonoBehaviour {
 		down = GameObject.Find ("Down");
 		left = GameObject.Find("Left");
 		right = GameObject.Find ("Right");
+		sound = GameObject.Find ("Sound");
+		
+		
 		
 		//Determines whether player is 1 or 2
 		if (GameObject.FindGameObjectWithTag("Player1") == null) transform.tag = "Player1";
@@ -70,7 +72,6 @@ public class PlayerStats : MonoBehaviour {
 		{
 			role = "Defender";
 			bar = GameObject.FindGameObjectWithTag("Bar2");
-			affinityTimer = Time.time;
 		}
 		if (transform.tag == "Player1")
 		{
@@ -89,7 +90,6 @@ public class PlayerStats : MonoBehaviour {
 		swapRole = "no";
 		if (role == "Attacker") role = "Defender";
 		else role = "Attacker";
-		if (role == "Defender") affinityTimer = Time.time;
 		//Things that happen specific to chars as a result of role swapping
 		if (transform.name == "PunchKnight(Clone)")
 		{
@@ -107,12 +107,14 @@ public class PlayerStats : MonoBehaviour {
 	
 	public void GotCoin()
 	{
-		bar.transform.localScale += new Vector3(0, .1f, 0);
+		bar.transform.localScale += new Vector3(0, .01f, 0);
+		sound.GetComponent<SoundManager>().PlaySound("Powerup");
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		Debug.Log (points);
 	
 		//If hit with bullets, lose life
 		GameObject[] bullets = GameObject.FindGameObjectsWithTag("BulletA");
@@ -141,9 +143,18 @@ public class PlayerStats : MonoBehaviour {
 			{
 				points += 1;
 				coin.GetComponent<Coin>().MoveTowards(bar.transform.position, transform);
+				sound.GetComponent<SoundManager>().PlaySound("coin");
+				
 			}
 		}
-		if (swapRole == "pending" && Time.time > swapTimer) swapRole = "no";
+		if (swapRole == "pending")
+		{
+			if (Time.time > swapTimer)
+			{
+				swapRole = "no";
+				sound.GetComponent<SoundManager>().StopSound("Pending");
+			}
+		}
 		//Input shenanigans
 		if (transform.tag == "Player1")
 		{
@@ -155,10 +166,12 @@ public class PlayerStats : MonoBehaviour {
 			if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S)) isMoving = true;
 			else isMoving = false;
 			//Swap
-			if (Input.GetKey (KeyCode.Z) && swapRole == "no" && Time.time > swapTimer && tutSwap == false)
+			if (Input.GetKeyUp (KeyCode.Z) && swapRole == "no" && tutSwap == false)
 			{
 				GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
 				swapRole = "pending";
+				sound.GetComponent<SoundManager>().PlaySound("Pending");
+				sound.GetComponent<SoundManager>().LoopSound("Pending");
 				if (player2.GetComponent<PlayerStats>().swapRole == "pending")
 				{
 					Swap();
@@ -184,11 +197,10 @@ public class PlayerStats : MonoBehaviour {
 				}
 			}
 			//Defender inputs
-			else if (affinityTimer < Time.time && Input.GetKey(KeyCode.Space))
+			else if (Input.GetKeyUp(KeyCode.Space))
 			{
 				if (affinity == 'A') affinity = 'B';
 				else affinity = 'A';
-				affinityTimer = affinityCD + Time.time;
 			}
 			//Animation stuff
 			if (isMoving && !shootBool) anim.SetBool("move!shoot", true);
@@ -212,10 +224,12 @@ public class PlayerStats : MonoBehaviour {
 //			if (Input.GetButton("XboxFire1")) Debug.Log ("Fire1");
 //		    if (Input.GetButton("XboxFire2")) Debug.Log ("Fire2");
 //		    if (Input.GetButton("XboxFire3")) Debug.Log ("Fire3");
-			if (Input.GetButton("XboxFire2") && swapRole == "no" && Time.time > swapTimer && tutSwap == false)
+			if ((Input.GetButton("XboxFire2") || Input.GetKeyUp(KeyCode.P)) && swapRole == "no" && tutSwap == false)
 			{
 				GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
 				swapRole = "pending";
+				sound.GetComponent<SoundManager>().PlaySound("Pending");
+				sound.GetComponent<SoundManager>().LoopSound("Pending");
 				if (player1.GetComponent<PlayerStats>().swapRole == "pending")
 				{
 					Swap();
@@ -239,11 +253,10 @@ public class PlayerStats : MonoBehaviour {
 				}
 			}
 			//Defender inputs
-			else if (affinityTimer < Time.time && Input.GetButton ("XboxFire1"))
+			else if (Input.GetButtonUp ("XboxFire1"))
 			{
 				if (affinity == 'A') affinity = 'B';
 				else affinity = 'A';
-				affinityTimer = Time.time + affinityCD;
 			}
 			//Animation stuff
 			if (isMoving && !shootBool) anim.SetBool("move!shoot", true);

@@ -42,6 +42,7 @@ public class PKShield : MonoBehaviour {
 		
 		GameObject[] bulletA = GameObject.FindGameObjectsWithTag ("BulletA");
 		GameObject[] bulletB = GameObject.FindGameObjectsWithTag ("BulletB");
+		GameObject sound = GameObject.Find ("Sound");
 		
 		for (int i = 0; i < bulletA.Length; i++)
 		{
@@ -49,6 +50,7 @@ public class PKShield : MonoBehaviour {
 			{
 				transform.parent.GetComponent<PlayerStats>().ammo += 1;
 				Destroy (bulletA[i].gameObject);
+				sound.GetComponent<SoundManager>().PlaySound("absorb");
 			}
 		}
 		for (int i = 0; i < bulletB.Length; i++)
@@ -57,6 +59,7 @@ public class PKShield : MonoBehaviour {
 			{
 				transform.parent.GetComponent<PlayerStats>().ammo += 1;
 				Destroy(bulletB[i].gameObject);
+				sound.GetComponent<SoundManager>().PlaySound("absorb");
 			}
 		}
 

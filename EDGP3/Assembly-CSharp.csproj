@@ -67,9 +67,14 @@
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\PlayerBullet.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\PlayerStats.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\PunchKnight.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Test.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Tinker.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Tutorial.cs" />
+     <Compile Include="Assets\Rotorz\Reorderable List Field\Demo\DemoBehaviour.cs" />
+     <None Include="Assets\Rotorz\Reorderable List Field\README.txt" />
+     <None Include="Assets\Rotorz\Reorderable List Field\LICENSE.txt" />
+     <None Include="Assets\Rotorz\Reorderable List Field\Editor\Editor.ReorderableList.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

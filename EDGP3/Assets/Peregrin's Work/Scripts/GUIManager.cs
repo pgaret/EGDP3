@@ -89,11 +89,13 @@ public class GUIManager : MonoBehaviour {
 	int player2Select = -1;
 	bool begin = false;
 	
+	GameObject sound;
 	GameObject boxy;
 	// Use this for initialization
 	void Start ()
 	{
 		boxy = GameObject.FindGameObjectWithTag("Manager");
+		sound = GameObject.Find ("Sound");
 		Screen.SetResolution (960, 720, false);
 		Screen.showCursor = false;
 		player1Cursor = Instantiate (target1) as Transform;
@@ -193,7 +195,8 @@ public class GUIManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (GameObject.Find ("Manager").GetComponent<spawn>().i == 4) gameMode = 6;
+	
+		if (Time.time - GameObject.Find ("Manager").GetComponent<spawn>().time >= 30f) gameMode = 1;
 	
 		Screen.showCursor = false;
 		
@@ -213,7 +216,8 @@ public class GUIManager : MonoBehaviour {
 
 			if (player1Select != -1 && player2Select != -1 && begin == true)
 			{
-				
+				sound.GetComponent<SoundManager>().PlaySound("Theme1");
+				sound.GetComponent<SoundManager>().LoopSound("Theme1");
 				level1BG = (Transform)Instantiate (Background);
 				level1BG.transform.localScale = new Vector3(1.6f, 1.6f);
 				

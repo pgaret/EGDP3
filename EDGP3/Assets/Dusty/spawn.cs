@@ -12,7 +12,7 @@ public class spawn : MonoBehaviour {
 	int y = 10;
 	float[] EnterTimes;
 	public float enter;
-	float time;
+	public float time;
 	public int i = 0;
 	public bool summon = false;
 	public int stage = 0;
@@ -20,26 +20,29 @@ public class spawn : MonoBehaviour {
 	void Start () {
 
 		time = Time.time;
-		EnterTimes = new float[6];
-		EnterTimes[0] = 1f;
-		EnterTimes[1] = 15f;
-		EnterTimes[2] = 22;
-		EnterTimes[3] = 29f;
-		EnterTimes[4] = 36f;
-		EnterTimes[5] = 45f;
+		EnterTimes = new float[10];
+		EnterTimes[0] = 2f;
+		EnterTimes[1] = 10f;
+		EnterTimes[2] = 22f;
+		EnterTimes[3] = 30f;
+		EnterTimes[4] = 40f;
+		EnterTimes[5] = 48f;
+		EnterTimes[6] = 56f;
+		EnterTimes[7] = 62f;
+		EnterTimes[8] = 70f;
+		EnterTimes[9] = 80f;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+//		Debug.Log (Mathf.RoundToInt(Time.time));
 		if(i < EnterTimes.Length && EnterTimes[i] <= Time.time - time && summon && stage == 0){
 			WaveS1(i);
-			time = Time.time;
 			i++;
 		}
 		if(i < EnterTimes.Length && EnterTimes[i] <= Time.time - time && summon && stage == 1){
 			WaveS2(i);
-			time = Time.time;
 			i++;
 		}
 	}
@@ -136,34 +139,58 @@ public class spawn : MonoBehaviour {
 	void WaveS1(int i){
 		if(i == 0){
 //			Diagonal(3,1,2);
-//			Side (1,0,3,1);
-			Setpath(1,0,3,1);
+			Side (1,0,3,1);
+//			Setpath(1,0,3,1);
 		}
 		if(i == 1){
-			Diagonal(3,1,3);
-			Down (1,0,2);
+			Diagonal(1,1,3);
+//			Down (0,0,2);
 			Side (1,0,3,1);
 //			Setpath(1,0,3,1);
 		}
 		if (i == 2){
-			Diagonal(3,1,3);
-			Down (1,0,2);
-			Side (1,0,3,1);
-			Setpath(1,0,3,1);
+			Diagonal(2,1,3);
+//			Down (1,0,2);
+			Side (2,0,3,1);
+//			Setpath(1,0,3,1);
 		}
 		if (i == 3){
-			Diagonal(3,1,3);
-			Down (1,0,2);
-			Side (2,0,3,1);
+			Diagonal(2,1,3);
+//			Down (1,0,2);
+			Side (1,0,3,1);
 			Setpath(1,0,3,1);
 		}
 		if (i == 4){
 			Diagonal(2,1,3);
 			Down (1,0,2);
-			Side (1,0,3,1);
-			Setpath(2,0,3,1);
+			Side (2,0,3,1);
+//			Setpath(2,0,3,1);
 		}
 		if (i == 5){
+			Diagonal(2,1,3);
+			Down (1,0,2);
+			Side (2,0,3,1);
+			//			Setpath(2,0,3,1);
+		}
+		if (i == 6){
+			Diagonal(2,1,3);
+			Down (1,0,2);
+			Side (2,0,3,1);
+			//			Setpath(2,0,3,1);
+		}
+		if (i == 7){
+			Diagonal(2,1,3);
+			Down (1,0,2);
+			Side (2,0,3,1);
+			//			Setpath(2,0,3,1);
+		}
+		if (i == 8){
+			Diagonal(2,1,3);
+			Down (1,0,2);
+			Side (2,0,3,1);
+			//			Setpath(2,0,3,1);
+		}
+		if (i == 9){
 			Boss1();
 		}
 	}

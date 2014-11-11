@@ -12,7 +12,7 @@ public class Fog : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		Vector3 position = transform.position;
+//		Vector3 position = transform.position;
 		for (int j = -1; j < 2; j++)
 		{
 			for (int k = -1; k < 2; k++)
