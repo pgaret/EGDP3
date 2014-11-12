@@ -200,6 +200,12 @@ public class Enemy : MonoBehaviour {
 			if(i == 2)
 				target = new Vector3(6,6,0);
 		}
+		if (path == 3){
+			if (i == 0)
+				target = new Vector3(0, 0, 0);
+			if (i == 1)
+				target = new Vector3(4, 4, 0);
+		}
 	}
 	public void changeloc(Vector3 a){
 		target = a;
@@ -215,6 +221,4 @@ public class Enemy : MonoBehaviour {
 		angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
 		transform.Rotate(0,0, -angle);
 	}
-
-
 }

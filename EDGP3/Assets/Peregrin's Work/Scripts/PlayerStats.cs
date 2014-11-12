@@ -6,7 +6,7 @@ public class PlayerStats : MonoBehaviour {
 	//Basic stats
 	public int ammo;
 	public int lives;
-	public int score;
+	public float score;
 	public int points;
 	public char affinity;
 	public string role;
@@ -42,6 +42,9 @@ public class PlayerStats : MonoBehaviour {
 	public bool tutSwap = false;
 	float swapTimer = 2f;
 	
+	public float pointCD;
+	float pointTimer;
+	
 	private Animator anim;
 	private GameObject bar;
 	private GameObject sound;
@@ -54,6 +57,8 @@ public class PlayerStats : MonoBehaviour {
 		affinity = 'A';
 		points = 0;
 		score = 0;
+		
+		pointTimer = Time.time;
 		
 		top = GameObject.Find ("Up");
 		down = GameObject.Find ("Down");
@@ -86,7 +91,9 @@ public class PlayerStats : MonoBehaviour {
 	//Swapping roles
 	public void Swap()
 	{	
+		sound.GetComponent<SoundManager>().PlaySound("playerSwap");
 		//Actual role swapping
+		sound.GetComponent<SoundManager>().StopSound("Pending");
 		swapRole = "no";
 		if (role == "Attacker") role = "Defender";
 		else role = "Attacker";
@@ -114,15 +121,19 @@ public class PlayerStats : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		Debug.Log (points);
-	
+		if (Time.time > pointTimer)
+		{
+			pointTimer = Time.time + pointCD;
+			score += (transform.position.y + 5);
+		}
 		//If hit with bullets, lose life
 		GameObject[] bullets = GameObject.FindGameObjectsWithTag("BulletA");
 		foreach (GameObject bullet in bullets)
 		{
 			if (bullet.renderer.bounds.Intersects(renderer.bounds))
 			{
-				lives -= 1;
+				if (points >= 50) points -= 50;
+				else points = 0;
 				Destroy (bullet.gameObject);
 			}
 		}
@@ -131,7 +142,8 @@ public class PlayerStats : MonoBehaviour {
 		{
 			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.renderer.bounds))
 			{
-				lives -= 1;
+				if (points >= 50) points -= 50;
+				else points = 0;
 				Destroy (bullet.gameObject);
 			}
 		}
@@ -170,12 +182,15 @@ public class PlayerStats : MonoBehaviour {
 			{
 				GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
 				swapRole = "pending";
-				sound.GetComponent<SoundManager>().PlaySound("Pending");
-				sound.GetComponent<SoundManager>().LoopSound("Pending");
 				if (player2.GetComponent<PlayerStats>().swapRole == "pending")
 				{
 					Swap();
 					player2.transform.GetComponent<PlayerStats>().Swap();
+				}
+				else
+				{
+					sound.GetComponent<SoundManager>().PlaySound("Pending");
+					sound.GetComponent<SoundManager>().LoopSound("Pending");
 				}
 				swapTimer = Time.time + swapCD;	
 			}
@@ -224,16 +239,19 @@ public class PlayerStats : MonoBehaviour {
 //			if (Input.GetButton("XboxFire1")) Debug.Log ("Fire1");
 //		    if (Input.GetButton("XboxFire2")) Debug.Log ("Fire2");
 //		    if (Input.GetButton("XboxFire3")) Debug.Log ("Fire3");
-			if ((Input.GetButton("XboxFire2") || Input.GetKeyUp(KeyCode.P)) && swapRole == "no" && tutSwap == false)
+			if ((Input.GetButtonUp("XboxFire2") || Input.GetKeyUp(KeyCode.P)) && swapRole == "no" && tutSwap == false)
 			{
 				GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
 				swapRole = "pending";
-				sound.GetComponent<SoundManager>().PlaySound("Pending");
-				sound.GetComponent<SoundManager>().LoopSound("Pending");
 				if (player1.GetComponent<PlayerStats>().swapRole == "pending")
 				{
 					Swap();
 					player1.transform.GetComponent<PlayerStats>().Swap();	
+				}
+				else
+				{
+					sound.GetComponent<SoundManager>().PlaySound("Pending");
+					sound.GetComponent<SoundManager>().LoopSound("Pending");
 				}
 				swapTimer = Time.time + swapCD;	
 			}

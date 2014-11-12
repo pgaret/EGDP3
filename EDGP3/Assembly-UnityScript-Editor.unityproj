@@ -51,11 +51,11 @@
      <None Include="Assets\Rotorz\Reorderable List Field\README.txt" />
      <None Include="Assets\Rotorz\Reorderable List Field\LICENSE.txt" />
      <None Include="Assets\Rotorz\Reorderable List Field\Editor\Editor.ReorderableList.xml" />
- <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
  <Reference Include="Editor.ReorderableList">
  <HintPath>C:/Users/Peregrin/Documents/EGDP3/EDGP3/Assets/Rotorz/Reorderable List Field/Editor/Editor.ReorderableList.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

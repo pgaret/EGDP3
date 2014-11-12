@@ -124,6 +124,8 @@ public class GUIManager : MonoBehaviour {
 				MMIcon = Instantiate (MM, new Vector3(0, -pos.y * 2 / 5), Quaternion.identity) as Transform;
 				TKIcon = Instantiate (TK, new Vector3(0, -pos.y / 5), Quaternion.identity) as Transform;
 				DTIcon = Instantiate(DT, new Vector3(0, 0), Quaternion.identity) as Transform;
+				sound.GetComponent<SoundManager>().PlaySound("CharSelect");
+				sound.GetComponent<SoundManager>().LoopSound("CharSelect");
 				
 			}
 		}
@@ -178,17 +180,17 @@ public class GUIManager : MonoBehaviour {
 			style.fontSize = 24;
 			GUI.Box (new Rect(Screen.width / 20, Screen.height * 5.5f / 8, Screen.width / 8, Screen.height / 10), player1.GetComponent<PlayerStats>().swapRole, style);
 			style.fontSize = 48	;	 
-			GUI.Box (new Rect(Screen.width * 1.1f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().lives.ToString(), style);
+//			GUI.Box (new Rect(Screen.width * 1.1f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().lives.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 1.1f / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().ammo.ToString(), style);
-			GUI.Box (new Rect(Screen.width / 25, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), "123,456", style);
+			GUI.Box (new Rect(Screen.width / 25, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), Mathf.RoundToInt(player1.GetComponent<PlayerStats>().score).ToString(), style);
 			
 			//Player 2 HUD
 			style.fontSize = 24;
 			GUI.Box (new Rect(Screen.width * 6.5f / 8, Screen.height * 5.5f / 8, Screen.width / 8, Screen.height / 10), player2.GetComponent<PlayerStats>().swapRole, style);
 			style.fontSize = 48;
-			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().lives.ToString(), style);
+//			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().lives.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().ammo.ToString(), style);
-			GUI.Box (new Rect(Screen.width * 82 / 100, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), "789, 012", style);	
+			GUI.Box (new Rect(Screen.width * 82 / 100, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), Mathf.RoundToInt(player2.GetComponent<PlayerStats>().score).ToString(), style);	
 		}
 		
 	}
@@ -216,6 +218,7 @@ public class GUIManager : MonoBehaviour {
 
 			if (player1Select != -1 && player2Select != -1 && begin == true)
 			{
+				sound.GetComponent<SoundManager>().StopSound("CharSelect");
 				sound.GetComponent<SoundManager>().PlaySound("Theme1");
 				sound.GetComponent<SoundManager>().LoopSound("Theme1");
 				level1BG = (Transform)Instantiate (Background);

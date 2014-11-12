@@ -54,11 +54,11 @@
  <Reference Include="Assembly-UnityScript">
  <HintPath>C:/Users/Peregrin/Documents/EGDP3/EDGP3/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
  <Reference Include="Editor.ReorderableList">
  <HintPath>C:/Users/Peregrin/Documents/EGDP3/EDGP3/Assets/Rotorz/Reorderable List Field/Editor/Editor.ReorderableList.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

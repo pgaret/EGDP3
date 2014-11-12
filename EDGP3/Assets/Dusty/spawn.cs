@@ -5,7 +5,7 @@ using System.IO;
 
 
 public class spawn : MonoBehaviour {
-	public GameObject[] enemy = new GameObject[4];
+	public GameObject[] enemy;
 	public GameObject Bossa;
 	public GameObject Bossb;
 	int x = 10;
@@ -139,56 +139,58 @@ public class spawn : MonoBehaviour {
 	void WaveS1(int i){
 		if(i == 0){
 //			Diagonal(3,1,2);
-			Side (1,0,3,1);
-//			Setpath(1,0,3,1);
+//			Side (1,0,3,1);
+			Setpath(1,0,1,1);
+			Setpath(1,0,2,2);
+			Setpath(1,0,3,3);
 		}
 		if(i == 1){
-			Diagonal(1,1,3);
+//			Diagonal(1,1,3);
 //			Down (0,0,2);
 			Side (1,0,3,1);
 //			Setpath(1,0,3,1);
 		}
 		if (i == 2){
-			Diagonal(2,1,3);
+//			Diagonal(2,1,3);
 //			Down (1,0,2);
 			Side (2,0,3,1);
-//			Setpath(1,0,3,1);
+			Setpath(1,0,3,1);
 		}
 		if (i == 3){
-			Diagonal(2,1,3);
+//			Diagonal(2,1,3);
 //			Down (1,0,2);
 			Side (1,0,3,1);
 			Setpath(1,0,3,1);
 		}
 		if (i == 4){
-			Diagonal(2,1,3);
+//			Diagonal(2,1,3);
 			Down (1,0,2);
 			Side (2,0,3,1);
 //			Setpath(2,0,3,1);
 		}
 		if (i == 5){
-			Diagonal(2,1,3);
-			Down (1,0,2);
+//			Diagonal(2,1,3);
+//			Down (1,0,2);
 			Side (2,0,3,1);
-			//			Setpath(2,0,3,1);
+//			Setpath(2,0,3,1);
 		}
 		if (i == 6){
-			Diagonal(2,1,3);
-			Down (1,0,2);
+//			Diagonal(2,1,3);
+//			Down (1,0,2);
 			Side (2,0,3,1);
-			//			Setpath(2,0,3,1);
+			Setpath(2,0,3,1);
 		}
 		if (i == 7){
-			Diagonal(2,1,3);
-			Down (1,0,2);
+//			Diagonal(2,1,3);
+//			Down (1,0,2);
 			Side (2,0,3,1);
-			//			Setpath(2,0,3,1);
+			Setpath(2,0,3,1);
 		}
 		if (i == 8){
-			Diagonal(2,1,3);
-			Down (1,0,2);
+//			Diagonal(2,1,3);
+//			Down (1,0,2);
 			Side (2,0,3,1);
-			//			Setpath(2,0,3,1);
+			Setpath(2,0,3,1);
 		}
 		if (i == 9){
 			Boss1();
