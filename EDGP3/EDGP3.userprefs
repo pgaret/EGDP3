@@ -1,11 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Dusty\spawn.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Peregrin's Work\Scripts\GUIManager.cs">
     <Files>
-      <File FileName="Assets\Dusty\spawn.cs" Line="8" Column="21" />
-      <File FileName="Assets\Peregrin's Work\Scripts\Enemy.cs" Line="210" Column="18" />
-      <File FileName="Assets\Dusty\Boss1.cs" Line="32" Column="39" />
-      <File FileName="Assets\Peregrin's Work\Scripts\PunchKnight.cs" Line="58" Column="28" />
+      <File FileName="Assets\Peregrin's Work\Scripts\PlayerStats.cs" Line="38" Column="21" />
+      <File FileName="Assets\Peregrin's Work\Scripts\Enemy.cs" Line="18" Column="31" />
+      <File FileName="Assets\Peregrin's Work\Scripts\PlayerBullet.cs" Line="34" Column="25" />
+      <File FileName="Assets\Peregrin's Work\Scripts\GUIManager.cs" Line="126" Column="33" />
+      <File FileName="Assets\Dusty\spawn.cs" Line="112" Column="23" />
+      <File FileName="Assets\Dusty\Boss1.cs" Line="53" Column="34" />
+      <File FileName="Assets\Peregrin's Work\Scripts\Effects.cs" Line="14" Column="3" />
+      <File FileName="Assets\Peregrin's Work\Scripts\Tutorial.cs" Line="66" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

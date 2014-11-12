@@ -31,6 +31,7 @@ public class DragonTamer : MonoBehaviour {
 		Vector3 position = transform.position;
 		position.x -= (special.transform.renderer.bounds.extents.x*dragons.Count*3 + 1)* dragSpawn;
 		dragons.Add((Transform)(Instantiate (special, position, Quaternion.identity)));
+		dragons[dragons.Count - 1].GetComponent<Dragon>().parent = gameObject;
 		if (dragons.Count == 1) dragons[0].GetComponent<Dragon>().specialDragon = true;
 	}
 	

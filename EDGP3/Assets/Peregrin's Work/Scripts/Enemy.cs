@@ -172,9 +172,15 @@ public class Enemy : MonoBehaviour {
 		{
 			if (bullets[i].renderer.bounds.Intersects(transform.renderer.bounds))
 			{
-				Destroy (gameObject);
-				GameObject.Find ("Sound").GetComponent<SoundManager>().PlaySound("Explosion");
-				Instantiate(coin, transform.position, Quaternion.identity);
+				health -= 1;
+				if (health <= 0)
+				{
+					GameObject.Find ("Sound").GetComponent<SoundManager>().PlaySound("Explosion");
+					bullets[i].GetComponent<PlayerBullet>().origin.GetComponent<PlayerStats>().score += 50;
+					Instantiate(coin, transform.position, Quaternion.identity);
+					Destroy (gameObject);
+				}
+				Destroy (bullets[i].gameObject);
 			}
 		}
 		float step = speed * Time.deltaTime;
@@ -186,26 +192,126 @@ public class Enemy : MonoBehaviour {
 	void checker(int i){
 		if(path == 1){
 			if(i == 0)
-				target = new Vector3( 3,3,0);
-			if(i == 1)
-				target = new Vector3( -3,3,0);
-			if(i == 2)
-				target = new Vector3(-6,6,0);
+				target = new Vector3(6,1,0);
 		}
-		if(path == 2){
-			if(i == 0)
-				target = new Vector3( -3,3,0);
-			if(i == 1)
-				target = new Vector3( 3,3,0);
-			if(i == 2)
-				target = new Vector3(6,6,0);
-		}
-		if (path == 3){
+		if (path == 2){
 			if (i == 0)
-				target = new Vector3(0, 0, 0);
-			if (i == 1)
-				target = new Vector3(4, 4, 0);
+				target = new Vector3(-6,2,0);
 		}
+		if(path == 3){
+			if(i == 0)
+				target = new Vector3(6,3,0);
+		}
+		if (path == 4){
+			if (i == 0)
+				target = new Vector3(-6,4,0);
+		}
+		if (path == 5){
+			if (i == 0)
+				target = new Vector3(-2,0,0);
+			if (i == 1)
+				target = new Vector3(6,0,0);
+		}
+		if (path == 6){
+			if (i == 0)
+				target = new Vector3(2,1,0);
+			if (i == 1)
+				target = new Vector3(-6,1,0);
+		}
+		if (path == 7){
+			if (i == 0)
+				target = new Vector3(-2,2,0);
+			if (i == 1)
+				target = new Vector3(6,2,0);
+		}
+		if (path == 8){
+			if (i == 0)
+				target = new Vector3(2,3,0);
+			if (i == 1)
+				target = new Vector3(-6,3,0);
+		}
+		if (path == 9){
+			if (i == 0)
+				target = new Vector3(-2,2,0);
+			if (i == 1)
+				target = new Vector3(1,2,0);
+			if (i == 2)
+				target = new Vector3(1,6,0);
+		}
+		if (path == 10){
+			if (i == 0)
+				target = new Vector3(-2,2,0);
+			if (i == 1)
+				target = new Vector3(-2,6,0);
+		}
+		if (path == 11){
+			if (i == 0)
+				target = new Vector3(2,2,0);
+			if (i == 1)
+				target = new Vector3(2,6,0);
+		}
+		if (path == 12){
+			if (i == 0)
+				target = new Vector3(-2,1,0);
+			if (i == 1)
+				target = new Vector3(6,1,0);
+		}
+		if (path == 13){
+			if (i == 0)
+				target = new Vector3(2,1,0);
+			if (i == 1)
+				target = new Vector3(-6,1,0);
+		}
+		if (path == 14){
+			if (i == 0)
+				target = new Vector3(-2,2,0);
+			if (i == 1)
+				target = new Vector3(6,2,0);
+		}
+		if (path == 15){
+			if (i == 0)
+				target = new Vector3(2,3,0);
+			if (i == 1)
+				target = new Vector3(-6,3,0);
+		}
+		if (path == 16){
+			if (i == 0)
+				target = new Vector3(-2,2,0);
+			if (i == 1)
+				target = new Vector3(2,2,0);
+			if (i == 2)
+				target = new Vector3(5,4,0);
+		}
+		if (path == 17){
+			if (i == 0)
+				target = new Vector3(2,2,0);
+			if (i == 1)
+				target = new Vector3(-2,2,0);
+			if (i == 2)
+				target = new Vector3(-5,4,0);
+		}
+		if (path == 18){
+			if (i == 0)
+				target = new Vector3(0,1,0);
+		}
+		if (path == 19){
+			if (i == 0)
+				target = new Vector3(-2,1,0);
+		}
+		if (path == 20){
+			if (i == 0)
+				target = new Vector3(-1,1,0);
+		}
+		if (path == 21){
+			if (i == 0)
+				target = new Vector3(1,1,0);
+		}
+		if (path == 22){
+			if (i == 0)
+				target = new Vector3(2,1,0);
+		}
+		
+		
 	}
 	public void changeloc(Vector3 a){
 		target = a;

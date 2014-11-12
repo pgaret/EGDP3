@@ -20,7 +20,7 @@ public class GUIManager : MonoBehaviour {
 	//Level mode (boss vs normal)
 	public int gameMode;
 	//Modes 0, 1, 2, 3, 4 = Title Screen, Character Selection, Game, Death, Tutorial
-	private int mode = 0;
+	public int mode = 0;
 	
 	//Tutorial script holding thingy
 	public Transform tutorial;
@@ -30,6 +30,9 @@ public class GUIManager : MonoBehaviour {
 	public Transform DTP1;
 	public Transform DTP2;
 	public Transform gameOver;
+	public Transform charSelect;
+	public Transform titleScreen;
+	public Transform tutoBG;
 	
 	//Punch
 	public Transform PKP1;
@@ -78,7 +81,9 @@ public class GUIManager : MonoBehaviour {
 	Transform DTIcon;
 	
 	//Background
-
+	Transform charaSelect;
+	Transform tiScre;
+	Transform tutBG;
 
 	//Cursor position stuff
 	Vector3 pos;
@@ -111,19 +116,34 @@ public class GUIManager : MonoBehaviour {
 		
 		
 	}
+	public void ReturnFromTutorial()
+	{
+		player1Cursor = Instantiate (target1) as Transform;
+		player2Cursor = Instantiate (target2) as Transform;
+		player1Cursor.renderer.sortingOrder = 1;
+		player2Cursor.renderer.sortingOrder = 1;
+		
+		pos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+		mPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+		cPos = Camera.main.ScreenToWorldPoint (player2Cursor.renderer.bounds.center);
+		mPos.z = 0;
+		cPos.z = 0;
+	}
 	
 	void OnGUI()
 	{
 		if (mode == 0)
 		{
-			GUI.Box (new Rect(Screen.width / 3, Screen.height / 3, Screen.width / 3, Screen.height / 3), "Press any key to start...", style);
+			if (tiScre == null) tiScre = Instantiate(titleScreen) as Transform;
 			if (Event.current.type == EventType.KeyDown || Input.GetButton("XboxFire1") || Input.GetButton("XboxFire2") || Input.GetButton("XboxFire3") || Input.GetButton("XboxFire4"))
 			{
 				mode = 1;
-				PKIcon = Instantiate(PK, new Vector3(0, pos.y / 5), Quaternion.identity) as Transform;
-				MMIcon = Instantiate (MM, new Vector3(0, -pos.y * 2 / 5), Quaternion.identity) as Transform;
-				TKIcon = Instantiate (TK, new Vector3(0, -pos.y / 5), Quaternion.identity) as Transform;
-				DTIcon = Instantiate(DT, new Vector3(0, 0), Quaternion.identity) as Transform;
+				Destroy (tiScre.gameObject);
+				PKIcon = Instantiate(PK, new Vector3(0, pos.y * 2.65f / 4), Quaternion.identity) as Transform;
+//				MMIcon = Instantiate (MM, new Vector3(0, -pos.y * 2 / 5), Quaternion.identity) as Transform;
+//				TKIcon = Instantiate (TK, new Vector3(0, -pos.y / 5), Quaternion.identity) as Transform;
+				DTIcon = Instantiate(DT, new Vector3(0, pos.y * 1.44f / 4), Quaternion.identity) as Transform;
+				charaSelect = Instantiate(charSelect, new Vector3(0, 0), Quaternion.identity) as Transform;
 				sound.GetComponent<SoundManager>().PlaySound("CharSelect");
 				sound.GetComponent<SoundManager>().LoopSound("CharSelect");
 				
@@ -133,36 +153,36 @@ public class GUIManager : MonoBehaviour {
 		{
 			style.fontSize = 48;
 			
-			if (player1Select != -1 && player2Select != -1)
-			{
 
-				if (GUI.Button (new Rect(Screen.width * 2 / 5, Screen.height * 3 / 4, Screen.width / 5, Screen.height / 8), "Begin", style))
-				{
-					begin = true;
-					style.fontSize = 0;
-				}
-			}
-			GUI.Box (new Rect(Screen.width / 3, Screen.height / 15, Screen.width / 3, Screen.height / 8), "Pick your character!", style);
-			if (player1Select == 0) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, PKT.width, PKT.height), PKT, style);
-			if (player1Select == 1) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, MMT.width, MMT.height), MMT, style);
-			if (player1Select == 2) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, TKT.width, TKT.height), TKT, style);
-			if (player1Select == 3) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, DTT.width, DTT.height), DTT, style);
-			if (player2Select == 0) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, PKT.width, PKT.height), PKT, style);
-			if (player2Select == 1) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, MMT.width, MMT.height), MMT, style);
-			if (player2Select == 2) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, TKT.width, TKT.height), TKT, style);
-			if (player2Select == 3) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, DTT.width, DTT.height), DTT, style);
+			if (player1Select == 0) GUI.Box (new Rect(-Screen.width / 40, Screen.height / 17, PKT.width, PKT.height), PKT, style);
+//			if (player1Select == 1) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, MMT.width, MMT.height), MMT, style);
+//			if (player1Select == 2) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, TKT.width, TKT.height), TKT, style);
+			if (player1Select == 3) GUI.Box (new Rect(-Screen.width / 40, Screen.height / 17, DTT.width, DTT.height), DTT, style);
+			if (player2Select == 0) GUI.Box (new Rect(Screen.width * 1.03f / 2, Screen.height / 17, PKT.width, PKT.height), PKT, style);
+//			if (player2Select == 1) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, MMT.width, MMT.height), MMT, style);
+//			if (player2Select == 2) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, TKT.width, TKT.height), TKT, style);
+			if (player2Select == 3) GUI.Box (new Rect(Screen.width * 1.03f / 2, Screen.height / 17, DTT.width, DTT.height), DTT, style);
 			
-			if (GUI.Button (new Rect(Screen.width / 2.35f, Screen.height / 5, Screen.width / 7, Screen.height / 10), "Tutorial"))
+			if (GUI.Button (new Rect(Screen.width / 2.35f, Screen.height * 3 / 4, Screen.width / 7, Screen.height / 10), "Tutorial"))
 			{
+				Instantiate(tutoBG, new Vector3(0, 0), Quaternion.identity);
 				mode = 3;
 				Destroy (PKIcon.gameObject);
-				Destroy(MMIcon.gameObject);
-				Destroy (TKIcon.gameObject);
+				//				Destroy(MMIcon.gameObject);
+				//				Destroy (TKIcon.gameObject);
 				Destroy (DTIcon.gameObject);
 				Destroy (player1Cursor.gameObject);
 				Destroy (player2Cursor.gameObject);
+				Destroy (charaSelect.gameObject);
 				Instantiate(tutorial);
+
 			}
+			if (player1Select != -1 && player2Select != -1)
+			{
+				if (GUI.Button (new Rect(Screen.width * 1.37f / 3, Screen.height * 1.15f / 2, Screen.width / 12, Screen.height / 10), "Begin")) begin = true;
+			}
+			
+
 		}
 		if (mode == 2 && player1 != null && player2 != null)
 		{
@@ -206,12 +226,12 @@ public class GUIManager : MonoBehaviour {
 		if (mode == 1)
 		{
 			if (Input.GetMouseButtonDown(0) && PKIcon.renderer.bounds.Contains(mPos) && player1Select != 0) player1Select = 0;
-			if (Input.GetMouseButtonDown(0) && MMIcon.renderer.bounds.Contains(mPos) && player1Select != 1) player1Select = 1;
-			if (Input.GetMouseButtonDown(0) && TKIcon.renderer.bounds.Contains(mPos) && player1Select != 2) player1Select = 2;
+//			if (Input.GetMouseButtonDown(0) && MMIcon.renderer.bounds.Contains(mPos) && player1Select != 1) player1Select = 1;
+//			if (Input.GetMouseButtonDown(0) && TKIcon.renderer.bounds.Contains(mPos) && player1Select != 2) player1Select = 2;
 			if (Input.GetMouseButtonDown(0) && DTIcon.renderer.bounds.Contains(mPos) && player1Select != 3) player1Select = 3;
 			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && PKIcon.renderer.bounds.Contains(cPos) && player2Select != 0) player2Select = 0;
-			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && MMIcon.renderer.bounds.Contains(cPos) && player2Select != 1) player2Select = 1;
-			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && TKIcon.renderer.bounds.Contains(cPos) && player2Select != 2) player2Select = 2;
+//			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && MMIcon.renderer.bounds.Contains(cPos) && player2Select != 1) player2Select = 1;
+//			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && TKIcon.renderer.bounds.Contains(cPos) && player2Select != 2) player2Select = 2;
 			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && DTIcon.renderer.bounds.Contains(cPos) && player2Select != 3) player2Select = 3;
 			if (Input.GetKey (KeyCode.Tab)) player2Select = 0;
 			if (Input.GetKeyDown(KeyCode.RightShift)) player2Select = 3;
@@ -234,28 +254,28 @@ public class GUIManager : MonoBehaviour {
 				{
 					player1 = Instantiate(MirrorMage) as Transform;
 				}
-				if (player1Select == 2)
-				{
-					player1 = Instantiate(Tinker) as Transform;
-				}
-				if (player1Select == 3)
-				{
-					player1 = Instantiate(DragonTamer) as Transform;
-					Instantiate (DTP1);
-				}
+//				if (player1Select == 2)
+//				{
+//					player1 = Instantiate(Tinker) as Transform;
+//				}
+//				if (player1Select == 3)
+//				{
+//					player1 = Instantiate(DragonTamer) as Transform;
+//					Instantiate (DTP1);
+//				}
 				if (player2Select == 0)
 				{
 					player2 = Instantiate(PunchKnight) as Transform;
 					Instantiate(PKP2);
 				}
-				if (player2Select == 1)
-				{
-					player2 = Instantiate(MirrorMage) as Transform;
-				}
-				if (player2Select == 2)
-				{
-					player2 = Instantiate(Tinker) as Transform;
-				}
+//				if (player2Select == 1)
+//				{
+//					player2 = Instantiate(MirrorMage) as Transform;
+//				}
+//				if (player2Select == 2)
+//				{
+//					player2 = Instantiate(Tinker) as Transform;
+//				}
 				if (player2Select == 3)
 				{
 					player2 = Instantiate(DragonTamer) as Transform;
@@ -264,11 +284,12 @@ public class GUIManager : MonoBehaviour {
 				player1.transform.tag = "Player1";
 				player2.transform.tag = "Player2";
 				Destroy (PKIcon.gameObject);
-				Destroy(MMIcon.gameObject);
-				Destroy (TKIcon.gameObject);
+//				Destroy(MMIcon.gameObject);
+//				Destroy (TKIcon.gameObject);
 				Destroy (DTIcon.gameObject);
 				Destroy (player1Cursor.gameObject);
 				Destroy (player2Cursor.gameObject);
+				Destroy (charaSelect.gameObject);
 				mode = 2;
 				boxy.GetComponent<spawn>().starter();
 			}

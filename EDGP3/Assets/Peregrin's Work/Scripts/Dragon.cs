@@ -6,23 +6,24 @@ public class Dragon : MonoBehaviour {
 	public bool dead = false;
 	public bool specialDragon = false;
 
-	GameObject parent;
+	public GameObject parent;
 	float lifeSpan = 15.0f;
 	float startTime;
+	
+	public Sprite A;
+	public Sprite B;
 
 	// Use this for initialization
 	void Start ()
 	{
 		startTime = Time.time;
 		
-		GameObject option1 = GameObject.FindGameObjectWithTag("Player1");
-		if (option1.GetComponent<PlayerStats>().role == "Attacker") parent = option1;
-		else parent = GameObject.FindGameObjectWithTag("Player2");
-		
 	}
 	
 	void BulletCheck()
 	{
+		GameObject sound = GameObject.Find ("Sound");
+		
 		GameObject[] bulletA = GameObject.FindGameObjectsWithTag ("BulletA");
 		GameObject[] bulletB = GameObject.FindGameObjectsWithTag ("BulletB");
 		
@@ -30,7 +31,8 @@ public class Dragon : MonoBehaviour {
 		{
 			if (bulletA[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && parent.GetComponent<PlayerStats>().affinity == 'A')
 			{
-				parent.GetComponent<PlayerStats>().ammo += 1;
+				sound.GetComponent<SoundManager>().PlaySound("absorb");
+				parent.GetComponent<PlayerStats>().ammo += 2;
 				Destroy (bulletA[i].gameObject);
 			}
 		}
@@ -38,7 +40,8 @@ public class Dragon : MonoBehaviour {
 		{
 			if (bulletB[i].renderer.bounds.Intersects(gameObject.renderer.bounds) && parent.GetComponent<PlayerStats>().affinity == 'B')
 			{
-				parent.GetComponent<PlayerStats>().ammo += 1;
+				sound.GetComponent<SoundManager>().PlaySound("absorb");
+				parent.GetComponent<PlayerStats>().ammo += 2;
 				Destroy(bulletB[i].gameObject);
 			}
 		}
@@ -51,5 +54,8 @@ public class Dragon : MonoBehaviour {
 		if (Time.time - lifeSpan >= startTime && specialDragon == false) dead = true;
 		
 		if (parent.GetComponent<PlayerStats>().role == "Defender") BulletCheck();
+		
+		if (parent.GetComponent<PlayerStats>().affinity == 'A') transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = A;
+		else transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = B;
 	}
 }

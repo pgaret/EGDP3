@@ -34,6 +34,7 @@ public class PlayerStats : MonoBehaviour {
 	public float specialCD;
 	public bool specialBool;
 	public bool tutSpecial = false;
+	public bool hasSwapped = false;
 	float specialTimer;
 	
 	//Role Swapping stuff (attacker vs defender)
@@ -109,6 +110,7 @@ public class PlayerStats : MonoBehaviour {
 
 			
 		}
+		hasSwapped = true;
 		
 	}
 	
@@ -235,10 +237,7 @@ public class PlayerStats : MonoBehaviour {
 			if (Input.GetAxis ("XboxHorizontal") > 0 && transform.position.x < right.transform.position.x) transform.Translate(Vector3.right*Time.deltaTime*speed);
 			if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("XboxVertical") > 0 || Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis ("XboxHorizontal") < 0 || Input.GetKey(KeyCode.DownArrow) || Input.GetAxis ("XboxVertical") < 0 || Input.GetKey(KeyCode.RightArrow) || Input.GetAxis ("XboxHorizontal") > 0) isMoving = true;
 			else isMoving = false;
-			//Swap
-//			if (Input.GetButton("XboxFire1")) Debug.Log ("Fire1");
-//		    if (Input.GetButton("XboxFire2")) Debug.Log ("Fire2");
-//		    if (Input.GetButton("XboxFire3")) Debug.Log ("Fire3");
+			
 			if ((Input.GetButtonUp("XboxFire2") || Input.GetKeyUp(KeyCode.P)) && swapRole == "no" && tutSwap == false)
 			{
 				GameObject player1 = GameObject.FindGameObjectWithTag("Player1");

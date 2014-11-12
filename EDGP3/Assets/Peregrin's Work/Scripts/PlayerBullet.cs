@@ -5,6 +5,7 @@ public class PlayerBullet : MonoBehaviour {
 	
 	public float speed;
 	public Vector2 clickedPoint;
+	public GameObject origin;
 	
 	private float slope;
 	private float upSlope;
@@ -14,8 +15,10 @@ public class PlayerBullet : MonoBehaviour {
 	
 	
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+		if (GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerStats>().role == "Attacker") origin = GameObject.FindGameObjectWithTag("Player1");
+		else origin = GameObject.FindGameObjectWithTag("Player2");
 	}
 
 	
@@ -24,6 +27,12 @@ public class PlayerBullet : MonoBehaviour {
 		
 		transform.Translate (Vector3.up*Time.deltaTime*10);
 		if (!transform.renderer.isVisible) Destroy (gameObject);
+		
+		if (GameObject.FindGameObjectWithTag("Boss1") != null)
+		{
+			GameObject.FindGameObjectWithTag("Boss1").GetComponent<Boss1>().subhealth();
+			Destroy (gameObject);
+		}
 		
 	}
 }
