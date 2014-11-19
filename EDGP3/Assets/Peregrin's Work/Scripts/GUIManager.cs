@@ -242,7 +242,7 @@ public class GUIManager : MonoBehaviour {
 				sound.GetComponent<SoundManager>().PlaySound("Theme1");
 				sound.GetComponent<SoundManager>().LoopSound("Theme1");
 				level1BG = (Transform)Instantiate (Background);
-				level1BG.localScale = new Vector3(1.6f, 1.6f);
+				level1BG.transform.localScale = new Vector3(1.6f, 1.6f);
 				
 				if (player1Select == 0)
 				{

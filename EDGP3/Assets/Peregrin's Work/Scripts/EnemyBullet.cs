@@ -2,12 +2,10 @@
 using System.Collections;
 
 public class EnemyBullet : MonoBehaviour {
-	
-	public float speed;
+
 	public Vector2 clickedPoint;
 	public int bullettype;
 	public int bulletspeed;
-	public int bulletrange = 30;
 	private Vector3 startPos;
 	float timer;
 	float fireTime;

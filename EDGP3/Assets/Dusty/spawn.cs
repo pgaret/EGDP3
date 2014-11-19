@@ -8,6 +8,7 @@ public class spawn : MonoBehaviour {
 	public GameObject[] enemy;
 	public GameObject Bossa;
 	public GameObject Bossb;
+	public GameObject Bossc;
 	int x = 10;
 	int y = 10;
 	float[] EnterTimes;
@@ -74,6 +75,10 @@ public class spawn : MonoBehaviour {
 		}
 		if(i < EnterTimes.Length && EnterTimes[i] <= Time.time - time && summon && stage == 1){
 			WaveS2(i);
+			i++;
+		}
+		if(i < EnterTimes.Length && EnterTimes[i] <= Time.time - time && summon && stage == 2){
+			WaveS3(i);
 			i++;
 		}
 	}
@@ -161,6 +166,12 @@ public class spawn : MonoBehaviour {
 		GameObject test;
 		test = Instantiate(Bossb, new Vector3(0, 7, 0), Quaternion.identity) as GameObject;
 		test.GetComponent<Boss2>().sethealth(health);
+		//test.GetComponent<Boss1>().changeloc(new Vector3(0, 4, 0));
+	}
+	public void Boss3(){
+		GameObject test;
+		test = Instantiate(Bossc, new Vector3(0, 7, 0), Quaternion.identity) as GameObject;
+		test.GetComponent<Boss3>().changeloc(new Vector3(0, 4, 0));
 		//test.GetComponent<Boss1>().changeloc(new Vector3(0, 4, 0));
 	}
 
@@ -338,6 +349,11 @@ public class spawn : MonoBehaviour {
 	void WaveS2(int i){
 		if (i == 0){
 			Boss2(10f);
+		}
+	}
+	void WaveS3(int i){
+		if (i == 0){
+			Boss3();
 		}
 	}
 	public void RandomSummon(){
