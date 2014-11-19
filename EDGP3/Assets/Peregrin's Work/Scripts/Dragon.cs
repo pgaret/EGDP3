@@ -9,15 +9,11 @@ public class Dragon : MonoBehaviour {
 	public GameObject parent;
 	float lifeSpan = 15.0f;
 	float startTime;
-	
-	public Sprite A;
-	public Sprite B;
 
 	// Use this for initialization
 	void Start ()
 	{
 		startTime = Time.time;
-		
 	}
 	
 	void BulletCheck()
@@ -53,9 +49,12 @@ public class Dragon : MonoBehaviour {
 //		Debug.Log (Time.time+"  "+startTime+" "+lifeSpan);
 		if (Time.time - lifeSpan >= startTime && specialDragon == false) dead = true;
 		
-		if (parent.GetComponent<PlayerStats>().role == "Defender") BulletCheck();
-		
-		if (parent.GetComponent<PlayerStats>().affinity == 'A') transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = A;
-		else transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = B;
+		if (parent.GetComponent<PlayerStats>().role == "Defender")
+		{
+			BulletCheck();
+			if (parent.GetComponent<PlayerStats>().affinity == 'B') transform.GetChild(0).GetComponent<Animator>().SetInteger("State", 1);
+			else transform.GetChild(0).GetComponent<Animator>().SetInteger("State", 2);
+		}
+		else transform.GetChild(0).GetComponent<Animator>().SetInteger("State", 0);
 	}
 }

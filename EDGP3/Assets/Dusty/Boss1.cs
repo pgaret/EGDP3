@@ -57,6 +57,8 @@ public class Boss1 : MonoBehaviour {
 			}
 			time3 = Time.time;
 		}
+		
+		if (health == 0) Application.Quit ();
 
 	}
 	public void subhealth(){

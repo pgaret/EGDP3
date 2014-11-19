@@ -9,6 +9,12 @@ public class GUIManager : MonoBehaviour {
 	public Transform Tinker;
 	public Transform DragonTamer;
 	
+	//Screen Transforms
+	public Transform gameOver;
+	public Transform charSelect;
+	public Transform titleScreen;
+	public Transform tutoBG;
+	
 	//Backgrounds
 	public Transform Background;
 	public Sprite Background1;
@@ -25,14 +31,24 @@ public class GUIManager : MonoBehaviour {
 	//Tutorial script holding thingy
 	public Transform tutorial;
 	
-	//HUD
+	//HUD stuff
+	//Buttons
+	//Start
+	public Transform startButton;
+	public Sprite startButtonHover;
+	public Sprite startButtonNormal;
+	public Sprite startButtonInactive;
+	Transform sButton;
+	
+	//Tutorial
+	public Transform tutorialButton;
+	public Sprite tutButtonHover;
+	public Sprite tutButtonNormal;
+	Transform tutButton;
+	
 	//Dragon
 	public Transform DTP1;
 	public Transform DTP2;
-	public Transform gameOver;
-	public Transform charSelect;
-	public Transform titleScreen;
-	public Transform tutoBG;
 	
 	//Punch
 	public Transform PKP1;
@@ -51,7 +67,7 @@ public class GUIManager : MonoBehaviour {
 	public Transform TK;
 	public Transform DT;
 	
-	//Textures for boxes in team select
+	//Textures for boxes of selected characters
 	public Texture PKT;
 	public Texture TKT;
 	public Texture MMT;
@@ -66,7 +82,7 @@ public class GUIManager : MonoBehaviour {
 	public GUIStyle player2Style;
 	public GUIStyle style;
 
-	//Holds the current player value, if both are filled then the game can begin
+	//Player 1 & 2 characters so we can get in-game info about them live!
 	Transform player1;
 	Transform player2;
 	
@@ -74,28 +90,31 @@ public class GUIManager : MonoBehaviour {
 	Transform player1Cursor;
 	Transform player2Cursor;
 	
-	//Used to check where the cursors are when they are activated
+	//Used for icon button locations/bounds
 	Transform PKIcon;
 	Transform MMIcon;
 	Transform TKIcon;
 	Transform DTIcon;
 	
-	//Background
+	//Used to check for/delete game screens
 	Transform charaSelect;
 	Transform tiScre;
 	Transform tutBG;
 
-	//Cursor position stuff
+	//Instantiation position vector
 	Vector3 pos;
-	Vector3 mPos;
-	Vector3 cPos;
 	
+	//Holds the current player value, if both are filled then the game can begin
 	int player1Select = -1;
 	int player2Select = -1;
 	bool begin = false;
 	
+	//Sound manager, plays the sounds
 	GameObject sound;
+	
+	//Enemy manager, starts the enemy wave timer
 	GameObject boxy;
+	
 	// Use this for initialization
 	void Start ()
 	{
@@ -109,10 +128,6 @@ public class GUIManager : MonoBehaviour {
 		player2Cursor.renderer.sortingOrder = 1;
 
 		pos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
-		mPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		cPos = Camera.main.ScreenToWorldPoint (player2Cursor.renderer.bounds.center);
-		mPos.z = 0;
-		cPos.z = 0;
 		
 		
 	}
@@ -124,36 +139,37 @@ public class GUIManager : MonoBehaviour {
 		player2Cursor.renderer.sortingOrder = 1;
 		
 		pos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
-		mPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		cPos = Camera.main.ScreenToWorldPoint (player2Cursor.renderer.bounds.center);
-		mPos.z = 0;
-		cPos.z = 0;
 	}
 	
 	void OnGUI()
 	{
 		if (mode == 0)
 		{
-			if (tiScre == null) tiScre = Instantiate(titleScreen) as Transform;
-			if (Event.current.type == EventType.KeyDown || Input.GetButton("XboxFire1") || Input.GetButton("XboxFire2") || Input.GetButton("XboxFire3") || Input.GetButton("XboxFire4"))
+			if (!sound.GetComponent<SoundManager>().IsPlaying("CharSelect"))
 			{
+				sound.GetComponent<SoundManager>().PlaySound("CharSelect");
+				sound.GetComponent<SoundManager>().LoopSound("CharSelect");
+			}
+			if (tiScre == null) tiScre = Instantiate(titleScreen) as Transform;
+			if (Input.GetButton ("XboxFire1A") || Input.GetButton ("XboxFire1B") || Input.GetButton ("XboxFire1X") || Input.GetButton ("XboxFire1Y") || Input.GetButton ("XboxFire2A") || Input.GetButton ("XboxFire2B") || Input.GetButton ("XboxFire2X") || Input.GetButton ("XboxFire2Y"))
+			{
+				//We're entering character select here
 				mode = 1;
 				Destroy (tiScre.gameObject);
+				sButton = Instantiate(startButton, new Vector3(0, -pos.y / 1.5f), Quaternion.identity) as Transform;
+				tutButton = Instantiate(tutorialButton, new Vector3(0, -pos.y / 2f), Quaternion.identity) as Transform;
 				PKIcon = Instantiate(PK, new Vector3(0, pos.y * 2.65f / 4), Quaternion.identity) as Transform;
 //				MMIcon = Instantiate (MM, new Vector3(0, -pos.y * 2 / 5), Quaternion.identity) as Transform;
 //				TKIcon = Instantiate (TK, new Vector3(0, -pos.y / 5), Quaternion.identity) as Transform;
 				DTIcon = Instantiate(DT, new Vector3(0, pos.y * 1.44f / 4), Quaternion.identity) as Transform;
 				charaSelect = Instantiate(charSelect, new Vector3(0, 0), Quaternion.identity) as Transform;
-				sound.GetComponent<SoundManager>().PlaySound("CharSelect");
-				sound.GetComponent<SoundManager>().LoopSound("CharSelect");
-				
+
 			}
 		}
 		if (mode == 1)
 		{
-			style.fontSize = 48;
-			
-
+		//THIS IS CHARACTER SELECT
+		
 			if (player1Select == 0) GUI.Box (new Rect(-Screen.width / 40, Screen.height / 17, PKT.width, PKT.height), PKT, style);
 //			if (player1Select == 1) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, MMT.width, MMT.height), MMT, style);
 //			if (player1Select == 2) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, TKT.width, TKT.height), TKT, style);
@@ -161,27 +177,7 @@ public class GUIManager : MonoBehaviour {
 			if (player2Select == 0) GUI.Box (new Rect(Screen.width * 1.03f / 2, Screen.height / 17, PKT.width, PKT.height), PKT, style);
 //			if (player2Select == 1) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, MMT.width, MMT.height), MMT, style);
 //			if (player2Select == 2) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, TKT.width, TKT.height), TKT, style);
-			if (player2Select == 3) GUI.Box (new Rect(Screen.width * 1.03f / 2, Screen.height / 17, DTT.width, DTT.height), DTT, style);
-			
-			if (GUI.Button (new Rect(Screen.width / 2.35f, Screen.height * 3 / 4, Screen.width / 7, Screen.height / 10), "Tutorial"))
-			{
-				Instantiate(tutoBG, new Vector3(0, 0), Quaternion.identity);
-				mode = 3;
-				Destroy (PKIcon.gameObject);
-				//				Destroy(MMIcon.gameObject);
-				//				Destroy (TKIcon.gameObject);
-				Destroy (DTIcon.gameObject);
-				Destroy (player1Cursor.gameObject);
-				Destroy (player2Cursor.gameObject);
-				Destroy (charaSelect.gameObject);
-				Instantiate(tutorial);
-
-			}
-			if (player1Select != -1 && player2Select != -1)
-			{
-				if (GUI.Button (new Rect(Screen.width * 1.37f / 3, Screen.height * 1.15f / 2, Screen.width / 12, Screen.height / 10), "Begin")) begin = true;
-			}
-			
+			if (player2Select == 3) GUI.Box (new Rect(Screen.width * 1.03f / 2, Screen.height / 17, DTT.width, DTT.height), DTT, style);		
 
 		}
 		if (mode == 2 && player1 != null && player2 != null)
@@ -218,24 +214,78 @@ public class GUIManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		if (Time.time - GameObject.Find ("Manager").GetComponent<spawn>().time >= 30f) gameMode = 1;
+		if (Time.time - GameObject.Find ("Manager").GetComponent<spawn>().i == 26) gameMode = 1;
 	
 		Screen.showCursor = false;
 		
 		if (Input.GetKey(KeyCode.Escape)) Application.Quit();
 		if (mode == 1)
 		{
-			if (Input.GetMouseButtonDown(0) && PKIcon.renderer.bounds.Contains(mPos) && player1Select != 0) player1Select = 0;
+			if (Input.GetButtonDown("XboxFire1A") && PKIcon.renderer.bounds.Contains(player1Cursor.position) && player1Select != 0) player1Select = 0;
 //			if (Input.GetMouseButtonDown(0) && MMIcon.renderer.bounds.Contains(mPos) && player1Select != 1) player1Select = 1;
 //			if (Input.GetMouseButtonDown(0) && TKIcon.renderer.bounds.Contains(mPos) && player1Select != 2) player1Select = 2;
-			if (Input.GetMouseButtonDown(0) && DTIcon.renderer.bounds.Contains(mPos) && player1Select != 3) player1Select = 3;
-			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && PKIcon.renderer.bounds.Contains(cPos) && player2Select != 0) player2Select = 0;
+			if (Input.GetButtonDown("XboxFire1A") && DTIcon.renderer.bounds.Contains(player1Cursor.position) && player1Select != 3) player1Select = 3;
+			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && PKIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 0) player2Select = 0;
 //			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && MMIcon.renderer.bounds.Contains(cPos) && player2Select != 1) player2Select = 1;
 //			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && TKIcon.renderer.bounds.Contains(cPos) && player2Select != 2) player2Select = 2;
-			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && DTIcon.renderer.bounds.Contains(cPos) && player2Select != 3) player2Select = 3;
-			if (Input.GetKey (KeyCode.Tab)) player2Select = 0;
+			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && DTIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 3) player2Select = 3;
+			if (Input.GetKey (KeyCode.Tab)) player1Select = 3;
 			if (Input.GetKeyDown(KeyCode.RightShift)) player2Select = 3;
+			
+			if (player1Select != -1 && player2Select != -1)
+			{
+				sButton.GetComponent<SpriteRenderer>().sprite = startButtonNormal;
+				if (player1Cursor.renderer.bounds.Intersects(sButton.renderer.bounds))
+				{
+					sButton.GetComponent<SpriteRenderer>().sprite = startButtonHover;
+					if (Input.GetButtonUp("XboxFire1A")) begin = true;
+				}
+				if (player2Cursor.renderer.bounds.Intersects(sButton.renderer.bounds))
+				{
+					sButton.GetComponent<SpriteRenderer>().sprite = startButtonHover;
+					if (Input.GetButtonUp("XboxFire2A")) begin = true;
+				}
+			}
+			
+			if (player1Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds) || player2Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds))
+			{
+				tutButton.GetComponent<SpriteRenderer>().sprite = tutButtonHover;
+				if (player1Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds) && Input.GetButtonUp("XboxFire1A"))
+				{
+					if (Input.GetButtonUp("XboxFire1A"))
+					{
+						Instantiate(tutoBG, new Vector3(0, 0), Quaternion.identity);
+						mode = 3;
+						Destroy (PKIcon.gameObject);
+						//				Destroy(MMIcon.gameObject);
+						//				Destroy (TKIcon.gameObject);
+						Destroy (DTIcon.gameObject);
+						Destroy (player1Cursor.gameObject);
+						Destroy (player2Cursor.gameObject);
+						Destroy (charaSelect.gameObject);
+						Instantiate(tutorial);
+					}
+				}
+				else if (player2Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds) && Input.GetButtonUp("XboxFire2A"))
+				{
 
+					if (Input.GetButtonUp("XboxFire2A"))
+					{
+						Instantiate(tutoBG, new Vector3(0, 0), Quaternion.identity);
+						mode = 3;
+						Destroy (PKIcon.gameObject);
+						//				Destroy(MMIcon.gameObject);
+						//				Destroy (TKIcon.gameObject);
+						Destroy (DTIcon.gameObject);
+						Destroy (player1Cursor.gameObject);
+						Destroy (player2Cursor.gameObject);
+						Destroy (charaSelect.gameObject);
+						Instantiate(tutorial);
+					}
+				}
+			}
+			else tutButton.GetComponent<SpriteRenderer>().sprite = tutButtonNormal;
+			
 			if (player1Select != -1 && player2Select != -1 && begin == true)
 			{
 				sound.GetComponent<SoundManager>().StopSound("CharSelect");
@@ -250,19 +300,19 @@ public class GUIManager : MonoBehaviour {
 					Instantiate (PKP1);
 					
 				}
-				if (player1Select == 1)
-				{
-					player1 = Instantiate(MirrorMage) as Transform;
-				}
+//				if (player1Select == 1)
+//				{
+//					player1 = Instantiate(MirrorMage) as Transform;
+//				}
 //				if (player1Select == 2)
 //				{
 //					player1 = Instantiate(Tinker) as Transform;
 //				}
-//				if (player1Select == 3)
-//				{
-//					player1 = Instantiate(DragonTamer) as Transform;
-//					Instantiate (DTP1);
-//				}
+				if (player1Select == 3)
+				{
+					player1 = Instantiate(DragonTamer) as Transform;
+					Instantiate (DTP1);
+				}
 				if (player2Select == 0)
 				{
 					player2 = Instantiate(PunchKnight) as Transform;
@@ -290,6 +340,8 @@ public class GUIManager : MonoBehaviour {
 				Destroy (player1Cursor.gameObject);
 				Destroy (player2Cursor.gameObject);
 				Destroy (charaSelect.gameObject);
+				Destroy (sButton.gameObject);
+				Destroy(tutButton.gameObject);
 				mode = 2;
 				boxy.GetComponent<spawn>().starter();
 			}
@@ -298,15 +350,8 @@ public class GUIManager : MonoBehaviour {
 		}
 		if (mode < 2)
 		{
-			pos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
-			mPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			cPos = player2Cursor.transform.position;
-			mPos.z = 0;
-			cPos.z = 0;
-			mPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			mPos.z = 0;
-			player1Cursor.position = mPos;
-			player2Cursor.position += new Vector3 (Input.GetAxis ("XboxHorizontal")*Time.deltaTime*10, Input.GetAxis ("XboxVertical")*Time.deltaTime*10, 0);
+			player1Cursor.position += new Vector3(Input.GetAxis ("XboxHorizontal1")*Time.deltaTime*10, Input.GetAxis ("XboxVertical1")*Time.deltaTime*10, 0);
+			player2Cursor.position += new Vector3 (Input.GetAxis ("XboxHorizontal2")*Time.deltaTime*10, Input.GetAxis ("XboxVertical2")*Time.deltaTime*10, 0);
 			if (Input.GetKey(KeyCode.UpArrow)) player2Cursor.transform.Translate(Vector3.up*Time.deltaTime*10);
 			if (Input.GetKey(KeyCode.LeftArrow)) player2Cursor.transform.Translate(Vector3.left*Time.deltaTime*10);
 			if (Input.GetKey(KeyCode.DownArrow)) player2Cursor.transform.Translate(Vector3.down*Time.deltaTime*10);

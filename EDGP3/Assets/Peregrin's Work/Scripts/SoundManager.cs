@@ -49,9 +49,17 @@ public class SoundManager : MonoBehaviour {
 		SoundBehavior behavior = sources[soundName];
 		behavior.source.Stop ();
 	}
+	
 	public void LoopSound(string soundName)
 	{
 		SoundBehavior behavior = sources[soundName];
 		behavior.source.loop = true;
+	}
+	
+	public bool IsPlaying(string soundName)
+	{
+		SoundBehavior behavior = sources[soundName];
+		if (behavior.source.isPlaying) return true;
+		else return false;
 	}
 }

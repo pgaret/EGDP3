@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour {
 	public GameObject projectileA;
 	public GameObject projectileB;
 	public GameObject coin;
+	public GameObject deadEnemy;
 	public float attackCD = 1;
 	public bool fire = false;
 	public int attacktype = 0;
@@ -178,6 +179,7 @@ public class Enemy : MonoBehaviour {
 					GameObject.Find ("Sound").GetComponent<SoundManager>().PlaySound("Explosion");
 					bullets[i].GetComponent<PlayerBullet>().origin.GetComponent<PlayerStats>().score += 50;
 					Instantiate(coin, transform.position, Quaternion.identity);
+					Instantiate(deadEnemy, new Vector3(transform.position.x + renderer.bounds.extents.x, transform.position.y), Quaternion.identity);
 					Destroy (gameObject);
 				}
 				Destroy (bullets[i].gameObject);

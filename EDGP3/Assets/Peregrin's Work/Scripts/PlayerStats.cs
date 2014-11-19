@@ -123,7 +123,6 @@ public class PlayerStats : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		Debug.Log(name+": "+points);
 	
 		if (Time.time > pointTimer)
 		{
@@ -175,14 +174,14 @@ public class PlayerStats : MonoBehaviour {
 		if (transform.tag == "Player1")
 		{
 			//Movement
-			if (Input.GetKey(KeyCode.W) && transform.position.y < top.transform.position.y) transform.Translate(Vector3.up*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.A) && transform.position.x > left.transform.position.x) transform.Translate(Vector3.left*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.S) && transform.position.y > down.transform.position.y) transform.Translate(Vector3.down*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.D) && transform.position.x < right.transform.position.x) transform.Translate(Vector3.right*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S)) isMoving = true;
+			if (Input.GetAxis("XboxVertical1") > 0 && transform.position.y < top.transform.position.y) transform.Translate(Vector3.up*Time.deltaTime*speed);
+			if (Input.GetAxis ("XboxHorizontal1") < 0 && transform.position.x > left.transform.position.x) transform.Translate(Vector3.left*Time.deltaTime*speed);
+			if (Input.GetAxis ("XboxVertical1") < 0 && transform.position.y > down.transform.position.y) transform.Translate(Vector3.down*Time.deltaTime*speed);
+			if (Input.GetAxis ("XboxHorizontal1") > 0 && transform.position.x < right.transform.position.x) transform.Translate(Vector3.right*Time.deltaTime*speed);
+			if (Input.GetAxis("XboxHorizontal1") != 0 || Input.GetAxis("XboxVertical1") != 0) isMoving = true;
 			else isMoving = false;
 			//Swap
-			if (Input.GetKeyUp (KeyCode.Z) && swapRole == "no" && tutSwap == false)
+			if (Input.GetButtonUp("XboxFire1Y") && swapRole == "no" && tutSwap == false)
 			{
 				GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
 				swapRole = "pending";
@@ -203,20 +202,20 @@ public class PlayerStats : MonoBehaviour {
 			if (role == "Attacker")
 			{
 				//Shooting
-				if (Input.GetKey(KeyCode.Space) && Time.time > shootTimer && shootBool == false && ammo > 0)
+				if (Input.GetButton("XboxFire1A") && Time.time > shootTimer && shootBool == false && ammo > 0)
 				{
 					shootBool = true;
 					shootTimer = Time.time + shootCD;
 				}
 				//Special
-				if (Input.GetKey(KeyCode.X) && Time.time > specialTimer && specialBool == false && tutSpecial == false)
+				if (Input.GetButtonUp("XboxFire1B") && Time.time > specialTimer && specialBool == false && tutSpecial == false)
 				{
 					specialBool = true;
 					specialTimer = Time.time + specialCD;
 				}
 			}
 			//Defender inputs
-			else if (Input.GetKeyUp(KeyCode.Space))
+			else if (Input.GetButtonUp("XboxFire1X"))
 			{
 				if (affinity == 'A') affinity = 'B';
 				else affinity = 'A';
@@ -233,14 +232,14 @@ public class PlayerStats : MonoBehaviour {
 		else
 		{
 			//Movement
-			if (Input.GetAxis("XboxVertical") > 0 && transform.position.y < top.transform.position.y) transform.Translate(Vector3.up*Time.deltaTime*speed);
-			if (Input.GetAxis ("XboxHorizontal") < 0 && transform.position.x > left.transform.position.x) transform.Translate(Vector3.left*Time.deltaTime*speed);
-			if (Input.GetAxis ("XboxVertical") < 0 && transform.position.y > down.transform.position.y) transform.Translate(Vector3.down*Time.deltaTime*speed);
-			if (Input.GetAxis ("XboxHorizontal") > 0 && transform.position.x < right.transform.position.x) transform.Translate(Vector3.right*Time.deltaTime*speed);
-			if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("XboxVertical") > 0 || Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis ("XboxHorizontal") < 0 || Input.GetKey(KeyCode.DownArrow) || Input.GetAxis ("XboxVertical") < 0 || Input.GetKey(KeyCode.RightArrow) || Input.GetAxis ("XboxHorizontal") > 0) isMoving = true;
+			if (Input.GetAxis("XboxVertical2") > 0 && transform.position.y < top.transform.position.y) transform.Translate(Vector3.up*Time.deltaTime*speed);
+			if (Input.GetAxis ("XboxHorizontal2") < 0 && transform.position.x > left.transform.position.x) transform.Translate(Vector3.left*Time.deltaTime*speed);
+			if (Input.GetAxis ("XboxVertical2") < 0 && transform.position.y > down.transform.position.y) transform.Translate(Vector3.down*Time.deltaTime*speed);
+			if (Input.GetAxis ("XboxHorizontal2") > 0 && transform.position.x < right.transform.position.x) transform.Translate(Vector3.right*Time.deltaTime*speed);
+			if (Input.GetAxis("XboxVertical2") != 0 ||  Input.GetAxis ("XboxHorizontal2") != 0) isMoving = true;
 			else isMoving = false;
 			
-			if ((Input.GetButtonUp("XboxFire2") || Input.GetKeyUp(KeyCode.P)) && swapRole == "no" && tutSwap == false)
+			if (Input.GetButtonUp("XboxFire2Y") && swapRole == "no" && tutSwap == false)
 			{
 				GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
 				swapRole = "pending";
@@ -259,20 +258,20 @@ public class PlayerStats : MonoBehaviour {
 			if (role == "Attacker")
 			{
 				//Shooting
-				if (Input.GetButton("XboxFire1") && Time.time > shootTimer && shootBool == false && ammo > 0)
+				if (Input.GetButton("XboxFire2A") && Time.time > shootTimer && shootBool == false && ammo > 0)
 				{
 					shootBool = true;
 					shootTimer = Time.time + shootCD;
 				}
 				//Special
-				if (Input.GetButton("XboxFire3") && Time.time > specialTimer && specialBool == false && tutSpecial == false)
+				if (Input.GetButton("XboxFire2B") && Time.time > specialTimer && specialBool == false && tutSpecial == false)
 				{
 					specialBool = true;
 					specialTimer = Time.time + specialCD;
 				}
 			}
 			//Defender inputs
-			else if (Input.GetButtonUp ("XboxFire1"))
+			else if (Input.GetButtonUp ("XboxFire2X"))
 			{
 				if (affinity == 'A') affinity = 'B';
 				else affinity = 'A';
