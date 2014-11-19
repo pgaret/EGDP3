@@ -151,7 +151,7 @@ public class GUIManager : MonoBehaviour {
 				sound.GetComponent<SoundManager>().LoopSound("CharSelect");
 			}
 			if (tiScre == null) tiScre = Instantiate(titleScreen) as Transform;
-			if (Input.GetButton ("XboxFire1A") || Input.GetButton ("XboxFire1B") || Input.GetButton ("XboxFire1X") || Input.GetButton ("XboxFire1Y") || Input.GetButton ("XboxFire2A") || Input.GetButton ("XboxFire2B") || Input.GetButton ("XboxFire2X") || Input.GetButton ("XboxFire2Y"))
+			if (Input.GetButton ("XboxFire1A") || Input.GetButton ("XboxFire1B") || Input.GetButton ("XboxFire1X") || Input.GetButton ("XboxFire1Y") || Input.GetButton ("XboxFire2A") || Input.GetButton ("XboxFire2B") || Input.GetButton ("XboxFire2X") || Input.GetButton ("XboxFire2Y") || Input.GetKey(KeyCode.S))
 			{
 				//We're entering character select here
 				mode = 1;
@@ -229,9 +229,11 @@ public class GUIManager : MonoBehaviour {
 //			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && MMIcon.renderer.bounds.Contains(cPos) && player2Select != 1) player2Select = 1;
 //			if ((Input.GetButtonDown("XboxFire1") || Input.GetKey(KeyCode.KeypadEnter)) && TKIcon.renderer.bounds.Contains(cPos) && player2Select != 2) player2Select = 2;
 			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && DTIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 3) player2Select = 3;
-			if (Input.GetKey (KeyCode.Tab)) player1Select = 3;
-			if (Input.GetKeyDown(KeyCode.RightShift)) player2Select = 3;
-			
+			if (Input.GetKey (KeyCode.S))
+			{
+				player1Select = 3;
+				player2Select = 3;
+			}
 			if (player1Select != -1 && player2Select != -1)
 			{
 				sButton.GetComponent<SpriteRenderer>().sprite = startButtonNormal;
@@ -286,7 +288,7 @@ public class GUIManager : MonoBehaviour {
 			}
 			else tutButton.GetComponent<SpriteRenderer>().sprite = tutButtonNormal;
 			
-			if (player1Select != -1 && player2Select != -1 && begin == true)
+			if (player1Select != -1 && player2Select != -1 && begin == true || Input.GetKey(KeyCode.S))
 			{
 				sound.GetComponent<SoundManager>().StopSound("CharSelect");
 				sound.GetComponent<SoundManager>().PlaySound("Theme1");

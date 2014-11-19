@@ -138,7 +138,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -146,9 +146,9 @@ TextureImporter:
     - name: SlimeSprite_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 51
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -156,9 +156,9 @@ TextureImporter:
     - name: SlimeSprite_2
       rect:
         serializedVersion: 2
-        x: 80
+        x: 102
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -166,9 +166,9 @@ TextureImporter:
     - name: SlimeSprite_3
       rect:
         serializedVersion: 2
-        x: 120
+        x: 153
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -176,9 +176,9 @@ TextureImporter:
     - name: SlimeSprite_4
       rect:
         serializedVersion: 2
-        x: 160
+        x: 204
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -186,9 +186,9 @@ TextureImporter:
     - name: SlimeSprite_5
       rect:
         serializedVersion: 2
-        x: 200
+        x: 255
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -196,9 +196,9 @@ TextureImporter:
     - name: SlimeSprite_6
       rect:
         serializedVersion: 2
-        x: 240
+        x: 306
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -206,9 +206,9 @@ TextureImporter:
     - name: SlimeSprite_7
       rect:
         serializedVersion: 2
-        x: 280
+        x: 357
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -216,9 +216,9 @@ TextureImporter:
     - name: SlimeSprite_8
       rect:
         serializedVersion: 2
-        x: 320
+        x: 408
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -226,9 +226,9 @@ TextureImporter:
     - name: SlimeSprite_9
       rect:
         serializedVersion: 2
-        x: 360
+        x: 459
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -236,9 +236,9 @@ TextureImporter:
     - name: SlimeSprite_10
       rect:
         serializedVersion: 2
-        x: 400
+        x: 510
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -246,9 +246,9 @@ TextureImporter:
     - name: SlimeSprite_11
       rect:
         serializedVersion: 2
-        x: 440
+        x: 561
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -256,9 +256,9 @@ TextureImporter:
     - name: SlimeSprite_12
       rect:
         serializedVersion: 2
-        x: 480
+        x: 612
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -266,9 +266,9 @@ TextureImporter:
     - name: SlimeSprite_13
       rect:
         serializedVersion: 2
-        x: 520
+        x: 663
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -276,9 +276,9 @@ TextureImporter:
     - name: SlimeSprite_14
       rect:
         serializedVersion: 2
-        x: 560
+        x: 714
         y: 300
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -288,7 +288,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -296,9 +296,9 @@ TextureImporter:
     - name: SlimeSprite_16
       rect:
         serializedVersion: 2
-        x: 40
+        x: 51
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -306,9 +306,9 @@ TextureImporter:
     - name: SlimeSprite_17
       rect:
         serializedVersion: 2
-        x: 80
+        x: 102
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -316,9 +316,9 @@ TextureImporter:
     - name: SlimeSprite_18
       rect:
         serializedVersion: 2
-        x: 120
+        x: 153
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -326,9 +326,9 @@ TextureImporter:
     - name: SlimeSprite_19
       rect:
         serializedVersion: 2
-        x: 160
+        x: 204
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -336,9 +336,9 @@ TextureImporter:
     - name: SlimeSprite_20
       rect:
         serializedVersion: 2
-        x: 200
+        x: 255
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -346,9 +346,9 @@ TextureImporter:
     - name: SlimeSprite_21
       rect:
         serializedVersion: 2
-        x: 240
+        x: 306
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -356,9 +356,9 @@ TextureImporter:
     - name: SlimeSprite_22
       rect:
         serializedVersion: 2
-        x: 280
+        x: 357
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -366,9 +366,9 @@ TextureImporter:
     - name: SlimeSprite_23
       rect:
         serializedVersion: 2
-        x: 320
+        x: 408
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -376,9 +376,9 @@ TextureImporter:
     - name: SlimeSprite_24
       rect:
         serializedVersion: 2
-        x: 360
+        x: 459
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -386,9 +386,9 @@ TextureImporter:
     - name: SlimeSprite_25
       rect:
         serializedVersion: 2
-        x: 400
+        x: 510
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -396,9 +396,9 @@ TextureImporter:
     - name: SlimeSprite_26
       rect:
         serializedVersion: 2
-        x: 440
+        x: 561
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -406,9 +406,9 @@ TextureImporter:
     - name: SlimeSprite_27
       rect:
         serializedVersion: 2
-        x: 480
+        x: 612
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -416,9 +416,9 @@ TextureImporter:
     - name: SlimeSprite_28
       rect:
         serializedVersion: 2
-        x: 520
+        x: 663
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -426,9 +426,9 @@ TextureImporter:
     - name: SlimeSprite_29
       rect:
         serializedVersion: 2
-        x: 560
+        x: 714
         y: 240
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -438,7 +438,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -446,9 +446,9 @@ TextureImporter:
     - name: SlimeSprite_31
       rect:
         serializedVersion: 2
-        x: 40
+        x: 51
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -456,9 +456,9 @@ TextureImporter:
     - name: SlimeSprite_32
       rect:
         serializedVersion: 2
-        x: 80
+        x: 102
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -466,9 +466,9 @@ TextureImporter:
     - name: SlimeSprite_33
       rect:
         serializedVersion: 2
-        x: 120
+        x: 153
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -476,9 +476,9 @@ TextureImporter:
     - name: SlimeSprite_34
       rect:
         serializedVersion: 2
-        x: 160
+        x: 204
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -486,9 +486,9 @@ TextureImporter:
     - name: SlimeSprite_35
       rect:
         serializedVersion: 2
-        x: 200
+        x: 255
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -496,9 +496,9 @@ TextureImporter:
     - name: SlimeSprite_36
       rect:
         serializedVersion: 2
-        x: 240
+        x: 306
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -506,9 +506,9 @@ TextureImporter:
     - name: SlimeSprite_37
       rect:
         serializedVersion: 2
-        x: 280
+        x: 357
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -516,9 +516,9 @@ TextureImporter:
     - name: SlimeSprite_38
       rect:
         serializedVersion: 2
-        x: 320
+        x: 408
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -526,9 +526,9 @@ TextureImporter:
     - name: SlimeSprite_39
       rect:
         serializedVersion: 2
-        x: 360
+        x: 459
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -536,9 +536,9 @@ TextureImporter:
     - name: SlimeSprite_40
       rect:
         serializedVersion: 2
-        x: 400
+        x: 510
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -546,9 +546,9 @@ TextureImporter:
     - name: SlimeSprite_41
       rect:
         serializedVersion: 2
-        x: 440
+        x: 561
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -556,9 +556,9 @@ TextureImporter:
     - name: SlimeSprite_42
       rect:
         serializedVersion: 2
-        x: 480
+        x: 612
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -566,9 +566,9 @@ TextureImporter:
     - name: SlimeSprite_43
       rect:
         serializedVersion: 2
-        x: 520
+        x: 663
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -576,9 +576,9 @@ TextureImporter:
     - name: SlimeSprite_44
       rect:
         serializedVersion: 2
-        x: 560
+        x: 714
         y: 180
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -588,7 +588,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -596,9 +596,9 @@ TextureImporter:
     - name: SlimeSprite_46
       rect:
         serializedVersion: 2
-        x: 40
+        x: 51
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -606,9 +606,9 @@ TextureImporter:
     - name: SlimeSprite_47
       rect:
         serializedVersion: 2
-        x: 80
+        x: 102
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -616,9 +616,9 @@ TextureImporter:
     - name: SlimeSprite_48
       rect:
         serializedVersion: 2
-        x: 120
+        x: 153
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -626,9 +626,9 @@ TextureImporter:
     - name: SlimeSprite_49
       rect:
         serializedVersion: 2
-        x: 160
+        x: 204
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -636,9 +636,9 @@ TextureImporter:
     - name: SlimeSprite_50
       rect:
         serializedVersion: 2
-        x: 200
+        x: 255
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -646,9 +646,9 @@ TextureImporter:
     - name: SlimeSprite_51
       rect:
         serializedVersion: 2
-        x: 240
+        x: 306
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -656,9 +656,9 @@ TextureImporter:
     - name: SlimeSprite_52
       rect:
         serializedVersion: 2
-        x: 280
+        x: 357
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -666,9 +666,9 @@ TextureImporter:
     - name: SlimeSprite_53
       rect:
         serializedVersion: 2
-        x: 320
+        x: 408
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -676,9 +676,9 @@ TextureImporter:
     - name: SlimeSprite_54
       rect:
         serializedVersion: 2
-        x: 360
+        x: 459
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -686,9 +686,9 @@ TextureImporter:
     - name: SlimeSprite_55
       rect:
         serializedVersion: 2
-        x: 400
+        x: 510
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -696,9 +696,9 @@ TextureImporter:
     - name: SlimeSprite_56
       rect:
         serializedVersion: 2
-        x: 440
+        x: 561
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -706,9 +706,9 @@ TextureImporter:
     - name: SlimeSprite_57
       rect:
         serializedVersion: 2
-        x: 480
+        x: 612
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -716,9 +716,9 @@ TextureImporter:
     - name: SlimeSprite_58
       rect:
         serializedVersion: 2
-        x: 520
+        x: 663
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -726,9 +726,9 @@ TextureImporter:
     - name: SlimeSprite_59
       rect:
         serializedVersion: 2
-        x: 560
+        x: 714
         y: 120
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -738,7 +738,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -746,9 +746,9 @@ TextureImporter:
     - name: SlimeSprite_61
       rect:
         serializedVersion: 2
-        x: 40
+        x: 51
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -756,9 +756,9 @@ TextureImporter:
     - name: SlimeSprite_62
       rect:
         serializedVersion: 2
-        x: 80
+        x: 102
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -766,9 +766,9 @@ TextureImporter:
     - name: SlimeSprite_63
       rect:
         serializedVersion: 2
-        x: 120
+        x: 153
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -776,9 +776,9 @@ TextureImporter:
     - name: SlimeSprite_64
       rect:
         serializedVersion: 2
-        x: 160
+        x: 204
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -786,9 +786,9 @@ TextureImporter:
     - name: SlimeSprite_65
       rect:
         serializedVersion: 2
-        x: 200
+        x: 255
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -796,9 +796,9 @@ TextureImporter:
     - name: SlimeSprite_66
       rect:
         serializedVersion: 2
-        x: 240
+        x: 306
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -806,9 +806,9 @@ TextureImporter:
     - name: SlimeSprite_67
       rect:
         serializedVersion: 2
-        x: 280
+        x: 357
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -816,9 +816,9 @@ TextureImporter:
     - name: SlimeSprite_68
       rect:
         serializedVersion: 2
-        x: 320
+        x: 408
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -826,9 +826,9 @@ TextureImporter:
     - name: SlimeSprite_69
       rect:
         serializedVersion: 2
-        x: 360
+        x: 459
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -836,9 +836,9 @@ TextureImporter:
     - name: SlimeSprite_70
       rect:
         serializedVersion: 2
-        x: 400
+        x: 510
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -846,9 +846,9 @@ TextureImporter:
     - name: SlimeSprite_71
       rect:
         serializedVersion: 2
-        x: 440
+        x: 561
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -856,9 +856,9 @@ TextureImporter:
     - name: SlimeSprite_72
       rect:
         serializedVersion: 2
-        x: 480
+        x: 612
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -866,9 +866,9 @@ TextureImporter:
     - name: SlimeSprite_73
       rect:
         serializedVersion: 2
-        x: 520
+        x: 663
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -876,9 +876,9 @@ TextureImporter:
     - name: SlimeSprite_74
       rect:
         serializedVersion: 2
-        x: 560
+        x: 714
         y: 60
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -888,7 +888,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -896,9 +896,9 @@ TextureImporter:
     - name: SlimeSprite_76
       rect:
         serializedVersion: 2
-        x: 40
+        x: 51
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -906,9 +906,9 @@ TextureImporter:
     - name: SlimeSprite_77
       rect:
         serializedVersion: 2
-        x: 80
+        x: 102
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -916,9 +916,9 @@ TextureImporter:
     - name: SlimeSprite_78
       rect:
         serializedVersion: 2
-        x: 120
+        x: 153
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -926,9 +926,9 @@ TextureImporter:
     - name: SlimeSprite_79
       rect:
         serializedVersion: 2
-        x: 160
+        x: 204
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -936,9 +936,9 @@ TextureImporter:
     - name: SlimeSprite_80
       rect:
         serializedVersion: 2
-        x: 200
+        x: 255
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -946,9 +946,9 @@ TextureImporter:
     - name: SlimeSprite_81
       rect:
         serializedVersion: 2
-        x: 240
+        x: 306
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -956,9 +956,9 @@ TextureImporter:
     - name: SlimeSprite_82
       rect:
         serializedVersion: 2
-        x: 280
+        x: 357
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -966,9 +966,9 @@ TextureImporter:
     - name: SlimeSprite_83
       rect:
         serializedVersion: 2
-        x: 320
+        x: 408
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -976,9 +976,9 @@ TextureImporter:
     - name: SlimeSprite_84
       rect:
         serializedVersion: 2
-        x: 360
+        x: 459
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -986,9 +986,9 @@ TextureImporter:
     - name: SlimeSprite_85
       rect:
         serializedVersion: 2
-        x: 400
+        x: 510
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -996,9 +996,9 @@ TextureImporter:
     - name: SlimeSprite_86
       rect:
         serializedVersion: 2
-        x: 440
+        x: 561
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1006,9 +1006,9 @@ TextureImporter:
     - name: SlimeSprite_87
       rect:
         serializedVersion: 2
-        x: 480
+        x: 612
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1016,9 +1016,9 @@ TextureImporter:
     - name: SlimeSprite_88
       rect:
         serializedVersion: 2
-        x: 520
+        x: 663
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1026,9 +1026,9 @@ TextureImporter:
     - name: SlimeSprite_89
       rect:
         serializedVersion: 2
-        x: 560
+        x: 714
         y: 0
-        width: 40
+        width: 51
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
