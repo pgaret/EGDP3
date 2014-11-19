@@ -101,89 +101,89 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 201
-        width: 100
-        height: 99
+        y: 200
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_1
       rect:
         serializedVersion: 2
-        x: 100
-        y: 201
-        width: 100
-        height: 99
+        x: 90
+        y: 200
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_2
       rect:
         serializedVersion: 2
-        x: 200
-        y: 201
-        width: 100
-        height: 99
+        x: 180
+        y: 200
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_3
       rect:
         serializedVersion: 2
-        x: 300
-        y: 201
-        width: 100
-        height: 99
+        x: 270
+        y: 200
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_4
       rect:
         serializedVersion: 2
-        x: 400
-        y: 201
-        width: 100
-        height: 99
+        x: 360
+        y: 200
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_5
       rect:
         serializedVersion: 2
-        x: 500
-        y: 201
-        width: 100
-        height: 99
+        x: 450
+        y: 200
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_6
       rect:
         serializedVersion: 2
-        x: 600
-        y: 201
-        width: 100
-        height: 99
+        x: 540
+        y: 200
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_7
       rect:
         serializedVersion: 2
-        x: 700
-        y: 201
-        width: 100
-        height: 99
+        x: 630
+        y: 200
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_8
       rect:
         serializedVersion: 2
-        x: 800
-        y: 201
-        width: 100
-        height: 99
+        x: 720
+        y: 200
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,89 +191,89 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 102
-        width: 100
-        height: 99
+        y: 100
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_10
       rect:
         serializedVersion: 2
-        x: 100
-        y: 102
-        width: 100
-        height: 99
+        x: 90
+        y: 100
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_11
       rect:
         serializedVersion: 2
-        x: 200
-        y: 102
-        width: 100
-        height: 99
+        x: 180
+        y: 100
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_12
       rect:
         serializedVersion: 2
-        x: 300
-        y: 102
-        width: 100
-        height: 99
+        x: 270
+        y: 100
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_13
       rect:
         serializedVersion: 2
-        x: 400
-        y: 102
-        width: 100
-        height: 99
+        x: 360
+        y: 100
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_14
       rect:
         serializedVersion: 2
-        x: 500
-        y: 102
-        width: 100
-        height: 99
+        x: 450
+        y: 100
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_15
       rect:
         serializedVersion: 2
-        x: 600
-        y: 102
-        width: 100
-        height: 99
+        x: 540
+        y: 100
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_16
       rect:
         serializedVersion: 2
-        x: 700
-        y: 102
-        width: 100
-        height: 99
+        x: 630
+        y: 100
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_17
       rect:
         serializedVersion: 2
-        x: 800
-        y: 102
-        width: 100
-        height: 99
+        x: 720
+        y: 100
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,89 +281,89 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 3
-        width: 100
-        height: 99
+        y: 0
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_19
       rect:
         serializedVersion: 2
-        x: 100
-        y: 3
-        width: 100
-        height: 99
+        x: 90
+        y: 0
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_20
       rect:
         serializedVersion: 2
-        x: 200
-        y: 3
-        width: 100
-        height: 99
+        x: 180
+        y: 0
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_21
       rect:
         serializedVersion: 2
-        x: 300
-        y: 3
-        width: 100
-        height: 99
+        x: 270
+        y: 0
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_22
       rect:
         serializedVersion: 2
-        x: 400
-        y: 3
-        width: 100
-        height: 99
+        x: 360
+        y: 0
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_23
       rect:
         serializedVersion: 2
-        x: 500
-        y: 3
-        width: 100
-        height: 99
+        x: 450
+        y: 0
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_24
       rect:
         serializedVersion: 2
-        x: 600
-        y: 3
-        width: 100
-        height: 99
+        x: 540
+        y: 0
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_25
       rect:
         serializedVersion: 2
-        x: 700
-        y: 3
-        width: 100
-        height: 99
+        x: 630
+        y: 0
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BatSprite_26
       rect:
         serializedVersion: 2
-        x: 800
-        y: 3
-        width: 100
-        height: 99
+        x: 720
+        y: 0
+        width: 90
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

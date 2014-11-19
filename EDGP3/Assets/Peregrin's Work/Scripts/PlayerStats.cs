@@ -132,7 +132,7 @@ public class PlayerStats : MonoBehaviour {
 		GameObject[] bullets = GameObject.FindGameObjectsWithTag("BulletA");
 		foreach (GameObject bullet in bullets)
 		{
-			if (bullet.renderer.bounds.Intersects(renderer.bounds))
+			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds))
 			{
 				if (points >= 50) points -= 50;
 				else points = 0;
@@ -142,7 +142,7 @@ public class PlayerStats : MonoBehaviour {
 		bullets = GameObject.FindGameObjectsWithTag("BulletB");
 		foreach (GameObject bullet in bullets)
 		{
-			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.renderer.bounds))
+			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds))
 			{
 				if (points >= 50) points -= 50;
 				else points = 0;

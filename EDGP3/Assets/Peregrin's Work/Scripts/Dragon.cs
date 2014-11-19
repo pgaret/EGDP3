@@ -7,6 +7,7 @@ public class Dragon : MonoBehaviour {
 	public bool specialDragon = false;
 
 	public GameObject parent;
+	public GameObject shield;
 	float lifeSpan = 15.0f;
 	float startTime;
 
@@ -51,6 +52,10 @@ public class Dragon : MonoBehaviour {
 		
 		if (parent.GetComponent<PlayerStats>().role == "Defender")
 		{
+			if (transform.childCount == 0)
+			{
+				
+			}
 			BulletCheck();
 			if (parent.GetComponent<PlayerStats>().affinity == 'B') transform.GetChild(0).GetComponent<Animator>().SetInteger("State", 1);
 			else transform.GetChild(0).GetComponent<Animator>().SetInteger("State", 2);
