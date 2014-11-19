@@ -123,10 +123,6 @@ public class PlayerStats : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-<<<<<<< HEAD
-=======
-	
->>>>>>> c58151c14fd5146937b08cf5d53f8862ba1c9b5d
 		if (Time.time > pointTimer)
 		{
 			pointTimer = Time.time + pointCD;
