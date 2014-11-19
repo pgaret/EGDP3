@@ -29,9 +29,12 @@ public class PlayerBullet : MonoBehaviour {
 		if (!transform.renderer.isVisible) Destroy (gameObject);
 		
 		if (GameObject.FindGameObjectWithTag("Boss1") != null)
-		{
-			GameObject.FindGameObjectWithTag("Boss1").GetComponent<Boss1>().subhealth();
-			Destroy (gameObject);
+		{	
+			if (GameObject.FindGameObjectWithTag("Boss1").renderer.bounds.Intersects(renderer.bounds))
+			{
+				GameObject.FindGameObjectWithTag("Boss1").GetComponent<Boss1>().subhealth();
+				Destroy (gameObject);
+			}
 		}
 		
 	}
