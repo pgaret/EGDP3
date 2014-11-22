@@ -14,10 +14,10 @@ Platform assembly: C:\Users\Peregrin\Documents\EGDP3\EDGP3\Builds\Interactive De
 Loading C:\Users\Peregrin\Documents\EGDP3\EDGP3\Builds\Interactive Demo Day\Trial3\Demo_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
 Platform assembly: C:\Users\Peregrin\Documents\EGDP3\EDGP3\Builds\Interactive Demo Day\Trial3\Demo_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Peregrin\Documents\EGDP3\EDGP3\Builds\Interactive Demo Day\Trial3\Demo_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.264 seconds
+- Completed reload, in  0.052 seconds
 <RI> Initializing input.
 <RI> Input initialized.
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 Platform assembly: C:\Users\Peregrin\Documents\EGDP3\EDGP3\Builds\Interactive Demo Day\Trial3\Demo_Data\Managed\System.Core.dll (this message is harmless)
 XboxFire1A
  
@@ -27,7 +27,11 @@ XboxFire1A
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-XboxFire2A
+6.666667 5
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+6.666667 5
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 

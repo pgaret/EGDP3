@@ -67,6 +67,7 @@
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\GUIManager.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\InputManager.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\MirrorMage.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\PKShield.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\PKSpecial.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\PlayerBullet.cs" />

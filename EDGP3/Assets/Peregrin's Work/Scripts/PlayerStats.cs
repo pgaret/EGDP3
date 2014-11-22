@@ -161,14 +161,6 @@ public class PlayerStats : MonoBehaviour {
 				
 			}
 		}
-		if (swapRole == "pending")
-		{
-			if (Time.time > swapTimer)
-			{
-				swapRole = "no";
-				sound.GetComponent<SoundManager>().StopSound("Pending");
-			}
-		}
 		//Input shenanigans
 		if (transform.tag == "Player1")
 		{
@@ -180,20 +172,11 @@ public class PlayerStats : MonoBehaviour {
 			if (Input.GetAxis("XboxHorizontal1") != 0 || Input.GetAxis("XboxVertical1") != 0) isMoving = true;
 			else isMoving = false;
 			//Swap
-			if (Input.GetButtonUp("XboxFire1Y") && swapRole == "no" && tutSwap == false)
+			if ((Input.GetButtonUp("XboxFire1Y") || Input.GetKeyUp(KeyCode.P)) && Time.time > swapTimer)
 			{
 				GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
-				swapRole = "pending";
-				if (player2.GetComponent<PlayerStats>().swapRole == "pending")
-				{
-					Swap();
-					player2.transform.GetComponent<PlayerStats>().Swap();
-				}
-				else
-				{
-					sound.GetComponent<SoundManager>().PlaySound("Pending");
-					sound.GetComponent<SoundManager>().LoopSound("Pending");
-				}
+				Swap();
+				player2.transform.GetComponent<PlayerStats>().Swap();
 				swapTimer = Time.time + swapCD;	
 			}
 
@@ -201,7 +184,7 @@ public class PlayerStats : MonoBehaviour {
 			if (role == "Attacker")
 			{
 				//Shooting
-				if (Input.GetButton("XboxFire1A") && Time.time > shootTimer && shootBool == false && ammo > 0)
+				if ((Input.GetButton("XboxFire1A") || Input.GetKey(KeyCode.I)) && Time.time > shootTimer && shootBool == false && ammo > 0)
 				{
 					shootBool = true;
 					shootTimer = Time.time + shootCD;
@@ -238,20 +221,11 @@ public class PlayerStats : MonoBehaviour {
 			if (Input.GetAxis("XboxVertical2") != 0 ||  Input.GetAxis ("XboxHorizontal2") != 0) isMoving = true;
 			else isMoving = false;
 			
-			if (Input.GetButtonUp("XboxFire2Y") && swapRole == "no" && tutSwap == false)
+			if ((Input.GetButtonUp("XboxFire2Y") || Input.GetKeyUp(KeyCode.O)) && Time.time > swapTimer)
 			{
 				GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
-				swapRole = "pending";
-				if (player1.GetComponent<PlayerStats>().swapRole == "pending")
-				{
-					Swap();
-					player1.transform.GetComponent<PlayerStats>().Swap();	
-				}
-				else
-				{
-					sound.GetComponent<SoundManager>().PlaySound("Pending");
-					sound.GetComponent<SoundManager>().LoopSound("Pending");
-				}
+				Swap();
+				player1.transform.GetComponent<PlayerStats>().Swap();	
 				swapTimer = Time.time + swapCD;	
 			}
 			if (role == "Attacker")

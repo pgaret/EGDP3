@@ -14,7 +14,7 @@ Platform assembly: C:\Users\Peregrin\Documents\EGDP3\EDGP3\Builds\Interactive De
 Loading C:\Users\Peregrin\Documents\EGDP3\EDGP3\Builds\Interactive Demo Day\Trial2\Demo_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
 Platform assembly: C:\Users\Peregrin\Documents\EGDP3\EDGP3\Builds\Interactive Demo Day\Trial2\Demo_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Peregrin\Documents\EGDP3\EDGP3\Builds\Interactive Demo Day\Trial2\Demo_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.289 seconds
+- Completed reload, in  0.796 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0

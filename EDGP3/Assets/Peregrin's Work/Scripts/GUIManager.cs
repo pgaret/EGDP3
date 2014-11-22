@@ -157,7 +157,7 @@ public class GUIManager : MonoBehaviour {
 				mode = 1;
 				Destroy (tiScre.gameObject);
 				sButton = Instantiate(startButton, new Vector3(0, -pos.y / 1.5f), Quaternion.identity) as Transform;
-				tutButton = Instantiate(tutorialButton, new Vector3(0, -pos.y / 2f), Quaternion.identity) as Transform;
+//				tutButton = Instantiate(tutorialButton, new Vector3(0, -pos.y / 2f), Quaternion.identity) as Transform;
 				PKIcon = Instantiate(PK, new Vector3(0, pos.y * 2.65f / 4), Quaternion.identity) as Transform;
 //				MMIcon = Instantiate (MM, new Vector3(0, -pos.y * 2 / 5), Quaternion.identity) as Transform;
 //				TKIcon = Instantiate (TK, new Vector3(0, -pos.y / 5), Quaternion.identity) as Transform;
@@ -194,7 +194,7 @@ public class GUIManager : MonoBehaviour {
 			
 			//Player 1 HUD
 			style.fontSize = 24;
-			GUI.Box (new Rect(Screen.width / 20, Screen.height * 5.5f / 8, Screen.width / 8, Screen.height / 10), player1.GetComponent<PlayerStats>().swapRole, style);
+//			GUI.Box (new Rect(Screen.width / 20, Screen.height * 5.5f / 8, Screen.width / 8, Screen.height / 10), player1.GetComponent<PlayerStats>().swapRole, style);
 			style.fontSize = 48	;	 
 //			GUI.Box (new Rect(Screen.width * 1.1f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().lives.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 1.1f / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().ammo.ToString(), style);
@@ -202,7 +202,7 @@ public class GUIManager : MonoBehaviour {
 			
 			//Player 2 HUD
 			style.fontSize = 24;
-			GUI.Box (new Rect(Screen.width * 6.5f / 8, Screen.height * 5.5f / 8, Screen.width / 8, Screen.height / 10), player2.GetComponent<PlayerStats>().swapRole, style);
+//			GUI.Box (new Rect(Screen.width * 6.5f / 8, Screen.height * 5.5f / 8, Screen.width / 8, Screen.height / 10), player2.GetComponent<PlayerStats>().swapRole, style);
 			style.fontSize = 48;
 //			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().lives.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().ammo.ToString(), style);
@@ -249,7 +249,7 @@ public class GUIManager : MonoBehaviour {
 				}
 			}
 			
-			if (player1Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds) || player2Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds))
+/*			if (player1Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds) || player2Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds))
 			{
 				tutButton.GetComponent<SpriteRenderer>().sprite = tutButtonHover;
 				if (player1Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds) && Input.GetButtonUp("XboxFire1A"))
@@ -286,7 +286,7 @@ public class GUIManager : MonoBehaviour {
 					}
 				}
 			}
-			else tutButton.GetComponent<SpriteRenderer>().sprite = tutButtonNormal;
+*///			else tutButton.GetComponent<SpriteRenderer>().sprite = tutButtonNormal;
 			
 			if (player1Select != -1 && player2Select != -1 && begin == true || Input.GetKey(KeyCode.S))
 			{
@@ -343,7 +343,8 @@ public class GUIManager : MonoBehaviour {
 				Destroy (player2Cursor.gameObject);
 				Destroy (charaSelect.gameObject);
 				Destroy (sButton.gameObject);
-				Destroy(tutButton.gameObject);
+//				Destroy(tutButton.gameObject);
+	
 				mode = 2;
 				boxy.GetComponent<spawn>().starter();
 			}

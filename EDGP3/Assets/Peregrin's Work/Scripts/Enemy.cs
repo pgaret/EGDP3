@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
 	public GameObject projectileB;
 	public GameObject coin;
 	public GameObject deadEnemy;
+	public int type;
 	public float attackCD = 1;
 	public bool fire = false;
 	public int attacktype = 0;
@@ -24,6 +25,9 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		string thisName = name.Substring(5);
+		thisName = thisName.Remove(thisName.Length - 7);
+		type = int.Parse(thisName);
 		Vector3 pos = Camera.main.ScreenToWorldPoint (new Vector3 (10, 10));
 		pos.z = 0;
 		//transform.position = pos;
@@ -179,7 +183,8 @@ public class Enemy : MonoBehaviour {
 					GameObject.Find ("Sound").GetComponent<SoundManager>().PlaySound("Explosion");
 					bullets[i].GetComponent<PlayerBullet>().origin.GetComponent<PlayerStats>().score += 50;
 					Instantiate(coin, transform.position, Quaternion.identity);
-					Instantiate(deadEnemy, new Vector3(transform.position.x + renderer.bounds.extents.x, transform.position.y), Quaternion.identity);
+					GameObject theDead = (GameObject)Instantiate(deadEnemy, new Vector3(transform.position.x + renderer.bounds.extents.x, transform.position.y), Quaternion.identity);
+					theDead.GetComponent<DeadEnemy>().type = type;
 					Destroy (gameObject);
 				}
 				Destroy (bullets[i].gameObject);

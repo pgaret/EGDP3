@@ -54,12 +54,16 @@ public class Dragon : MonoBehaviour {
 		{
 			if (transform.childCount == 0)
 			{
-				
+				GameObject drag = Instantiate(shield, transform.position, Quaternion.identity) as GameObject;
+				drag.transform.parent = transform;
 			}
 			BulletCheck();
 			if (parent.GetComponent<PlayerStats>().affinity == 'B') transform.GetChild(0).GetComponent<Animator>().SetInteger("State", 1);
 			else transform.GetChild(0).GetComponent<Animator>().SetInteger("State", 2);
 		}
-		else transform.GetChild(0).GetComponent<Animator>().SetInteger("State", 0);
+		else
+		{
+			if (transform.childCount > 0) Destroy (transform.GetChild(0).gameObject);
+		}
 	}
 }
