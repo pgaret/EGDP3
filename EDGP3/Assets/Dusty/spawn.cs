@@ -347,8 +347,113 @@ public class spawn : MonoBehaviour {
 //		}
 	}
 	void WaveS2(int i){
-		if (i == 0){
-			Boss2(10f);
+		if(i == 0){
+			//			Setpath(1,-4,1,1,0,0); //0 is red bat
+			Boss1();
+		}
+		if(i == 1){
+			Setpath(1,4,2,2,0,0);
+		}
+		if (i == 2){
+			Setpath(1,-4,3,3,0,0);
+		}
+		if (i == 3){
+			Setpath(1,4,4,4,0,0);
+		}
+		//Wave 2
+		if (i == 4){
+			Setpath(1,-4,1,5,0,0);
+		}
+		if (i == 5){
+			Setpath(1,4,2,6,0,0);
+		}
+		if (i == 6){
+			Setpath(1,-4,3,7,0,0);
+		}
+		if (i == 7){
+			Setpath(1,4,4,8,0,0);
+		}
+		//Wave 3
+		if (i == 8){
+			Setpath(1,-2,5,9,3,10); //3 is green slime
+			Setpath(1,-4,1,1,0,0);
+			Setpath(1,4,2,2,0,0);
+		}
+		//Wave 4
+		if (i == 9){
+			Setpath(1,-4,2,10,3,10);
+			Setpath(1,4,2,11,3,10);
+		}
+		if (i == 10){
+			Setpath(1,-4,1,1,0,0);
+			Setpath(1,4,2,2,0,0);
+		}
+		//Wave 5
+		if(i == 11){
+			Setpath(1,-4,0,12,1,0);
+			Setpath(1,4,1,13,0,0);
+		}
+		if (i == 12){
+			Setpath(1,-3,2,14,0,0);
+			Setpath(1,4,3,15,1,0);
+		}
+		//Wave 6
+		if (i == 13){
+			Setpath(1,-4,4,16,1,0);
+			Setpath(1,4,4,17,1,0);
+		}
+		if (i == 14){
+			Setpath(1,0,4,18,3,10);
+		}
+		//Wave 7
+		if(i == 15){
+			Setpath(1,-3,2,14,0,0);
+			Setpath(1,-4,1,1,0,0);
+			Setpath(1,4,1,13,0,0);
+		}
+		if(i == 16){
+			Setpath(1,4,2,2,0,0);
+			Setpath(1,4,3,15,1,0);
+		}
+		//Wave 8
+		if (i == 17){
+			Setpath(1,4,2,11,3,10);
+			Setpath(1,-4,1,5,0,0);
+			Setpath(1,-4,3,7,0,0);
+		}
+		if (i == 18){
+			Setpath(1,4,4,17,1,0);
+			Setpath(1,4,2,11,3,10);
+		}
+		//Wave 9
+		if (i == 19){
+			Setpath(1,-2,4,19,1,12); //12 is blue slime
+		}
+		if (i == 20){
+			Setpath(1,-1,4,20,1,12);
+		}
+		if (i == 21){
+			Setpath(1,1,4,21,1,12);
+		}
+		if (i == 22){
+			Setpath(1,2,4,22,1,12);
+		}
+		//Wave 10
+		if(i == 23){
+			Setpath(1,-4,2,10,3,10);
+			Setpath(1,4,4,8,0,1);
+		}
+		if (i == 24){
+			Setpath(1,4,4,4,0,0);
+		}
+		if (i == 25){
+			Setpath(1,4,2,6,0,0);
+		}
+		if (i == 26){
+			Setpath(1,4,2,2,0,0);
+		}
+		if (i == 27){
+			Boss2 (10);
 		}
 	}
 	void WaveS3(int i){

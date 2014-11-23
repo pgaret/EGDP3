@@ -8,6 +8,7 @@ public class Boss1 : MonoBehaviour {
 	public bool alive;
 	public GameObject projectileA;
 	public GameObject projectileB;
+	public GameObject transition;
 	private GameObject shippe1;
 	private GameObject shippe2;
 	private GameObject shippeatk;
@@ -21,6 +22,7 @@ public class Boss1 : MonoBehaviour {
 		time2 = Time.time;
 		time3 = Time.time;
 		Master = GameObject.FindGameObjectWithTag("Manager");
+		Master.GetComponent<spawn>().summon = false;
 		//transform.rotation = Quaternion.Euler(new Vector3(180,0,0));
 	}
 	
@@ -58,7 +60,11 @@ public class Boss1 : MonoBehaviour {
 			time3 = Time.time;
 		}
 		
-		if (health == 0) Application.Quit ();
+		if (health == 0)
+		{
+			Destroy(gameObject);
+			Instantiate(transition);
+		}
 
 	}
 	public void subhealth(){
