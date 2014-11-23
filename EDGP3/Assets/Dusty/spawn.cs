@@ -188,6 +188,7 @@ public class spawn : MonoBehaviour {
 		//Wave 1
 		if(i == 0){
 			Setpath(1,-4,1,1,0,0); //0 is red bat
+			Boss1();
 		}
 		if(i == 1){
 			Setpath(1,4,2,2,0,0);

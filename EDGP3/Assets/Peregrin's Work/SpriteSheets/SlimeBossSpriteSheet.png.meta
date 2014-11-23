@@ -54,9 +54,9 @@ TextureImporter:
     - name: SlimeBossSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 285
-        width: 130
+        x: 0
+        y: 280
+        width: 140
         height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -65,8 +65,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 140
-        y: 285
-        width: 130
+        y: 280
+        width: 140
         height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -74,9 +74,9 @@ TextureImporter:
     - name: SlimeBossSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 270
-        y: 285
-        width: 130
+        x: 0
+        y: 150
+        width: 140
         height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -84,9 +84,9 @@ TextureImporter:
     - name: SlimeBossSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 10
-        y: 155
-        width: 130
+        x: 140
+        y: 150
+        width: 140
         height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -94,9 +94,9 @@ TextureImporter:
     - name: SlimeBossSpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 140
-        y: 155
-        width: 130
+        x: 0
+        y: 20
+        width: 140
         height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -104,29 +104,9 @@ TextureImporter:
     - name: SlimeBossSpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 270
-        y: 155
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: SlimeBossSpriteSheet_6
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 25
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: SlimeBossSpriteSheet_7
-      rect:
-        serializedVersion: 2
         x: 140
-        y: 25
-        width: 130
+        y: 20
+        width: 140
         height: 130
       alignment: 0
       pivot: {x: 0, y: 0}

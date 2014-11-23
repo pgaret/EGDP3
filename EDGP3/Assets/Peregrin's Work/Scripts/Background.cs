@@ -7,29 +7,46 @@ public class Background : MonoBehaviour {
 	private bool haveReplicated = false;
 	public int mode;
 	
+	private GameObject manager;
+	private GameObject cam;
 	private Transform background;
 
 	// Use this for initialization
 	void Start ()
 	{
-		GameObject cam = GameObject.Find ("Main Camera");
-		mode = cam.GetComponent<GUIManager>().gameMode;
-		if (mode == 0) transform.GetComponent<SpriteRenderer>().sprite = cam.GetComponent<GUIManager>().Background1;
-		if (mode == 1)
-		{
-			transform.GetComponent<SpriteRenderer>().sprite = cam.GetComponent<GUIManager>().Background1B;
-			GameObject[] bgs  = GameObject.FindGameObjectsWithTag("Background");
-			foreach (GameObject bg in bgs) bg.GetComponent<Background>().scrollSpeed = bg.GetComponent<Background>().scrollSpeed* 2;
-		}
+		manager = GameObject.Find ("Manager");
+		cam = GameObject.Find ("Main Camera");
 		
-		transform.localScale = new Vector3(1.6f, 1.6f);
-		GetComponent<SpriteRenderer>().sortingOrder = -1;
+
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if (mode == 0 || mode == 2 || mode == 4)
+		mode = manager.GetComponent<spawn>().stage;
+		if (mode == 0 && GameObject.Find ("Boss1(Clone)") == null) transform.GetComponent<SpriteRenderer>().sprite = cam.GetComponent<GUIManager>().Background1;
+		else if (mode == 0 && GameObject.Find ("Boss1(Clone") != null)
+		{
+			transform.GetComponent<SpriteRenderer>().sprite = cam.GetComponent<GUIManager>().Background1B;
+			GameObject[] bgs  = GameObject.FindGameObjectsWithTag("Background");
+			foreach (GameObject bg in bgs) bg.GetComponent<Background>().scrollSpeed = bg.GetComponent<Background>().scrollSpeed* 2;
+		}
+		else if (mode == 1 && GameObject.Find ("Boss2(Clone") == null)
+		{
+			GameObject[] bgs  = GameObject.FindGameObjectsWithTag("Background");
+			foreach (GameObject bg in bgs) bg.GetComponent<SpriteRenderer>().sprite = cam.GetComponent<GUIManager>().Background2;
+			transform.GetComponent<SpriteRenderer>().sprite = cam.GetComponent<GUIManager>().Background2;
+			
+		}
+		else if (mode == 1 && GameObject.Find ("Boss1(Clone") == null)
+		{
+			transform.GetComponent<SpriteRenderer>().sprite = cam.GetComponent<GUIManager>().Background2B;
+			GameObject[] bgs  = GameObject.FindGameObjectsWithTag("Background");
+			foreach (GameObject bg in bgs) bg.GetComponent<Background>().scrollSpeed = bg.GetComponent<Background>().scrollSpeed* 2;
+		}
+		transform.localScale = new Vector3(1.6f, 1.6f);
+		GetComponent<SpriteRenderer>().sortingOrder = -1;
+		if (GameObject.Find("Boss1(Clone") == null && GameObject.Find ("Boss2(Clone") == null && GameObject.Find ("Boss3Clone"))
 		{
 			transform.Translate (Vector3.down*Time.deltaTime*scrollSpeed);
 			
@@ -41,7 +58,7 @@ public class Background : MonoBehaviour {
 			if (!renderer.isVisible) Destroy (gameObject);
 
 		}
-		if (mode == 1 || mode == 3 || mode == 5)
+		else
 		{
 			if (transform.position.y > 1.36f) transform.Translate (Vector3.down*Time.deltaTime*scrollSpeed);
 		}

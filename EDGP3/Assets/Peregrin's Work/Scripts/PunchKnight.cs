@@ -2,8 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class PunchKnight : MonoBehaviour {
-	
-	public float speed;
+
 	public Transform projectile;
 	public Transform special;
 	public Transform shield;
@@ -24,12 +23,9 @@ public class PunchKnight : MonoBehaviour {
 	
 	void Special()
 	{
-		if (GetComponent<PlayerStats>().ammo >= 100)
-		{
-			transform.GetComponent<PlayerStats>().ammo -= 100;
-			specialTimer = Time.time + 2.1f;
-			specialCounter = 2f;
-		}
+		transform.GetComponent<PlayerStats>().ammo = 0;
+		specialTimer = Time.time + 2.1f;
+		specialCounter = 2f;
 	}
 	
 	public void Shield()
