@@ -21,7 +21,7 @@ public class spawn : MonoBehaviour {
 	void Start () {
 
 		time = Time.time;
-		EnterTimes = new float[28];
+		EnterTimes = new float[35];
 		//Wave 1
 		EnterTimes[0] = 1f;
 		EnterTimes[1] = 3f;
@@ -49,24 +49,24 @@ public class spawn : MonoBehaviour {
 		EnterTimes[13+4] = 58f+15;
 		EnterTimes[14+4] = 59f+15;
 		//Wave 7
-		EnterTimes[15+4] = 66f+9;
-		EnterTimes[16+4] = 67f+9;
+		EnterTimes[15+4] = 66f+15;
+		EnterTimes[16+4] = 67f+15;
 		//Wave 8
-		EnterTimes[17+4] = 75f+9;
-		EnterTimes[18+4] = 76f+9;
+		EnterTimes[17+4] = 75f+15;
+		EnterTimes[18+4] = 76f+15;
 		//Wave 9
-		EnterTimes[19+4] = 84f+9;
-		EnterTimes[20+4] = 85f+9;
-		EnterTimes[21+4] = 86f+9;
-		EnterTimes[22+4] = 87f+9;
+		EnterTimes[19+4] = 84f+15;
+		EnterTimes[20+4] = 85f+15;
+		EnterTimes[21+4] = 86f+15;
+		EnterTimes[22+4] = 87f+15;
 		//Wave 10
-		EnterTimes[23+4] = 97f+9;
-		EnterTimes[24+4] = 98f+9;
-		EnterTimes[25+4] = 99f+9;
-		EnterTimes[26+4] = 100f+9;
+		EnterTimes[23+4] = 97f+15;
+		EnterTimes[24+4] = 98f+15;
+		EnterTimes[25+4] = 99f+15;
+		EnterTimes[26+4] = 100f+15;
 		
 		//Boss 1
-		EnterTimes[27+4] = 115f+9;
+		EnterTimes[27+4] = 115f+15;
 		
 		
 
