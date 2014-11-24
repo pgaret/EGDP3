@@ -172,11 +172,11 @@ public class GUIManager : MonoBehaviour {
 		
 			if (player1Select == 0) GUI.Box (new Rect(-Screen.width / 40, Screen.height / 17, PKT.width, PKT.height), PKT, style);
 //			if (player1Select == 1) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, MMT.width, MMT.height), MMT, style);
-			if (player1Select == 2) GUI.Box (new Rect(Screen.width / 8, Screen.height / 4, TKT.width, TKT.height), TKT, style);
+			if (player1Select == 2) GUI.Box (new Rect(-Screen.width / 40, Screen.height / 17, TKT.width, TKT.height), TKT, style);
 			if (player1Select == 3) GUI.Box (new Rect(-Screen.width / 40, Screen.height / 17, DTT.width, DTT.height), DTT, style);
 			if (player2Select == 0) GUI.Box (new Rect(Screen.width * 1.03f / 2, Screen.height / 17, PKT.width, PKT.height), PKT, style);
 //			if (player2Select == 1) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, MMT.width, MMT.height), MMT, style);
-			if (player2Select == 2) GUI.Box (new Rect(Screen.width * 3 / 4, Screen.height / 4, TKT.width, TKT.height), TKT, style);
+			if (player2Select == 2) GUI.Box (new Rect(Screen.width * 1.03f / 2, Screen.height / 17, TKT.width, TKT.height), TKT, style);
 			if (player2Select == 3) GUI.Box (new Rect(Screen.width * 1.03f / 2, Screen.height / 17, DTT.width, DTT.height), DTT, style);		
 
 		}
