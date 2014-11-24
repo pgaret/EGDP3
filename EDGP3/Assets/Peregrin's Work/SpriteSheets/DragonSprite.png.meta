@@ -51,52 +51,52 @@ TextureImporter:
     - name: DragonSprite_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 6
         y: 3
-        width: 38
+        width: 36
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonSprite_1
       rect:
         serializedVersion: 2
-        x: 43
+        x: 44
         y: 3
-        width: 38
+        width: 36
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonSprite_2
       rect:
         serializedVersion: 2
         x: 81
         y: 3
-        width: 38
+        width: 36
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonSprite_3
       rect:
         serializedVersion: 2
-        x: 119
+        x: 120
         y: 3
-        width: 38
+        width: 36
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonSprite_4
       rect:
         serializedVersion: 2
-        x: 157
+        x: 162
         y: 3
-        width: 38
+        width: 33
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

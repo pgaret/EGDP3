@@ -67,7 +67,7 @@ TextureImporter:
         width: 36
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_1
       rect:
@@ -77,7 +77,7 @@ TextureImporter:
         width: 36
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_2
       rect:
@@ -87,7 +87,7 @@ TextureImporter:
         width: 20
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_3
       rect:
@@ -97,7 +97,7 @@ TextureImporter:
         width: 20
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_4
       rect:
@@ -107,7 +107,7 @@ TextureImporter:
         width: 36
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_5
       rect:
@@ -117,7 +117,7 @@ TextureImporter:
         width: 36
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_6
       rect:
@@ -127,7 +127,7 @@ TextureImporter:
         width: 36
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_7
       rect:
@@ -137,7 +137,7 @@ TextureImporter:
         width: 36
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_8
       rect:
@@ -147,7 +147,7 @@ TextureImporter:
         width: 36
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_9
       rect:
@@ -155,9 +155,9 @@ TextureImporter:
         x: 58
         y: 76
         width: 36
-        height: 56
+        height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_10
       rect:
@@ -167,7 +167,7 @@ TextureImporter:
         width: 36
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_11
       rect:
@@ -175,9 +175,9 @@ TextureImporter:
         x: 154
         y: 76
         width: 36
-        height: 56
+        height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_12
       rect:
@@ -187,7 +187,7 @@ TextureImporter:
         width: 36
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_13
       rect:
@@ -195,9 +195,9 @@ TextureImporter:
         x: 58
         y: 10
         width: 36
-        height: 56
+        height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_14
       rect:
@@ -207,7 +207,7 @@ TextureImporter:
         width: 36
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightSprite_15
       rect:
@@ -215,9 +215,9 @@ TextureImporter:
         x: 154
         y: 10
         width: 36
-        height: 56
+        height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

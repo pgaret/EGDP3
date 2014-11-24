@@ -7,6 +7,7 @@ TextureImporter:
     21300004: CoinSprite_2
     21300006: CoinSprite_3
     21300008: CoinSprite_4
+    21300010: CoinSprite_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -51,52 +52,62 @@ TextureImporter:
     - name: CoinSprite_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 19
+        width: 16
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CoinSprite_1
       rect:
         serializedVersion: 2
-        x: 19
+        x: 20
         y: 0
-        width: 19
+        width: 16
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CoinSprite_2
       rect:
         serializedVersion: 2
-        x: 38
+        x: 39
         y: 0
-        width: 19
+        width: 16
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CoinSprite_3
       rect:
         serializedVersion: 2
-        x: 57
+        x: 58
         y: 0
-        width: 19
+        width: 16
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CoinSprite_4
       rect:
         serializedVersion: 2
         x: 76
         y: 0
-        width: 19
+        width: 16
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CoinSprite_5
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

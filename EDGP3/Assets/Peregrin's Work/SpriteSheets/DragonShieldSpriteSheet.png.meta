@@ -25,7 +25,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -45,7 +45,7 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: 1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -71,7 +71,7 @@ TextureImporter:
         width: 26
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_1
       rect:
@@ -81,7 +81,7 @@ TextureImporter:
         width: 26
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_2
       rect:
@@ -91,7 +91,7 @@ TextureImporter:
         width: 26
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_3
       rect:
@@ -101,167 +101,167 @@ TextureImporter:
         width: 26
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 4
-        y: 36
-        width: 26
-        height: 28
+        x: 2
+        y: 35
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 36
-        y: 37
-        width: 26
-        height: 27
+        x: 34
+        y: 35
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_6
       rect:
         serializedVersion: 2
         x: 66
-        y: 38
-        width: 28
-        height: 26
+        y: 35
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 99
-        y: 38
-        width: 27
-        height: 26
+        x: 98
+        y: 35
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 132
-        y: 38
-        width: 26
-        height: 28
+        x: 130
+        y: 35
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_9
       rect:
         serializedVersion: 2
-        x: 164
-        y: 38
-        width: 26
-        height: 27
+        x: 162
+        y: 35
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_10
       rect:
         serializedVersion: 2
-        x: 196
-        y: 38
-        width: 28
-        height: 26
+        x: 194
+        y: 35
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_11
       rect:
         serializedVersion: 2
-        x: 228
-        y: 38
-        width: 27
-        height: 26
+        x: 226
+        y: 35
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_12
       rect:
         serializedVersion: 2
-        x: 4
+        x: 2
         y: 4
-        width: 26
-        height: 28
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_13
       rect:
         serializedVersion: 2
-        x: 36
-        y: 5
-        width: 26
-        height: 27
+        x: 34
+        y: 4
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_14
       rect:
         serializedVersion: 2
-        x: 68
-        y: 6
-        width: 28
-        height: 26
+        x: 66
+        y: 4
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_15
       rect:
         serializedVersion: 2
-        x: 100
-        y: 6
-        width: 27
-        height: 26
+        x: 98
+        y: 4
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_16
       rect:
         serializedVersion: 2
-        x: 132
-        y: 6
-        width: 26
-        height: 28
+        x: 130
+        y: 4
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_17
       rect:
         serializedVersion: 2
-        x: 164
-        y: 6
-        width: 26
-        height: 27
+        x: 162
+        y: 4
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_18
       rect:
         serializedVersion: 2
         x: 194
-        y: 6
-        width: 28
-        height: 26
+        y: 4
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: DragonShieldSpriteSheet_19
       rect:
         serializedVersion: 2
-        x: 227
-        y: 6
-        width: 27
-        height: 26
+        x: 226
+        y: 4
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

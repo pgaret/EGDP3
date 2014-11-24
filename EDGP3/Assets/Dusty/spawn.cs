@@ -27,41 +27,46 @@ public class spawn : MonoBehaviour {
 		EnterTimes[1] = 3f;
 		EnterTimes[2] = 5f;
 		EnterTimes[3] = 6f;
-		//Wave 2
+		//Wave 1.5
 		EnterTimes[4] = 14f;
 		EnterTimes[5] = 16f;
 		EnterTimes[6] = 18f;
 		EnterTimes[7] = 19f;
+		//Wave 2
+		EnterTimes[4+4] = 14f+15;
+		EnterTimes[5+4] = 16f+15;
+		EnterTimes[6+4] = 18f+15;
+		EnterTimes[7+4] = 19f+15;
 		//Wave 3
-		EnterTimes[8] = 28f;
+		EnterTimes[8+4] = 28f+15;
 		//Wave 4
-		EnterTimes[9] = 41f;
-		EnterTimes[10] = 41f;
+		EnterTimes[9+4] = 41f+15;
+		EnterTimes[10+4] = 41f+15;
 		//Wave 5
-		EnterTimes[11] = 48f;
-		EnterTimes[12] = 48f;
+		EnterTimes[11+4] = 48f+15;
+		EnterTimes[12+4] = 48f+15;
 		//Wave 6
-		EnterTimes[13] = 58f;
-		EnterTimes[14] = 59f;
+		EnterTimes[13+4] = 58f+15;
+		EnterTimes[14+4] = 59f+15;
 		//Wave 7
-		EnterTimes[15] = 66f;
-		EnterTimes[16] = 67f;
+		EnterTimes[15+4] = 66f+9;
+		EnterTimes[16+4] = 67f+9;
 		//Wave 8
-		EnterTimes[17] = 75f;
-		EnterTimes[18] = 76f;
+		EnterTimes[17+4] = 75f+9;
+		EnterTimes[18+4] = 76f+9;
 		//Wave 9
-		EnterTimes[19] = 84f;
-		EnterTimes[20] = 85f;
-		EnterTimes[21] = 86f;
-		EnterTimes[22] = 87f;
+		EnterTimes[19+4] = 84f+9;
+		EnterTimes[20+4] = 85f+9;
+		EnterTimes[21+4] = 86f+9;
+		EnterTimes[22+4] = 87f+9;
 		//Wave 10
-		EnterTimes[23] = 97f;
-		EnterTimes[24] = 98f;
-		EnterTimes[25] = 99f;
-		EnterTimes[26] = 100f;
+		EnterTimes[23+4] = 97f+9;
+		EnterTimes[24+4] = 98f+9;
+		EnterTimes[25+4] = 99f+9;
+		EnterTimes[26+4] = 100f+9;
 		
 		//Boss 1
-		EnterTimes[27] = 115f;
+		EnterTimes[27+4] = 115f+9;
 		
 		
 
@@ -200,114 +205,114 @@ public class spawn : MonoBehaviour {
 		if (i == 3){
 			Setpath(1,4,4,4,0,4, false);
 		}
-		/*//Wave 1.5
-		if(i == 0){
+		//Wave 1.5
+		if(i == 4){
 			Setpath(1,-4,1,1,0,0, true); //0 is red bat
 			//Boss1();
 		}
-		if(i == 1){
+		if(i == 5){
 			Setpath(1,4,2,2,0,0, true);
 		}
-		if (i == 2){
+		if (i == 6){
 			Setpath(1,-4,3,3,0,0, true);
 		}
-		if (i == 3){
+		if (i == 7){
 			Setpath(1,4,4,4,0,0, true);
-		} */
+		}
 		//Wave 2
-		if (i == 4){
+		if (i == 4+4){
 			Setpath(1,-4,1,5,0,0, false);
 			//Boss1();
 		}
-		if (i == 5){
+		if (i == 5+4){
 			Setpath(1,4,2,6,0,0, false);
 		}
-		if (i == 6){
+		if (i == 6+4){
 			Setpath(1,-4,3,7,0,0, false);
 		}
-		if (i == 7){
+		if (i == 7+4){
 			Setpath(1,4,4,8,0,0, false);
 		}
 		//Wave 3
-		if (i == 8){
+		if (i == 8+4){
 			Setpath(1,-2,5,9,3,10, false); //3 is green slime
 			Setpath(1,-4,1,1,0,0, false);
 			Setpath(1,4,2,2,0,0, false);
 		}
 		//Wave 4
-		if (i == 9){
+		if (i == 9+4){
 			Setpath(1,-4,2,10,3,10, false);
 			Setpath(1,4,2,11,3,10, false);
 		}
-		if (i == 10){
+		if (i == 10+4){
 			Setpath(1,-4,1,1,0,0, false);
 			Setpath(1,4,2,2,0,0, false);
 		}
 		//Wave 5
-		if(i == 11){
+		if(i == 11+4){
 			Setpath(1,-4,0,12,1,0, false);
 			Setpath(1,4,1,13,0,0, false);
 		}
-		if (i == 12){
+		if (i == 12+4){
 			Setpath(1,-3,2,14,0,0, false);
 			Setpath(1,4,3,15,1,0, false);
 		}
 		//Wave 6
-		if (i == 13){
+		if (i == 13+4){
 			Setpath(1,-4,4,16,1,0, false);
 			Setpath(1,4,4,17,1,0, false);
 		}
-		if (i == 14){
+		if (i == 14+4){
 			Setpath(1,0,4,18,3,10, false);
 		}
 		//Wave 7
-		if(i == 15){
+		if(i == 15+4){
 			Setpath(1,-3,2,14,0,0, false);
 			Setpath(1,-4,1,1,0,0, false);
 			Setpath(1,4,1,13,0,0, false);
 		}
-		if(i == 16){
+		if(i == 16+4){
 			Setpath(1,4,2,2,0,0, false);
 			Setpath(1,4,3,15,1,0, false);
 		}
 		//Wave 8
-		if (i == 17){
+		if (i == 17+4){
 			Setpath(1,4,2,11,3,10, false);
 			Setpath(1,-4,1,5,0,0, false);
 			Setpath(1,-4,3,7,0,0, false);
 		}
-		if (i == 18){
+		if (i == 18+4){
 			Setpath(1,4,4,17,1,0, false);
 			Setpath(1,4,2,11,3,10, false);
 		}
 		//Wave 9
-		if (i == 19){
+		if (i == 19+4){
 			Setpath(1,-2,4,19,1,12, false); //12 is blue slime
 		}
-		if (i == 20){
+		if (i == 20+4){
 			Setpath(1,-1,4,20,1,12, false);
 		}
-		if (i == 21){
+		if (i == 21+4){
 			Setpath(1,1,4,21,1,12, false);
 		}
-		if (i == 22){
+		if (i == 22+4){
 			Setpath(1,2,4,22,1,12, false);
 		}
 		//Wave 10
-		if(i == 23){
+		if(i == 23+4){
 			Setpath(1,-4,2,10,3,10, false);
 			Setpath(1,4,4,8,0,1, false);
 		}
-		if (i == 24){
+		if (i == 24+4){
 			Setpath(1,4,4,4,0,0, false);
 		}
-		if (i == 25){
+		if (i == 25+4){
 			Setpath(1,4,2,6,0,0, false);
 		}
-		if (i == 26){
+		if (i == 26+4){
 			Setpath(1,4,2,2,0,0, false);
 		}
-		if (i == 27){
+		if (i == 27+4){
 			Boss1 ();
 		}
 		//Wave 11
@@ -359,7 +364,7 @@ public class spawn : MonoBehaviour {
 //			Side (2,0,3,1);
 //			Setpath(2,0,3,1);
 		}												
-//		if (i == 37){
+//		if (i == 37+4){
 //			Boss1();
 //		}
 	}

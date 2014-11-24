@@ -61,22 +61,22 @@ TextureImporter:
     - name: TamerSprite_0
       rect:
         serializedVersion: 2
-        x: 12
+        x: 10
         y: 212
-        width: 32
+        width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TamerSprite_1
       rect:
         serializedVersion: 2
-        x: 59
+        x: 57
         y: 212
-        width: 32
+        width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TamerSprite_2
       rect:
@@ -86,27 +86,27 @@ TextureImporter:
         width: 28
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TamerSprite_3
       rect:
         serializedVersion: 2
-        x: 12
+        x: 10
         y: 144
-        width: 32
+        width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TamerSprite_4
       rect:
         serializedVersion: 2
-        x: 60
+        x: 58
         y: 144
-        width: 32
+        width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TamerSprite_5
       rect:
@@ -116,7 +116,7 @@ TextureImporter:
         width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TamerSprite_6
       rect:
@@ -126,67 +126,67 @@ TextureImporter:
         width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TamerSprite_7
       rect:
         serializedVersion: 2
-        x: 12
+        x: 10
         y: 76
-        width: 32
+        width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TamerSprite_8
       rect:
         serializedVersion: 2
-        x: 60
+        x: 58
         y: 76
-        width: 34
-        height: 48
+        width: 36
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TamerSprite_9
       rect:
         serializedVersion: 2
-        x: 108
+        x: 106
         y: 76
-        width: 32
+        width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TamerSprite_10
       rect:
         serializedVersion: 2
         x: 154
         y: 76
-        width: 34
-        height: 48
+        width: 36
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TamerSprite_11
       rect:
         serializedVersion: 2
-        x: 12
+        x: 10
         y: 10
-        width: 32
+        width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TamerSprite_12
       rect:
         serializedVersion: 2
-        x: 60
+        x: 58
         y: 10
-        width: 34
-        height: 48
+        width: 36
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TamerSprite_13
       rect:
@@ -196,7 +196,7 @@ TextureImporter:
         width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TamerSprite_14
       rect:
@@ -204,9 +204,9 @@ TextureImporter:
         x: 154
         y: 10
         width: 36
-        height: 48
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
