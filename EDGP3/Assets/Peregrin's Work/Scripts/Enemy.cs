@@ -42,9 +42,9 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		int random = Random.Range (0, 2);
-		if (random == 0) affinity = false;
-		else affinity = true;
+//		int random = Random.Range (0, 2);
+	//	if (random == 0) affinity = false;
+		//else affinity = true;
 
 
 		checker (point);
@@ -151,9 +151,9 @@ public class Enemy : MonoBehaviour {
 
 				for(int j = 0; j < 13; j++){
 
-					random = Random.Range (0, 2);
-					if (random == 0) affinity = false;
-					else affinity = true;
+//					random = Random.Range (0, 2);
+	//				if (random == 0) affinity = false;
+		//			else affinity = true;
 
 					Vector3 b = new Vector3(j-6,5,0);
 					Vector3 bb = new Vector3(j-6 +.5f,5,0);
