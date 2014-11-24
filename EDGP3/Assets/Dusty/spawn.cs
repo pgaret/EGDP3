@@ -147,7 +147,7 @@ public class spawn : MonoBehaviour {
 	 * path should be always set to 1, if we ever decide on another path, this is inplace for different special paths
 	 * type is enemy/bullet type
 	 */
-	public void Setpath(int numene,int x, int y,int path,int type, int anim){
+	public void Setpath(int numene,int x, int y,int path,int type, int anim, bool affinity){
 		numene += 6;
 		for(int i = numene; i > 6; i--){
 			GameObject test;
@@ -155,6 +155,7 @@ public class spawn : MonoBehaviour {
 			test.GetComponent<Enemy>().path = path;
 			//test.GetComponent<Enemy>().changeloc(new Vector3(i, -i, 0));
 			test.GetComponent<Enemy>().attacktype = type;
+			test.GetComponent<Enemy>().affinity = affinity;
 		}
 	}
 	public void Boss1(){
@@ -188,10 +189,11 @@ public class spawn : MonoBehaviour {
 		//Wave 1
 		if(i == 0){
 			Setpath(1,-4,1,1,0,0); //0 is red bat
-			Boss1();
+//			Boss1();
 		}
 		if(i == 1){
 			Setpath(1,4,2,2,0,0);
+			
 		}
 		if (i == 2){
 			Setpath(1,-4,3,3,0,0);
@@ -202,6 +204,7 @@ public class spawn : MonoBehaviour {
 		//Wave 2
 		if (i == 4){
 			Setpath(1,-4,1,5,0,0);
+			Boss1();
 		}
 		if (i == 5){
 			Setpath(1,4,2,6,0,0);

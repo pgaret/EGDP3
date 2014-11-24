@@ -17,7 +17,7 @@ public class Tinker : MonoBehaviour {
 	Sprite attackRight;
 	Sprite attackLeft;
 	
-	int attackType = 0;
+	public int attackType = 0;
 	
 	float specialTimer = 0;
 	float specialCounter = 0;
@@ -77,6 +77,8 @@ public class Tinker : MonoBehaviour {
 		{
 			attackType += 1;
 			if (attackType > 2) attackType = 0;
+			GetComponent<Animator>().SetInteger("type", attackType);
+			GetComponent<PlayerStats>().specialBool = false;
 		}
 		
 		GameObject[] bulletA = GameObject.FindGameObjectsWithTag ("BulletA");

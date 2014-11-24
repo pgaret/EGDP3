@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour {
 	private GameObject shippe1;
 	private GameObject shippe2;
 	private GameObject shippeatk;
-	bool affinity = false;
+	public bool affinity = false;
 	private Vector3 target;
 	public int path;
 	public int point = 0;

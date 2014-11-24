@@ -20,7 +20,7 @@ public class Boss1 : MonoBehaviour {
 	void Start () {
 		time1 = Time.time;
 		time2 = Time.time;
-		time3 = Time.time;
+		time3 = Time.time + .3f;
 		Master = GameObject.FindGameObjectWithTag("Manager");
 		Master.GetComponent<spawn>().summon = false;
 		//transform.rotation = Quaternion.Euler(new Vector3(180,0,0));
