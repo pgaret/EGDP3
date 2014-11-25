@@ -181,7 +181,7 @@ public class Enemy : MonoBehaviour {
 				if (health <= 0)
 				{
 					GameObject.Find ("Sound").GetComponent<SoundManager>().PlaySound("Explosion");
-					bullets[i].GetComponent<PlayerBullet>().origin.GetComponent<PlayerStats>().score += 50;
+//					bullets[i].GetComponent<PlayerBullet>().origin.GetComponent<PlayerStats>().get
 					Instantiate(coin, transform.position, Quaternion.identity);
 					GameObject theDead = (GameObject)Instantiate(deadEnemy, new Vector3(transform.position.x + renderer.bounds.extents.x, transform.position.y), Quaternion.identity);
 					theDead.GetComponent<DeadEnemy>().type = type;

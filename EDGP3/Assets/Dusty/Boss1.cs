@@ -60,7 +60,7 @@ public class Boss1 : MonoBehaviour {
 			time3 = Time.time;
 		}
 		
-		if (health == 0)
+		if (health <= 0)
 		{
 			Destroy(gameObject);
 			Instantiate(transition);

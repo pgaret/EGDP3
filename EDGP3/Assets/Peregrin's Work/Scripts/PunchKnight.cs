@@ -23,9 +23,9 @@ public class PunchKnight : MonoBehaviour {
 	
 	void Special()
 	{
+		specialCounter = transform.GetComponent<PlayerStats>().ammo / 5;
 		transform.GetComponent<PlayerStats>().ammo = 0;
-		specialTimer = Time.time + 2.1f;
-		specialCounter = 2f;
+		specialTimer = Time.time + .5f;
 	}
 	
 	public void Shield()
@@ -53,9 +53,9 @@ public class PunchKnight : MonoBehaviour {
 				{
 					thePunch = (Transform)Instantiate (projectile, child.position, Quaternion.identity);
 					thePunch.GetComponent<SpriteRenderer>().sprite = punchRight;
-				transform.GetComponent<PlayerStats>().ammo -= 1;
-			}
-			GetComponent<PlayerStats>().shootBool = false;
+					transform.GetComponent<PlayerStats>().ammo -= 1;
+				}
+				GetComponent<PlayerStats>().shootBool = false;
 			}
 		}
 		
@@ -82,7 +82,7 @@ public class PunchKnight : MonoBehaviour {
 			}
 		}
 		
-		if (specialTimer - Time.time <= specialCounter  && specialTimer - Time.time > 0)
+		if (specialTimer - Time.time <= specialCounter  && Time.time > specialTimer && specialCounter > 0)
 		{
 			Transform instance;
 			for (float i = 0; i < specialCounter; i += .5f)
@@ -98,8 +98,8 @@ public class PunchKnight : MonoBehaviour {
 			instance = (Transform)Instantiate(special, transform.position, Quaternion.identity);
 			instance.GetComponent<PKSpecial>().rotation = 0;
 			instance.GetComponent<SpriteRenderer>().sprite = punchLeft;
-			
-			specialCounter -= .5f;
+			specialTimer = Time.time + .5f;
+			specialCounter -= 1f;
 		}
 
 	}

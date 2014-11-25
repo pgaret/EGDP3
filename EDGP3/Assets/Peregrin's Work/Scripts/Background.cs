@@ -6,6 +6,12 @@ public class Background : MonoBehaviour {
 	public float scrollSpeed;
 	public int mode;
 	public Sprite theSprite;
+	public bool bossKilled = false;
+	
+	public Sprite background1;
+	public Sprite background1b;
+	public Sprite background2;
+	public Sprite background2b;
 	
 	private GameObject manager;
 	private GameObject cam;
@@ -14,7 +20,7 @@ public class Background : MonoBehaviour {
 	private bool haveReplicated = false;
 	
 	private float time;
-	private float time1 = 1;
+	private float time1 = 2f;
 	private float time2 = 300f;
 	private float time3 = 600f;
 
@@ -22,64 +28,67 @@ public class Background : MonoBehaviour {
 	void Start ()
 	{
 		manager = GameObject.Find ("Manager");
-		cam = GameObject.Find ("Main Camera");
 		time = manager.GetComponent<spawn>().time;
 		
+		transform.localScale = new Vector3(1.6f, 1.6f);
+		GetComponent<SpriteRenderer>().sortingOrder = -1;
+		
+	
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-/*		if (Time.time - time >= time1)
-		{
-			mode = 1;
-			theSprite = cam.GetComponent<GUIManager>().Background1B;
-		}
-		if (Time.time - time >= time2)
-		{
-			mode = 2;
-		}
-		if (Time.time - time >= time3)
-		{
-			mode = 3;
-		}
-		if (mode == 0 && GameObject.Find ("Boss1(Clone)") == null)
-		{
-			transform.GetComponent<SpriteRenderer>().sprite = cam.GetComponent<GUIManager>().Background1;
-		}
-		else if (mode == 1)
-		{
-			GameObject[] bgs  = GameObject.FindGameObjectsWithTag("Background");
-			foreach (GameObject bg in bgs) bg.GetComponent<Background>().scrollSpeed = bg.GetComponent<Background>().scrollSpeed * 2;
-		}
-		else if (mode == 2)
-		{
-			transform.GetComponent<SpriteRenderer>().sprite = cam.GetComponent<GUIManager>().Background2;
-			
-		}
-		else if (mode == 3)
-		{
-			transform.GetComponent<SpriteRenderer>().sprite = cam.GetComponent<GUIManager>().Background2B;
-			GameObject[] bgs  = GameObject.FindGameObjectsWithTag("Background");
-			foreach (GameObject bg in bgs) bg.GetComponent<Background>().scrollSpeed = bg.GetComponent<Background>().scrollSpeed * 4;
-		}
-		transform.localScale = new Vector3(1.6f, 1.6f);
-		GetComponent<SpriteRenderer>().sortingOrder = -1;
-		if (mode == 0 || mode == 2 || mode == 4)
+		mode = manager.GetComponent<spawn>().stage;
+					
+		if (GetComponent<SpriteRenderer>().sprite != background1b && GetComponent<SpriteRenderer>().sprite != background2b)
 		{
 			transform.Translate (Vector3.down*Time.deltaTime*scrollSpeed);
-			
+			Transform bg;
 			if (transform.position.y < -1.36f && haveReplicated == false)
 			{
-				Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
+//				Debug.Log (time1+" "+manager.GetComponent<spawn>().time);
+				if (mode == 0 && Time.time - manager.GetComponent<spawn>().time < time1)
+				{
+					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
+					bg.GetComponent<SpriteRenderer>().sprite = background1;
+				}
+				if (mode == 0 && Time.time - manager.GetComponent<spawn>().time > time1)
+				{
+					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
+					bg.GetComponent<SpriteRenderer>().sprite = background1b;
+				}
+				if (mode == 1 && Time.time - manager.GetComponent<spawn>().time < time2)
+				{
+					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
+					bg.GetComponent<SpriteRenderer>().sprite = background2;
+				}
+				if (mode == 1 && Time.time - manager.GetComponent<spawn>().time > time2)
+				{
+					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
+					bg.GetComponent<SpriteRenderer>().sprite = background2b;
+				}
 				haveReplicated = true;
 			}
-			if (!renderer.isVisible) Destroy (gameObject);
-
 		}
 		else
 		{
-			if (transform.position.y > 1.36f) transform.Translate (Vector3.down*Time.deltaTime*scrollSpeed * 2);
+			if (transform.position.y > 1.36f)
+			{
+				transform.Translate (Vector3.down*Time.deltaTime*scrollSpeed);
+			}
+			if (bossKilled == true)
+			{
+				if (GetComponent<SpriteRenderer>().sprite == background1b)
+				{
+					GetComponent<SpriteRenderer>().sprite = background2;
+					bossKilled = false;
+				}
+			}
+			
 		}
-*/	}
+		if (!renderer.isVisible) Destroy (gameObject);
+
+
+	}
 }

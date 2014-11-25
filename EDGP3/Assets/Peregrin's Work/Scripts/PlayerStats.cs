@@ -164,6 +164,12 @@ public class PlayerStats : MonoBehaviour {
 		//Input shenanigans
 		if (transform.tag == "Player1")
 		{
+			//Keyboard
+			if (Input.GetAxis("Vertical") > 0 && transform.position.y < top.transform.position.y) transform.Translate(Vector3.up*Time.deltaTime*speed);
+			if (Input.GetAxis ("Horizontal") < 0 && transform.position.x > left.transform.position.x) transform.Translate(Vector3.left*Time.deltaTime*speed);
+			if (Input.GetAxis ("Vertical") < 0 && transform.position.y > down.transform.position.y) transform.Translate(Vector3.down*Time.deltaTime*speed);
+			if (Input.GetAxis ("Horizontal") > 0 && transform.position.x < right.transform.position.x) transform.Translate(Vector3.right*Time.deltaTime*speed);
+		
 			//Movement
 			if (Input.GetAxis("XboxVertical1") > 0 && transform.position.y < top.transform.position.y) transform.Translate(Vector3.up*Time.deltaTime*speed);
 			if (Input.GetAxis ("XboxHorizontal1") < 0 && transform.position.x > left.transform.position.x) transform.Translate(Vector3.left*Time.deltaTime*speed);

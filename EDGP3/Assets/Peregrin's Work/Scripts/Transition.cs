@@ -32,6 +32,7 @@ public class Transition : MonoBehaviour {
 				GameObject manager = GameObject.Find("Manager");
 				manager.GetComponent<spawn>().stage = 1;
 				manager.GetComponent<spawn>().summon = true;
+				GameObject.FindGameObjectWithTag("Background").GetComponent<Background>().bossKilled = true;
 			}
 		}
 	}
