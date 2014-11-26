@@ -1,10 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Peregrin's Work\Scripts\Background.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Dusty\Boss3.cs">
     <Files>
-      <File FileName="Assets\Peregrin's Work\Scripts\Background.cs" Line="32" Column="49" />
-      <File FileName="Assets\Dusty\spawn.cs" Line="57" Column="11" />
-      <File FileName="Assets\Peregrin's Work\Scripts\Transition.cs" Line="34" Column="7" />
+      <File FileName="Assets\Dusty\Boss3.cs" Line="85" Column="78" />
+      <File FileName="Assets\Dusty\Boss2.cs" Line="36" Column="3" />
+      <File FileName="Assets\Dusty\Spin.cs" Line="14" Column="46" />
+      <File FileName="Assets\Dusty\Wings.cs" Line="10" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

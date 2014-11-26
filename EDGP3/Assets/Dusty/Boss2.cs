@@ -7,6 +7,8 @@ public class Boss2 : MonoBehaviour {
 	public float summoncd,firecd,raincd,ramcd;
 	public float time1,time2,time3,time4;
 	public bool alive;
+	Animator anim;
+
 	public GameObject projectileA;
 	public GameObject projectileB;
 	private GameObject shippe1;
@@ -24,6 +26,7 @@ public class Boss2 : MonoBehaviour {
 	public int phase = 0;
 	// Use this for initialization
 	void Start () {
+		anim = GetComponent<Animator>();
 		rush = false;
 		time1 = Time.time;
 		time2 = Time.time;
@@ -90,7 +93,7 @@ public class Boss2 : MonoBehaviour {
 			if (random == 0) shippeatk = shippe1;
 			else shippeatk = shippe2;
 			rotations();
-
+			anim.SetBool("Dash",true);
 			time4 = Time.time;
 		}
 		if(rush){
