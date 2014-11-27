@@ -95,11 +95,12 @@ public class Boss2 : MonoBehaviour {
 			rotations();
 			anim.SetBool("Dash",true);
 			time4 = Time.time;
+			transform.Rotate(0,0,180);
 		}
 		if(rush){
 			step = (speed + acc) * Time.deltaTime;
 			acc += 2f;
-			rigidbody.AddForce(transform.up * step);
+			rigidbody.AddForce(-transform.up * step);
 		}
 		//Health phases
 		if(health/maxhealth < .3f){
