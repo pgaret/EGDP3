@@ -2,10 +2,11 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Dusty\Boss3.cs">
     <Files>
-      <File FileName="Assets\Dusty\Boss3.cs" Line="85" Column="78" />
-      <File FileName="Assets\Dusty\Boss2.cs" Line="36" Column="3" />
-      <File FileName="Assets\Dusty\Spin.cs" Line="14" Column="46" />
-      <File FileName="Assets\Dusty\Wings.cs" Line="10" Column="28" />
+      <File FileName="Assets\Dusty\Boss3.cs" Line="187" Column="4" />
+      <File FileName="Assets\Dusty\Boss2.cs" Line="90" Column="20" />
+      <File FileName="Assets\Dusty\Spin.cs" Line="1" Column="1" />
+      <File FileName="Assets\Dusty\Wings.cs" Line="1" Column="1" />
+      <File FileName="Assets\Peregrin's Work\Scripts\PlayerStats.cs" Line="133" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

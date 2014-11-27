@@ -54,6 +54,7 @@
      <Compile Include="Assets\Dusty\Boxy2.cs" />
      <Compile Include="Assets\Dusty\Spin.cs" />
      <Compile Include="Assets\Dusty\Wings.cs" />
+     <Compile Include="Assets\Dusty\ice.cs" />
      <Compile Include="Assets\Dusty\manager.cs" />
      <Compile Include="Assets\Dusty\spawn.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Background.cs" />
