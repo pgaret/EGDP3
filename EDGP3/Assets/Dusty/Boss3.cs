@@ -42,6 +42,12 @@ public class Boss3 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(health/maxhealth < .3f){
+			phase = 2;
+		}else
+		if(health/maxhealth < .6f){
+			phase = 1;
+		}
 		step = speed * Time.deltaTime;
 		transform.position = Vector3.MoveTowards(transform.position, target, step);
 		if(firecd <= Time.time - time1 && phase == 0){
