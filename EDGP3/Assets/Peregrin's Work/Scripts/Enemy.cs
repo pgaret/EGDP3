@@ -177,7 +177,7 @@ public class Enemy : MonoBehaviour {
 		{
 			if (bullets[i].renderer.bounds.Intersects(transform.renderer.bounds))
 			{
-				health -= 1;
+				if (bullets[i].name != "TinkerBullet(Clone)") health -= 1;
 				if (health <= 0)
 				{
 					GameObject.Find ("Sound").GetComponent<SoundManager>().PlaySound("Explosion");
@@ -187,7 +187,7 @@ public class Enemy : MonoBehaviour {
 					theDead.GetComponent<DeadEnemy>().type = type;
 					Destroy (gameObject);
 				}
-				Destroy (bullets[i].gameObject);
+				if (bullets[i].name != "TinkerBullet(Clone)") Destroy (bullets[i].gameObject);
 			}
 		}
 		float step = speed * Time.deltaTime;

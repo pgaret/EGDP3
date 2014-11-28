@@ -62,11 +62,14 @@ public class Tinker : MonoBehaviour {
 				{
 					thePunch = (Transform)Instantiate (projectile, child.position, Quaternion.identity);
 					thePunch.GetComponent<SpriteRenderer>().sprite = attackLeft;
+					thePunch.GetComponent<TinkerBullets>().type = attackType;
+					transform.GetComponent<PlayerStats>().ammo -= 1;
 				}
 				else if (child.name == "Right")
 				{
 					thePunch = (Transform)Instantiate (projectile, child.position, Quaternion.identity);
 					thePunch.GetComponent<SpriteRenderer>().sprite = attackRight;
+					thePunch.GetComponent<TinkerBullets>().type = attackType;
 					transform.GetComponent<PlayerStats>().ammo -= 1;
 				}
 				GetComponent<PlayerStats>().shootBool = false;

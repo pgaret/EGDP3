@@ -23,7 +23,7 @@ public class Boss3 : MonoBehaviour {
 	float acc = 0;
 	float step;
 	bool sumlight;
-	public int phase = 0;
+	public int phase = 1;
 	bool firefire = false;
 	bool fireice = false;
 	int amount = 6;
@@ -43,7 +43,7 @@ public class Boss3 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(health/maxhealth < .3f){
-			phase = 2;
+			phase = 1;
 		}else
 		if(health/maxhealth < .6f){
 			phase = 1;

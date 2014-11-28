@@ -43,6 +43,4 @@ public class EnemyBullet : MonoBehaviour {
 		bullettype = a;
 
 	}
-
-
 }

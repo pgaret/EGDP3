@@ -196,7 +196,7 @@ public class PlayerStats : MonoBehaviour {
 					shootTimer = Time.time + shootCD;
 				}
 				//Special
-				if (Input.GetButtonUp("XboxFire1B") && Time.time > specialTimer && specialBool == false && tutSpecial == false)
+				if ((Input.GetButtonUp("XboxFire1B") || Input.GetKeyUp(KeyCode.T)) && Time.time > specialTimer && specialBool == false && tutSpecial == false)
 				{
 					specialBool = true;
 					specialTimer = Time.time + specialCD;

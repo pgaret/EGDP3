@@ -67,23 +67,6 @@ public class DragonTamer : MonoBehaviour {
 				transform.GetComponent<PlayerStats>().ammo -= 1;
 				GetComponent<PlayerStats>().shootBool = false;
 			}
-
-			GameObject[] bulletA = GameObject.FindGameObjectsWithTag ("BulletA");
-			GameObject[] bulletB = GameObject.FindGameObjectsWithTag ("BulletB");
-			for (int i = 0; i < bulletA.Length; i++)
-			{
-				if (bulletA[i].renderer.bounds.Intersects(gameObject.renderer.bounds))
-				{
-					Destroy (bulletA[i].gameObject);
-				}
-			}
-			for (int i = 0; i < bulletB.Length; i++)
-			{
-				if (bulletB[i].renderer.bounds.Intersects(gameObject.renderer.bounds))
-				{
-					Destroy(bulletB[i].gameObject);
-				}
-			}
 		}
 
 	}
