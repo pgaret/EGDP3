@@ -45,7 +45,7 @@ public class TinkerBullets : MonoBehaviour {
 					{
 						if (enemy.renderer.bounds.Intersects(collider2D.bounds))
 						{
-							Destroy (enemy.gameObject);
+							enemy.GetComponent<Enemy>().health -= 1;
 						}
 					}
 					type = 4;
@@ -57,7 +57,6 @@ public class TinkerBullets : MonoBehaviour {
 				float dist = 0;
 				if (enemies.Length == 0) Destroy (gameObject);
 				if (hasHit) Destroy(gameObject);
-				if (!hasHit) Debug.Log ("have not hit");
 				for (int i = 0; i < enemies.Length; i++)
 				{
 					float test = Vector3.Distance(enemies[i].transform.position, transform.position);
@@ -73,6 +72,7 @@ public class TinkerBullets : MonoBehaviour {
 				if (transform.position == enemies[index].transform.position)
 				{
 					Destroy(gameObject);
+					Debug.Log ("test");
 					enemies[index].GetComponent<Enemy>().health -= 1;
 					hasHit = true;
 				}
@@ -94,6 +94,7 @@ public class TinkerBullets : MonoBehaviour {
 		
 		if (type == 4 && bombTimer == -1) //Bomb explosion
 		{
+			transform.position = enemies[index].transform.position;
 			GetComponent<SpriteRenderer>().sprite = bombSprite;
 			bombTimer = Time.time + bombCD;
 		}

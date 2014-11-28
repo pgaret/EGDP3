@@ -177,18 +177,18 @@ public class Enemy : MonoBehaviour {
 		{
 			if (bullets[i].renderer.bounds.Intersects(transform.renderer.bounds))
 			{
-				if (bullets[i].name != "TinkerBullet(Clone)") health -= 1;
-				if (health <= 0)
-				{
-					GameObject.Find ("Sound").GetComponent<SoundManager>().PlaySound("Explosion");
-//					bullets[i].GetComponent<PlayerBullet>().origin.GetComponent<PlayerStats>().get
-					Instantiate(coin, transform.position, Quaternion.identity);
-					GameObject theDead = (GameObject)Instantiate(deadEnemy, new Vector3(transform.position.x + renderer.bounds.extents.x, transform.position.y), Quaternion.identity);
-					theDead.GetComponent<DeadEnemy>().type = type;
-					Destroy (gameObject);
-				}
-				if (bullets[i].name != "TinkerBullet(Clone)") Destroy (bullets[i].gameObject);
+				health -= 1;
+				Destroy (bullets[i].gameObject);
 			}
+		}
+		if (health <= 0)
+		{
+			GameObject.Find ("Sound").GetComponent<SoundManager>().PlaySound("Explosion");
+			//					bullets[i].GetComponent<PlayerBullet>().origin.GetComponent<PlayerStats>().get
+			Instantiate(coin, transform.position, Quaternion.identity);
+			GameObject theDead = (GameObject)Instantiate(deadEnemy, new Vector3(transform.position.x + renderer.bounds.extents.x, transform.position.y), Quaternion.identity);
+			theDead.GetComponent<DeadEnemy>().type = type;
+			Destroy (gameObject);
 		}
 		float step = speed * Time.deltaTime;
 		//transform.rotation = Quaternion.Lerp(transform.rotation,qr,Time.deltaTime*turnspeed);
