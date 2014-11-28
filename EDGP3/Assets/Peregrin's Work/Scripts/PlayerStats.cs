@@ -101,9 +101,8 @@ public class PlayerStats : MonoBehaviour {
 		//Things that happen specific to chars as a result of role swapping
 		if (transform.name == "PunchKnight(Clone)")
 		{
-			if (role != "Defender")Destroy(transform.FindChild("Shield(Clone)").gameObject);
+			if (role != "Defender")Destroy(transform.FindChild("PKShield(Clone)").gameObject);
 			if (role == "Defender")transform.GetComponent<PunchKnight>().Shield();
-
 		}
 		if (transform.name == "DragonTamer(Clone)")
 		{
@@ -203,7 +202,7 @@ public class PlayerStats : MonoBehaviour {
 				}
 			}
 			//Defender inputs
-			else if (Input.GetButtonUp("XboxFire1X"))
+			else if (Input.GetButtonUp("XboxFire1X") || Input.GetKeyUp(KeyCode.T))
 			{
 				if (affinity == 'A') affinity = 'B';
 				else affinity = 'A';

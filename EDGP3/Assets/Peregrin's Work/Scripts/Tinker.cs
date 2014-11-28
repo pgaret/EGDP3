@@ -19,8 +19,8 @@ public class Tinker : MonoBehaviour {
 	
 	public int attackType = 0;
 	
-	float specialTimer = 0;
-	float specialCounter = 0;
+	public float spawnCD;
+	float spawnTimer;
 	
 	GameObject sound;
 	
@@ -32,7 +32,7 @@ public class Tinker : MonoBehaviour {
 	
 	public void Shield()
 	{
-		Instantiate(shield, transform.position, Quaternion.identity);
+
 	}
 	
 	// Update is called once per frame
@@ -76,7 +76,7 @@ public class Tinker : MonoBehaviour {
 			}
 		}
 		
-		if (GetComponent<PlayerStats>().specialBool == true)
+		if (GetComponent<PlayerStats>().specialBool == true && GetComponent<PlayerStats>().role == "Attacker")
 		{
 			attackType += 1;
 			if (attackType > 2) attackType = 0;
@@ -84,21 +84,10 @@ public class Tinker : MonoBehaviour {
 			GetComponent<PlayerStats>().specialBool = false;
 		}
 		
-		GameObject[] bulletA = GameObject.FindGameObjectsWithTag ("BulletA");
-		GameObject[] bulletB = GameObject.FindGameObjectsWithTag ("BulletB");
-		for (int i = 0; i < bulletA.Length; i++)
+		if (GetComponent<PlayerStats>().role == "Defender" && Time.time > spawnTimer && Input.GetKeyUp(KeyCode.I))
 		{
-			if (bulletA[i].renderer.bounds.Intersects(gameObject.renderer.bounds))
-			{
-				Destroy (bulletA[i].gameObject);
-			}
-		}
-		for (int i = 0; i < bulletB.Length; i++)
-		{
-			if (bulletB[i].renderer.bounds.Intersects(gameObject.renderer.bounds))
-			{
-				Destroy(bulletB[i].gameObject);
-			}
+			Instantiate(shield, transform.position, Quaternion.identity);
+			spawnTimer = Time.time + spawnCD;
 		}
 
 		

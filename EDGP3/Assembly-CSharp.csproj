@@ -80,6 +80,7 @@
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Test.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Tinker.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\TinkerBullets.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\Scripts\TinkerShield.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Transition.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Tutorial.cs" />
  <Reference Include="UnityEngine.UI">
