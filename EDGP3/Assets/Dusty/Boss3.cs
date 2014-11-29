@@ -57,7 +57,7 @@ public class Boss3 : MonoBehaviour {
 			time1 = Time.time;
 		}
 		if(pewpew1cd <= Time.time - time5 && phase == 0){
-			pewpew1();
+			firecone();
 			
 			time5 = Time.time;
 		}
@@ -123,6 +123,35 @@ public class Boss3 : MonoBehaviour {
 	void light(){
 		GameObject a;
 		a = Instantiate(lightning, new Vector3(0,0,0), lightning.transform.rotation) as GameObject;
+
+	}
+	void firecone(){
+		GameObject bullet;
+		int random = Random.Range (0, 2);
+		if (random == 0) affinity = false;
+		else affinity = true;
+		random = Random.Range (0, 2);
+		if (random == 0) shippeatk = shippe1;
+		else shippeatk = shippe2;
+		for(int i = -4;i< 4; i++){
+			if (affinity == false) {
+				float angle = 0;
+				Vector3 relative = transform.InverseTransformPoint(shippeatk.transform.position);
+				angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
+				bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
+				bullet.transform.Rotate(0,0,-angle+i*3+180);
+
+				
+			}else {
+				float angle = 0;
+				Vector3 relative = transform.InverseTransformPoint(shippeatk.transform.position);
+				angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
+				bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
+				bullet.transform.Rotate(0,0,-angle+i*3+180);
+
+				
+			}
+		}
 
 	}
 	void rainice(){
