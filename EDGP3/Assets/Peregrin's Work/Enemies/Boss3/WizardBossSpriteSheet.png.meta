@@ -1,0 +1,696 @@
+fileFormatVersion: 2
+guid: 20698a869a19b244a91f53aae5b85a68
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: WizardBossSpriteSheet_0
+    21300002: WizardBossSpriteSheet_1
+    21300004: WizardBossSpriteSheet_2
+    21300006: WizardBossSpriteSheet_3
+    21300008: WizardBossSpriteSheet_4
+    21300010: WizardBossSpriteSheet_5
+    21300012: WizardBossSpriteSheet_6
+    21300014: WizardBossSpriteSheet_7
+    21300016: WizardBossSpriteSheet_8
+    21300018: WizardBossSpriteSheet_9
+    21300020: WizardBossSpriteSheet_10
+    21300022: WizardBossSpriteSheet_11
+    21300024: WizardBossSpriteSheet_12
+    21300026: WizardBossSpriteSheet_13
+    21300028: WizardBossSpriteSheet_14
+    21300030: WizardBossSpriteSheet_15
+    21300032: WizardBossSpriteSheet_16
+    21300034: WizardBossSpriteSheet_17
+    21300036: WizardBossSpriteSheet_18
+    21300038: WizardBossSpriteSheet_19
+    21300040: WizardBossSpriteSheet_20
+    21300042: WizardBossSpriteSheet_21
+    21300044: WizardBossSpriteSheet_22
+    21300046: WizardBossSpriteSheet_23
+    21300048: WizardBossSpriteSheet_24
+    21300050: WizardBossSpriteSheet_25
+    21300052: WizardBossSpriteSheet_26
+    21300054: WizardBossSpriteSheet_27
+    21300056: WizardBossSpriteSheet_28
+    21300058: WizardBossSpriteSheet_29
+    21300060: WizardBossSpriteSheet_30
+    21300062: WizardBossSpriteSheet_31
+    21300064: WizardBossSpriteSheet_32
+    21300066: WizardBossSpriteSheet_33
+    21300068: WizardBossSpriteSheet_34
+    21300070: WizardBossSpriteSheet_35
+    21300072: WizardBossSpriteSheet_36
+    21300074: WizardBossSpriteSheet_37
+    21300076: WizardBossSpriteSheet_38
+    21300078: WizardBossSpriteSheet_39
+    21300080: WizardBossSpriteSheet_40
+    21300082: WizardBossSpriteSheet_41
+    21300084: WizardBossSpriteSheet_42
+    21300086: WizardBossSpriteSheet_43
+    21300088: WizardBossSpriteSheet_44
+    21300090: WizardBossSpriteSheet_45
+    21300092: WizardBossSpriteSheet_46
+    21300094: WizardBossSpriteSheet_47
+    21300096: WizardBossSpriteSheet_48
+    21300098: WizardBossSpriteSheet_49
+    21300100: WizardBossSpriteSheet_50
+    21300102: WizardBossSpriteSheet_51
+    21300104: WizardBossSpriteSheet_52
+    21300106: WizardBossSpriteSheet_53
+    21300108: WizardBossSpriteSheet_54
+    21300110: WizardBossSpriteSheet_55
+    21300112: WizardBossSpriteSheet_56
+    21300114: WizardBossSpriteSheet_57
+    21300116: WizardBossSpriteSheet_58
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: WizardBossSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 549
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 547
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 545
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 543
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 541
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 539
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 526
+        width: 51
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 539
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 541
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 543
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 1667
+        y: 545
+        width: 50
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 547
+        width: 50
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 526
+        width: 42
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 526
+        width: 44
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 526
+        width: 44
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 526
+        width: 44
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 526
+        width: 44
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 526
+        width: 44
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 526
+        width: 44
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 526
+        width: 42
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 526
+        width: 42
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 526
+        width: 42
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 526
+        width: 42
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 345
+        width: 143
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 345
+        width: 143
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 345
+        width: 143
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 345
+        width: 143
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 345
+        width: 142
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 345
+        width: 143
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 345
+        width: 143
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 345
+        width: 143
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 345
+        width: 143
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 345
+        width: 143
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 345
+        width: 143
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 1781
+        y: 345
+        width: 142
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 184
+        width: 135
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 184
+        width: 135
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 184
+        width: 135
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 184
+        width: 136
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 184
+        width: 136
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 184
+        width: 136
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 184
+        width: 135
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 184
+        width: 135
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 184
+        width: 135
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 184
+        width: 135
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 184
+        width: 133
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 184
+        width: 134
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 22
+        width: 131
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 22
+        width: 131
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 22
+        width: 131
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 22
+        width: 132
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 22
+        width: 132
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 22
+        width: 132
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 22
+        width: 131
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 22
+        width: 131
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 22
+        width: 131
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 22
+        width: 129
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 1627
+        y: 22
+        width: 130
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WizardBossSpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 22
+        width: 130
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

@@ -37,6 +37,10 @@ public class Effects : MonoBehaviour {
 			Debug.Log (pos1 + " " + pos2);
 			lr.SetPosition(0, player1.transform.position);
 			lr.SetPosition(1, player2.transform.position);
+			lr.SetWidth(.1f, .1f);
+			lr.useWorldSpace = false;
+			lr.transform.position = new Vector3(transform.position.x, transform.position.y, -.1f);
 		}
+		
 	}
 }

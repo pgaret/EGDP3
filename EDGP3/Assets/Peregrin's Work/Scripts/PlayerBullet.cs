@@ -44,14 +44,15 @@ public class PlayerBullet : MonoBehaviour {
 				Destroy (gameObject);
 			}
 		}
-/*		else if (GameObject.FindGameObjectWithTag("Boss3") != null)
-		         {	
-			if (GameObject.FindGameObjectWithTag("Boss3").renderer.bounds.Intersects(renderer.bounds))
+		else if (GameObject.FindGameObjectWithTag("Boss3") != null)
+		{
+			Debug.Log (GameObject.FindGameObjectWithTag("Boss3").collider.bounds+ "  " + renderer.bounds);
+			if (GameObject.FindGameObjectWithTag("Boss3").collider.bounds.Intersects(renderer.bounds))
 			{
 				GameObject.FindGameObjectWithTag("Boss3").GetComponent<Boss3>().subhealth();
 				Destroy (gameObject);
 			}
 		}
-*/		
+		
 	}
 }

@@ -12,6 +12,7 @@ public class Boss3 : MonoBehaviour {
 	public GameObject fires;
 	public GameObject ice;
 	public GameObject lightning;
+	public GameObject transition;
 	private GameObject shippe1;
 	private GameObject shippe2;
 	private GameObject shippeatk;
@@ -42,6 +43,10 @@ public class Boss3 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (phase == 0) GetComponent<Animator>().SetInteger("type", 0);
+		if (phase == 1) GetComponent<Animator>().SetInteger("type", 1);
+		if (phase == 2) GetComponent<Animator>().SetInteger("type", 2);
+		
 		if(health/maxhealth < .3f){
 			phase = 1;
 		}else
@@ -118,6 +123,12 @@ public class Boss3 : MonoBehaviour {
 		if(sumlight == false && phase == 2){
 			sumlight = true;
 			light();
+		}
+		
+		if (health <= 0)
+		{
+			Destroy(gameObject);
+			Instantiate(transition);
 		}
 	}
 	void light(){
@@ -283,6 +294,11 @@ public class Boss3 : MonoBehaviour {
 	}
 	public void changeloc(Vector3 a){
 		target = a;
+		
+	}
+	
+	public void subhealth(){
+		health--;
 		
 	}
 }

@@ -177,7 +177,7 @@ public class spawn : MonoBehaviour {
 	public void Boss3(){
 		GameObject test;
 		test = Instantiate(Bossc, new Vector3(0, 7, 0), Quaternion.identity) as GameObject;
-		test.GetComponent<Boss3>().changeloc(new Vector3(0, 4, 0));
+		test.GetComponent<Boss3>().changeloc(new Vector3(0, 4, -1));
 		//test.GetComponent<Boss1>().changeloc(new Vector3(0, 4, 0));
 	}
 

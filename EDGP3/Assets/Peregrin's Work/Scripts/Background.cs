@@ -12,6 +12,10 @@ public class Background : MonoBehaviour {
 	public Sprite background1b;
 	public Sprite background2;
 	public Sprite background2b;
+	public Sprite backgournd3;
+	public Sprite background3a;
+	public Sprite background3b;
+	public Sprite background3c;
 	
 	private GameObject manager;
 	private GameObject cam;

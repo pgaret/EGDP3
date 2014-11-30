@@ -27,12 +27,6 @@ public class Tinker : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		sound = GameObject.Find ("Sound");
-		if (transform.tag == "Player2") Shield ();	
-	}
-	
-	public void Shield()
-	{
-
 	}
 	
 	// Update is called once per frame

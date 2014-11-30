@@ -3,10 +3,6 @@ using System.Collections;
 
 public class PKShield : MonoBehaviour {
 	
-	public GUIStyle style;
-	public Sprite A;
-	public Sprite B;
-	
 	Transform parent;
 
 	// Use this for initialization
@@ -23,7 +19,7 @@ public class PKShield : MonoBehaviour {
 			transform.parent = option2.transform;
 			transform.position = new Vector3(transform.parent.renderer.bounds.center.x, transform.parent.renderer.bounds.center.y + transform.parent.renderer.bounds.extents.y + transform.renderer.bounds.extents.y);	
 		}
-		transform.localScale = new Vector3(2f, 1.5f);
+		transform.localScale = new Vector3(1f, 1f);
 	}
 	
 //	void OnGUI()
@@ -36,8 +32,8 @@ public class PKShield : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.position = new Vector3(transform.parent.renderer.bounds.center.x, transform.parent.renderer.bounds.center.y + transform.parent.renderer.bounds.extents.y + transform.renderer.bounds.extents.y);
-		Vector3 scale = new Vector3(.002f, .002f);
-		Vector3 finalScale = new Vector3(.7f, .5f);
+		Vector3 scale = new Vector3(.0002f, .0002f);
+		Vector3 finalScale = new Vector3(.5f, .5f);
 		if (transform.localScale.x > finalScale.x && transform.localScale.y > finalScale.y) transform.localScale -= scale;
 		
 		GameObject[] bulletA = GameObject.FindGameObjectsWithTag ("BulletA");
@@ -65,11 +61,11 @@ public class PKShield : MonoBehaviour {
 
 		if (transform.parent.GetComponent<PlayerStats>().affinity == 'A')
 		{
-			GetComponent<SpriteRenderer>().sprite = A;
+			GetComponent<Animator>().SetBool("a", true);
 		}
 		else
 		{
-			GetComponent<SpriteRenderer>().sprite = B;
+			GetComponent<Animator>().SetBool("a", false);
 		}		
 		
 	}

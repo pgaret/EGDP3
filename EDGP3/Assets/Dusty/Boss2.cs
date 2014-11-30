@@ -11,6 +11,7 @@ public class Boss2 : MonoBehaviour {
 
 	public GameObject projectileA;
 	public GameObject projectileB;
+	public GameObject transition;
 	private GameObject shippe1;
 	private GameObject shippe2;
 	private GameObject shippeatk;
@@ -108,6 +109,12 @@ public class Boss2 : MonoBehaviour {
 		}else
 		if(health/maxhealth < .6f){
 			phase = 1;
+		}
+		
+		if (health <= 0)
+		{
+			Destroy(gameObject);
+			Instantiate(transition);
 		}
 
 	}
