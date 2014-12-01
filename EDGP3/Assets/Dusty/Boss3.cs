@@ -48,7 +48,7 @@ public class Boss3 : MonoBehaviour {
 		if (phase == 2) GetComponent<Animator>().SetInteger("type", 2);
 		
 		if(health/maxhealth < .3f){
-			phase = 1;
+			phase = 2;
 		}else
 		if(health/maxhealth < .6f){
 			phase = 1;
