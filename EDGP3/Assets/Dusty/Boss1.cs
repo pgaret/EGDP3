@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Boss1 : MonoBehaviour {
 	public float health;
+	private float maxHealth;
 	public float summoncd,firecd,raincd;
 	public float time1,time2,time3;
 	public bool alive;
@@ -23,6 +24,7 @@ public class Boss1 : MonoBehaviour {
 		time3 = Time.time + .3f;
 		Master = GameObject.FindGameObjectWithTag("Manager");
 		Master.GetComponent<spawn>().summon = false;
+		maxHealth = health;
 		//transform.rotation = Quaternion.Euler(new Vector3(180,0,0));
 	}
 	
@@ -30,10 +32,34 @@ public class Boss1 : MonoBehaviour {
 	void Update () {
 		float step = speed * Time.deltaTime;
 		transform.position = Vector3.MoveTowards(transform.position, target, step);
-		if(summoncd <= Time.time - time1){
-			Master.GetComponent<spawn>().RandomSummon();
-			time1 = Time.time;
+		
+	// Three boss phases corresponding with how much HP remaining (BEHAVIOR DOES NOT APPEAR TO CHANGE)
+		// 1: Boss focuses on summoning slimes mostly
+		if (health >= health - maxHealth/4) {
+			summoncd = 4f;
+			raincd = 10f;
 		}
+		
+		// 2: Boss uses rain more frequently after losing 1/4 HP
+		else if (health < health - maxHealth/4 && health > maxHealth/4) {
+			summoncd = 6f;
+			firecd = 5f;
+		}
+		
+		// 3: Boss uses rain a heck of a lot more when 1/4 HP remaining
+		else //(health >= maxHealth/4) 
+		{
+			summoncd = 7f;
+			firecd = 2f;
+		}
+		
+		// Slime summon
+		if(Time.time > time1){
+			Master.GetComponent<spawn>().RandomSummon();
+			time1 = Time.time + summoncd;
+		}
+		
+		// Rain attack
 		if(firecd <= Time.time - time2){
 			//Master.GetComponent<spawn>().RandomSummon();
 			time2 = Time.time;
@@ -60,8 +86,7 @@ public class Boss1 : MonoBehaviour {
 			time3 = Time.time;
 		}
 		
-		if (health <= 0)
-		{
+		if (health <= 0) {
 			Destroy(gameObject);
 			Instantiate(transition);
 		}
@@ -71,7 +96,6 @@ public class Boss1 : MonoBehaviour {
 		health--;
 	}
 	public void changeloc(Vector3 a){
-		target = a;
-		
+		target = a;		
 	}
 }

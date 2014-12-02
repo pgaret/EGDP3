@@ -33,40 +33,39 @@ public class spawn : MonoBehaviour {
 		EnterTimes[6] = 18f;
 		EnterTimes[7] = 19f;
 		//Wave 2
-		EnterTimes[4+4] = 14f+15;
-		EnterTimes[5+4] = 16f+15;
-		EnterTimes[6+4] = 18f+15;
-		EnterTimes[7+4] = 19f+15;
+		EnterTimes[8] = 14f+15;
+		EnterTimes[9] = 16f+15;
+		EnterTimes[10] = 18f+15;
+		EnterTimes[11] = 19f+15;
 		//Wave 3
-		EnterTimes[8+4] = 28f+15;
+		EnterTimes[12] = 28f+15;
 		//Wave 4
-		EnterTimes[9+4] = 41f+15;
-		EnterTimes[10+4] = 41f+15;
+		EnterTimes[13] = 41f+15;
+		EnterTimes[14] = 41f+15;
 		//Wave 5
-		EnterTimes[11+4] = 48f+15;
-		EnterTimes[12+4] = 48f+15;
+		EnterTimes[15] = 48f+15;
+		EnterTimes[16] = 48f+15;
 		//Wave 6
-		EnterTimes[13+4] = 58f+15;
-		EnterTimes[14+4] = 59f+15;
+		EnterTimes[17] = 58f+15;
+		EnterTimes[18] = 59f+15;
 		//Wave 7
-		EnterTimes[15+4] = 66f+15;
-		EnterTimes[16+4] = 67f+15;
+		EnterTimes[19] = 66f+15;
+		EnterTimes[20] = 67f+15;
 		//Wave 8
-		EnterTimes[17+4] = 75f+15;
-		EnterTimes[18+4] = 76f+15;
+		EnterTimes[21] = 75f+15;
+		EnterTimes[22] = 76f+15;
 		//Wave 9
-		EnterTimes[19+4] = 84f+15;
-		EnterTimes[20+4] = 85f+15;
-		EnterTimes[21+4] = 86f+15;
-		EnterTimes[22+4] = 87f+15;
+		EnterTimes[23] = 84f+15;
+		EnterTimes[24] = 85f+15;
+		EnterTimes[25] = 86f+15;
+		EnterTimes[26] = 87f+15;
 		//Wave 10
-		EnterTimes[23+4] = 97f+15;
-		EnterTimes[24+4] = 98f+15;
-		EnterTimes[25+4] = 99f+15;
-		EnterTimes[26+4] = 100f+15;
-		
+		EnterTimes[27] = 97f+15;
+		EnterTimes[28] = 98f+15;
+		EnterTimes[29] = 99f+15;
+		EnterTimes[30] = 100f+15;
 		//Boss 1
-		EnterTimes[27+4] = 115f+15;
+		EnterTimes[31] = 115f+15;		
 		
 		
 
@@ -149,7 +148,7 @@ public class spawn : MonoBehaviour {
 	/*
 	 * numene is amount of enemies that spawn
 	 * dir is either 0 or 1 for direction
-	 * path should be always set to 1, if we ever decide on another path, this is inplace for different special paths
+	 * path should be always set to 1, if we ever decide on another path, this is in place for different special paths
 	 * type is enemy/bullet type
 	 */
 	public void Setpath(int numene,int x, int y,int path,int type, int anim, bool affinity){
@@ -180,8 +179,7 @@ public class spawn : MonoBehaviour {
 		test.GetComponent<Boss3>().changeloc(new Vector3(0, 4, -1));
 		//test.GetComponent<Boss1>().changeloc(new Vector3(0, 4, 0));
 	}
-
-	void WaveS1(int i){
+	
 	//Using function Setpath
 	//Numene: number of enemies this call of the function spawns
 	//X: position along the x axis, where -4 is at the left side and 4 is at the right side
@@ -191,9 +189,12 @@ public class spawn : MonoBehaviour {
 	//Anim: the transform (which has all the animated enemies), see the enemies folder to find the number for each enemy
 	//and the manager script for which index in the enemy array holds that given enemy
 	
+	// ~ LEVEL 1 WAVES ~ //
+	void WaveS1(int i){	
 		//Wave 1
 		if(i == 0){
-			Setpath(1,-4,1,1,0,4, false); //4 is "blue" bat
+			Setpath(1,-4,1,1,0,4, false); //4 is "blue" bat, false is blue
+			Boss1();
 		}
 		if(i == 1){
 			Setpath(1,4,2,2,0,4, false);
@@ -205,10 +206,10 @@ public class spawn : MonoBehaviour {
 			Setpath(1,4,4,4,0,4, false);
 		}
 		//Wave 1.5
-		if(i == 4){
-			Setpath(1,-4,1,1,0,0, true); //0 is red bat
+		if (i == 4){
+			Setpath(1,-4,1,1,0,0, true); //0 is red bat, true is red
 		}
-		if(i == 5){
+		if (i == 5){
 			Setpath(1,4,2,2,0,0, true);
 		}
 		if (i == 6){
@@ -218,96 +219,98 @@ public class spawn : MonoBehaviour {
 			Setpath(1,4,4,4,0,0, true);
 		}
 		//Wave 2
-		if (i == 4+4){
-			Setpath(1,-4,1,5,0,0, false);
+		if (i == 8){
+			Setpath(1,-4,1,5,0,0, true);
+			//Boss1();
 		}
-		if (i == 5+4){
-			Setpath(1,4,2,6,0,0, false);
+		if (i == 9){
+			Setpath(1,4,2,6,0,0, true);
 		}
-		if (i == 6+4){
-			Setpath(1,-4,3,7,0,0, false);
+		if (i == 10){
+			Setpath(1,-4,3,7,0,4, false);
 		}
-		if (i == 7+4){
-			Setpath(1,4,4,8,0,0, false);
+		if (i == 11){
+			Setpath(1,4,4,8,0,4, false);
 		}
 		//Wave 3
 		if (i == 8+4){
-			Setpath(1,-2,5,9,3,10, false); //3 is green slime
-			Setpath(1,-4,1,1,0,0, false);
-			Setpath(1,4,2,2,0,0, false);
+			Setpath(1,-2,5,9,3,12, false); //12 is blue slime
+			Setpath(1,-4,1,1,0,0, true);
+			Setpath(1,4,2,2,0,0, true);
 		}
 		//Wave 4
 		if (i == 9+4){
-			Setpath(1,-4,2,10,3,10, false);
-			Setpath(1,4,2,11,3,10, false);
+			Setpath(1,-4,2,10,3,8, true);
+			Setpath(1,4,2,11,3,8, true);
 		}
 		if (i == 10+4){
-			Setpath(1,-4,1,1,0,0, false);
-			Setpath(1,4,2,2,0,0, false);
+			Setpath(1,-4,1,1,0,4, false);
+			Setpath(1,4,2,2,0,4, false);
 		}
 		//Wave 5
 		if(i == 11+4){
-			Setpath(1,-4,0,12,1,0, false);
-			Setpath(1,4,1,13,0,0, false);
+			Setpath(1,-4,0,12,1,4, false);
+			Setpath(1,4,1,13,0,0, true);
 		}
 		if (i == 12+4){
-			Setpath(1,-3,2,14,0,0, false);
-			Setpath(1,4,3,15,1,0, false);
+			Setpath(1,-3,2,14,0,0, true);
+			Setpath(1,4,3,15,1,4, false);
 		}
 		//Wave 6
 		if (i == 13+4){
-			Setpath(1,-4,4,16,1,0, false);
-			Setpath(1,4,4,17,1,0, false);
+			Setpath(1,-4,4,16,1,0, true);
+			Setpath(1,4,4,17,1,0, true);
 		}
 		if (i == 14+4){
-			Setpath(1,0,4,18,3,10, false);
+			Setpath(1,0,4,18,3,12, false);
 		}
 		//Wave 7
 		if(i == 15+4){
-			Setpath(1,-3,2,14,0,0, false);
-			Setpath(1,-4,1,1,0,0, false);
-			Setpath(1,4,1,13,0,0, false);
+			Setpath(1,-3,2,14,0,4, false);
+			Setpath(1,-4,1,1,0,4, false);
+			Setpath(1,4,1,13,0,4, false);
 		}
 		if(i == 16+4){
-			Setpath(1,4,2,2,0,0, false);
-			Setpath(1,4,3,15,1,0, false);
+			Setpath(1,4,2,2,0,0, true);
+			Setpath(1,4,3,15,1,0, true);
 		}
 		//Wave 8
 		if (i == 17+4){
-			Setpath(1,4,2,11,3,10, false);
-			Setpath(1,-4,1,5,0,0, false);
-			Setpath(1,-4,3,7,0,0, false);
+			Setpath(1,4,2,11,3,4, false);
+			Setpath(1,-4,1,5,0,0, true);
+			Setpath(1,-4,3,7,0,0, true);
 		}
 		if (i == 18+4){
-			Setpath(1,4,4,17,1,0, false);
-			Setpath(1,4,2,11,3,10, false);
+			Setpath(1,4,4,17,1,4, false);
+			Setpath(1,4,2,11,3,12, false);
 		}
 		//Wave 9
 		if (i == 19+4){
-			Setpath(1,-2,4,19,1,12, false); //12 is blue slime
+			Setpath(1,-2,4,19,1,12, false);
 		}
 		if (i == 20+4){
-			Setpath(1,-1,4,20,1,12, false);
+			Setpath(1,-1,4,20,1,8, true);
 		}
 		if (i == 21+4){
 			Setpath(1,1,4,21,1,12, false);
 		}
 		if (i == 22+4){
-			Setpath(1,2,4,22,1,12, false);
+			Setpath(1,2,4,22,1,8, true);
 		}
 		//Wave 10
 		if(i == 23+4){
-			Setpath(1,-4,2,10,3,10, false);
-			Setpath(1,4,4,8,0,1, false);
+			Setpath(1,-4,2,10,3,12, false);
+			Setpath(1,4,4,8,0,4, false);
 		}
 		if (i == 24+4){
-			Setpath(1,4,4,4,0,0, false);
+			Setpath(1,4,4,4,0,0, true);
 		}
 		if (i == 25+4){
-			Setpath(1,4,2,6,0,0, false);
+			Setpath(1,4,2,6,0,0, true);
 		}
 		if (i == 26+4){
 			Setpath(1,4,2,2,0,0, false);
+			Setpath(1,-4,2,10,3,8, true);
 		}
 		if (i == 27+4){
 			Boss1 ();
@@ -366,32 +369,73 @@ public class spawn : MonoBehaviour {
 //		}
 	}
 	
+	// ~ LEVEL 2 WAVES ~ //
 	void WaveS2(int i){
-		if (i == 0)
-		{
-			Boss2(10);
+		//Wave 1
+		if(i == 0){
+			Setpath(1,-4,1,1,0,4, false); //4 is "blue" bat, false is blue
+			//Boss2(10);
+		}
+		if(i == 1){
+			Setpath(1,4,2,2,0,4, false);
+		}
+		if (i == 2){
+			Setpath(1,-4,3,3,0,4, false);
+		}
+		if (i == 3){
+			Setpath(1,4,4,4,0,4, false);
+		}
+		//Wave 2
+		if (i == 4){
+			Setpath(1,-4,1,1,0,0, true); //0 is red bat, true is red
 		}
 	}
-
+	
+	// ~ LEVEL 3 WAVES ~ //
 	void WaveS3(int i){
 		if (i == 0){
 			Boss3();
 		}
 	}
 	
+	//Boss 1 randomly picks from predetermined groups of slimes to summon
 	public void RandomSummon(){
-		int random = 3;
+		int random = 1;//Random.Range (0, 3);
+		int tempRand;
+		
+		// (1) Two slimes move diagonally down, 1 straight down
 		if (random == 0) {
-			Diagonal(2,Random.Range (0, 1),Random.Range (0, 5));
+			tempRand = Random.Range (0, 2);
+			if (tempRand == 0) {
+				Diagonal(1,0,0); //red?
+				Diagonal(1,1,0); //blue?
+				Down (1,0,1);
+			}
+			else {
+				Diagonal(1,1,0); //blue?
+				Diagonal(1,0,0); //red?
+				Down (1,0,1);
+			}			
 		}
+		// (2) Two slimes
 		else if(random == 1){
-			Side(2,Random.Range (1, 5),Random.Range (0, 1),Random.Range (0, 5));
+			tempRand = Random.Range (0, 2);
+			if (tempRand == 0) {
+				Setpath(1,-2,5,9,3,12, false); //blue
+				Setpath(1,4,2,11,3,8, true); //red
+			}
+			else {
+				Setpath(1,-2,5,9,3,8, true); //red
+				Setpath(1,4,2,11,3,12, false); //blue
+			}
 		}
+		// (3) --
 		else if(random == 2){
-			Down(2,Random.Range (-3, 3),Random.Range (0, 5));
+			//Down(2,Random.Range (-3, 3),Random.Range (0, 5));
 		}
 		else {
-			Setpath(1, Random.Range (-3, 3), Random.Range (-2, 2), Random.Range (1, 5), Random.Range (0, 3), 10, false);
+			Setpath(1, Random.Range (-3, 3), Random.Range (-2, 2), Random.Range (1, 5), Random.Range (0, 3), 12, false);
+			Setpath(1, Random.Range (-3, 3), Random.Range (-2, 2), Random.Range (1, 5), Random.Range (0, 3), 8, true);
 		}
 
 	}
