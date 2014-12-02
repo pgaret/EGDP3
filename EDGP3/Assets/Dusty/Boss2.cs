@@ -100,7 +100,7 @@ public class Boss2 : MonoBehaviour {
 		}
 		if(rush){
 			step = (speed + acc) * Time.deltaTime;
-			acc += 2f;
+			acc += 3f;
 			rigidbody.AddForce(-transform.up * step);
 		}
 		//Health phases
