@@ -12,7 +12,7 @@ public class Background : MonoBehaviour {
 	public Sprite background1b;
 	public Sprite background2;
 	public Sprite background2b;
-	public Sprite backgournd3;
+	public Sprite background3;
 	public Sprite background3a;
 	public Sprite background3b;
 	public Sprite background3c;
@@ -52,25 +52,45 @@ public class Background : MonoBehaviour {
 			if (transform.position.y < -1.36f && haveReplicated == false)
 			{
 //				Debug.Log (time1+" "+manager.GetComponent<spawn>().time);
-				if (mode == 0 && Time.time - manager.GetComponent<spawn>().time < time1)
+				if (mode == 0)
 				{
 					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
 					bg.GetComponent<SpriteRenderer>().sprite = background1;
 				}
-				if (mode == 0 && Time.time - manager.GetComponent<spawn>().time > time1)
+				if (mode == 0 && GameObject.FindGameObjectWithTag("Boss1"))
 				{
 					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
 					bg.GetComponent<SpriteRenderer>().sprite = background1b;
 				}
-				if (mode == 1 && Time.time - manager.GetComponent<spawn>().time < time2)
+				if (mode == 1)
 				{
 					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
 					bg.GetComponent<SpriteRenderer>().sprite = background2;
 				}
-				if (mode == 1 && Time.time - manager.GetComponent<spawn>().time > time2)
+				if (mode == 1 && GameObject.FindGameObjectWithTag("Boss2"))
 				{
 					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
 					bg.GetComponent<SpriteRenderer>().sprite = background2b;
+				}
+				if (mode == 2)
+				{
+					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
+					bg.GetComponent<SpriteRenderer>().sprite = background3;
+				}
+				if (mode == 2 && GameObject.FindGameObjectWithTag("Boss3"))
+				{
+					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
+					bg.GetComponent<SpriteRenderer>().sprite = background3a;
+				}
+				if (mode == 2 && GameObject.FindGameObjectWithTag("Boss3"))
+				{
+					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
+					bg.GetComponent<SpriteRenderer>().sprite = background3b;
+				}
+				if (mode == 2 && GameObject.FindGameObjectWithTag("Boss3"))
+				{
+					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
+					bg.GetComponent<SpriteRenderer>().sprite = background3c;
 				}
 				haveReplicated = true;
 			}

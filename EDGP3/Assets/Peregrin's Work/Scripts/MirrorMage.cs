@@ -11,6 +11,8 @@ public class MirrorMage : MonoBehaviour {
 	public float width = .1f;
 	public Color color = Color.white;
 	
+	public Sprite mirror;
+	
 	GameObject sound;
 	
 	float specialTimer = 0;
@@ -22,16 +24,21 @@ public class MirrorMage : MonoBehaviour {
 	LineRenderer topLeft;
 	LineRenderer topRight;
 	
+	GameObject left;
+	GameObject right;
+	
 	// Use this for initialization
 	void Start () {
 		sound = GameObject.Find ("Sound");
+		left = GameObject.Find ("Left");
+		right = GameObject.Find ("Right");
 		if (transform.tag == "Player2") Shield ();
 		//From player to mirrors lenses
-		leftSide = GameObject.Find ("Left").AddComponent<LineRenderer>();
-		rightSide = GameObject.Find ("Right").AddComponent<LineRenderer>();
+		leftSide = left.AddComponent<LineRenderer>();
+		rightSide = right.AddComponent<LineRenderer>();
 		//From mirrors to top lenses
-		topLeft = GameObject.Find ("MML").AddComponent<LineRenderer>();
-		topRight = GameObject.Find ("MMR").AddComponent<LineRenderer>();
+		topLeft = left.transform.GetChild(0).gameObject.AddComponent<LineRenderer>();
+		topRight = right.transform.GetChild(0).gameObject.AddComponent<LineRenderer>();
 		//Narrow the beams
 		topLeft.SetWidth(width, width); topLeft.SetColors(color, color);
 		topRight.SetWidth(width, width); topRight.SetColors(color, color);
@@ -58,6 +65,29 @@ public class MirrorMage : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag("EnemyShipA");
+		RaycastHit hit;
+
+		if (Physics.Raycast(transform.position, leftSide.transform.position - transform.position, out hit))
+		{
+			if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= .05f;
+		}
+		if (Physics.Raycast(transform.position, rightSide.transform.position - transform.position, out hit))
+		{
+			if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= .05f;
+		}
+		if (Physics.Raycast(leftSide.transform.position, topLeft.transform.position - transform.position, out hit))
+		{
+			if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= .05f;
+		}
+		if (Physics.Raycast(rightSide.transform.position, topRight.transform.position - transform.position, out hit))
+		{
+			if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= .05f;
+		}
+		
+		
+		
+		
 		//Beam follows the player
 		Vector3 pos = transform.position;
 		pos.z = -width;
@@ -66,12 +96,24 @@ public class MirrorMage : MonoBehaviour {
 		rightSide.SetPosition(0, pos);
 		
 		//Beam goes to left and right sides
-		leftSide.SetPosition(1, GameObject.Find("Left").transform.position);
-		rightSide.SetPosition(1, GameObject.Find ("Right").transform.position);
+		leftSide.SetPosition(1, left.transform.position);
+		rightSide.SetPosition(1, right.transform.position);
 		
-		//
-		topLeft.SetPosition(0, GameObject.Find ("Left").transform.position);
-		topRight.SetPosition(0, GameObject.Find("Right").transform.position);
+		//Beam starts at left and right sides
+		topLeft.SetPosition(0, left.transform.position);
+		topRight.SetPosition(0, right.transform.position);
+		
+		//Change position of top destination
+		pos = left.transform.GetChild(1).position;
+		pos.x = transform.position.x;
+		left.transform.GetChild(1).position = pos;
+		pos = right.transform.GetChild(1).position;
+		pos.x = transform.position.x;
+		right.transform.GetChild(1).position = pos;
+		
+		//Beam goes to the top
+		topLeft.SetPosition(1, left.transform.GetChild(1).transform.position);
+		topRight.SetPosition(1, right.transform.GetChild(1).transform.position);
 		
 		
 	}
