@@ -9,8 +9,6 @@ public class spawn : MonoBehaviour {
 	public GameObject Bossa;
 	public GameObject Bossb;
 	public GameObject Bossc;
-	GameObject p1;
-	GameObject p2;
 	int x = 10;
 	int y = 10;
 	float[] EnterTimes;
@@ -131,7 +129,6 @@ public class spawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		if(i < EnterTimes.Length && EnterTimes[i] <= Time.time - time && summon && stage == 0){
 			WaveS1(i);
 			i++;
@@ -145,14 +142,12 @@ public class spawn : MonoBehaviour {
 			WaveS3(i);
 			i++;
 		}
-	
 
 	}
 	public void starter(){
 		time = Time.time - time;
 		summon = true;
 		i = 0;
-		killall();
 	}
 	public void con(){
 		time = Time.time;
@@ -263,7 +258,7 @@ public class spawn : MonoBehaviour {
 		//Wave 01
 		if(i == 0){
 			Setpath(1,-4,1,1,0,4, false); //4 is "blue" bat, false is blue
-			Boss1();
+			//Boss1();
 		}
 		if(i == 1){
 			Setpath(1,4,2,2,0,4, false);
@@ -355,16 +350,16 @@ public class spawn : MonoBehaviour {
 		}
 		//Wave 10
 		if (i == 19+4){
-			Setpath(1,-2,4,19,1,12, false);
+			Setpath(1,-2,6,19,1,12, false);
 		}
 		if (i == 20+4){
-			Setpath(1,-1,4,20,1,8, true);
+			Setpath(1,-1,6,20,1,8, true);
 		}
 		if (i == 21+4){
-			Setpath(1,1,4,21,1,12, false);
+			Setpath(1,1,6,21,1,12, false);
 		}
 		if (i == 22+4){
-			Setpath(1,2,4,22,1,8, true);
+			Setpath(1,2,6,22,1,8, true);
 		}
 		//Wave 11
 		if(i == 23+4){
@@ -436,6 +431,38 @@ public class spawn : MonoBehaviour {
 		if (i == 12){
 			Setpath(1,4,3,2,0,21, false);
 		}
+		//Wave 05
+		if (i == 13){
+			Setpath(1,-2,5,9,3,17, true);
+		}
+		if (i == 14){
+			Setpath(1,-2,5,9,3,21, false);
+		}
+		if (i == 15){
+			Setpath(1,-2,5,9,3,17, true);
+			Setpath(1,4,4,17,1,5, false); //swooping blue bat
+		}
+		if (i == 16){
+			Setpath(1,-2,5,9,3,21, false);
+		}
+		if (i == 17){
+			Setpath(1,4,4,17,1,2, true); //swooping blue bat
+		}
+		//Wave 06
+		if (i == 18){
+			Setpath(1,-2,6,19,3,10, true);
+		}
+		if (i == 19){
+			Setpath(1,-4,2,1,1,5, false);
+			Setpath(1,-4,2,14,0,21, false);
+		}
+		if (i == 20){
+			Setpath(1,2,6,19,3,10, true);
+		}
+		if (i == 21){
+			Setpath(1,4,2,2,1,5, false);
+			Setpath(1,4,2,14,0,21, false);
+		}
 	}
 	
 	// ~ LEVEL 3 WAVES ~ //
@@ -446,23 +473,9 @@ public class spawn : MonoBehaviour {
 	}
 	public void killall(){
 		GameObject[] a = GameObject.FindGameObjectsWithTag("EnemyShipA");
-
-		for(int i = a.Length-1; i >= 0; i--){
-
-			a[i].GetComponent<Enemy>().health = -1;
+		for(int i = a.Length - 1; i > 0; i--){
 			Destroy(a[i].gameObject);
 		}
-		GameObject[] c = GameObject.FindGameObjectsWithTag("BulletA");
-
-		for(int i = c.Length-1; i >= 0; i--){
-			Destroy(c[i].gameObject);
-		}
-		GameObject[] d = GameObject.FindGameObjectsWithTag("BulletB");
-		
-		for(int i = d.Length-1; i >= 0; i--){
-			Destroy(d[i].gameObject);
-		}
-
 		if(GameObject.FindGameObjectWithTag("Boss1") != null){
 			GameObject b = GameObject.FindGameObjectWithTag("Boss1");
 			Destroy (b.gameObject);
@@ -519,5 +532,5 @@ public class spawn : MonoBehaviour {
 		}
 
 	}
-
+	
 }
