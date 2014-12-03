@@ -5,6 +5,7 @@ public class Background : MonoBehaviour {
 
 	public float scrollSpeed;
 	public int mode;
+	public bool needSwap = false;
 	public Sprite theSprite;
 	public bool bossKilled = false;
 	
@@ -24,8 +25,8 @@ public class Background : MonoBehaviour {
 	private bool haveReplicated = false;
 	
 	private float time;
-	private float time1 = 2f;
-	private float time2 = 300f;
+	private float time1 = 120f;
+	private float time2 = 84f;
 	private float time3 = 600f;
 
 	// Use this for initialization
@@ -37,66 +38,66 @@ public class Background : MonoBehaviour {
 		transform.localScale = new Vector3(1.6f, 1.6f);
 		GetComponent<SpriteRenderer>().sortingOrder = -1;
 		
+		mode = manager.GetComponent<spawn>().stage;
+		
+		if (mode == 0 && Time.time - time >= time1) mode = 4;
+		if (mode == 1 && Time.time - time >= time2) mode = 5;
+		if (mode == 2 && Time.time - time >= time3) mode = 6;
+		
+		
 	
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		mode = manager.GetComponent<spawn>().stage;
-					
-		if (GetComponent<SpriteRenderer>().sprite != background1b && GetComponent<SpriteRenderer>().sprite != background2b)
+		
+		if (needSwap == true)
 		{
-			transform.Translate (Vector3.down*Time.deltaTime*scrollSpeed);
-			Transform bg;
+			Debug.Log (mode);
+			if (mode == 1) GetComponent<SpriteRenderer>().sprite = background2;
+			else if (mode == 2) GetComponent<SpriteRenderer>().sprite = background3;
+			needSwap = false;
+		}
+		
+		Transform bg;
+		if (mode != 4 && mode != 5 && mode != 6)
+		{
 			if (transform.position.y < -1.36f && haveReplicated == false)
 			{
-//				Debug.Log (time1+" "+manager.GetComponent<spawn>().time);
 				if (mode == 0)
 				{
 					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
 					bg.GetComponent<SpriteRenderer>().sprite = background1;
 				}
-				if (mode == 0 && GameObject.FindGameObjectWithTag("Boss1"))
-				{
-					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
-					bg.GetComponent<SpriteRenderer>().sprite = background1b;
-				}
-				if (mode == 1)
+				else if (mode == 1)
 				{
 					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
 					bg.GetComponent<SpriteRenderer>().sprite = background2;
 				}
-				if (mode == 1 && GameObject.FindGameObjectWithTag("Boss2"))
+				else if (mode == 2)
 				{
 					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
-					bg.GetComponent<SpriteRenderer>().sprite = background2b;
-				}
-				if (mode == 2)
-				{
-					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
-					bg.GetComponent<SpriteRenderer>().sprite = background3;
-				}
-				if (mode == 2 && GameObject.FindGameObjectWithTag("Boss3"))
-				{
-					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
-					bg.GetComponent<SpriteRenderer>().sprite = background3a;
-				}
-				if (mode == 2 && GameObject.FindGameObjectWithTag("Boss3"))
-				{
-					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
-					bg.GetComponent<SpriteRenderer>().sprite = background3b;
-				}
-				if (mode == 2 && GameObject.FindGameObjectWithTag("Boss3"))
-				{
-					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
-					bg.GetComponent<SpriteRenderer>().sprite = background3c;
+					bg.GetComponent<SpriteRenderer>().sprite = background2;
 				}
 				haveReplicated = true;
 			}
+			transform.Translate(Vector3.down*Time.deltaTime*scrollSpeed);
 		}
 		else
 		{
+			if (mode == 4)
+			{
+				GetComponent<SpriteRenderer>().sprite = background1b;
+			}
+			else if (mode == 5)
+			{
+				GetComponent<SpriteRenderer>().sprite = background2b;
+			}
+			else if (mode == 6)
+			{
+				GetComponent<SpriteRenderer>().sprite = background3b;
+			}
 			if (transform.position.y > 1.36f)
 			{
 				transform.Translate (Vector3.down*Time.deltaTime*scrollSpeed);

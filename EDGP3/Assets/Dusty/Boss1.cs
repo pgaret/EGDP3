@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Boss1 : MonoBehaviour {
 	public float health;
-	private float maxHealth;
+	public float maxhealth;
 	public float summoncd,firecd,raincd;
 	public float time1,time2,time3;
 	public bool alive;
@@ -24,7 +24,6 @@ public class Boss1 : MonoBehaviour {
 		time3 = Time.time + .3f;
 		Master = GameObject.FindGameObjectWithTag("Manager");
 		Master.GetComponent<spawn>().summon = false;
-		maxHealth = health;
 		//transform.rotation = Quaternion.Euler(new Vector3(180,0,0));
 	}
 	
@@ -33,24 +32,16 @@ public class Boss1 : MonoBehaviour {
 		float step = speed * Time.deltaTime;
 		transform.position = Vector3.MoveTowards(transform.position, target, step);
 		
-	// Three boss phases corresponding with how much HP remaining (BEHAVIOR DOES NOT APPEAR TO CHANGE)
-		// 1: Boss focuses on summoning slimes mostly
-		if (health >= health - maxHealth/4) {
-			summoncd = 4f;
-			raincd = 10f;
-		}
-		
+		//Health phases
 		// 2: Boss uses rain more frequently after losing 1/4 HP
-		else if (health < health - maxHealth/4 && health > maxHealth/4) {
+		if(health/maxhealth < .75f){
 			summoncd = 6f;
-			firecd = 5f;
+			raincd = 5f;
 		}
-		
 		// 3: Boss uses rain a heck of a lot more when 1/4 HP remaining
-		else //(health >= maxHealth/4) 
-		{
-			summoncd = 7f;
-			firecd = 2f;
+		else if(health/maxhealth < .25f){
+			summoncd = 8f;
+			raincd = 2f;
 		}
 		
 		// Slime summon

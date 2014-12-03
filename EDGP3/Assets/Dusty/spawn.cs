@@ -66,9 +66,9 @@ public class spawn : MonoBehaviour {
 		EnterTimes[27] = 97f+15;
 		EnterTimes[28] = 98f+15;
 		EnterTimes[29] = 99f+15;
-		EnterTimes[30] = 100f+15;
+		EnterTimes[30] = 115f;
 		//Boss 1
-		EnterTimes[31] = 115f+15;		
+		EnterTimes[31] = 130f;
 
 		//  LEVEL 2 //
 		EnterTimes2 = new float[40];
@@ -120,7 +120,7 @@ public class spawn : MonoBehaviour {
 		EnterTimes2[35] = 83f;
 		EnterTimes2[36] = 84f;
 		//Boss 2
-		EnterTimes2[37] = 3f;
+		EnterTimes2[37] = 94f;
 		
 		//  LEVEL 3 //
 		EnterTimes3 = new float[1];
@@ -129,6 +129,7 @@ public class spawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+//		Debug.Log (Time.time - time);
 		if(i < EnterTimes.Length && EnterTimes[i] <= Time.time - time && summon && stage == 0){
 			WaveS1(i);
 			i++;
@@ -240,7 +241,7 @@ public class spawn : MonoBehaviour {
 	public void Boss3(){
 		GameObject test;
 		test = Instantiate(Bossc, new Vector3(0, 7, 0), Quaternion.identity) as GameObject;
-		test.GetComponent<Boss3>().changeloc(new Vector3(0, 4, 0));
+		test.GetComponent<Boss3>().changeloc(new Vector3(0, 4, -1));
 		//test.GetComponent<Boss1>().changeloc(new Vector3(0, 4, 0));
 	}
 	
@@ -257,11 +258,11 @@ public class spawn : MonoBehaviour {
 	void WaveS1(int i){	
 		//Wave 01
 		if(i == 0){
-			Setpath(1,-4,1,1,4,4, false); //4 is "blue" bat, false is blue
-			Boss1();
+			Setpath(1,-4,1,1,0,4, false); //4 is "blue" bat, false is blue
+//			Boss1();
 		}
 		if(i == 1){
-			Setpath(1,4,2,2,4,4, false);
+			Setpath(1,4,2,2,0,4, false);
 		}
 		if (i == 2){
 			Setpath(1,-4,3,3,0,4, false);
@@ -271,10 +272,10 @@ public class spawn : MonoBehaviour {
 		}
 		//Wave 02
 		if (i == 4){
-			Setpath(1,-4,1,1,4,0, true); //0 is red bat, true is red
+			Setpath(1,-4,1,1,0,0, true); //0 is red bat, true is red
 		}
 		if (i == 5){
-			Setpath(1,4,2,2,4,0, true);
+			Setpath(1,4,2,2,0,0, true);
 		}
 		if (i == 6){
 			Setpath(1,-4,3,3,0,0, true);
@@ -297,86 +298,86 @@ public class spawn : MonoBehaviour {
 			Setpath(1,4,4,8,0,4, false);
 		}
 		//Wave 04
-		if (i == 8+4){
+		if (i == 12){
 			Setpath(1,-2,5,9,3,12, false); //12 is blue slime
 			Setpath(1,-4,1,1,0,0, true);
 			Setpath(1,4,2,2,0,0, true);
 		}
 		//Wave 05
-		if (i == 9+4){
+		if (i == 13){
 			Setpath(1,-4,2,10,3,8, true);
 			Setpath(1,4,2,11,3,8, true);
 		}
-		if (i == 10+4){
+		if (i == 14){
 			Setpath(1,-4,1,1,0,4, false);
 			Setpath(1,4,2,2,0,4, false);
 		}
 		//Wave 06
-		if(i == 11+4){
+		if(i == 15){
 			Setpath(1,-4,0,12,1,4, false);
 			Setpath(1,4,1,13,0,0, true);
 		}
-		if (i == 12+4){
+		if (i == 16){
 			Setpath(1,-3,2,14,0,0, true);
 			Setpath(1,4,3,15,1,4, false);
 		}
 		//Wave 07
-		if (i == 13+4){
+		if (i == 17){
 			Setpath(1,-4,4,16,1,0, true);
 			Setpath(1,4,4,17,1,0, true);
 		}
-		if (i == 14+4){
-			Setpath(1,0,4,18,3,12, false);
+		if (i == 18){
+			Setpath(1,0,4,18,4,12, false);
 		}
 		//Wave 08
-		if(i == 15+4){
+		if(i == 19){
 			Setpath(1,-3,2,14,0,4, false);
 			Setpath(1,-4,1,1,0,4, false);
 			Setpath(1,4,1,13,0,4, false);
 		}
-		if(i == 16+4){
+		if(i == 20){
 			Setpath(1,4,2,2,0,0, true);
 			Setpath(1,4,3,15,1,0, true);
 		}
 		//Wave 09
-		if (i == 17+4){
+		if (i == 21){
 			Setpath(1,4,2,11,3,4, false);
 			Setpath(1,-4,1,5,0,0, true);
 			Setpath(1,-4,3,7,0,0, true);
 		}
-		if (i == 18+4){
+		if (i == 22){
 			Setpath(1,4,4,17,1,4, false);
 			Setpath(1,4,2,11,3,12, false);
 		}
 		//Wave 10
-		if (i == 19+4){
+		if (i == 23){
 			Setpath(1,-2,6,19,1,12, false);
 		}
-		if (i == 20+4){
+		if (i == 24){
 			Setpath(1,-1,6,20,1,8, true);
 		}
-		if (i == 21+4){
+		if (i == 25){
 			Setpath(1,1,6,21,1,12, false);
 		}
-		if (i == 22+4){
+		if (i == 26){
 			Setpath(1,2,6,22,1,8, true);
 		}
 		//Wave 11
-		if(i == 23+4){
+		if(i == 27){
 			Setpath(1,-4,2,10,3,12, false);
 			Setpath(1,4,4,8,0,4, false);
 		}
-		if (i == 24+4){
+		if (i == 28){
 			Setpath(1,4,4,4,0,0, true);
 		}
-		if (i == 25+4){
+		if (i == 29){
 			Setpath(1,4,2,6,0,0, true);
 		}
-		if (i == 26+4){
+		if (i == 30){
 			Setpath(1,4,2,2,0,0, false);
 			Setpath(1,-4,2,10,3,8, true);
 		}
-		if (i == 27+4){
+		if (i == 31){
 			Boss1 ();
 		}
 		
@@ -388,7 +389,7 @@ public class spawn : MonoBehaviour {
 		if(i == 00){
 			Setpath(1,-4,1,1,0,2, true); //2 is brown (red) bat
 			Setpath(1,4,3,2,0,2, true);
-		//	Boss2(10);
+			//Boss2(10);
 		}
 		if(i == 01){
 			Setpath(1,-4,2,1,0,5, false); //5 is purple (blue) bat
@@ -403,7 +404,7 @@ public class spawn : MonoBehaviour {
 			Setpath(1,-4,2,5,0,2, true); //red bat on left
 		}
 		if (i == 04){
-			Setpath(1,0,5,20,3,14, false); //14 is purple (blue) slime
+			Setpath(1,0,5,20,4,14, false); //14 is purple (blue) slime
 		}
 //		//Wave 03
 		if (i == 05){
@@ -433,17 +434,17 @@ public class spawn : MonoBehaviour {
 		}
 		//Wave 05
 		if (i == 13){
-			Setpath(1,-2,5,9,1,17, true);
+			Setpath(1,-2,5,9,0,17, true);
 		}
 		if (i == 14){
-			Setpath(1,-2,5,9,1,21, false);
+			Setpath(1,-2,5,9,0,21, false);
 		}
 		if (i == 15){
-			Setpath(1,-2,5,9,1,17, true);
+			Setpath(1,-2,5,9,0,17, true);
 			Setpath(1,4,4,17,1,5, false); //swooping blue bat
 		}
 		if (i == 16){
-			Setpath(1,-2,5,9,1,21, false);
+			Setpath(1,-2,5,9,0,21, false);
 		}
 		if (i == 17){
 			Setpath(1,4,4,17,1,2, true); //swooping red bat
@@ -501,20 +502,30 @@ public class spawn : MonoBehaviour {
 		}
 		//Wave 10
 		if (i == 32){
-			
+			Setpath(1,-1,6,20,4,11, true); //red slime
+			Setpath(1,1,6,21,4,14, false); //blue slime
 		}
 		if (i == 33){
-			
+			Setpath(1,4,4,8,0,17, true); //red wisp
+			Setpath(1,-4,4,16,0,21, false); //blue wisp
 		}
 		if (i == 34){
-			
+			Setpath(1,4,4,8,0,17, true); //red wisp
+			Setpath(1,-4,4,16,0,21, false); //blue wisp
 		}
 		if (i == 35){
-			
+			Setpath(1,4,4,8,0,17, true); //red wisp
+			Setpath(1,-4,4,16,0,21, false); //blue wisp
 		}
 		if (i == 36){
-			
+			Setpath(1,4,4,8,0,17, true); //red wisp
+			Setpath(1,-4,4,16,0,21, false); //blue wisp
 		}
+		//Boss 2
+		if(i == 37){
+			Boss2(100);
+		}
+		
 	}
 	
 	// ~ LEVEL 3 WAVES ~ //
@@ -545,21 +556,23 @@ public class spawn : MonoBehaviour {
 	}
 	//Boss 1 randomly picks from predetermined groups of slimes to summon
 	public void RandomSummon(){
-		int random = 1;//Random.Range (0, 3);
+		int random = Random.Range (0, 2);
 		int tempRand;
 		
-		// (1) Two slimes move diagonally down, 1 straight down
+		// (1) Four slimes move sideways
 		if (random == 0) {
 			tempRand = Random.Range (0, 2);
 			if (tempRand == 0) {
-				Diagonal(1,0,0); //red?
-				Diagonal(1,1,0); //blue?
-				Down (1,0,1);
+				Setpath(1,0,4,1,0,8, true); //red slime, right
+				Setpath(1,0,4,3,0,12, false); //blue slime, right
+				Setpath(1,0,4,2,0,12, false); //blue slime, left
+				Setpath(1,0,4,4,0,8, true); //red slime, left
 			}
 			else {
-				Diagonal(1,1,0); //blue?
-				Diagonal(1,0,0); //red?
-				Down (1,0,1);
+				Setpath(1,0,4,1,0,12, false); //blue slime, right
+				Setpath(1,0,4,3,0,8, true); //red slime, right
+				Setpath(1,0,4,2,0,8, true); //red slime, left
+				Setpath(1,0,4,4,0,12, false); //blue slime, left
 			}			
 		}
 		// (2) Two slimes
