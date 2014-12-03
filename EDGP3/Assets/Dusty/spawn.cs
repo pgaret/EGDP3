@@ -240,7 +240,7 @@ public class spawn : MonoBehaviour {
 	public void Boss3(){
 		GameObject test;
 		test = Instantiate(Bossc, new Vector3(0, 7, 0), Quaternion.identity) as GameObject;
-		test.GetComponent<Boss3>().changeloc(new Vector3(0, 4, -1));
+		test.GetComponent<Boss3>().changeloc(new Vector3(0, 4, 0));
 		//test.GetComponent<Boss1>().changeloc(new Vector3(0, 4, 0));
 	}
 	
@@ -388,7 +388,7 @@ public class spawn : MonoBehaviour {
 		if(i == 00){
 			Setpath(1,-4,1,1,0,2, true); //2 is brown (red) bat
 			Setpath(1,4,3,2,0,2, true);
-			//Boss2(10);
+		//	Boss2(10);
 		}
 		if(i == 01){
 			Setpath(1,-4,2,1,0,5, false); //5 is purple (blue) bat

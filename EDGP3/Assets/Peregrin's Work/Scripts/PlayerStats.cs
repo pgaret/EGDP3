@@ -133,7 +133,7 @@ public class PlayerStats : MonoBehaviour {
 		{
 			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds))
 			{
-				//lives -= 1;
+				lives -= 1;
 				Destroy (bullet.gameObject);
 			}
 		}
@@ -142,7 +142,7 @@ public class PlayerStats : MonoBehaviour {
 		{
 			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds))
 			{
-				//lives -= 1;
+				lives -= 1;
 				Destroy (bullet.gameObject);
 			}
 		}
