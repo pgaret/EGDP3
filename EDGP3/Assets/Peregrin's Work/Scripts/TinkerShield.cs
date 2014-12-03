@@ -43,6 +43,10 @@ public class TinkerShield : MonoBehaviour {
 			}
 		}
 		
-		if (Time.time > timer) Destroy (gameObject);
+		if (Time.time > timer)
+		{
+			Debug.Log("destroy tinker shield");
+			Destroy (gameObject);
+		}
 	}
 }

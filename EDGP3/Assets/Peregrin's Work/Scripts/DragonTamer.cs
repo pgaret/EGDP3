@@ -72,6 +72,7 @@ public class DragonTamer : MonoBehaviour {
 				foreach (Transform dragon in dragons) 
 				{
 					Transform bullet = (Transform)Instantiate(projectile, dragon.position, Quaternion.identity);
+					bullet.GetComponent<PlayerBullet>().damage = GetComponent<PlayerStats>().damage;
 					bullet.GetComponent<SpriteRenderer>().sprite = Attack;
 				}
 				transform.GetComponent<PlayerStats>().ammo -= 1;

@@ -129,6 +129,8 @@ public class spawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log(i);
+	
 		if(i < EnterTimes.Length && EnterTimes[i] <= Time.time - time && summon && stage == 0){
 			WaveS1(i);
 			i++;
@@ -529,10 +531,57 @@ public class spawn : MonoBehaviour {
 	
 	// ~ LEVEL 3 WAVES ~ //
 	void WaveS3(int i){
+		//Wave 01
+		if (i == 00){
+			Setpath(1,-4,1,1,0,7, false); //7 is pink/blue bat
+		}
+		if (i == 01){
+			Setpath(1,4,2,2,4,6, true); //6 is black/red bat
+		}
+		if (i == 02){
+			Setpath(1,-4,3,3,0,6, true); //red bat
+		}
+		if (i == 03){
+			Setpath(1,4,4,4,4,7, false); //blue bat
+		}
+		//Wave 02
+		if (i == 04){
+			Setpath(1,-4,1,1,0,15, true); //15 is black/red slime
+		}
+		if (i == 05){
+			Setpath(1,4,2,2,4,16, false); //16 is pink/blue slime
+		}
+		if (i == 06){
+			Setpath(1,-4,4,16,3,7, false); //blue bat
+		}
+		//Wave 03
+		if (i == 07){
+			Setpath(1,-4,2,10,3,19, true); //19 is brown/red wisp
+			Setpath(1,4,2,11,3,19, true); //red wisp
+		}
+		if (i == 07){
+			Setpath(1,-4,2,10,3,24, false); //24 is purple/blue wisp
+			Setpath(1,4,2,11,3,24, false); //blue wisp
+		}
+		//Wave 4
+		if (i == 08){
+			
+		}
+		//Wave 0
 		if (i == 0){
+			
+		}
+		//Wave 0
+		if (i == 0){
+			
+		}
+	
+		//Boss 3
+		if (i == 300){
 			Boss3();
 		}
 	}
+	
 	public void killall(){
 		GameObject[] a = GameObject.FindGameObjectsWithTag("EnemyShipA");
 		for(int i = a.Length - 1; i > 0; i--){

@@ -203,7 +203,7 @@ public class PlayerStats : MonoBehaviour {
 			if (role == "Attacker")
 			{
 				//Shooting
-				if ((Input.GetButton("XboxFire1A") || Input.GetKey(KeyCode.I)) && Time.time > shootTimer && shootBool == false && ammo > 0)
+				if ((Input.GetButton("XboxFire1X") || Input.GetKey(KeyCode.I)) && Time.time > shootTimer && shootBool == false && ammo > 0)
 				{
 					shootBool = true;
 					shootTimer = Time.time + shootCD;
@@ -222,6 +222,13 @@ public class PlayerStats : MonoBehaviour {
 				else affinity = 'A';
 				// affinity timer
 				affinityTimer = affinityCD + Time.time;
+			}
+			else if (transform.name == "Tinker(Clone)")
+			{
+				if (Input.GetButtonUp("XboxFire1B"))
+				{
+					GetComponent<Tinker>().Shield();
+				}
 			}
 			//Animation stuff
 			if (isMoving && !shootBool) anim.SetBool("move!shoot", true);
@@ -252,7 +259,7 @@ public class PlayerStats : MonoBehaviour {
 			if (role == "Attacker")
 			{
 				//Shooting
-				if (Input.GetButton("XboxFire2A") && Time.time > shootTimer && shootBool == false && ammo > 0)
+				if (Input.GetButton("XboxFire2X") && Time.time > shootTimer && shootBool == false && ammo > 0)
 				{
 					shootBool = true;
 					shootTimer = Time.time + shootCD;
@@ -270,6 +277,13 @@ public class PlayerStats : MonoBehaviour {
 				if (affinity == 'A') affinity = 'B';
 				else affinity = 'A';
 				affinityTimer = affinityCD + Time.time;
+			}
+			else if (transform.name == "Tinker(Clone)")
+			{
+				if (Input.GetButtonUp("XboxFire2B"))
+				{
+					GetComponent<Tinker>().Shield();
+				}
 			}
 			//Animation stuff
 			if (isMoving && !shootBool) anim.SetBool("move!shoot", true);

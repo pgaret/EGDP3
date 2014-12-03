@@ -29,6 +29,11 @@ public class Tinker : MonoBehaviour {
 		sound = GameObject.Find ("Sound");
 	}
 	
+	public void Shield()
+	{
+		Instantiate(shield, transform.position, Quaternion.identity);
+	}
+	
 	// Update is called once per frame
 	void Update ()
 	{
@@ -61,6 +66,7 @@ public class Tinker : MonoBehaviour {
 					thePunch = (Transform)Instantiate (projectile, child.position, Quaternion.identity);
 					thePunch.GetComponent<SpriteRenderer>().sprite = attackLeft;
 					thePunch.GetComponent<TinkerBullets>().type = attackType;
+					thePunch.GetComponent<TinkerBullets>().damage = GetComponent<PlayerStats>().damage;
 					transform.GetComponent<PlayerStats>().ammo -= 1;
 				}
 				else if (child.name == "Right")
@@ -68,6 +74,7 @@ public class Tinker : MonoBehaviour {
 					thePunch = (Transform)Instantiate (projectile, child.position, Quaternion.identity);
 					thePunch.GetComponent<SpriteRenderer>().sprite = attackRight;
 					thePunch.GetComponent<TinkerBullets>().type = attackType;
+					thePunch.GetComponent<TinkerBullets>().damage = GetComponent<PlayerStats>().damage;
 					transform.GetComponent<PlayerStats>().ammo -= 1;
 				}
 				GetComponent<PlayerStats>().shootBool = false;
@@ -81,13 +88,6 @@ public class Tinker : MonoBehaviour {
 			GetComponent<Animator>().SetInteger("type", attackType);
 			GetComponent<PlayerStats>().specialBool = false;
 		}
-		
-		if (GetComponent<PlayerStats>().role == "Defender" && Time.time > spawnTimer && Input.GetKeyUp(KeyCode.I))
-		{
-			Instantiate(shield, transform.position, Quaternion.identity);
-			spawnTimer = Time.time + spawnCD;
-		}
-
 		
 	}
 }

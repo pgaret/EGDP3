@@ -7,6 +7,7 @@ public class TinkerBullets : MonoBehaviour {
 	public int type;
 	public float speed;
 	public Sprite bombSprite;
+	public float damage;
 	
 	private bool explosion = false;
 	private bool hasHit = false;
@@ -50,19 +51,19 @@ public class TinkerBullets : MonoBehaviour {
 					{
 						if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "EnemyShipA")
 						{
-							enemy.GetComponent<Enemy>().health -= 1;
+							enemy.GetComponent<Enemy>().health -= damage;
 						}
 						else if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "Boss1")
 						{
-							enemy.GetComponent<Boss1>().subhealth(1);
+							enemy.GetComponent<Boss1>().subhealth(damage);
 						}
 						else if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "Boss2")
 						{
-							enemy.GetComponent<Boss2>().subhealth(1);
+							enemy.GetComponent<Boss2>().subhealth(damage);
 						}
 						else if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "Boss3")
 						{
-							enemy.GetComponent<Boss3>().subhealth(1);
+							enemy.GetComponent<Boss3>().subhealth(damage);
 						}
 					}
 					type = 4;
@@ -95,19 +96,19 @@ public class TinkerBullets : MonoBehaviour {
 						Debug.Log ("test");
 						if (enemies[index].tag == "EnemyShipA")
 						{
-							enemies[index].GetComponent<Enemy>().health -= 1;
+							enemies[index].GetComponent<Enemy>().health -= damage;
 						}
 						else if (enemies[index].tag == "Boss1")
 						{
-							enemies[index].GetComponent<Boss1>().subhealth(1);
+							enemies[index].GetComponent<Boss1>().subhealth(damage);
 						}
 						else if (enemies[index].tag == "Boss2")
 						{
-							enemies[index].GetComponent<Boss2>().subhealth(1);
+							enemies[index].GetComponent<Boss2>().subhealth(damage);
 						}
 						else if (enemies[index].tag == "Boss3")
 						{
-							enemies[index].GetComponent<Boss3>().subhealth(1);
+							enemies[index].GetComponent<Boss3>().subhealth(damage);
 						}
 						hasHit = true;
 					}
@@ -123,19 +124,19 @@ public class TinkerBullets : MonoBehaviour {
 					{
 						if (enemies[index].tag == "EnemyShipA")
 						{
-							enemies[index].GetComponent<Enemy>().health -= 1;
+							enemies[index].GetComponent<Enemy>().health -= damage;
 						}
 						else if (enemies[index].tag == "Boss1")
 						{
-							enemies[index].GetComponent<Boss1>().subhealth(1);
+							enemies[index].GetComponent<Boss1>().subhealth(damage);
 						}
 						else if (enemies[index].tag == "Boss2")
 						{
-							enemies[index].GetComponent<Boss2>().subhealth(1);
+							enemies[index].GetComponent<Boss2>().subhealth(damage);
 						}
 						else if (enemies[index].tag == "Boss3")
 						{
-							enemies[index].GetComponent<Boss3>().subhealth(1);
+							enemies[index].GetComponent<Boss3>().subhealth(damage);
 						}
 						haveHit.Add (enemy);
 					}
