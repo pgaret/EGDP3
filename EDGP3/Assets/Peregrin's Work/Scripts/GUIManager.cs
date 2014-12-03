@@ -322,6 +322,7 @@ public class GUIManager : MonoBehaviour {
 				if (player1Select == 1)
 				{
 					player1 = Instantiate(MirrorMage) as Transform;
+					Instantiate(MMP1);
 				}
 				if (player1Select == 2)
 				{
@@ -341,6 +342,7 @@ public class GUIManager : MonoBehaviour {
 				if (player2Select == 1)
 				{
 					player2 = Instantiate(MirrorMage) as Transform;
+					Instantiate(MMP2);
 				}
 				if (player2Select == 2)
 				{
