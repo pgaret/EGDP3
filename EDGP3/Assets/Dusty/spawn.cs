@@ -257,11 +257,11 @@ public class spawn : MonoBehaviour {
 	void WaveS1(int i){	
 		//Wave 01
 		if(i == 0){
-			Setpath(1,-4,1,1,0,4, false); //4 is "blue" bat, false is blue
+			Setpath(1,-4,1,1,4,4, false); //4 is "blue" bat, false is blue
 			//Boss1();
 		}
 		if(i == 1){
-			Setpath(1,4,2,2,0,4, false);
+			Setpath(1,4,2,2,4,4, false);
 		}
 		if (i == 2){
 			Setpath(1,-4,3,3,0,4, false);
@@ -271,10 +271,10 @@ public class spawn : MonoBehaviour {
 		}
 		//Wave 02
 		if (i == 4){
-			Setpath(1,-4,1,1,0,0, true); //0 is red bat, true is red
+			Setpath(1,-4,1,1,4,0, true); //0 is red bat, true is red
 		}
 		if (i == 5){
-			Setpath(1,4,2,2,0,0, true);
+			Setpath(1,4,2,2,4,0, true);
 		}
 		if (i == 6){
 			Setpath(1,-4,3,3,0,0, true);
@@ -403,7 +403,7 @@ public class spawn : MonoBehaviour {
 			Setpath(1,-4,2,5,0,2, true); //red bat on left
 		}
 		if (i == 04){
-			Setpath(1,0,5,19,3,14, false); //14 is purple (blue) slime
+			Setpath(1,0,5,20,3,14, false); //14 is purple (blue) slime
 		}
 //		//Wave 03
 		if (i == 05){
@@ -433,35 +433,87 @@ public class spawn : MonoBehaviour {
 		}
 		//Wave 05
 		if (i == 13){
-			Setpath(1,-2,5,9,3,17, true);
+			Setpath(1,-2,5,9,1,17, true);
 		}
 		if (i == 14){
-			Setpath(1,-2,5,9,3,21, false);
+			Setpath(1,-2,5,9,1,21, false);
 		}
 		if (i == 15){
-			Setpath(1,-2,5,9,3,17, true);
+			Setpath(1,-2,5,9,1,17, true);
 			Setpath(1,4,4,17,1,5, false); //swooping blue bat
 		}
 		if (i == 16){
-			Setpath(1,-2,5,9,3,21, false);
+			Setpath(1,-2,5,9,1,21, false);
 		}
 		if (i == 17){
-			Setpath(1,4,4,17,1,2, true); //swooping blue bat
+			Setpath(1,4,4,17,1,2, true); //swooping red bat
 		}
 		//Wave 06
 		if (i == 18){
-			Setpath(1,-2,6,19,3,10, true);
+			Setpath(1,-2,6,19,3,11, true);
 		}
 		if (i == 19){
 			Setpath(1,-4,2,1,1,5, false);
 			Setpath(1,-4,2,14,0,21, false);
 		}
 		if (i == 20){
-			Setpath(1,2,6,19,3,10, true);
+			Setpath(1,2,6,19,3,11, true);
 		}
 		if (i == 21){
 			Setpath(1,4,2,2,1,5, false);
 			Setpath(1,4,2,14,0,21, false);
+		}
+		//Wave 07
+		if (i == 22){
+			Setpath(1,4,4,4,0,17, true); //red wisp
+		}
+		if (i == 23){
+			Setpath(1,-4,4,16,3,11, true); //red slime
+		}
+		if (i == 24){
+			Setpath(1,4,4,17,3,14, false); //blue slime
+		}
+		if (i == 25){
+			Setpath(1,4,4,4,0,17, true); //red wisp
+		}
+		//Wave 08
+		if (i == 26){
+			Setpath(1,-2,5,9,1,2, true); //red bat
+		}
+		if (i == 27){
+			Setpath(1,-2,5,9,0,17, true); //red wisp
+		}
+		if (i == 28){
+			Setpath(1,-2,5,9,1,2, true); //red bat
+		}
+		if (i == 29){
+			Setpath(1,-2,5,9,0,17, true); //red wisp
+			Setpath(1,4,2,11,3,14, false); //blue slime
+		}
+		//Wave 09
+		if (i == 30){
+			Setpath(1,-4,3,3,1,11, false); //red slime
+			Setpath(1,-3,2,14,0,2, true); //red bat
+		}
+		if (i == 32){
+			Setpath(1,-4,1,1,3,5, false); //blue slime
+			Setpath(1,-3,2,14,0,5, false); //red bat
+		}
+		//Wave 10
+		if (i == 32){
+			
+		}
+		if (i == 33){
+			
+		}
+		if (i == 34){
+			
+		}
+		if (i == 35){
+			
+		}
+		if (i == 36){
+			
 		}
 	}
 	
