@@ -162,10 +162,10 @@ public class GUIManager : MonoBehaviour {
 				mode = 1;
 				Destroy (tiScre.gameObject);
 				sButton = Instantiate(startButton, new Vector3(0, -pos.y / 1.5f), Quaternion.identity) as Transform;
-				tutButton = Instantiate(tutorialButton, new Vector3(0, -pos.y / 2f), Quaternion.identity) as Transform;
+//				tutButton = Instantiate(tutorialButton, new Vector3(0, -pos.y / 2f), Quaternion.identity) as Transform;
 				PKIcon = Instantiate(PK, new Vector3(0, pos.y * 2.65f / 4), Quaternion.identity) as Transform;
-				MMIcon = Instantiate (MM, new Vector3(0, -pos.y * 2 / 5), Quaternion.identity) as Transform;
-				TKIcon = Instantiate (TK, new Vector3(0, -pos.y / 5), Quaternion.identity) as Transform;
+				MMIcon = Instantiate (MM, new Vector3(0, pos.y * 1.1f / 20), Quaternion.identity) as Transform;
+				TKIcon = Instantiate (TK, new Vector3(0, -pos.y / 4), Quaternion.identity) as Transform;
 				DTIcon = Instantiate(DT, new Vector3(0, pos.y * 1.44f / 4), Quaternion.identity) as Transform;
 				charaSelect = Instantiate(charSelect, new Vector3(0, 0), Quaternion.identity) as Transform;
 
@@ -266,46 +266,46 @@ public class GUIManager : MonoBehaviour {
 				}
 			}
 			
-			if (player1Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds) || player2Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds))
-			{
-				tutButton.GetComponent<SpriteRenderer>().sprite = tutButtonHover;
-				if (player1Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds) && Input.GetButtonUp("XboxFire1A"))
-				{
-					if (Input.GetButtonUp("XboxFire1A"))
-					{
-						Instantiate(tutoBG, new Vector3(0, 0), Quaternion.identity);
-						mode = 3;
-						Destroy (PKIcon.gameObject);
-						//				Destroy(MMIcon.gameObject);
-						Destroy (TKIcon.gameObject);
-						Destroy (DTIcon.gameObject);
-						Destroy (player1Cursor.gameObject);
-						Destroy (player2Cursor.gameObject);
-						Destroy (charaSelect.gameObject);
-						Instantiate(tutorial);
-					}
-				}
-				else if (player2Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds) && Input.GetButtonUp("XboxFire2A"))
-				{
-
-					if (Input.GetButtonUp("XboxFire2A"))
-					{
-						Instantiate(tutoBG, new Vector3(0, 0), Quaternion.identity);
-						mode = 3;
-						Destroy (PKIcon.gameObject);
-						Destroy(MMIcon.gameObject);
-						Destroy (TKIcon.gameObject);
-						Destroy (DTIcon.gameObject);
-						Destroy (player1Cursor.gameObject);
-						Destroy (player2Cursor.gameObject);
-						Destroy (charaSelect.gameObject);
-						Instantiate(tutorial);
-					}
-				}
-			}
-			else tutButton.GetComponent<SpriteRenderer>().sprite = tutButtonNormal;
+//			if (player1Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds) || player2Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds))
+//			{
+//				tutButton.GetComponent<SpriteRenderer>().sprite = tutButtonHover;
+//				if (player1Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds) && Input.GetButtonUp("XboxFire1A"))
+//				{
+//					if (Input.GetButtonUp("XboxFire1A"))
+//					{
+//						Instantiate(tutoBG, new Vector3(0, 0), Quaternion.identity);
+//						mode = 3;
+//						Destroy (PKIcon.gameObject);
+//						//				Destroy(MMIcon.gameObject);
+//						Destroy (TKIcon.gameObject);
+//						Destroy (DTIcon.gameObject);
+//						Destroy (player1Cursor.gameObject);
+//						Destroy (player2Cursor.gameObject);
+//						Destroy (charaSelect.gameObject);
+//						Instantiate(tutorial);
+//					}
+//				}
+//				else if (player2Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds) && Input.GetButtonUp("XboxFire2A"))
+//				{
+//
+//					if (Input.GetButtonUp("XboxFire2A"))
+//					{
+//						Instantiate(tutoBG, new Vector3(0, 0), Quaternion.identity);
+//						mode = 3;
+//						Destroy (PKIcon.gameObject);
+//						Destroy(MMIcon.gameObject);
+//						Destroy (TKIcon.gameObject);
+//						Destroy (DTIcon.gameObject);
+//						Destroy (player1Cursor.gameObject);
+//						Destroy (player2Cursor.gameObject);
+//						Destroy (charaSelect.gameObject);
+//						Instantiate(tutorial);
+//					}
+//				}
+//			}
+//			else tutButton.GetComponent<SpriteRenderer>().sprite = tutButtonNormal;
 			
-			if (player1Select != -1 && player2Select != -1 && begin == true || Input.GetKey(KeyCode.S))
+			if (player1Select != -1 && player2Select != -1 && begin == true || Input.GetKey(KeyCode.D))
 			{
 				sound.GetComponent<SoundManager>().StopSound("CharSelect");
 				sound.GetComponent<SoundManager>().PlaySound("Theme1");
