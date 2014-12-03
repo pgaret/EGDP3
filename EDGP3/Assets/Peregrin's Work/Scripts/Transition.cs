@@ -40,10 +40,9 @@ public class Transition : MonoBehaviour {
 			else
 			{
 				GetComponent<SpriteRenderer>().sprite = slides[0];
-
-
-
 				manager.GetComponent<spawn>().stage += 1;
+				GameObject.FindGameObjectWithTag("Background").GetComponent<Background>().mode -= 3;
+				GameObject.FindGameObjectWithTag("Background").GetComponent<Background>().needSwap = true;
 				if(manager.GetComponent<spawn>().stage <3){
 					manager.GetComponent<spawn>().summon = true;
 					Destroy (gameObject);

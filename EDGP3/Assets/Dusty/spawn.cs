@@ -129,6 +129,7 @@ public class spawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+//		Debug.Log (Time.time - time);
 		if(i < EnterTimes.Length && EnterTimes[i] <= Time.time - time && summon && stage == 0){
 			WaveS1(i);
 			i++;
@@ -258,7 +259,7 @@ public class spawn : MonoBehaviour {
 		//Wave 01
 		if(i == 0){
 			Setpath(1,-4,1,1,0,4, false); //4 is "blue" bat, false is blue
-			//Boss1();
+//			Boss1();
 		}
 		if(i == 1){
 			Setpath(1,4,2,2,0,4, false);
