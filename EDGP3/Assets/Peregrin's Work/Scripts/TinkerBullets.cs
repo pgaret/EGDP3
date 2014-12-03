@@ -11,7 +11,8 @@ public class TinkerBullets : MonoBehaviour {
 	private bool explosion = false;
 	private bool hasHit = false;
 	private int index = 0;
-	private GameObject[] enemies;
+	private List<GameObject> enemies = new List<GameObject>();
+	private GameObject boss;
 	private float bombCD;
 	private float bombTimer = -1;
 
@@ -27,7 +28,11 @@ public class TinkerBullets : MonoBehaviour {
 		if (!renderer.isVisible) Destroy (gameObject);
 		if (type == 0 || type == 1 || type == 2)
 		{
-			enemies = GameObject.FindGameObjectsWithTag("EnemyShipA");
+			GameObject[] enemies1 = GameObject.FindGameObjectsWithTag("EnemyShipA");
+			for (int i = 0; i < enemies1.Length; i++) enemies.Add (enemies1[i]);
+			if (GameObject.FindGameObjectWithTag("Boss1")) enemies.Add (GameObject.FindGameObjectWithTag("Boss1"));
+			if (GameObject.FindGameObjectWithTag("Boss2")) enemies.Add(GameObject.FindGameObjectWithTag("Boss2"));
+			if (GameObject.FindGameObjectWithTag("Boss3")) enemies.Add (boss = GameObject.FindGameObjectWithTag("Boss3"));
 			if (type != 1) transform.Translate(Vector3.up*Time.deltaTime*speed);
 			
 			if (type == 0) //Bomb
@@ -43,9 +48,21 @@ public class TinkerBullets : MonoBehaviour {
 				{
 					foreach (GameObject enemy in enemies)
 					{
-						if (enemy.renderer.bounds.Intersects(collider2D.bounds))
+						if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "EnemyShipA")
 						{
 							enemy.GetComponent<Enemy>().health -= 1;
+						}
+						else if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "Boss1")
+						{
+							enemy.GetComponent<Boss1>().subhealth(1);
+						}
+						else if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "Boss2")
+						{
+							enemy.GetComponent<Boss2>().subhealth(1);
+						}
+						else if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "Boss3")
+						{
+							enemy.GetComponent<Boss3>().subhealth(1);
 						}
 					}
 					type = 4;
@@ -54,13 +71,13 @@ public class TinkerBullets : MonoBehaviour {
 			
 			if (type == 1) //Homing
 			{
-				if (enemies.Length == 0) transform.Translate(Vector3.up*Time.deltaTime*speed);
+				if (enemies.Count == 0) transform.Translate(Vector3.up*Time.deltaTime*speed);
 				else
 				{
 					float dist = 0;
-					if (enemies.Length == 0) 
+					if (enemies.Count == 0) 
 					if (hasHit) Destroy(gameObject);
-					for (int i = 0; i < enemies.Length; i++)
+					for (int i = 0; i < enemies.Count; i++)
 					{
 						float test = Vector3.Distance(enemies[i].transform.position, transform.position);
 						if (test < dist)
@@ -76,7 +93,22 @@ public class TinkerBullets : MonoBehaviour {
 					{
 						Destroy(gameObject);
 						Debug.Log ("test");
-						enemies[index].GetComponent<Enemy>().health -= 1;
+						if (enemies[index].tag == "EnemyShipA")
+						{
+							enemies[index].GetComponent<Enemy>().health -= 1;
+						}
+						else if (enemies[index].tag == "Boss1")
+						{
+							enemies[index].GetComponent<Boss1>().subhealth(1);
+						}
+						else if (enemies[index].tag == "Boss2")
+						{
+							enemies[index].GetComponent<Boss2>().subhealth(1);
+						}
+						else if (enemies[index].tag == "Boss3")
+						{
+							enemies[index].GetComponent<Boss3>().subhealth(1);
+						}
 						hasHit = true;
 					}
 				}
@@ -89,7 +121,22 @@ public class TinkerBullets : MonoBehaviour {
 				{
 					if (enemy.renderer.bounds.Intersects(renderer.bounds) && !haveHit.Contains(enemy))
 					{
-						enemy.GetComponent<Enemy>().health -= 1	;
+						if (enemies[index].tag == "EnemyShipA")
+						{
+							enemies[index].GetComponent<Enemy>().health -= 1;
+						}
+						else if (enemies[index].tag == "Boss1")
+						{
+							enemies[index].GetComponent<Boss1>().subhealth(1);
+						}
+						else if (enemies[index].tag == "Boss2")
+						{
+							enemies[index].GetComponent<Boss2>().subhealth(1);
+						}
+						else if (enemies[index].tag == "Boss3")
+						{
+							enemies[index].GetComponent<Boss3>().subhealth(1);
+						}
 						haveHit.Add (enemy);
 					}
 				}
