@@ -69,6 +69,7 @@
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Fog.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\GUIManager.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\InputManager.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\Scripts\MMShield.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\MirrorMage.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\PKShield.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\PKSpecial.cs" />

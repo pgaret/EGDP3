@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour {
 	public GameObject deadEnemy;
 	public int type;
 	public float attackCD = 1;
+	public float deathTimer;
 	public bool fire = false;
 	public int attacktype = 0;
 	float attackTimer = 0;
@@ -51,7 +52,6 @@ public class Enemy : MonoBehaviour {
 //		int random = Random.Range (0, 2);
 	//	if (random == 0) affinity = false;
 		//else affinity = true;
-
 
 		checker (point);
 		if (attackCD < Time.time - attackTimer && fire == true){
@@ -187,15 +187,17 @@ public class Enemy : MonoBehaviour {
 				Destroy (bullets[i].gameObject);
 			}
 		}
-		if (health <= 0)
+		if (health <= 0 && fire == true)
 		{
 			GameObject.Find ("Sound").GetComponent<SoundManager>().PlaySound("Explosion");
 			//					bullets[i].GetComponent<PlayerBullet>().origin.GetComponent<PlayerStats>().get
 			Instantiate(coin, transform.position, Quaternion.identity);
 			GameObject theDead = (GameObject)Instantiate(deadEnemy, new Vector3(transform.position.x + renderer.bounds.extents.x, transform.position.y), Quaternion.identity);
 			theDead.GetComponent<DeadEnemy>().type = type;
-			Destroy (gameObject);
+			fire = false;
+			deathTimer = Time.time + deathTimer;
 		}
+		if (health <= 0 && fire == false && Time.time > deathTimer) Destroy(gameObject);
 		float step = speed * Time.deltaTime;
 		//transform.rotation = Quaternion.Lerp(transform.rotation,qr,Time.deltaTime*turnspeed);
 		transform.position = Vector3.MoveTowards(transform.position, target, step);
