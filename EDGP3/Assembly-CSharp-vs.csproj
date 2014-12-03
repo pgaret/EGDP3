@@ -54,9 +54,13 @@
      <Compile Include="Assets\Dusty\Boxy2.cs" />
      <Compile Include="Assets\Dusty\Spin.cs" />
      <Compile Include="Assets\Dusty\Wings.cs" />
+     <Compile Include="Assets\Dusty\done_bg.cs" />
      <Compile Include="Assets\Dusty\ice.cs" />
      <Compile Include="Assets\Dusty\manager.cs" />
+     <Compile Include="Assets\Dusty\move.cs" />
+     <Compile Include="Assets\Dusty\offset.cs" />
      <Compile Include="Assets\Dusty\spawn.cs" />
+     <Compile Include="Assets\Dusty\strip.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Background.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Coin.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\DTShield.cs" />

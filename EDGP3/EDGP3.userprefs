@@ -1,13 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Peregrin's Work\Scripts\EnemyBullet.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Dusty\move.cs">
     <Files>
-      <File FileName="Assets\Dusty\Boss2.cs" Line="113" Column="3" />
-      <File FileName="Assets\Dusty\spawn.cs" Line="260" Column="3" />
-      <File FileName="Assets\Dusty\Boss3.cs" Line="33" Column="17" />
-      <File FileName="Assets\Dusty\ice.cs" Line="19" Column="51" />
-      <File FileName="Assets\Peregrin's Work\Scripts\Enemy.cs" Line="183" Column="4" />
-      <File FileName="Assets\Peregrin's Work\Scripts\EnemyBullet.cs" Line="28" Column="4" />
+      <File FileName="Assets\Dusty\done_bg.cs" Line="20" Column="40" />
+      <File FileName="Assets\Dusty\offset.cs" Line="6" Column="30" />
+      <File FileName="Assets\Dusty\strip.cs" Line="34" Column="2" />
+      <File FileName="Assets\Dusty\manager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Dusty\move.cs" Line="4" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
