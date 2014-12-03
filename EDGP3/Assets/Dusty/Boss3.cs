@@ -29,6 +29,7 @@ public class Boss3 : MonoBehaviour {
 	bool fireice = false;
 	int amount = 6;
 	int iamount = 4;
+	public bool death = false;
 	// Use this for initialization
 	void Start () {
 		shippe1 = GameObject.FindGameObjectWithTag ("Player1");

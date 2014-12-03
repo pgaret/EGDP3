@@ -9,6 +9,8 @@ public class spawn : MonoBehaviour {
 	public GameObject Bossa;
 	public GameObject Bossb;
 	public GameObject Bossc;
+	GameObject p1;
+	GameObject p2;
 	int x = 10;
 	int y = 10;
 	float[] EnterTimes;
@@ -129,6 +131,7 @@ public class spawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if(i < EnterTimes.Length && EnterTimes[i] <= Time.time - time && summon && stage == 0){
 			WaveS1(i);
 			i++;
@@ -142,6 +145,7 @@ public class spawn : MonoBehaviour {
 			WaveS3(i);
 			i++;
 		}
+	
 
 	}
 	public void starter(){
@@ -448,6 +452,16 @@ public class spawn : MonoBehaviour {
 			a[i].GetComponent<Enemy>().health = -1;
 			Destroy(a[i].gameObject);
 		}
+		GameObject[] c = GameObject.FindGameObjectsWithTag("BulletA");
+
+		for(int i = c.Length-1; i >= 0; i--){
+			Destroy(c[i].gameObject);
+		}
+		GameObject[] d = GameObject.FindGameObjectsWithTag("BulletB");
+		
+		for(int i = d.Length-1; i >= 0; i--){
+			Destroy(d[i].gameObject);
+		}
 
 		if(GameObject.FindGameObjectWithTag("Boss1") != null){
 			GameObject b = GameObject.FindGameObjectWithTag("Boss1");
@@ -505,5 +519,5 @@ public class spawn : MonoBehaviour {
 		}
 
 	}
-	
+
 }

@@ -115,7 +115,11 @@ public class GUIManager : MonoBehaviour {
 	
 	//Enemy manager, starts the enemy wave timer
 	GameObject boxy;
-	
+
+	//death screen
+	bool start = false;
+	bool death = false;
+	public Texture b;
 	// Use this for initialization
 	void Start ()
 	{
@@ -209,13 +213,28 @@ public class GUIManager : MonoBehaviour {
 			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().ammo.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 82 / 100, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), Mathf.RoundToInt(player2.GetComponent<PlayerStats>().score).ToString(), style);	
 		}
+		if(death == true){
+			GUI.DrawTexture(new Rect(0, 0, 435, 326), b,ScaleMode.StretchToFill);
+
+		}
+
 		
 	}
 
 	// Update is called once per frame
 	void Update () {
 		Screen.showCursor = false;
-		
+		if(death){
+			if(Input.anyKey){
+				Application.LoadLevel ("Peregrin's Scene");
+			}
+		}
+		if(start){
+			if(player1.GetComponent<PlayerStats>().lives < 0 || player2.GetComponent<PlayerStats>().lives < 0){
+				death = true;
+			}
+		}
+
 		if (Input.GetKey(KeyCode.Escape)) Application.Quit();
 		if (mode == 1)
 		{
@@ -344,7 +363,7 @@ public class GUIManager : MonoBehaviour {
 				Destroy (charaSelect.gameObject);
 				Destroy (sButton.gameObject);
 				Destroy(tutButton.gameObject);
-	
+				start = true;
 				mode = 2;
 				boxy.GetComponent<spawn>().starter();
 			}

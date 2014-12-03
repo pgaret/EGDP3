@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Transition : MonoBehaviour {
@@ -8,22 +8,23 @@ public class Transition : MonoBehaviour {
 	float timer;
 	int counter = 1;
 	public Texture a;
-	public Texture b;
-	public bool death = false;
+
+
 	public bool end = false;
+
 	GameObject manager; 
 	// Use this fr initialization
 	void Start ()
 	{
-	manager	= GameObject.Find("Manager");
+		manager	= GameObject.Find("Manager");
 
 		timer = Time.time + timing;
 	}
 	
 	// Update is called once per frame
 	void Update ()
-	{
-		if(end || death){
+	{	
+		if(end){
 			if(Input.anyKey){
 				Application.LoadLevel ("Peregrin's Scene");
 			}
@@ -67,9 +68,6 @@ public class Transition : MonoBehaviour {
 			GUI.DrawTexture(new Rect(0, 0, 435, 326), a,ScaleMode.StretchToFill);
 			//Debug.Log("run");
 		}
-		if(death == true){
-			GUI.DrawTexture(new Rect(0, 0, 435, 326), b,ScaleMode.StretchToFill);
 
-		}
 	}
 }
