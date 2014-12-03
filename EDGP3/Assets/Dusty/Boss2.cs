@@ -188,8 +188,8 @@ public class Boss2 : MonoBehaviour {
 			}
 		}
 	}
-	public void subhealth(){
-		health--;
+	public void subhealth(float damage){
+		health -= damage;
 	}
 	public void sethealth(float a){
 		health = a;

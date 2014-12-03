@@ -7,6 +7,7 @@ public class MirrorMage : MonoBehaviour {
 	public Transform special;
 	public Transform shield;
 	public string shipType;
+	public float damage;
 	
 	public float width = .1f;
 	public Color color = Color.white;
@@ -108,27 +109,36 @@ public class MirrorMage : MonoBehaviour {
 		}	
 		if (GetComponent<PlayerStats>().role == "Attacker")
 		{
-			GameObject[] enemies = GameObject.FindGameObjectsWithTag("EnemyShipA");
 			RaycastHit hit;
 	
 			if (Physics.Raycast(transform.position, leftSide.transform.position - transform.position, out hit,  Vector3.Distance(transform.position, leftSide.transform.position)))
 			{
-				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= .05f;
+				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= damage;
+				else if (hit.transform.tag == "Boss1") hit.transform.gameObject.GetComponent<Boss1>().subhealth(damage);
+				else if (hit.transform.tag == "Boss2") hit.transform.gameObject.GetComponent<Boss2>().subhealth(damage);
+				else if (hit.transform.tag == "Boss3") hit.transform.gameObject.GetComponent<Boss3>().subhealth(damage);
 			}
 			if (Physics.Raycast(transform.position, rightSide.transform.position - transform.position, out hit,  Vector3.Distance(transform.position, rightSide.transform.position)))
 			{
-				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= .05f;
+				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= damage;
+				else if (hit.transform.tag == "Boss1") hit.transform.gameObject.GetComponent<Boss1>().subhealth(damage);
+				else if (hit.transform.tag == "Boss2") hit.transform.gameObject.GetComponent<Boss2>().subhealth(damage);
+				else if (hit.transform.tag == "Boss3") hit.transform.gameObject.GetComponent<Boss3>().subhealth(damage);
 			}
 			if (Physics.Raycast(leftSide.transform.position, topLeft.transform.position - leftSide.transform.position, out hit, Vector3.Distance(leftSide.transform.position, topLeft.transform.position)))
 			{
-				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= .05f;
+				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= damage;
+				else if (hit.transform.tag == "Boss1") hit.transform.gameObject.GetComponent<Boss1>().subhealth(damage);
+				else if (hit.transform.tag == "Boss2") hit.transform.gameObject.GetComponent<Boss2>().subhealth(damage);
+				else if (hit.transform.tag == "Boss3") hit.transform.gameObject.GetComponent<Boss3>().subhealth(damage);
 			}
 			if (Physics.Raycast(rightSide.transform.position, topRight.transform.position - rightSide.transform.position, out hit, Vector3.Distance(rightSide.transform.position, topRight.transform.position)))
 			{
-				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= .05f;
+				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= damage;
+				else if (hit.transform.tag == "Boss1") hit.transform.gameObject.GetComponent<Boss1>().subhealth(damage);
+				else if (hit.transform.tag == "Boss2") hit.transform.gameObject.GetComponent<Boss2>().subhealth(damage);
+				else if (hit.transform.tag == "Boss3") hit.transform.gameObject.GetComponent<Boss3>().subhealth(damage);
 			}
-			
-			Debug.Log (rightSide.transform.position+" "+topRight.transform.position);
 			
 			//Beam follows the player
 			Vector3 pos = transform.position;

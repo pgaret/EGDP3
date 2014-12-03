@@ -305,8 +305,8 @@ public class Boss3 : MonoBehaviour {
 		
 	}
 	
-	public void subhealth(){
-		health--;
+	public void subhealth(float damage){
+		health -= damage;
 		
 	}
 

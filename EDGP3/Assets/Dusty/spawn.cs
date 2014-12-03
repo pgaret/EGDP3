@@ -258,7 +258,7 @@ public class spawn : MonoBehaviour {
 		//Wave 01
 		if(i == 0){
 			Setpath(1,-4,1,1,4,4, false); //4 is "blue" bat, false is blue
-			//Boss1();
+			Boss1();
 		}
 		if(i == 1){
 			Setpath(1,4,2,2,4,4, false);

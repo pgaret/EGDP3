@@ -96,8 +96,8 @@ public class Boss1 : MonoBehaviour {
 		}
 
 	}
-	public void subhealth(){
-		health--;
+	public void subhealth(float damage){
+		health -= damage;
 	}
 	public void changeloc(Vector3 a){
 		target = a;		

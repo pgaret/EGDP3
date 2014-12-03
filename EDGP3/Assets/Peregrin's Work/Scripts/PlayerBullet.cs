@@ -32,7 +32,7 @@ public class PlayerBullet : MonoBehaviour {
 		{	
 			if (GameObject.FindGameObjectWithTag("Boss1").renderer.bounds.Intersects(renderer.bounds))
 			{
-				GameObject.FindGameObjectWithTag("Boss1").GetComponent<Boss1>().subhealth();
+				GameObject.FindGameObjectWithTag("Boss1").GetComponent<Boss1>().subhealth(1);
 				Destroy (gameObject);
 			}
 		}
@@ -40,7 +40,7 @@ public class PlayerBullet : MonoBehaviour {
 		{	
 			if (GameObject.FindGameObjectWithTag("Boss2").renderer.bounds.Intersects(renderer.bounds))
 			{
-				GameObject.FindGameObjectWithTag("Boss2").GetComponent<Boss2>().subhealth();
+				GameObject.FindGameObjectWithTag("Boss2").GetComponent<Boss2>().subhealth(1);
 				Destroy (gameObject);
 			}
 		}
@@ -49,7 +49,7 @@ public class PlayerBullet : MonoBehaviour {
 			Debug.Log (GameObject.FindGameObjectWithTag("Boss3").collider.bounds+ "  " + renderer.bounds);
 			if (GameObject.FindGameObjectWithTag("Boss3").collider.bounds.Intersects(renderer.bounds))
 			{
-				GameObject.FindGameObjectWithTag("Boss3").GetComponent<Boss3>().subhealth();
+				GameObject.FindGameObjectWithTag("Boss3").GetComponent<Boss3>().subhealth(1);
 				Destroy (gameObject);
 			}
 		}
