@@ -307,9 +307,6 @@ public class GUIManager : MonoBehaviour {
 			
 			if (player1Select != -1 && player2Select != -1 && begin == true || Input.GetKey(KeyCode.D))
 			{
-				sound.GetComponent<SoundManager>().StopSound("CharSelect");
-				sound.GetComponent<SoundManager>().PlaySound("Theme1");
-				sound.GetComponent<SoundManager>().LoopSound("Theme1");
 				level1BG = (Transform)Instantiate (Background);
 				level1BG.transform.localScale = new Vector3(1.6f, 1.6f);
 				
@@ -369,6 +366,9 @@ public class GUIManager : MonoBehaviour {
 				mode = 2;
 				boxy.GetComponent<spawn>().starter();
 				boxy.GetComponent<spawn>().i = 0;
+				sound.GetComponent<SoundManager>().StopSound("CharSelect");
+				sound.GetComponent<SoundManager>().PlaySound("MainTheme");
+				sound.GetComponent<SoundManager>().LoopSound("MainTheme");
 			}
 			//			int playerOne;
 			//			int playerTwo;

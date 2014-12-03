@@ -25,6 +25,11 @@ public class Boss1 : MonoBehaviour {
 		Master = GameObject.FindGameObjectWithTag("Manager");
 		Master.GetComponent<spawn>().summon = false;
 		//transform.rotation = Quaternion.Euler(new Vector3(180,0,0));
+		
+		Transform sound = GameObject.Find("Main Camera").transform;
+		sound.GetChild(0).GetComponent<SoundManager>().StopSound("MainTheme");
+		sound.GetChild(0).GetComponent<SoundManager>().PlaySound("Evil");
+		sound.GetChild(0).GetComponent<SoundManager>().LoopSound("Evil");
 	}
 	
 	// Update is called once per frame

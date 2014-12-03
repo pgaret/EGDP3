@@ -42,6 +42,18 @@ public class Transition : MonoBehaviour {
 				GetComponent<SpriteRenderer>().sprite = slides[0];
 				manager.GetComponent<spawn>().stage += 1;
 				GameObject.FindGameObjectWithTag("Background").GetComponent<Background>().mode -= 3;
+				Transform sound = GameObject.Find ("Main Camera").transform.GetChild (0);
+				sound.GetComponent<SoundManager>().StopSound("Evil");
+				if (GameObject.FindGameObjectWithTag("Background").GetComponent<Background>().mode == 1)
+				{
+					sound.GetComponent<SoundManager>().PlaySound("Fantasy");
+					sound.GetComponent<SoundManager>().LoopSound("Fantasy");
+				}
+				else
+				{
+					sound.GetComponent<SoundManager>().PlaySound("MainTheme");
+					sound.GetComponent<SoundManager>().LoopSound("MainTheme");
+				}
 				GameObject.FindGameObjectWithTag("Background").GetComponent<Background>().needSwap = true;
 				if(manager.GetComponent<spawn>().stage <3){
 					manager.GetComponent<spawn>().summon = true;

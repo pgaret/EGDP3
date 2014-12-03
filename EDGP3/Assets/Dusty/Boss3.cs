@@ -43,6 +43,11 @@ public class Boss3 : MonoBehaviour {
 		time4 = Time.time;
 		time5 = Time.time;
 		time6 = Time.time;
+		
+		Transform sound = GameObject.Find("Main Camera").transform;
+		sound.GetChild(0).GetComponent<SoundManager>().StopSound("MainTheme");
+		sound.GetChild(0).GetComponent<SoundManager>().PlaySound("Evil");
+		sound.GetChild(0).GetComponent<SoundManager>().LoopSound("Evil");
 	}
 	
 	// Update is called once per frame

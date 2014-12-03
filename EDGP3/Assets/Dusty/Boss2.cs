@@ -46,6 +46,11 @@ public class Boss2 : MonoBehaviour {
 		path[3] = new Vector3(-4,0,0);
 		changeloc(path[0]);
 		step = speed * Time.deltaTime;
+		
+		Transform sound = GameObject.Find("Main Camera").transform;
+		sound.GetChild(0).GetComponent<SoundManager>().StopSound("Fantasy");
+		sound.GetChild(0).GetComponent<SoundManager>().PlaySound("Evil");
+		sound.GetChild(0).GetComponent<SoundManager>().LoopSound("Evil");
 	}
 	
 	// Update is called once per frame

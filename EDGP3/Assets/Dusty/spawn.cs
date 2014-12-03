@@ -270,6 +270,7 @@ public class spawn : MonoBehaviour {
 		}
 		if (i == 3){
 			Setpath(1,4,4,4,0,4, false);
+			//Boss1();
 		}
 		//Wave 02
 		if (i == 4){
