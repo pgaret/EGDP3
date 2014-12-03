@@ -22,7 +22,7 @@ public class spawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		time = Time.time;
+		time = Time.timeSinceLevelLoad;
 		//  LEVEL 1 //
 		EnterTimes = new float[35];
 		//Wave 01
@@ -147,7 +147,7 @@ public class spawn : MonoBehaviour {
 
 	}
 	public void starter(){
-		time = Time.time - time;
+		time = Time.timeSinceLevelLoad - time;
 		summon = true;
 		i = 0;
 	}
@@ -533,9 +533,10 @@ public class spawn : MonoBehaviour {
 	void WaveS3(int i){
 		//Wave 01
 		if (i == 00){
-			Setpath(1,-4,1,1,0,7, false); //7 is pink/blue bat
+			//Setpath(1,-4,1,1,0,7, false); //7 is pink/blue bat
+			Boss3();
 		}
-		if (i == 01){
+		/*if (i == 01){
 			Setpath(1,4,2,2,4,6, true); //6 is black/red bat
 		}
 		if (i == 02){
@@ -563,15 +564,27 @@ public class spawn : MonoBehaviour {
 			Setpath(1,-4,2,10,3,24, false); //24 is purple/blue wisp
 			Setpath(1,4,2,11,3,24, false); //blue wisp
 		}
-		//Wave 4
+		//Wave 04
 		if (i == 08){
-			
+			Setpath(1,-4,3,7,0,4, false);
+			Setpath(1,-4,1,5,0,0, true);
 		}
-		//Wave 0
+		if (i == 09){
+			Setpath(1,-4,2,10,3,8, true);
+			Setpath(1,-4,2,10,3,12, false);
+		}
+		if (i == 10){
+			Setpath(1,-4,3,7,0,4, false);
+		}
+		if (i == 11){
+			Setpath(1,4,2,11,3,12, false);
+			Setpath(1,4,2,6,0,0, true);
+		}
+		//Wave 05
 		if (i == 0){
 			
 		}
-		//Wave 0
+		//Wave 06
 		if (i == 0){
 			
 		}
@@ -579,7 +592,7 @@ public class spawn : MonoBehaviour {
 		//Boss 3
 		if (i == 300){
 			Boss3();
-		}
+		}*/
 	}
 	
 	public void killall(){

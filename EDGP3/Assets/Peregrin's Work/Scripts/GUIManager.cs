@@ -368,6 +368,7 @@ public class GUIManager : MonoBehaviour {
 				start = true;
 				mode = 2;
 				boxy.GetComponent<spawn>().starter();
+				boxy.GetComponent<spawn>().i = 0;
 			}
 			//			int playerOne;
 			//			int playerTwo;
