@@ -123,8 +123,31 @@ public class spawn : MonoBehaviour {
 		EnterTimes2[37] = 94f;
 		
 		//  LEVEL 3 //
-		EnterTimes3 = new float[1];
-		EnterTimes3[0] = 10f;
+		EnterTimes3 = new float[30];
+		//Wave 01
+		EnterTimes3[00] = 05f;
+		EnterTimes3[01] = 06f;
+		EnterTimes3[02] = 07f;
+		EnterTimes3[03] = 08f;
+		//Wave 02
+		EnterTimes3[04] = 13f;
+		EnterTimes3[05] = 14f;
+		EnterTimes3[06] = 16f;
+		//Wave 03
+		EnterTimes3[07] = 21f;
+		EnterTimes3[08] = 23f;
+		//Wave 04
+		EnterTimes3[09] = 27f;
+		EnterTimes3[10] = 29f;
+		EnterTimes3[11] = 31f;
+		EnterTimes3[12] = 33f;
+		//Wave 04
+		EnterTimes3[13] = 38f;
+		EnterTimes3[14] = 40f;
+		EnterTimes3[15] = 42f;
+		EnterTimes3[16] = 44f;
+		//Boss 3
+		EnterTimes3[17] = 52f;
 	}
 	
 	// Update is called once per frame
@@ -270,7 +293,6 @@ public class spawn : MonoBehaviour {
 		}
 		if (i == 3){
 			Setpath(1,4,4,4,0,4, false);
-			//Boss1();
 		}
 		//Wave 02
 		if (i == 4){
@@ -534,10 +556,10 @@ public class spawn : MonoBehaviour {
 	void WaveS3(int i){
 		//Wave 01
 		if (i == 00){
-			//Setpath(1,-4,1,1,0,7, false); //7 is pink/blue bat
-			Boss3();
+			Setpath(1,-4,1,1,0,7, false); //7 is pink/blue bat
+			//Boss3();
 		}
-		/*if (i == 01){
+		if (i == 01){
 			Setpath(1,4,2,2,4,6, true); //6 is black/red bat
 		}
 		if (i == 02){
@@ -561,39 +583,46 @@ public class spawn : MonoBehaviour {
 			Setpath(1,-4,2,10,3,19, true); //19 is brown/red wisp
 			Setpath(1,4,2,11,3,19, true); //red wisp
 		}
-		if (i == 07){
+		if (i == 08){
 			Setpath(1,-4,2,10,3,24, false); //24 is purple/blue wisp
 			Setpath(1,4,2,11,3,24, false); //blue wisp
 		}
 		//Wave 04
-		if (i == 08){
+		if (i == 09){
 			Setpath(1,-4,3,7,0,4, false);
 			Setpath(1,-4,1,5,0,0, true);
 		}
-		if (i == 09){
+		if (i == 10){
 			Setpath(1,-4,2,10,3,8, true);
 			Setpath(1,-4,2,10,3,12, false);
 		}
-		if (i == 10){
+		if (i == 11){
 			Setpath(1,-4,3,7,0,4, false);
 		}
-		if (i == 11){
+		if (i == 12){
 			Setpath(1,4,2,11,3,12, false);
 			Setpath(1,4,2,6,0,0, true);
 		}
 		//Wave 05
-		if (i == 0){
-			
+		if (i == 13){
+			Setpath(1,-4,3,7,0,5, false);
+			Setpath(1,-4,1,5,0,2, true);
 		}
-		//Wave 06
-		if (i == 0){
-			
+		if (i == 14){
+			Setpath(1,-4,2,10,3,11, true);
+			Setpath(1,-4,2,10,3,14, false);
 		}
-	
+		if (i == 15){
+			Setpath(1,-4,3,7,0,5, false);
+		}
+		if (i == 16){
+			Setpath(1,4,2,11,3,14, false);
+			Setpath(1,4,2,6,0,2, true);
+		}
 		//Boss 3
-		if (i == 300){
+		if (i == 17){
 			Boss3();
-		}*/
+		}
 	}
 	
 	public void killall(){
