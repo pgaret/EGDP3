@@ -12,6 +12,9 @@ public class MirrorMage : MonoBehaviour {
 	public Color color = Color.white;
 	
 	public Material lazor;
+	public Sprite mirrorL;
+	public Sprite mirrorR;
+	public Sprite node;
 	
 	public string mode;
 	
@@ -57,11 +60,14 @@ public class MirrorMage : MonoBehaviour {
 	public void Shield()
 	{
 		Instantiate(shield, transform.GetChild(0).position, Quaternion.identity);
-		Instantiate(shield, transform.GetChild(0).position, Quaternion.identity);
+		Instantiate(shield, transform.GetChild(1).position, Quaternion.identity);
 	}
 	
 	void LazerTime()
 	{
+		left.GetComponent<SpriteRenderer>().sprite = mirrorL;
+		right.GetComponent<SpriteRenderer>().sprite = mirrorR;
+		left.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = node;
 		//From player to mirrors lenses
 		leftSide = left.AddComponent<LineRenderer>();
 		rightSide = right.AddComponent<LineRenderer>();
@@ -90,6 +96,9 @@ public class MirrorMage : MonoBehaviour {
 		{
 			Shield ();
 			NotLazerTime();
+			left.GetComponent<SpriteRenderer>().sprite = null;
+			right.GetComponent<SpriteRenderer>().sprite = null;
+			left.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
 		}
 		if (GetComponent<PlayerStats>().role  == "Attacker" && GameObject.FindGameObjectsWithTag("MMShield").Length > 0)
 		{
