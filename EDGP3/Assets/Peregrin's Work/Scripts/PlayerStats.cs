@@ -127,7 +127,7 @@ public class PlayerStats : MonoBehaviour {
 	void Update ()
 	{
 	
-		Debug.Log (transform.name+": "+coinScore);
+//		Debug.Log (transform.name+": "+coinScore);
 	
 		if (Time.time > pointTimer)
 		{

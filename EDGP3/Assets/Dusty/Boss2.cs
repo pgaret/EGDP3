@@ -114,12 +114,13 @@ public class Boss2 : MonoBehaviour {
 		}
 		
 		if (health <= 0) {
-			Destroy(gameObject);
 			Master.GetComponent<spawn>().summon = false;
 			Master.GetComponent<spawn>().killall();
 			Instantiate(transition);
+			Debug.Log (GameObject.Find("Transition(Clone)").name);
 			Master.GetComponent<spawn>().starter();
 			Master.GetComponent<spawn>().killall();
+			Destroy(gameObject);
 		}
 
 	}

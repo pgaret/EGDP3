@@ -51,7 +51,7 @@ public class Background : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		
+			
 		if (needSwap == true)
 		{
 			Debug.Log (mode);
@@ -78,7 +78,7 @@ public class Background : MonoBehaviour {
 				else if (mode == 2)
 				{
 					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
-					bg.GetComponent<SpriteRenderer>().sprite = background2;
+					bg.GetComponent<SpriteRenderer>().sprite = background3;
 				}
 				haveReplicated = true;
 			}

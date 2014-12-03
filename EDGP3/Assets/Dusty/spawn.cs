@@ -539,16 +539,13 @@ public class spawn : MonoBehaviour {
 			Destroy(a[i].gameObject);
 		}
 		if(GameObject.FindGameObjectWithTag("Boss1") != null){
-			GameObject b = GameObject.FindGameObjectWithTag("Boss1");
-			Destroy (b.gameObject);
+			Destroy(GameObject.FindGameObjectWithTag("Boss1"));
 		}
 		if(GameObject.FindGameObjectWithTag("Boss2") != null){
-			GameObject b = GameObject.FindGameObjectWithTag("Boss1");
-			Destroy (b.gameObject);
+			Destroy(GameObject.FindGameObjectWithTag("Boss2"));
 		}
 		if(GameObject.FindGameObjectWithTag("Boss3") != null){
-			GameObject b = GameObject.FindGameObjectWithTag("Boss1");
-			Destroy (b.gameObject);
+			Destroy(GameObject.FindGameObjectWithTag("Boss3"));
 		}
 
 
