@@ -13,6 +13,8 @@ public class MirrorMage : MonoBehaviour {
 	
 	public Sprite mirror;
 	
+	public string mode;
+	
 	GameObject sound;
 	
 	float specialTimer = 0;
@@ -30,20 +32,16 @@ public class MirrorMage : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		sound = GameObject.Find ("Sound");
-		left = GameObject.Find ("Left");
-		right = GameObject.Find ("Right");
-		if (transform.tag == "Player2") Shield ();
-		//From player to mirrors lenses
-		leftSide = left.AddComponent<LineRenderer>();
-		rightSide = right.AddComponent<LineRenderer>();
-		//From mirrors to top lenses
-		topLeft = left.transform.GetChild(0).gameObject.AddComponent<LineRenderer>();
-		topRight = right.transform.GetChild(0).gameObject.AddComponent<LineRenderer>();
-		//Narrow the beams
-		topLeft.SetWidth(width, width); topLeft.SetColors(color, color);
-		topRight.SetWidth(width, width); topRight.SetColors(color, color);
-		leftSide.SetWidth(width, width); leftSide.SetColors(color, color);
-		rightSide.SetWidth(width, width); rightSide.SetColors(color, color);
+		if (tag == "Player1")
+		{
+			mode = "Attack";
+			LazerTime();
+		}
+		else
+		{
+			Shield ();
+		}
+
 		
 	}
 	
@@ -57,35 +55,47 @@ public class MirrorMage : MonoBehaviour {
 
 	}
 	
-	void Shoot()
+	void LazerTime()
 	{
-		
+		left = GameObject.Find ("Left");
+		right = GameObject.Find ("Right");
+		//From player to mirrors lenses
+		leftSide = left.AddComponent<LineRenderer>();
+		rightSide = right.AddComponent<LineRenderer>();
+		//From mirrors to top lenses
+		topLeft = left.transform.GetChild(0).gameObject.AddComponent<LineRenderer>();
+		topRight = right.transform.GetChild(0).gameObject.AddComponent<LineRenderer>();
+		//Narrow the beams
+		topLeft.SetWidth(width, width); topLeft.SetColors(color, color);
+		topRight.SetWidth(width, width); topRight.SetColors(color, color);
+		leftSide.SetWidth(width, width); leftSide.SetColors(color, color);
+		rightSide.SetWidth(width, width); rightSide.SetColors(color, color);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		
+	
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag("EnemyShipA");
 		RaycastHit hit;
 
-		if (Physics.Raycast(transform.position, leftSide.transform.position - transform.position, out hit))
+		if (Physics.Raycast(transform.position, leftSide.transform.position - transform.position, out hit,  Vector3.Distance(transform.position, leftSide.transform.position)))
 		{
 			if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= .05f;
 		}
-		if (Physics.Raycast(transform.position, rightSide.transform.position - transform.position, out hit))
+		if (Physics.Raycast(transform.position, rightSide.transform.position - transform.position, out hit,  Vector3.Distance(transform.position, rightSide.transform.position)))
 		{
 			if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= .05f;
 		}
-		if (Physics.Raycast(leftSide.transform.position, topLeft.transform.position - transform.position, out hit))
+		if (Physics.Raycast(leftSide.transform.position, topLeft.transform.position - transform.position, out hit, Vector3.Distance(transform.position, topLeft.transform.position)))
 		{
 			if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= .05f;
 		}
-		if (Physics.Raycast(rightSide.transform.position, topRight.transform.position - transform.position, out hit))
+		if (Physics.Raycast(rightSide.transform.position, topRight.transform.position - transform.position, out hit, Vector3.Distance(transform.position, topRight.transform.position)))
 		{
 			if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= .05f;
 		}
-		
-		
 		
 		
 		//Beam follows the player
@@ -106,10 +116,11 @@ public class MirrorMage : MonoBehaviour {
 		//Change position of top destination
 		pos = left.transform.GetChild(1).position;
 		pos.x = transform.position.x;
+		pos.y = -transform.position.y;
 		left.transform.GetChild(1).position = pos;
-		pos = right.transform.GetChild(1).position;
-		pos.x = transform.position.x;
 		right.transform.GetChild(1).position = pos;
+		
+		
 		
 		//Beam goes to the top
 		topLeft.SetPosition(1, left.transform.GetChild(1).transform.position);
