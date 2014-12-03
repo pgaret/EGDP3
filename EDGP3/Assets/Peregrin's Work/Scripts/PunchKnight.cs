@@ -36,9 +36,9 @@ public class PunchKnight : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (GetComponent<PlayerStats>().coinScore >= 10 && GetComponent<PlayerStats>().damage == 1) GetComponent<PlayerStats>().damage += 1;
-		if (GetComponent<PlayerStats>().coinScore >= 20 && GetComponent<PlayerStats>().damage == 2) GetComponent<PlayerStats>().damage += 1;
-		if (GetComponent<PlayerStats>().coinScore >= 30 && GetComponent<PlayerStats>().damage == 3) GetComponent<PlayerStats>().damage += 1;
+		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin1 && GetComponent<PlayerStats>().damage == 1) GetComponent<PlayerStats>().damage += 1;
+		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin2 && GetComponent<PlayerStats>().damage == 2) GetComponent<PlayerStats>().damage += 1;
+		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin3 && GetComponent<PlayerStats>().damage == 3) GetComponent<PlayerStats>().damage += 1;
 	
 		shipType = transform.GetComponent<PlayerStats>().role;
 

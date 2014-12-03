@@ -76,8 +76,7 @@ public class Transition : MonoBehaviour {
 	{
 
 		if(end == true){
-			GUI.DrawTexture(new Rect(0, 0, 435, 326), a,ScaleMode.StretchToFill);
-			//Debug.Log("run");
+			Application.LoadLevel("Reginald's Scene");
 		}
 
 	}

@@ -44,9 +44,9 @@ public class DragonTamer : MonoBehaviour {
 	void Update () {
 		shipType = transform.GetComponent<PlayerStats>().role;
 		
-		if (GetComponent<PlayerStats>().coinScore >= 10 && minDrag == 1) minDrag += 1;
-		if (GetComponent<PlayerStats>().coinScore >= 20 && minDrag == 2) minDrag += 1;
-		if (GetComponent<PlayerStats>().coinScore >= 30 && minDrag == 3) minDrag += 1;
+		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin1 && minDrag == 1) minDrag += 1;
+		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin2 && minDrag == 2) minDrag += 1;
+		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin3 && minDrag == 3) minDrag += 1;
 		
 		
 		for (int i = 0; i < dragons.Count; i++)

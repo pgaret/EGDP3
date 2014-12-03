@@ -29,7 +29,7 @@ public class GUIManager : MonoBehaviour {
 	public int mode = 0;
 	
 	//Tutorial script holding thingy
-	public Transform tutorial;
+	public Texture win;
 	
 	//HUD stuff
 	//Buttons
@@ -216,6 +216,14 @@ public class GUIManager : MonoBehaviour {
 		if(death == true){
 			Application.LoadLevel("Peregrin's Scene");
 
+		}
+		
+		if (mode == 5)
+		{
+			GUI.Box (new Rect(0, 0, Screen.width, Screen.height), win);
+			float finalScore = player1.GetComponent<PlayerStats>().score + player2.GetComponent<PlayerStats>().score;
+			GUI.Label (new Rect(Screen.width / 3, Screen.height * 3 / 4, Screen.width / 3, Screen.height / 4), finalScore.ToString()+"\nAny button to continue...");
+			
 		}
 
 		

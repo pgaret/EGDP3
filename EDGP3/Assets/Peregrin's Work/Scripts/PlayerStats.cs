@@ -58,6 +58,10 @@ public class PlayerStats : MonoBehaviour {
 	private Animator anim;
 	private GameObject bar;
 	private GameObject sound;
+	
+	public float coin1 = 50;
+	public float coin2 = 100;
+	public float coin3 = 150;
 
 	// Use this for initialization
 	void Start () {
