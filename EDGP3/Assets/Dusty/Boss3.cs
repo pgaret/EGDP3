@@ -30,7 +30,7 @@ public class Boss3 : MonoBehaviour {
 	bool firefire = false;
 	bool fireice = false;
 	int amount = 6;
-	int iamount = 4;
+	int iamount = 2;
 	public bool death = false;
 	// Use this for initialization
 	void Start () {
@@ -119,7 +119,7 @@ public class Boss3 : MonoBehaviour {
 			if(iamount < 0){
 				fireice = false;
 				
-				iamount = 4;
+				iamount = 2;
 			}
 		}
 

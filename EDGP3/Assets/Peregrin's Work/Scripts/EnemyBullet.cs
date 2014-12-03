@@ -27,7 +27,7 @@ public class EnemyBullet : MonoBehaviour {
 			rigidbody.velocity = Vector3.zero;
 		}
 		else if (bullettype == 4){
-			if(timer + .2f >= Time.time){
+			if(timer + .4f >= Time.time){
 				rigidbody.AddForce(transform.up * bulletspeed);
 
 			}else{

@@ -26,6 +26,8 @@ public class Enemy : MonoBehaviour {
 	private GameObject shippe2;
 	private GameObject shippeatk;
 	public bool affinity = false;
+	bool firefire;
+	int amount = 5;
 	private Vector3 target;
 	public int path;
 	public int point = 0;
@@ -141,17 +143,8 @@ public class Enemy : MonoBehaviour {
 				//Sprinkler Attack
 			}else if(attacktype == 4){
 				//rotations();
-				Transform a = transform;
-				for(int j = 0; j < 3; j++){
-					int i = Random.Range (-10, 10);
-					Quaternion up = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z + i*5));
-					if (affinity == false) {
-						bullet = Instantiate(SmallA, transform.position, up) as GameObject;
-					}else {
-						bullet = Instantiate(SmallB, transform.position, up) as GameObject;
-					}
-					bullet.GetComponent<EnemyBullet>().setatktype(attacktype);
-				}
+				firefire = true;
+
 				//Rain Attack
 			}else if(attacktype == 5){
 
@@ -174,9 +167,19 @@ public class Enemy : MonoBehaviour {
 				}
 				
 			}
+
 		
 
 		attackTimer = Time.time;
+		}
+		if(firefire){
+			pewpew ();
+			amount--;
+			if(amount < 0){
+				firefire = false;
+				amount = 5;
+			}
+			
 		}
 		GameObject[] bullets = GameObject.FindGameObjectsWithTag ("BulletC");
 		for (int i = 0; i < bullets.Length; i++)
@@ -203,6 +206,20 @@ public class Enemy : MonoBehaviour {
 		transform.position = Vector3.MoveTowards(transform.position, target, step);
 		if(path > 0 && target == transform.position)
 			point++;
+	}
+	void pewpew(){
+		GameObject bullet;
+		Transform a = transform;
+
+		int i = Random.Range (-10, 10);
+		Quaternion up = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z + i*5));
+		if (affinity == false) {
+			bullet = Instantiate(SmallA, transform.position, up) as GameObject;
+		}else {
+			bullet = Instantiate(SmallB, transform.position, up) as GameObject;
+		}
+		bullet.GetComponent<EnemyBullet>().setatktype(attacktype);
+
 	}
 	void checker(int i){
 		if(path == 1){
