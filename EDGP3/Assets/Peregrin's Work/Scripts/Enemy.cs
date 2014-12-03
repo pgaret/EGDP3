@@ -184,9 +184,14 @@ public class Enemy : MonoBehaviour {
 		GameObject[] bullets = GameObject.FindGameObjectsWithTag ("BulletC");
 		for (int i = 0; i < bullets.Length; i++)
 		{
-			if (bullets[i].renderer.bounds.Intersects(transform.renderer.bounds))
+			if (bullets[i].renderer.bounds.Intersects(transform.renderer.bounds) && bullets[i].transform.name != "PKSpecial(Clone)")
 			{
 				health -= bullets[i].GetComponent<PlayerBullet>().damage;
+				Destroy (bullets[i].gameObject);
+			}
+			else if (bullets[i].renderer.bounds.Intersects(transform.renderer.bounds) && bullets[i].transform.name == "PKSpecial(Clone)")
+			{
+				health -= 1;
 				Destroy (bullets[i].gameObject);
 			}
 		}

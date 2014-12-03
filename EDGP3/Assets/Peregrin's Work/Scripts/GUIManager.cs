@@ -248,8 +248,8 @@ public class GUIManager : MonoBehaviour {
 			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && DTIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 3) player2Select = 3;
 			if (Input.GetKey (KeyCode.S))
 			{
-				player1Select = 2;
-				player2Select = 0;
+				player1Select = 0;
+				player2Select = 1;
 			}
 			if (player1Select != -1 && player2Select != -1)
 			{

@@ -21,7 +21,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -41,7 +41,7 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: 1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -62,162 +62,162 @@ TextureImporter:
     - name: KnightShield_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 185
-        width: 220
-        height: 175
+        x: 12
+        y: 210
+        width: 195
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_1
       rect:
         serializedVersion: 2
-        x: 220
-        y: 185
-        width: 220
-        height: 175
+        x: 232
+        y: 210
+        width: 195
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_2
       rect:
         serializedVersion: 2
-        x: 440
-        y: 185
-        width: 220
-        height: 175
+        x: 452
+        y: 210
+        width: 195
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_3
       rect:
         serializedVersion: 2
-        x: 660
-        y: 185
-        width: 220
-        height: 175
+        x: 672
+        y: 210
+        width: 195
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_4
       rect:
         serializedVersion: 2
-        x: 880
-        y: 185
-        width: 220
-        height: 175
+        x: 892
+        y: 210
+        width: 195
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_5
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 185
-        width: 220
-        height: 175
+        x: 1112
+        y: 210
+        width: 195
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_6
       rect:
         serializedVersion: 2
-        x: 1320
-        y: 185
-        width: 220
-        height: 175
+        x: 1330
+        y: 210
+        width: 200
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_7
       rect:
         serializedVersion: 2
-        x: 1540
-        y: 185
-        width: 220
-        height: 175
+        x: 1552
+        y: 210
+        width: 195
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 10
-        width: 220
-        height: 175
+        x: 12
+        y: 30
+        width: 195
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_9
       rect:
         serializedVersion: 2
-        x: 220
-        y: 10
-        width: 220
-        height: 175
+        x: 232
+        y: 30
+        width: 195
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_10
       rect:
         serializedVersion: 2
-        x: 440
-        y: 10
-        width: 220
-        height: 175
+        x: 452
+        y: 30
+        width: 195
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_11
       rect:
         serializedVersion: 2
-        x: 660
-        y: 10
-        width: 220
-        height: 175
+        x: 672
+        y: 30
+        width: 195
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_12
       rect:
         serializedVersion: 2
-        x: 880
-        y: 10
-        width: 220
-        height: 175
+        x: 892
+        y: 30
+        width: 195
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_13
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 10
-        width: 220
-        height: 175
+        x: 1112
+        y: 30
+        width: 195
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_14
       rect:
         serializedVersion: 2
-        x: 1320
-        y: 10
-        width: 220
-        height: 175
+        x: 1330
+        y: 30
+        width: 200
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: KnightShield_15
       rect:
         serializedVersion: 2
-        x: 1540
-        y: 10
-        width: 220
-        height: 175
+        x: 1552
+        y: 30
+        width: 195
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -71,27 +71,25 @@ public class PunchKnight : MonoBehaviour {
 			GetComponent<PlayerStats>().specialBool = false;
 		}
 		
-		if (specialTimer - Time.time <= specialCounter  && Time.time > specialTimer && specialCounter > 0)
+if (specialTimer - Time.time <= specialCounter  && Time.time > specialTimer && specialCounter > 0)
 		{
 			Transform instance;
 			for (float i = 0; i < specialCounter; i += .5f)
 			{
 				instance = (Transform)Instantiate(special, transform.position, Quaternion.identity);
-				if (i == 0) instance.GetComponent<PKSpecial>().rotation = 13;
-				if (i == .5) instance.GetComponent<PKSpecial>().rotation = -13;
-				if (i == 1) instance.GetComponent<PKSpecial>().rotation = 25;
-				if (i == 1.5) instance.GetComponent<PKSpecial>().rotation = -25;
+				
+				if (i == 0) instance.GetComponent<PKSpecial>().rotation = Random.Range(4,26);
+				if (i == .5) instance.GetComponent<PKSpecial>().rotation =  Random.Range(-26,-4);
+				if (i == 1) instance.GetComponent<PKSpecial>().rotation = Random.Range(4,26);
+				if (i == 1.5) instance.GetComponent<PKSpecial>().rotation =  Random.Range(-26,-4);
 				if (instance.GetComponent<PKSpecial>().rotation > 0) instance.GetComponent<SpriteRenderer>().sprite = punchLeft;
 				else instance.GetComponent<SpriteRenderer>().sprite = punchRight;
-				instance.GetComponent<PlayerBullet>().damage = GetComponent<PlayerStats>().damage;
 			}
 			instance = (Transform)Instantiate(special, transform.position, Quaternion.identity);
-			instance.GetComponent<PKSpecial>().rotation = 0;
+			instance.GetComponent<PKSpecial>().rotation = Random.Range(-8,8);
 			instance.GetComponent<SpriteRenderer>().sprite = punchLeft;
-			instance.GetComponent<PlayerBullet>().damage = GetComponent<PlayerStats>().damage;
-			specialTimer = Time.time + .5f;
+			specialTimer = Time.time + .1f; //delay between waves of punches
 			specialCounter -= 1f;
 		}
-
 	}
 }

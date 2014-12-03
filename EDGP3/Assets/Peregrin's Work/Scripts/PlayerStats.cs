@@ -45,6 +45,10 @@ public class PlayerStats : MonoBehaviour {
 	public bool tutSwap = false;
 	float swapTimer = 2f;
 	
+	// Affinity timer
+	public float affinityCD;
+	float affinityTimer;
+	
 	public float pointCD;
 	float pointTimer;
 	
@@ -203,10 +207,12 @@ public class PlayerStats : MonoBehaviour {
 				}
 			}
 			//Defender inputs
-			else if (Input.GetButtonUp("XboxFire1X") || Input.GetKeyUp(KeyCode.T))
+			else if (Input.GetButtonUp("XboxFire1X") || Input.GetKeyUp(KeyCode.T) && Time.time > affinityTimer)
 			{
 				if (affinity == 'A') affinity = 'B';
 				else affinity = 'A';
+				// affinity timer
+				affinityTimer = affinityCD + Time.time;
 			}
 			//Animation stuff
 			if (isMoving && !shootBool) anim.SetBool("move!shoot", true);
@@ -250,10 +256,11 @@ public class PlayerStats : MonoBehaviour {
 				}
 			}
 			//Defender inputs
-			else if (Input.GetButtonUp ("XboxFire2X"))
+			else if (Input.GetButtonUp ("XboxFire2X") && Time.time > affinityTimer)
 			{
 				if (affinity == 'A') affinity = 'B';
 				else affinity = 'A';
+				affinityTimer = affinityCD + Time.time;
 			}
 			//Animation stuff
 			if (isMoving && !shootBool) anim.SetBool("move!shoot", true);
