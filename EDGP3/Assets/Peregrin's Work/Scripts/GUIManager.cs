@@ -214,7 +214,7 @@ public class GUIManager : MonoBehaviour {
 			GUI.Box (new Rect(Screen.width * 82 / 100, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), Mathf.RoundToInt(player2.GetComponent<PlayerStats>().score).ToString(), style);	
 		}
 		if(death == true){
-			GUI.DrawTexture(new Rect(0, 0, 435, 326), b,ScaleMode.StretchToFill);
+			Application.LoadLevel("Peregrin's Scene");
 
 		}
 

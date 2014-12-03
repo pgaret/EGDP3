@@ -62,7 +62,7 @@ public class PlayerStats : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//Starting stats
-		lives = 15;
+		lives = 1;
 		swapRole = "no";
 		affinity = 'A';
 		points = 0;
