@@ -11,6 +11,8 @@ public class Boss2 : MonoBehaviour {
 
 	public GameObject projectileA;
 	public GameObject projectileB;
+	public GameObject RectA;
+	public GameObject RectB;
 	public GameObject transition;
 	private GameObject shippe1;
 	private GameObject shippe2;
@@ -78,11 +80,11 @@ public class Boss2 : MonoBehaviour {
 				Vector3 b = new Vector3(j-6,5,0);
 				Vector3 bb = new Vector3(j-6 +.5f,5,0);
 				if (affinity == false) {
-					bullet = Instantiate(projectileA, b, transform.rotation) as GameObject;
-					bullet = Instantiate(projectileA, bb, transform.rotation) as GameObject;
+					bullet = Instantiate(RectA, b, transform.rotation) as GameObject;
+					bullet = Instantiate(RectA, bb, transform.rotation) as GameObject;
 				}else {
-					bullet = Instantiate(projectileB, b, transform.rotation) as GameObject;
-					bullet = Instantiate(projectileB, bb, transform.rotation) as GameObject;
+					bullet = Instantiate(RectB, b, transform.rotation) as GameObject;
+					bullet = Instantiate(RectB, bb, transform.rotation) as GameObject;
 				}
 				bullet.GetComponent<EnemyBullet>().setatktype(1);
 			}

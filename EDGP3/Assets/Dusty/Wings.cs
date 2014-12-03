@@ -15,7 +15,7 @@ public class Wings : MonoBehaviour {
 		check = true;
 		renderer.enabled = false;
 		on = false;
-		arccd = Random.value*5f+3f;
+		arccd = Random.value*1.5f+3f;
 		time = Time.time;
 		anim.SetBool("Freeze",true);
 

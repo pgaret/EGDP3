@@ -8,6 +8,12 @@ public class Enemy : MonoBehaviour {
 	public float health;
 	public GameObject projectileA;
 	public GameObject projectileB;
+	public GameObject OvalA;
+	public GameObject OvalB;
+	public GameObject SaturnA;
+	public GameObject SaturnB;
+	public GameObject SmallA;
+	public GameObject SmallB;
 	public GameObject coin;
 	public GameObject deadEnemy;
 	public int type;
@@ -54,11 +60,11 @@ public class Enemy : MonoBehaviour {
 			if (attacktype == 0){
 
 				if (affinity == false){
-					bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
+					bullet = Instantiate(OvalA, transform.position, transform.rotation) as GameObject;
 
 				}
 				else {
-					bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
+					bullet = Instantiate(OvalB, transform.position, transform.rotation) as GameObject;
 
 
 					}
@@ -127,9 +133,9 @@ public class Enemy : MonoBehaviour {
 
 					Quaternion up = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z + i));
 					if (affinity == false) {
-						bullet = Instantiate(projectileA, transform.position, up) as GameObject;
+						bullet = Instantiate(SaturnA, transform.position, up) as GameObject;
 					}else {
-						bullet = Instantiate(projectileB, transform.position, up) as GameObject;
+						bullet = Instantiate(SaturnB, transform.position, up) as GameObject;
 					}
 				}
 				//Sprinkler Attack
@@ -140,9 +146,9 @@ public class Enemy : MonoBehaviour {
 					int i = Random.Range (-10, 10);
 					Quaternion up = Quaternion.Euler( new Vector3(a.rotation.eulerAngles.x, a.rotation.eulerAngles.y,a.rotation.eulerAngles.z + i*5));
 					if (affinity == false) {
-						bullet = Instantiate(projectileA, transform.position, up) as GameObject;
+						bullet = Instantiate(SmallA, transform.position, up) as GameObject;
 					}else {
-						bullet = Instantiate(projectileB, transform.position, up) as GameObject;
+						bullet = Instantiate(SmallB, transform.position, up) as GameObject;
 					}
 					bullet.GetComponent<EnemyBullet>().setatktype(attacktype);
 				}

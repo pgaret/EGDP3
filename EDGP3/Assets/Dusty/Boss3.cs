@@ -9,6 +9,8 @@ public class Boss3 : MonoBehaviour {
 	public bool alive;
 	public GameObject projectileA;
 	public GameObject projectileB;
+	public GameObject SmallA;
+	public GameObject SmallB;
 	public GameObject fires;
 	public GameObject ice;
 	public GameObject lightning;
@@ -242,12 +244,12 @@ public class Boss3 : MonoBehaviour {
 				float angle = 0;
 				Vector3 relative = transform.InverseTransformPoint(shippe1.transform.position);
 				angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
-				bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
+				bullet = Instantiate(SmallA, transform.position, transform.rotation) as GameObject;
 				bullet.transform.Rotate(0,0,-angle+angles +180);
 				angles = Random.Range (x, xx);
 				relative = transform.InverseTransformPoint(shippe2.transform.position);
 				angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
-				bullet = Instantiate(projectileA, transform.position, transform.rotation) as GameObject;
+				bullet = Instantiate(SmallA, transform.position, transform.rotation) as GameObject;
 				bullet.transform.Rotate(0,0,-angle+angles+180);
 				
 			}else {
@@ -255,12 +257,12 @@ public class Boss3 : MonoBehaviour {
 				int angles = Random.Range (x, xx);
 				Vector3 relative = transform.InverseTransformPoint(shippe1.transform.position);
 				angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
-				bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
+				bullet = Instantiate(SmallB, transform.position, transform.rotation) as GameObject;
 				bullet.transform.Rotate(0,0,-angle+angles+180);
 				angles = Random.Range (x, xx);
 				relative = transform.InverseTransformPoint(shippe2.transform.position);
 				angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
-				bullet = Instantiate(projectileB, transform.position, transform.rotation) as GameObject;
+				bullet = Instantiate(SmallB, transform.position, transform.rotation) as GameObject;
 				bullet.transform.Rotate(0,0,-angle+angles+180);
 				
 			}
