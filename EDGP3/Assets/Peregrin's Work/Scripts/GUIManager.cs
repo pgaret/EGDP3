@@ -29,7 +29,7 @@ public class GUIManager : MonoBehaviour {
 	public int mode = 0;
 	
 	//Tutorial script holding thingy
-	public Texture win;
+//	public Texture win;
 	
 	//HUD stuff
 	//Buttons
@@ -217,14 +217,7 @@ public class GUIManager : MonoBehaviour {
 			Application.LoadLevel("Peregrin's Scene");
 
 		}
-		
-		if (mode == 5)
-		{
-			GUI.Box (new Rect(0, 0, Screen.width, Screen.height), win);
-			float finalScore = player1.GetComponent<PlayerStats>().score + player2.GetComponent<PlayerStats>().score;
-			GUI.Label (new Rect(Screen.width / 3, Screen.height * 3 / 4, Screen.width / 3, Screen.height / 4), finalScore.ToString()+"\nAny button to continue...");
-			
-		}
+
 
 		
 	}
@@ -247,11 +240,11 @@ public class GUIManager : MonoBehaviour {
 		if (mode == 1)
 		{
 			if (Input.GetButtonDown("XboxFire1A") && PKIcon.renderer.bounds.Contains(player1Cursor.position) && player1Select != 0) player1Select = 0;
-			if (Input.GetButtonDown("XboxFire1A") && MMIcon.renderer.bounds.Contains(player1Cursor.position) && player1Select != 1) player1Select = 1;
+			if (Input.GetButtonDown("XboxFire1A") && MMIcon.renderer.bounds.Contains(player1Cursor.position) && player1Select != 1 && player2Select != 1) player1Select = 1;
 			if (Input.GetButtonDown("XboxFire1A") && TKIcon.renderer.bounds.Contains(player1Cursor.position) && player1Select != 2) player1Select = 2;
 			if (Input.GetButtonDown("XboxFire1A") && DTIcon.renderer.bounds.Contains(player1Cursor.position) && player1Select != 3) player1Select = 3;
 			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && PKIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 0) player2Select = 0;
-			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && MMIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 1) player2Select = 1;
+			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && MMIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 1 && player1Select != 1) player2Select = 1;
 			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && TKIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 2) player2Select = 2;
 			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && DTIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 3) player2Select = 3;
 			if (Input.GetKey (KeyCode.S))
