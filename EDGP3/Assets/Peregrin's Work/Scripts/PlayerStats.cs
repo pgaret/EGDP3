@@ -49,6 +49,9 @@ public class PlayerStats : MonoBehaviour {
 	public float affinityCD;
 	float affinityTimer;
 	
+	public float deathCD;
+	float deathTimer;
+	
 	public float pointCD;
 	float pointTimer;
 	
@@ -138,18 +141,22 @@ public class PlayerStats : MonoBehaviour {
 		GameObject[] bullets = GameObject.FindGameObjectsWithTag("BulletA");
 		foreach (GameObject bullet in bullets)
 		{
-			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds))
+			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds) && Time.time > deathTimer)
 			{
 				lives -= 1;
+				GetComponent<Animator>().SetBool("death", true);
+				deathTimer = Time.time + deathCD;
 				Destroy (bullet.gameObject);
 			}
 		}
 		bullets = GameObject.FindGameObjectsWithTag("BulletB");
 		foreach (GameObject bullet in bullets)
 		{
-			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds))
+			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds) && Time.time > deathTimer)
 			{
 				lives -= 1;
+				GetComponent<Animator>().SetBool("dead", true);
+				deathTimer = Time.time + deathCD;
 				Destroy (bullet.gameObject);
 			}
 		}
@@ -165,6 +172,8 @@ public class PlayerStats : MonoBehaviour {
 				
 			}
 		}
+		
+		if (Time.time > deathTimer) GetComponent<Animator>().SetBool("dead", false);
 		//Input shenanigans
 		if (transform.tag == "Player1")
 		{
