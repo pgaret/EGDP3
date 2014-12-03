@@ -30,7 +30,7 @@ public class TinkerShield : MonoBehaviour {
 			if (bullet.renderer.bounds.Intersects(renderer.bounds) && parent.GetComponent<PlayerStats>().affinity == 'A')
 			{
 				Destroy (bullet);
-				parent.GetComponent<PlayerStats>().ammo += 1;
+				parent.GetComponent<PlayerStats>().ammo += 2;
 			}
 		}
 		bullets = GameObject.FindGameObjectsWithTag("BulletB");
@@ -39,7 +39,7 @@ public class TinkerShield : MonoBehaviour {
 			if (bullet.renderer.bounds.Intersects(renderer.bounds) && parent.GetComponent<PlayerStats>().affinity == 'B')
 			{
 				Destroy (bullet);
-				parent.GetComponent<PlayerStats>().ammo += 1;
+				parent.GetComponent<PlayerStats>().ammo += 2;
 			}
 		}
 		

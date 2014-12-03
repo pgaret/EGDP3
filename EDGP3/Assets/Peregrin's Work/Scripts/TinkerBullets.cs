@@ -54,27 +54,31 @@ public class TinkerBullets : MonoBehaviour {
 			
 			if (type == 1) //Homing
 			{
-				float dist = 0;
-				if (enemies.Length == 0) Destroy (gameObject);
-				if (hasHit) Destroy(gameObject);
-				for (int i = 0; i < enemies.Length; i++)
+				if (enemies.Length == 0) transform.Translate(Vector3.up*Time.deltaTime*speed);
+				else
 				{
-					float test = Vector3.Distance(enemies[i].transform.position, transform.position);
-					if (test < dist)
+					float dist = 0;
+					if (enemies.Length == 0) 
+					if (hasHit) Destroy(gameObject);
+					for (int i = 0; i < enemies.Length; i++)
 					{
-						dist = test;
-						index = i;
+						float test = Vector3.Distance(enemies[i].transform.position, transform.position);
+						if (test < dist)
+						{
+							dist = test;
+							index = i;
+						}
 					}
-				}
-				transform.position = Vector3.MoveTowards(transform.position, enemies[index].transform.position, Time.deltaTime*speed);
-				Quaternion rotation = Quaternion.LookRotation(enemies[index].transform.position + transform.position);
-				transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
-				if (transform.position == enemies[index].transform.position)
-				{
-					Destroy(gameObject);
-					Debug.Log ("test");
-					enemies[index].GetComponent<Enemy>().health -= 1;
-					hasHit = true;
+					transform.position = Vector3.MoveTowards(transform.position, enemies[index].transform.position, Time.deltaTime*speed);
+					Quaternion rotation = Quaternion.LookRotation(enemies[index].transform.position + transform.position);
+					transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
+					if (transform.position == enemies[index].transform.position)
+					{
+						Destroy(gameObject);
+						Debug.Log ("test");
+						enemies[index].GetComponent<Enemy>().health -= 1;
+						hasHit = true;
+					}
 				}
 			}
 			

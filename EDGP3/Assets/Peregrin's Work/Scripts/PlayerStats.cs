@@ -76,12 +76,13 @@ public class PlayerStats : MonoBehaviour {
 		//Determines position based on player, not really active atm
 		if (transform.tag == "Player2")
 		{
+			ammo = 50;
 			role = "Defender";
 			bar = GameObject.FindGameObjectWithTag("Bar2");
 		}
 		if (transform.tag == "Player1")
 		{
-			ammo = 100;
+			ammo = 50;
 			role = "Attacker";
 			bar = GameObject.FindGameObjectWithTag("Bar1");
 		}
