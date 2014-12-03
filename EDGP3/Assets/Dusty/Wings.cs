@@ -4,7 +4,7 @@ using System.Collections;
 public class Wings : MonoBehaviour {
 	public float arccd,icd;
 	float time;
-	bool on;
+	public bool on;
 	public bool check;
 	public Sprite warning;
 	Animator anim;

@@ -413,7 +413,7 @@ public class spawn : MonoBehaviour {
 		if(i == 00){
 			Setpath(1,-4,1,1,0,2, true); //2 is brown (red) bat
 			Setpath(1,4,3,2,0,2, true);
-			//Boss2(10);
+			//Boss2(1);
 		}
 		if(i == 01){
 			Setpath(1,-4,2,1,0,5, false); //5 is purple (blue) bat
@@ -557,7 +557,7 @@ public class spawn : MonoBehaviour {
 		//Wave 01
 		if (i == 00){
 			Setpath(1,-4,1,1,0,7, false); //7 is pink/blue bat
-			//Boss3();
+			Boss3();
 		}
 		if (i == 01){
 			Setpath(1,4,2,2,4,6, true); //6 is black/red bat

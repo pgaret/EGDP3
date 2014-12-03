@@ -185,6 +185,26 @@ public class PlayerStats : MonoBehaviour {
 				deathTimer = Time.time + deathCD;
 			}
 		}
+		bullets = GameObject.FindGameObjectsWithTag("blaze");
+		foreach (GameObject bullet in bullets)
+		{
+			if (bullet.GetComponent<Wings>().on == true && GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds) && Time.time > deathTimer)
+			{
+				lives -= 1;
+				GetComponent<Animator>().SetBool("dead", true);
+				deathTimer = Time.time + deathCD;
+			}
+		}
+		bullets = GameObject.FindGameObjectsWithTag("lightn");
+		foreach (GameObject bullet in bullets)
+		{
+			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<SphereCollider>().bounds) && Time.time > deathTimer)
+			{
+				lives -= 1;
+				GetComponent<Animator>().SetBool("dead", true);
+				deathTimer = Time.time + deathCD;
+			}
+		}
 		
 		//If find coin, gain points
 		GameObject[] coins = GameObject.FindGameObjectsWithTag("Coin");
