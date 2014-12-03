@@ -230,11 +230,11 @@ public class GUIManager : MonoBehaviour {
 				Application.LoadLevel ("Peregrin's Scene");
 			}
 		}
-		if(start){
-			if(player1.GetComponent<PlayerStats>().lives < 0 || player2.GetComponent<PlayerStats>().lives < 0){
-				death = true;
-			}
-		}
+//		if(start){
+//			if(player1.GetComponent<PlayerStats>().lives < 0 || player2.GetComponent<PlayerStats>().lives < 0){
+//				death = true;
+//			}
+//		}
 
 		if (Input.GetKey(KeyCode.Escape)) Application.Quit();
 		if (mode == 1)
@@ -249,8 +249,8 @@ public class GUIManager : MonoBehaviour {
 			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && DTIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 3) player2Select = 3;
 			if (Input.GetKey (KeyCode.S))
 			{
-				player1Select = 2;
-				player2Select = 1;
+				player1Select = 1;
+				player2Select = 2;
 			}
 			if (player1Select != -1 && player2Select != -1)
 			{
@@ -366,6 +366,8 @@ public class GUIManager : MonoBehaviour {
 				start = true;
 				mode = 2;
 				boxy.GetComponent<spawn>().starter();
+				boxy.GetComponent<spawn>().i = 0;
+				boxy.GetComponent<spawn>().time = 0f;
 				boxy.GetComponent<spawn>().i = 0;
 				sound.GetComponent<SoundManager>().StopSound("CharSelect");
 				sound.GetComponent<SoundManager>().PlaySound("MainTheme");
