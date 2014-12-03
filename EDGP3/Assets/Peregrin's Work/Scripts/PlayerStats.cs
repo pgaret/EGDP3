@@ -144,7 +144,7 @@ public class PlayerStats : MonoBehaviour {
 			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds) && Time.time > deathTimer)
 			{
 				lives -= 1;
-				GetComponent<Animator>().SetBool("death", true);
+				GetComponent<Animator>().SetBool("dead", true);
 				deathTimer = Time.time + deathCD;
 				Destroy (bullet.gameObject);
 			}
