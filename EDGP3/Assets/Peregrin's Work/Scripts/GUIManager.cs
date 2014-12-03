@@ -197,7 +197,7 @@ public class GUIManager : MonoBehaviour {
 			style.fontSize = 24;
 //			GUI.Box (new Rect(Screen.width / 20, Screen.height * 5.5f / 8, Screen.width / 8, Screen.height / 10), player1.GetComponent<PlayerStats>().swapRole, style);
 			style.fontSize = 48	;	 
-//			GUI.Box (new Rect(Screen.width * 1.1f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().lives.ToString(), style);
+			GUI.Box (new Rect(Screen.width * 1.1f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().lives.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 1.1f / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player1.GetComponent<PlayerStats>().ammo.ToString(), style);
 			GUI.Box (new Rect(Screen.width / 25, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), Mathf.RoundToInt(player1.GetComponent<PlayerStats>().score).ToString(), style);
 			
@@ -205,7 +205,7 @@ public class GUIManager : MonoBehaviour {
 			style.fontSize = 24;
 //			GUI.Box (new Rect(Screen.width * 6.5f / 8, Screen.height * 5.5f / 8, Screen.width / 8, Screen.height / 10), player2.GetComponent<PlayerStats>().swapRole, style);
 			style.fontSize = 48;
-//			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().lives.ToString(), style);
+			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 6.45f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().lives.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().ammo.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 82 / 100, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), Mathf.RoundToInt(player2.GetComponent<PlayerStats>().score).ToString(), style);	
 		}
@@ -229,7 +229,7 @@ public class GUIManager : MonoBehaviour {
 			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && DTIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 3) player2Select = 3;
 			if (Input.GetKey (KeyCode.S))
 			{
-				player1Select = 0;
+				player1Select = 1;
 				player2Select = 0;
 			}
 			if (player1Select != -1 && player2Select != -1)
