@@ -88,7 +88,11 @@ public class Boss1 : MonoBehaviour {
 		
 		if (health <= 0) {
 			Destroy(gameObject);
+			Master.GetComponent<spawn>().summon = false;
+			Master.GetComponent<spawn>().killall();
 			Instantiate(transition);
+			Master.GetComponent<spawn>().starter();
+			Master.GetComponent<spawn>().killall();
 		}
 
 	}

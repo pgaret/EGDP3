@@ -28,11 +28,16 @@ public class Transition : MonoBehaviour {
 			else
 			{
 				GetComponent<SpriteRenderer>().sprite = slides[0];
+
 				Destroy (gameObject);
 				GameObject manager = GameObject.Find("Manager");
-				manager.GetComponent<spawn>().stage = 1;
+
+				manager.GetComponent<spawn>().stage += 1;
 				manager.GetComponent<spawn>().summon = true;
+
+				manager.GetComponent<spawn>().killall();
 				GameObject.FindGameObjectWithTag("Background").GetComponent<Background>().bossKilled = true;
+				manager.GetComponent<spawn>().i = 0;
 			}
 		}
 	}

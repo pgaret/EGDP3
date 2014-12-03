@@ -12,6 +12,8 @@ public class spawn : MonoBehaviour {
 	int x = 10;
 	int y = 10;
 	float[] EnterTimes;
+	float[] EnterTimes2;
+	float[] EnterTimes3;
 	public float enter;
 	public float time;
 	public int i = 0;
@@ -66,9 +68,12 @@ public class spawn : MonoBehaviour {
 		EnterTimes[30] = 100f+15;
 		//Boss 1
 		EnterTimes[31] = 115f+15;		
-		
-		
 
+		EnterTimes2 = new float[1];
+		EnterTimes2[0] = 10f;
+
+		EnterTimes3 = new float[1];
+		EnterTimes3[0] = 10f;
 	}
 	
 	// Update is called once per frame
@@ -77,18 +82,26 @@ public class spawn : MonoBehaviour {
 			WaveS1(i);
 			i++;
 		}
-		if(i < EnterTimes.Length && EnterTimes[i] <= Time.time - time && summon && stage == 1){
+		if(i < EnterTimes2.Length && EnterTimes2[i] <= Time.time - time && summon && stage == 1){
 			WaveS2(i);
+			print (i);
 			i++;
 		}
-		if(i < EnterTimes.Length && EnterTimes[i] <= Time.time - time && summon && stage == 2){
+		if(i < EnterTimes3.Length && EnterTimes3[i] <= Time.time - time && summon && stage == 2){
 			WaveS3(i);
 			i++;
 		}
+
 	}
 	public void starter(){
 		time = Time.time - time;
 		summon = true;
+		i = 0;
+	}
+	public void con(){
+		time = Time.time;
+		summon = true;
+
 	}
 	/*
 	 * numene is amount of enemies that spawn
@@ -374,7 +387,7 @@ public class spawn : MonoBehaviour {
 		//Wave 1
 		if(i == 0){
 			Setpath(1,-4,1,1,0,4, false); //4 is "blue" bat, false is blue
-			//Boss2(10);
+			Boss2(10);
 		}
 		if(i == 1){
 			Setpath(1,4,2,2,0,4, false);
@@ -397,7 +410,26 @@ public class spawn : MonoBehaviour {
 			Boss3();
 		}
 	}
-	
+	public void killall(){
+		GameObject[] a = GameObject.FindGameObjectsWithTag("EnemyShipA");
+		for(int i = a.Length - 1; i > 0; i--){
+			Destroy(a[i].gameObject);
+		}
+		if(GameObject.FindGameObjectWithTag("Boss1") != null){
+			GameObject b = GameObject.FindGameObjectWithTag("Boss1");
+			Destroy (b.gameObject);
+		}
+		if(GameObject.FindGameObjectWithTag("Boss2") != null){
+			GameObject b = GameObject.FindGameObjectWithTag("Boss1");
+			Destroy (b.gameObject);
+		}
+		if(GameObject.FindGameObjectWithTag("Boss3") != null){
+			GameObject b = GameObject.FindGameObjectWithTag("Boss1");
+			Destroy (b.gameObject);
+		}
+
+
+	}
 	//Boss 1 randomly picks from predetermined groups of slimes to summon
 	public void RandomSummon(){
 		int random = 1;//Random.Range (0, 3);

@@ -111,10 +111,13 @@ public class Boss2 : MonoBehaviour {
 			phase = 1;
 		}
 		
-		if (health <= 0)
-		{
+		if (health <= 0) {
 			Destroy(gameObject);
+			Master.GetComponent<spawn>().summon = false;
+			Master.GetComponent<spawn>().killall();
 			Instantiate(transition);
+			Master.GetComponent<spawn>().starter();
+			Master.GetComponent<spawn>().killall();
 		}
 
 	}
