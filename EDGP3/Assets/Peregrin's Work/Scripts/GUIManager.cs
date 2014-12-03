@@ -364,7 +364,7 @@ public class GUIManager : MonoBehaviour {
 				Destroy (player2Cursor.gameObject);
 				Destroy (charaSelect.gameObject);
 				Destroy (sButton.gameObject);
-				Destroy(tutButton.gameObject);
+//				Destroy(tutButton.gameObject);
 				start = true;
 				mode = 2;
 				boxy.GetComponent<spawn>().starter();
