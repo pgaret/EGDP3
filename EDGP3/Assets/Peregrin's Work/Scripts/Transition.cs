@@ -7,16 +7,27 @@ public class Transition : MonoBehaviour {
 	public float timing;
 	float timer;
 	int counter = 1;
-
-	// Use this for initialization
+	public Texture a;
+	public Texture b;
+	public bool death = false;
+	public bool end = false;
+	GameObject manager; 
+	// Use this fr initialization
 	void Start ()
 	{
+	manager	= GameObject.Find("Manager");
+
 		timer = Time.time + timing;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		if(end || death){
+			if(Input.anyKey){
+				Application.LoadLevel ("Peregrin's Scene");
+			}
+		}
 		if (Time.time > timer)
 		{
 			if (counter < slides.Length)
@@ -29,16 +40,36 @@ public class Transition : MonoBehaviour {
 			{
 				GetComponent<SpriteRenderer>().sprite = slides[0];
 
-				Destroy (gameObject);
-				GameObject manager = GameObject.Find("Manager");
+
 
 				manager.GetComponent<spawn>().stage += 1;
-				manager.GetComponent<spawn>().summon = true;
+				if(manager.GetComponent<spawn>().stage <3){
+					manager.GetComponent<spawn>().summon = true;
+					Destroy (gameObject);
+					manager.GetComponent<spawn>().killall();
+					GameObject.FindGameObjectWithTag("Background").GetComponent<Background>().bossKilled = true;
+					manager.GetComponent<spawn>().i = 0;
+				}
+				if(manager.GetComponent<spawn>().stage >= 3){
+					end = true;
+					//Debug.Log(end);
+				}
+					
 
-				manager.GetComponent<spawn>().killall();
-				GameObject.FindGameObjectWithTag("Background").GetComponent<Background>().bossKilled = true;
-				manager.GetComponent<spawn>().i = 0;
 			}
+		}
+
+	}
+	void OnGUI()
+	{
+
+		if(end == true){
+			GUI.DrawTexture(new Rect(0, 0, 435, 326), a,ScaleMode.StretchToFill);
+			//Debug.Log("run");
+		}
+		if(death == true){
+			GUI.DrawTexture(new Rect(0, 0, 435, 326), b,ScaleMode.StretchToFill);
+
 		}
 	}
 }

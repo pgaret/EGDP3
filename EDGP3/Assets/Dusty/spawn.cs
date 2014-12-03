@@ -97,6 +97,7 @@ public class spawn : MonoBehaviour {
 		time = Time.time - time;
 		summon = true;
 		i = 0;
+		killall();
 	}
 	public void con(){
 		time = Time.time;
@@ -412,9 +413,13 @@ public class spawn : MonoBehaviour {
 	}
 	public void killall(){
 		GameObject[] a = GameObject.FindGameObjectsWithTag("EnemyShipA");
-		for(int i = a.Length - 1; i > 0; i--){
+
+		for(int i = a.Length-1; i >= 0; i--){
+
+			a[i].GetComponent<Enemy>().health = -1;
 			Destroy(a[i].gameObject);
 		}
+
 		if(GameObject.FindGameObjectWithTag("Boss1") != null){
 			GameObject b = GameObject.FindGameObjectWithTag("Boss1");
 			Destroy (b.gameObject);
