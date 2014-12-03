@@ -93,6 +93,11 @@ public class MirrorMage : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		if (GetComponent<PlayerStats>().coinScore >= 10 && width == .1f) width = .2f;
+		if (GetComponent<PlayerStats>().coinScore >= 20 && damage == .05f) damage = .1f;
+		if (GetComponent<PlayerStats>().coinScore >= 30 && width == .2f) width = .3f;
+		
+	
 		if (GetComponent<PlayerStats>().role == "Defender" && GameObject.FindGameObjectsWithTag("MMShield").Length == 0)
 		{
 			Shield ();
@@ -113,14 +118,14 @@ public class MirrorMage : MonoBehaviour {
 	
 			if (Physics.Raycast(transform.position, leftSide.transform.position - transform.position, out hit,  Vector3.Distance(transform.position, leftSide.transform.position)))
 			{
-				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= damage;
+				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= damage*2;
 				else if (hit.transform.tag == "Boss1") hit.transform.gameObject.GetComponent<Boss1>().subhealth(damage);
 				else if (hit.transform.tag == "Boss2") hit.transform.gameObject.GetComponent<Boss2>().subhealth(damage);
 				else if (hit.transform.tag == "Boss3") hit.transform.gameObject.GetComponent<Boss3>().subhealth(damage);
 			}
 			if (Physics.Raycast(transform.position, rightSide.transform.position - transform.position, out hit,  Vector3.Distance(transform.position, rightSide.transform.position)))
 			{
-				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= damage;
+				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= damage*2;
 				else if (hit.transform.tag == "Boss1") hit.transform.gameObject.GetComponent<Boss1>().subhealth(damage);
 				else if (hit.transform.tag == "Boss2") hit.transform.gameObject.GetComponent<Boss2>().subhealth(damage);
 				else if (hit.transform.tag == "Boss3") hit.transform.gameObject.GetComponent<Boss3>().subhealth(damage);

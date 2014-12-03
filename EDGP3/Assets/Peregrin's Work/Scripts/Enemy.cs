@@ -186,7 +186,7 @@ public class Enemy : MonoBehaviour {
 		{
 			if (bullets[i].renderer.bounds.Intersects(transform.renderer.bounds))
 			{
-				health -= 1;
+				health -= bullets[i].GetComponent<PlayerBullet>().damage;
 				Destroy (bullets[i].gameObject);
 			}
 		}

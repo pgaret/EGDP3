@@ -36,6 +36,10 @@ public class PunchKnight : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		if (GetComponent<PlayerStats>().coinScore >= 10 && GetComponent<PlayerStats>().damage == 1) GetComponent<PlayerStats>().damage += 1;
+		if (GetComponent<PlayerStats>().coinScore >= 20 && GetComponent<PlayerStats>().damage == 2) GetComponent<PlayerStats>().damage += 1;
+		if (GetComponent<PlayerStats>().coinScore >= 30 && GetComponent<PlayerStats>().damage == 3) GetComponent<PlayerStats>().damage += 1;
+	
 		shipType = transform.GetComponent<PlayerStats>().role;
 
 		if (GetComponent<PlayerStats>().shootBool == true)
@@ -48,11 +52,13 @@ public class PunchKnight : MonoBehaviour {
 				{
 					thePunch = (Transform)Instantiate (projectile, child.position, Quaternion.identity);
 					thePunch.GetComponent<SpriteRenderer>().sprite = punchLeft;
+					thePunch.GetComponent<PlayerBullet>().damage = GetComponent<PlayerStats>().damage;
 				}
 				else if (child.name == "Right")
 				{
 					thePunch = (Transform)Instantiate (projectile, child.position, Quaternion.identity);
 					thePunch.GetComponent<SpriteRenderer>().sprite = punchRight;
+					thePunch.GetComponent<PlayerBullet>().damage = GetComponent<PlayerStats>().damage;
 					transform.GetComponent<PlayerStats>().ammo -= 1;
 				}
 				GetComponent<PlayerStats>().shootBool = false;
@@ -77,10 +83,12 @@ public class PunchKnight : MonoBehaviour {
 				if (i == 1.5) instance.GetComponent<PKSpecial>().rotation = -25;
 				if (instance.GetComponent<PKSpecial>().rotation > 0) instance.GetComponent<SpriteRenderer>().sprite = punchLeft;
 				else instance.GetComponent<SpriteRenderer>().sprite = punchRight;
+				instance.GetComponent<PlayerBullet>().damage = GetComponent<PlayerStats>().damage;
 			}
 			instance = (Transform)Instantiate(special, transform.position, Quaternion.identity);
 			instance.GetComponent<PKSpecial>().rotation = 0;
 			instance.GetComponent<SpriteRenderer>().sprite = punchLeft;
+			instance.GetComponent<PlayerBullet>().damage = GetComponent<PlayerStats>().damage;
 			specialTimer = Time.time + .5f;
 			specialCounter -= 1f;
 		}

@@ -6,6 +6,7 @@ public class PlayerBullet : MonoBehaviour {
 	public float speed;
 	public Vector2 clickedPoint;
 	public GameObject origin;
+	public float damage;
 	
 	private float slope;
 	private float upSlope;
@@ -32,7 +33,7 @@ public class PlayerBullet : MonoBehaviour {
 		{	
 			if (GameObject.FindGameObjectWithTag("Boss1").renderer.bounds.Intersects(renderer.bounds))
 			{
-				GameObject.FindGameObjectWithTag("Boss1").GetComponent<Boss1>().subhealth(1);
+				GameObject.FindGameObjectWithTag("Boss1").GetComponent<Boss1>().subhealth(damage);
 				Destroy (gameObject);
 			}
 		}
@@ -40,7 +41,7 @@ public class PlayerBullet : MonoBehaviour {
 		{	
 			if (GameObject.FindGameObjectWithTag("Boss2").renderer.bounds.Intersects(renderer.bounds))
 			{
-				GameObject.FindGameObjectWithTag("Boss2").GetComponent<Boss2>().subhealth(1);
+				GameObject.FindGameObjectWithTag("Boss2").GetComponent<Boss2>().subhealth(damage);
 				Destroy (gameObject);
 			}
 		}
@@ -49,7 +50,7 @@ public class PlayerBullet : MonoBehaviour {
 			Debug.Log (GameObject.FindGameObjectWithTag("Boss3").collider.bounds+ "  " + renderer.bounds);
 			if (GameObject.FindGameObjectWithTag("Boss3").collider.bounds.Intersects(renderer.bounds))
 			{
-				GameObject.FindGameObjectWithTag("Boss3").GetComponent<Boss3>().subhealth(1);
+				GameObject.FindGameObjectWithTag("Boss3").GetComponent<Boss3>().subhealth(damage);
 				Destroy (gameObject);
 			}
 		}

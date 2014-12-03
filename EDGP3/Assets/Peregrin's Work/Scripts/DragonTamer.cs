@@ -14,6 +14,8 @@ public class DragonTamer : MonoBehaviour {
 	public Transform shield;
 	public string shipType;
 	public Sprite Attack;
+	
+	private int minDrag = 1;
 
 	public List<Transform> dragons = new List<Transform>();
 	
@@ -32,12 +34,20 @@ public class DragonTamer : MonoBehaviour {
 		position.x -= (special.transform.renderer.bounds.extents.x*dragons.Count*3 + 1)* dragSpawn;
 		dragons.Add((Transform)(Instantiate (special, position, Quaternion.identity)));
 		dragons[dragons.Count - 1].GetComponent<Dragon>().parent = gameObject;
-		if (dragons.Count == 1) dragons[0].GetComponent<Dragon>().specialDragon = true;
+		if (dragons.Count == minDrag)
+		{
+			for (int i = 0; i < minDrag; i++) dragons[i].GetComponent<Dragon>().specialDragon = true;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		shipType = transform.GetComponent<PlayerStats>().role;
+		
+		if (GetComponent<PlayerStats>().coinScore >= 10 && minDrag == 1) minDrag += 1;
+		if (GetComponent<PlayerStats>().coinScore >= 20 && minDrag == 2) minDrag += 1;
+		if (GetComponent<PlayerStats>().coinScore >= 30 && minDrag == 3) minDrag += 1;
+		
 		
 		for (int i = 0; i < dragons.Count; i++)
 		{

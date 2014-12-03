@@ -32,6 +32,10 @@ public class Tinker : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		if (GetComponent<PlayerStats>().coinScore >= 10 && spawnCD == 3) spawnCD = 2.5f;
+		if (GetComponent<PlayerStats>().coinScore >= 20 && spawnCD == 2.5f) spawnCD = 2;
+		if (GetComponent<PlayerStats>().coinScore >= 30 && spawnCD == 2) spawnCD = 1.5f;
+	
 		if (attackType == 0)
 		{
 			attackLeft = BlueL; attackRight = BlueR;

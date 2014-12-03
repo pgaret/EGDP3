@@ -7,9 +7,11 @@ public class PlayerStats : MonoBehaviour {
 	public int ammo;
 	public int lives;
 	public float score;
+	public float coinScore;
 	public int points;
 	public char affinity;
 	public string role;
+	public float damage;
 	
 	//Affinity swapping stuff (A vs B)
 	public Texture AffinityA;
@@ -105,11 +107,7 @@ public class PlayerStats : MonoBehaviour {
 			if (role != "Defender")Destroy(transform.FindChild("PKShield(Clone)").gameObject);
 			if (role == "Defender")transform.GetComponent<PunchKnight>().Shield();
 		}
-		if (transform.name == "DragonTamer(Clone)")
-		{
-
-			
-		}
+		
 		hasSwapped = true;
 		
 	}
@@ -118,11 +116,13 @@ public class PlayerStats : MonoBehaviour {
 	{
 		bar.transform.localScale += new Vector3(0, .01f, 0);
 		sound.GetComponent<SoundManager>().PlaySound("Powerup");
+		coinScore += 1;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+	
 		if (Time.time > pointTimer)
 		{
 			pointTimer = Time.time + pointCD;
