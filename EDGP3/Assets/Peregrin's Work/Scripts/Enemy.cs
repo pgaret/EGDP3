@@ -191,7 +191,7 @@ public class Enemy : MonoBehaviour {
 			}
 			else if (bullets[i].renderer.bounds.Intersects(transform.renderer.bounds) && bullets[i].transform.name == "PKSpecial(Clone)")
 			{
-				health -= 1;
+				health -= 2;
 				Destroy (bullets[i].gameObject);
 			}
 		}
