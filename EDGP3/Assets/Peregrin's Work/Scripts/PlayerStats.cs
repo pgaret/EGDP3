@@ -66,7 +66,7 @@ public class PlayerStats : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//Starting stats
-		lives = 10;
+		lives = 1;
 		swapRole = "no";
 		affinity = 'A';
 		points = 0;
@@ -147,7 +147,7 @@ public class PlayerStats : MonoBehaviour {
 		{
 			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds) && Time.time > deathTimer)
 			{
-//				lives -= 1;
+				lives -= 1;
 				GetComponent<Animator>().SetBool("dead", true);
 				deathTimer = Time.time + deathCD;
 				Destroy (bullet.gameObject);
@@ -158,7 +158,7 @@ public class PlayerStats : MonoBehaviour {
 		{
 			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds) && Time.time > deathTimer)
 			{
-//				lives -= 1;
+				lives -= 1;
 				GetComponent<Animator>().SetBool("dead", true);
 				deathTimer = Time.time + deathCD;
 				Destroy (bullet.gameObject);
@@ -169,7 +169,7 @@ public class PlayerStats : MonoBehaviour {
 		{
 			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds) && Time.time > deathTimer)
 			{
-//				lives -= 1;
+				lives -= 1;
 				GetComponent<Animator>().SetBool("dead", true);
 				deathTimer = Time.time + deathCD;
 				Destroy (bullet.gameObject);

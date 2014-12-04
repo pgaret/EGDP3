@@ -230,11 +230,11 @@ public class GUIManager : MonoBehaviour {
 				Application.LoadLevel ("Peregrin's Scene");
 			}
 		}
-//		if(start){
-//			if(player1.GetComponent<PlayerStats>().lives < 0 || player2.GetComponent<PlayerStats>().lives < 0){
-//				death = true;
-//			}
-//		}
+		if(start){
+			if(player1.GetComponent<PlayerStats>().lives < 0 || player2.GetComponent<PlayerStats>().lives < 0){
+				death = true;
+			}
+		}
 
 		if (Input.GetKey(KeyCode.Escape)) Application.Quit();
 		if (mode == 1)
@@ -363,12 +363,9 @@ public class GUIManager : MonoBehaviour {
 				Destroy (charaSelect.gameObject);
 				Destroy (sButton.gameObject);
 //				Destroy(tutButton.gameObject);
+				boxy.GetComponent<spawn>().starter();
 				start = true;
 				mode = 2;
-				boxy.GetComponent<spawn>().starter();
-				boxy.GetComponent<spawn>().i = 0;
-				boxy.GetComponent<spawn>().time = 0f;
-				boxy.GetComponent<spawn>().i = 0;
 				sound.GetComponent<SoundManager>().StopSound("CharSelect");
 				sound.GetComponent<SoundManager>().PlaySound("MainTheme");
 				sound.GetComponent<SoundManager>().LoopSound("MainTheme");
