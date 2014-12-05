@@ -4,6 +4,7 @@ using System.Collections;
 public class GUIManager : MonoBehaviour {
 
 	//Transforms to load into the game as the characters
+	public bool debug;
 	public Transform PunchKnight;
 	public Transform MirrorMage;
 	public Transform Tinker;
@@ -231,7 +232,7 @@ public class GUIManager : MonoBehaviour {
 			}
 		}
 		if(start){
-			if(player1.GetComponent<PlayerStats>().lives < 0 || player2.GetComponent<PlayerStats>().lives < 0){
+			if(!debug && (player1.GetComponent<PlayerStats>().lives < 0 || player2.GetComponent<PlayerStats>().lives < 0)){
 				death = true;
 			}
 		}

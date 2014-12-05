@@ -4,8 +4,8 @@ using System.Collections;
 public class Boss2 : MonoBehaviour {
 	public float health;
 	public float maxhealth;
-	public float summoncd,firecd,raincd,ramcd;
-	public float time1,time2,time3,time4;
+	public float summoncd,firecd,raincd,ramcd,check;
+	public float time1,time2,time3,time4,time5;
 	public bool alive;
 	Animator anim;
 
@@ -35,6 +35,7 @@ public class Boss2 : MonoBehaviour {
 		time2 = Time.time;
 		time3 = Time.time;
 		time4 = Time.time;
+		time5 = Time.time;
 		Master = GameObject.FindGameObjectWithTag("Manager");
 		shippe1 = GameObject.FindGameObjectWithTag ("Player1");
 		shippe2 = GameObject.FindGameObjectWithTag ("Player2");
@@ -58,10 +59,11 @@ public class Boss2 : MonoBehaviour {
 		step = speed * Time.deltaTime;
 		transform.position = Vector3.MoveTowards(transform.position, target, step);
 		if(rush == false && phase >= 1){
-			if(transform.position == target){
+			if(transform.position == target && check <= Time.time - time5){
 				int random = Random.Range (0, 4);
 				changeloc(path[random]);
 				fireradius();
+				time5 = Time.time;
 			}
 		}
 		if(summoncd <= Time.time - time1 && rush == false){
@@ -97,6 +99,7 @@ public class Boss2 : MonoBehaviour {
 		}
 		if(ramcd <= Time.time - time4 && rush == false && phase == 2){
 			rush = true;
+			target = transform.position;
 			int random = Random.Range (0, 2);
 			if (random == 0) shippeatk = shippe1;
 			else shippeatk = shippe2;

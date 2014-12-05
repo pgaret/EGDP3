@@ -160,7 +160,7 @@ public class spawn : MonoBehaviour {
 		}
 		if(i < EnterTimes2.Length && EnterTimes2[i] <= Time.time - time && summon && stage == 1){
 			WaveS2(i);
-			print (i);
+			//print (i);
 			i++;
 		}
 		if(i < EnterTimes3.Length && EnterTimes3[i] <= Time.time - time && summon && stage == 2){
@@ -414,7 +414,7 @@ public class spawn : MonoBehaviour {
 		if(i == 00){
 			Setpath(1,-4,1,1,0,2, true); //2 is brown (red) bat
 			Setpath(1,4,3,2,0,2, true);
-			//Boss2(1);
+			//Boss2(50);
 		}
 		if(i == 01){
 			Setpath(1,-4,2,1,0,5, false); //5 is purple (blue) bat
@@ -548,7 +548,7 @@ public class spawn : MonoBehaviour {
 		}
 		//Boss 2
 		if(i == 37){
-			Boss2(100);
+			Boss2(200);
 		}
 		
 	}

@@ -66,7 +66,7 @@ public class PlayerStats : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//Starting stats
-		lives = 1;
+		lives = 10;
 		swapRole = "no";
 		affinity = 'A';
 		points = 0;
@@ -151,6 +151,16 @@ public class PlayerStats : MonoBehaviour {
 				GetComponent<Animator>().SetBool("dead", true);
 				deathTimer = Time.time + deathCD;
 				Destroy (bullet.gameObject);
+			}
+		}
+		bullets = GameObject.FindGameObjectsWithTag("Boss2");
+		foreach (GameObject bullet in bullets)
+		{
+			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds) && Time.time > deathTimer)
+			{
+				lives -= 1;
+				GetComponent<Animator>().SetBool("dead", true);
+				deathTimer = Time.time + deathCD;
 			}
 		}
 		bullets = GameObject.FindGameObjectsWithTag("BulletB");
