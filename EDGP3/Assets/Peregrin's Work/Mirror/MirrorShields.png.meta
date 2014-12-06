@@ -58,120 +58,120 @@ TextureImporter:
     - name: MirrorShields_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 59
-        width: 64
-        height: 59
+        x: 12
+        y: 78
+        width: 52
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: MirrorShields_1
       rect:
         serializedVersion: 2
-        x: 69
-        y: 59
-        width: 64
-        height: 59
+        x: 76
+        y: 78
+        width: 52
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: MirrorShields_2
       rect:
         serializedVersion: 2
-        x: 133
-        y: 59
-        width: 64
-        height: 59
+        x: 140
+        y: 78
+        width: 52
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: MirrorShields_3
       rect:
         serializedVersion: 2
-        x: 197
-        y: 59
-        width: 64
-        height: 59
+        x: 204
+        y: 78
+        width: 52
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: MirrorShields_4
       rect:
         serializedVersion: 2
-        x: 261
-        y: 59
-        width: 64
-        height: 59
+        x: 268
+        y: 78
+        width: 52
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: MirrorShields_5
       rect:
         serializedVersion: 2
-        x: 325
-        y: 59
-        width: 64
-        height: 59
+        x: 332
+        y: 78
+        width: 52
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: MirrorShields_6
       rect:
         serializedVersion: 2
-        x: 5
-        y: 0
-        width: 64
-        height: 59
+        x: 12
+        y: 22
+        width: 52
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: MirrorShields_7
       rect:
         serializedVersion: 2
-        x: 69
-        y: 0
-        width: 64
-        height: 59
+        x: 76
+        y: 22
+        width: 52
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: MirrorShields_8
       rect:
         serializedVersion: 2
-        x: 133
-        y: 0
-        width: 64
-        height: 59
+        x: 140
+        y: 22
+        width: 52
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: MirrorShields_9
       rect:
         serializedVersion: 2
-        x: 197
-        y: 0
-        width: 64
-        height: 59
+        x: 204
+        y: 22
+        width: 52
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: MirrorShields_10
       rect:
         serializedVersion: 2
-        x: 261
-        y: 0
-        width: 64
-        height: 59
+        x: 268
+        y: 22
+        width: 52
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: MirrorShields_11
       rect:
         serializedVersion: 2
-        x: 325
-        y: 0
-        width: 64
-        height: 59
+        x: 332
+        y: 22
+        width: 52
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

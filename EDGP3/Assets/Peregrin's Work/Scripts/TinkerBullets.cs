@@ -72,7 +72,7 @@ public class TinkerBullets : MonoBehaviour {
 			
 			if (type == 1) //Homing
 			{
-				if (enemies.Count == 0) transform.Translate(Vector3.up*Time.deltaTime*speed);
+				if (enemies.Count == 0 || enemies[index] == null) transform.Translate(Vector3.up*Time.deltaTime*speed);
 				else
 				{
 					float dist = 0;
