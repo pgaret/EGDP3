@@ -67,17 +67,17 @@ public class Background : MonoBehaviour {
 			{
 				if (mode == 0)
 				{
-					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
+					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f, 1), Quaternion.identity);
 					bg.GetComponent<SpriteRenderer>().sprite = background1;
 				}
 				else if (mode == 1)
 				{
-					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
+					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f, 1), Quaternion.identity);
 					bg.GetComponent<SpriteRenderer>().sprite = background2;
 				}
 				else if (mode == 2)
 				{
-					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f), Quaternion.identity);
+					bg = (Transform)Instantiate (transform, new Vector3(0, 11.4f, 1), Quaternion.identity);
 					bg.GetComponent<SpriteRenderer>().sprite = background3;
 				}
 				haveReplicated = true;

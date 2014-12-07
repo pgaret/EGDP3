@@ -151,7 +151,7 @@ public class MirrorMage : MonoBehaviour {
 			
 			//Beam follows the player
 			Vector3 pos = transform.position;
-			pos.z = -width;
+			pos.z = .1f;
 			
 			leftSide.SetPosition(0, pos);
 			rightSide.SetPosition(0, pos);
@@ -168,9 +168,9 @@ public class MirrorMage : MonoBehaviour {
 			pos = left.transform.GetChild(1).position;
 			pos.x = transform.position.x;
 			pos.y = -transform.position.y;
+			pos.z = 0f;
 			left.transform.GetChild(1).position = pos;
 			right.transform.GetChild(1).position = pos;
-			
 			
 			//Beam goes to the top
 			topLeft.SetPosition(1, left.transform.GetChild(1).transform.position);
