@@ -53,9 +53,6 @@ public class PlayerStats : MonoBehaviour {
 	public float deathCD;
 	float deathTimer;
 	
-	public float powerCD;
-	float powerTimer;
-	
 	public float pointCD;
 	float pointTimer;
 	
@@ -68,9 +65,13 @@ public class PlayerStats : MonoBehaviour {
 	
 	GameObject otherPlayer;
 	
-	public float coin1 = 50;
+	public float coin1 = 10;
 	public float coin2 = 100;
 	public float coin3 = 150;
+	
+	bool coin1d = false;
+	bool coin2d = false;
+	bool coin3d = false;
 
 	// Use this for initialization
 	void Start () {
@@ -143,17 +144,18 @@ public class PlayerStats : MonoBehaviour {
 	void Update ()
 	{
 	
-		Debug.Log (transform.name+": "+coinScore);
+		if (coinScore > 0) Debug.Log (transform.name+": "+coinScore);
 		if (transform.tag == "Player1") otherPlayer = GameObject.FindGameObjectWithTag("Player2");
 		else otherPlayer = GameObject.FindGameObjectWithTag("Player1");
 	
-		if (coinScore == coin1)
+		if (coinScore >= coin1 && coin1d == false)
 		{
-			Instantiate(powerUp, transform.position, Quaternion.identity);
-			powerTimer = Time.time + powerCD;
+			coin1d = true;
+			Vector3 pos = new Vector3(transform.position.x, transform.position.y - renderer.bounds.extents.y);
+			Transform power = Instantiate(powerUp, pos, Quaternion.identity) as Transform;
+			power.parent = transform;
+			power.renderer.sortingOrder = 1;
 		}
-		
-		if (Time.time > powerTimer && GameObject.FindGameObjectWithTag("powerup")) Destroy (GameObject.FindGameObjectWithTag("powerup"));
 	
 		if (Time.time > pointTimer)
 		{

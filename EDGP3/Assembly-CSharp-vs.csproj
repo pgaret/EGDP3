@@ -81,6 +81,7 @@
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\PlayerBullet.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\PlayerStats.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\PlayerTut.cs" />
+     <Compile Include="Assets\Peregrin&apos;s Work\Scripts\PowerUp.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\PunchKnight.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Peregrin&apos;s Work\Scripts\Test.cs" />

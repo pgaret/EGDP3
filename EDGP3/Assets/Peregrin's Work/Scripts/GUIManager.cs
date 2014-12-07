@@ -102,6 +102,12 @@ public class GUIManager : MonoBehaviour {
 	Transform charaSelect;
 	Transform tiScre;
 	Transform tutBG;
+	
+	//Left, right, down, up for boundaries for cursors
+	GameObject left;
+	GameObject right;
+	GameObject down;
+	GameObject up;
 
 	//Instantiation position vector
 	Vector3 pos;
@@ -134,6 +140,12 @@ public class GUIManager : MonoBehaviour {
 		player2Cursor.renderer.sortingOrder = 1;
 
 		pos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+		
+		left = GameObject.Find ("Left");
+		right = GameObject.Find ("Right");
+		up = GameObject.Find ("Up");
+		down = GameObject.Find ("Down");
+		
 		
 		
 	}
