@@ -14,6 +14,8 @@ public class PlayerStats : MonoBehaviour {
 	public float damage;
 	
 	public Transform swapTransition;
+	public Transform powerUp;
+	
 	
 	//Speed and movement testing for animation purposes
 	public float speed;
@@ -50,6 +52,9 @@ public class PlayerStats : MonoBehaviour {
 	
 	public float deathCD;
 	float deathTimer;
+	
+	public float powerCD;
+	float powerTimer;
 	
 	public float pointCD;
 	float pointTimer;
@@ -138,10 +143,17 @@ public class PlayerStats : MonoBehaviour {
 	void Update ()
 	{
 	
-//		Debug.Log (transform.name+": "+coinScore);
+		Debug.Log (transform.name+": "+coinScore);
 		if (transform.tag == "Player1") otherPlayer = GameObject.FindGameObjectWithTag("Player2");
 		else otherPlayer = GameObject.FindGameObjectWithTag("Player1");
+	
+		if (coinScore == coin1)
+		{
+			Instantiate(powerUp, transform.position, Quaternion.identity);
+			powerTimer = Time.time + powerCD;
+		}
 		
+		if (Time.time > powerTimer && GameObject.FindGameObjectWithTag("powerup")) Destroy (GameObject.FindGameObjectWithTag("powerup"));
 	
 		if (Time.time > pointTimer)
 		{

@@ -2,16 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Peregrin's Work\Scripts\PlayerStats.cs">
     <Files>
-      <File FileName="Assets\Dusty\spawn.cs" Line="691" Column="1" />
-      <File FileName="Assets\Peregrin's Work\Scripts\PlayerStats.cs" Line="355" Column="1" />
-      <File FileName="Assets\Dusty\Boss2.cs" Line="208" Column="1" />
-      <File FileName="Assets\Dusty\Boss1.cs" Line="1" Column="1" />
-      <File FileName="Assets\Peregrin's Work\Scripts\MirrorMage.cs" Line="1" Column="1" />
-      <File FileName="Assets\Dusty\Boss3.cs" Line="1" Column="1" />
-      <File FileName="Assets\Dusty\Spin.cs" Line="1" Column="1" />
-      <File FileName="Assets\Dusty\Wings.cs" Line="1" Column="1" />
-      <File FileName="Assets\Peregrin's Work\Scripts\Transition.cs" Line="60" Column="6" />
-      <File FileName="Assets\Peregrin's Work\Scripts\GUIManager.cs" Line="241" Column="17" />
+      <File FileName="Assets\Peregrin's Work\Scripts\PlayerStats.cs" Line="151" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
