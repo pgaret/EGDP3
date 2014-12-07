@@ -13,7 +13,7 @@ public class PunchKnight : MonoBehaviour {
 	GameObject sound;
 	
 	float specialTimer = 0;
-	float specialCounter = 0;
+	public float specialCounter = 0;
 	
 	// Use this for initialization
 	void Start () {
@@ -42,7 +42,7 @@ public class PunchKnight : MonoBehaviour {
 	
 		shipType = transform.GetComponent<PlayerStats>().role;
 
-		if (GetComponent<PlayerStats>().shootBool == true)
+		if (GetComponent<PlayerStats>().shootBool == true && specialCounter == 0)
 		{
 			sound.GetComponent<SoundManager>().PlaySound("punch");
 			foreach (Transform child in transform)

@@ -137,7 +137,7 @@ public class PlayerStats : MonoBehaviour {
 	{
 		bar.transform.localScale += new Vector3(0, .01f, 0);
 		sound.GetComponent<SoundManager>().PlaySound("Powerup");
-		coinScore += 1;
+		coinScore += 1.5f;
 	}
 	
 	// Update is called once per frame
@@ -298,6 +298,10 @@ public class PlayerStats : MonoBehaviour {
 				{
 					specialBool = true;
 					specialTimer = Time.time + specialCD;
+				}
+				if (transform.name == "PunchKnight(Clone)")
+				{
+					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
 				}
 			}
 			//Defender inputs

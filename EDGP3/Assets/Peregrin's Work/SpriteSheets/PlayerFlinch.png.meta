@@ -1,0 +1,399 @@
+fileFormatVersion: 2
+guid: 14eb49603fe25424fb2aa2ce141ddebb
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PlayerFlinch_p0
+    21300002: PlayerFlinch_p2
+    21300004: PlayerFlinch_p4
+    21300006: PlayerFlinch_p6
+    21300008: PlayerFlinch_d0
+    21300010: PlayerFlinch_d2
+    21300012: PlayerFlinch_d4
+    21300014: PlayerFlinch_d6
+    21300016: PlayerFlinch_t0
+    21300018: PlayerFlinch_t2
+    21300020: PlayerFlinch_t4
+    21300022: PlayerFlinch_t6
+    21300024: PlayerFlinch_m0
+    21300026: PlayerFlinch_m2
+    21300028: PlayerFlinch_m4
+    21300030: PlayerFlinch_m6
+    21300032: PlayerFlinch_p1
+    21300034: PlayerFlinch_p3
+    21300036: PlayerFlinch_p5
+    21300038: PlayerFlinch_p7
+    21300040: PlayerFlinch_d1
+    21300042: PlayerFlinch_d3
+    21300044: PlayerFlinch_d5
+    21300046: PlayerFlinch_d7
+    21300048: PlayerFlinch_t1
+    21300050: PlayerFlinch_t3
+    21300052: PlayerFlinch_t5
+    21300054: PlayerFlinch_t7
+    21300056: PlayerFlinch_m1
+    21300058: PlayerFlinch_m3
+    21300060: PlayerFlinch_m5
+    21300062: PlayerFlinch_m7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PlayerFlinch_p0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_p2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 480
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_p4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 480
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_p6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 480
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_d0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 321
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_d2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_d4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 320
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_d6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 320
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_t0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_t2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_t4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 160
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_t6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 161
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_m0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_m2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_m4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_m6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_p1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 518
+        width: 74
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_p3
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 519
+        width: 85
+        height: 74
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_p5
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 511
+        width: 76
+        height: 82
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_p7
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 512
+        width: 86
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_d1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 351
+        width: 95
+        height: 93
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_d3
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 363
+        width: 95
+        height: 89
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_d5
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 361
+        width: 96
+        height: 95
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_d7
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 345
+        width: 96
+        height: 107
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_t1
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 192
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_t3
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 187
+        width: 94
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_t5
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 195
+        width: 97
+        height: 91
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_t7
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 185
+        width: 95
+        height: 95
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_m1
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 29
+        width: 94
+        height: 97
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_m3
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 31
+        width: 94
+        height: 95
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_m5
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 30
+        width: 99
+        height: 102
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerFlinch_m7
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 28
+        width: 98
+        height: 93
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
