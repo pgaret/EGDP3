@@ -13,9 +13,9 @@ public class PlayerStats : MonoBehaviour {
 	public string role;
 	public float damage;
 	
-	//Affinity swapping stuff (A vs B)
-	public Texture AffinityA;
-	public Texture AffinityB;
+	public Transform swapTransition;
+	public Transform powerUp;
+	
 	
 	//Speed and movement testing for animation purposes
 	public float speed;
@@ -43,6 +43,7 @@ public class PlayerStats : MonoBehaviour {
 	public string swapRole;
 	public float swapCD = .5f;
 	public bool tutSwap = false;
+	public bool swap = false;
 	float swapTimer = 2f;
 	
 	// Affinity timer
@@ -55,13 +56,22 @@ public class PlayerStats : MonoBehaviour {
 	public float pointCD;
 	float pointTimer;
 	
+	public float tinkerCD;
+	float tinkerTimer;
+	
 	private Animator anim;
 	private GameObject bar;
 	private GameObject sound;
 	
-	public float coin1 = 50;
+	GameObject otherPlayer;
+	
+	public float coin1 = 10;
 	public float coin2 = 100;
 	public float coin3 = 150;
+	
+	bool coin1d = false;
+	bool coin2d = false;
+	bool coin3d = false;
 
 	// Use this for initialization
 	void Start () {
@@ -72,6 +82,7 @@ public class PlayerStats : MonoBehaviour {
 		score = 0;
 		
 		pointTimer = Time.time;
+		tinkerTimer = Time.time;
 		
 		top = GameObject.Find ("Up");
 		down = GameObject.Find ("Down");
@@ -133,7 +144,18 @@ public class PlayerStats : MonoBehaviour {
 	void Update ()
 	{
 	
-//		Debug.Log (transform.name+": "+coinScore);
+		if (coinScore > 0) Debug.Log (transform.name+": "+coinScore);
+		if (transform.tag == "Player1") otherPlayer = GameObject.FindGameObjectWithTag("Player2");
+		else otherPlayer = GameObject.FindGameObjectWithTag("Player1");
+	
+		if (coinScore >= coin1 && coin1d == false)
+		{
+			coin1d = true;
+			Vector3 pos = new Vector3(transform.position.x, transform.position.y - renderer.bounds.extents.y);
+			Transform power = Instantiate(powerUp, pos, Quaternion.identity) as Transform;
+			power.parent = transform;
+			power.renderer.sortingOrder = 1;
+		}
 	
 		if (Time.time > pointTimer)
 		{
@@ -248,17 +270,25 @@ public class PlayerStats : MonoBehaviour {
 			//Swap
 			if ((Input.GetButtonUp("XboxFire1Y") || Input.GetKeyUp(KeyCode.P)) && Time.time > swapTimer)
 			{
-				GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
-				Swap();
-				player2.transform.GetComponent<PlayerStats>().Swap();
-				swapTimer = Time.time + swapCD;	
+				swapTimer = Time.time + swapCD;
+				Transform theSwap = Instantiate(swapTransition, transform.position, Quaternion.identity) as Transform;
+				theSwap.parent = transform;
+				theSwap.GetComponent<Animator>().speed -= .1f;
+				if (role == "Attacker") theSwap.GetComponent<Animator>().SetBool("TowardsOffense", false);
+				else theSwap.GetComponent<Animator>().SetBool("TowardsOffense", true);
+				theSwap = Instantiate(swapTransition, otherPlayer.transform.position, Quaternion.identity) as Transform;
+				theSwap.GetComponent<Animator>().speed -= .1f;
+				if (otherPlayer.GetComponent<PlayerStats>().role == "Attacker") theSwap.GetComponent<Animator>().SetBool("TowardsOffense", false);
+				else theSwap.GetComponent<Animator>().SetBool("TowardsOffense", true);
+				theSwap.parent = otherPlayer.transform;
+				swap = true;
 			}
 
 			//Attacker inputs
 			if (role == "Attacker")
 			{
 				//Shooting
-				if ((Input.GetButton("XboxFire1X") || Input.GetKey(KeyCode.I)) && Time.time > shootTimer && shootBool == false && ammo > 0)
+				if ((Input.GetButton("XboxFire1X") || Input.GetButton("XboxFire1A") ||Input.GetKey(KeyCode.I)) && Time.time > shootTimer && shootBool == false && ammo > 0)
 				{
 					shootBool = true;
 					shootTimer = Time.time + shootCD;
@@ -271,18 +301,19 @@ public class PlayerStats : MonoBehaviour {
 				}
 			}
 			//Defender inputs
-			else if (Input.GetButtonUp("XboxFire1X") || Input.GetKeyUp(KeyCode.T) && Time.time > affinityTimer)
+			else if ((Input.GetButtonUp("XboxFire1X") || Input.GetButton("XboxFire1A") || Input.GetKeyUp(KeyCode.T)) && Time.time > affinityTimer)
 			{
 				if (affinity == 'A') affinity = 'B';
 				else affinity = 'A';
 				// affinity timer
 				affinityTimer = affinityCD + Time.time;
 			}
-			else if (transform.name == "Tinker(Clone)")
+			else if (transform.name == "Tinker(Clone)" && Time.time > tinkerTimer)
 			{
 				if (Input.GetButtonUp("XboxFire1B"))
 				{
 					GetComponent<Tinker>().Shield();
+					tinkerTimer = Time.time + tinkerCD;
 				}
 			}
 			//Animation stuff
@@ -306,15 +337,19 @@ public class PlayerStats : MonoBehaviour {
 			
 			if ((Input.GetButtonUp("XboxFire2Y") || Input.GetKeyUp(KeyCode.O)) && Time.time > swapTimer)
 			{
-				GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
-				Swap();
-				player1.transform.GetComponent<PlayerStats>().Swap();	
-				swapTimer = Time.time + swapCD;	
+				swapTimer = Time.time + swapCD;
+				Transform theSwap = Instantiate(swapTransition, transform.position, Quaternion.identity) as Transform;
+				theSwap.parent = transform;
+				theSwap.GetComponent<Animator>().speed -= .1f;
+				theSwap = Instantiate(swapTransition, otherPlayer.transform.position, Quaternion.identity) as Transform;
+				theSwap.parent = otherPlayer.transform;
+				theSwap.GetComponent<Animator>().speed -= .1f;
+				swap = true;
 			}
 			if (role == "Attacker")
 			{
 				//Shooting
-				if (Input.GetButton("XboxFire2X") && Time.time > shootTimer && shootBool == false && ammo > 0)
+				if ((Input.GetButton("XboxFire2X") || Input.GetButton("XboxFire2A")) && Time.time > shootTimer && shootBool == false && ammo > 0)
 				{
 					shootBool = true;
 					shootTimer = Time.time + shootCD;
@@ -327,17 +362,18 @@ public class PlayerStats : MonoBehaviour {
 				}
 			}
 			//Defender inputs
-			else if (Input.GetButtonUp ("XboxFire2X") && Time.time > affinityTimer)
+			else if ((Input.GetButtonUp ("XboxFire2X") || Input.GetButtonUp ("XboxFire2A")) && Time.time > affinityTimer)
 			{
 				if (affinity == 'A') affinity = 'B';
 				else affinity = 'A';
 				affinityTimer = affinityCD + Time.time;
 			}
-			else if (transform.name == "Tinker(Clone)")
+			else if (transform.name == "Tinker(Clone)" && Time.time > tinkerTimer)
 			{
 				if (Input.GetButtonUp("XboxFire2B"))
 				{
 					GetComponent<Tinker>().Shield();
+					tinkerTimer = Time.time + tinkerCD;
 				}
 			}
 			//Animation stuff
@@ -349,6 +385,14 @@ public class PlayerStats : MonoBehaviour {
 			else anim.SetBool("moveshoot", false);
 		}
 		
+		if (swap == true && Time.time > swapTimer)
+		{
+			Swap ();
+			otherPlayer.transform.GetComponent<PlayerStats>().Swap();
+			swap = false;
+			GameObject[] swaps = GameObject.FindGameObjectsWithTag("swap");
+			foreach (GameObject aSwap in swaps) Destroy (aSwap);
+		}
 		
 	}
 }

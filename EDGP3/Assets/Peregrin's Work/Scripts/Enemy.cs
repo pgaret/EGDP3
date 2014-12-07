@@ -198,8 +198,13 @@ public class Enemy : MonoBehaviour {
 		if (health <= 0 && fire == true)
 		{
 			GameObject.Find ("Sound").GetComponent<SoundManager>().PlaySound("Explosion");
-			//					bullets[i].GetComponent<PlayerBullet>().origin.GetComponent<PlayerStats>().get
-			Instantiate(coin, transform.position, Quaternion.identity);
+			int limit = Random.Range(2, 5);
+			for (int i = 0; i < limit; i++)
+			{
+				float floatx = Random.Range (-.2f, .2f); float floaty = Random.Range(-.2f, .2f);
+				Vector3 pos = new Vector3(floatx + transform.position.x, floaty  + transform.position.y);
+				Instantiate(coin, pos, Quaternion.identity);
+			}
 			GameObject theDead = (GameObject)Instantiate(deadEnemy, new Vector3(transform.position.x + renderer.bounds.extents.x, transform.position.y), Quaternion.identity);
 			theDead.GetComponent<DeadEnemy>().type = type;
 			fire = false;

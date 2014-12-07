@@ -80,10 +80,10 @@ public class MirrorMage : MonoBehaviour {
 		topLeft = left.transform.GetChild(1).gameObject.AddComponent<LineRenderer>();
 		topRight = right.transform.GetChild(1).gameObject.AddComponent<LineRenderer>();
 		//Narrow the beams
-		topLeft.SetWidth(width, width); topLeft.SetColors(color, color); topLeft.materials[0] = lazor;
-		topRight.SetWidth(width, width); topRight.SetColors(color, color); topRight.materials[0] = lazor;
-		leftSide.SetWidth(width, width); leftSide.SetColors(color, color); leftSide.materials[0] = lazor;
-		rightSide.SetWidth(width, width); rightSide.SetColors(color, color); rightSide.materials[0] = lazor;
+		topLeft.SetWidth(width, width); topLeft.SetColors(color, color); topLeft.material = lazor;
+		topRight.SetWidth(width, width); topRight.SetColors(color, color); topRight.material = lazor;
+		leftSide.SetWidth(width, width); leftSide.SetColors(color, color); leftSide.material = lazor;
+		rightSide.SetWidth(width, width); rightSide.SetColors(color, color); rightSide.material = lazor;
 	}
 	
 	void NotLazerTime()
@@ -151,7 +151,7 @@ public class MirrorMage : MonoBehaviour {
 			
 			//Beam follows the player
 			Vector3 pos = transform.position;
-			pos.z = -width;
+			pos.z = .1f;
 			
 			leftSide.SetPosition(0, pos);
 			rightSide.SetPosition(0, pos);
@@ -168,9 +168,9 @@ public class MirrorMage : MonoBehaviour {
 			pos = left.transform.GetChild(1).position;
 			pos.x = transform.position.x;
 			pos.y = -transform.position.y;
+			pos.z = 0f;
 			left.transform.GetChild(1).position = pos;
 			right.transform.GetChild(1).position = pos;
-			
 			
 			//Beam goes to the top
 			topLeft.SetPosition(1, left.transform.GetChild(1).transform.position);

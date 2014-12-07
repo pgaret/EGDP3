@@ -26,49 +26,49 @@ public class spawn : MonoBehaviour {
 		//  LEVEL 1 //
 		EnterTimes = new float[35];
 		//Wave 01
-		EnterTimes[0] = 1f;
-		EnterTimes[1] = 3f;
-		EnterTimes[2] = 5f;
-		EnterTimes[3] = 6f;
+		EnterTimes[0] = 1f+4;
+		EnterTimes[1] = 3f+4;
+		EnterTimes[2] = 5f+4;
+		EnterTimes[3] = 6f+4;
 		//Wave 02
-		EnterTimes[4] = 14f;
-		EnterTimes[5] = 16f;
-		EnterTimes[6] = 18f;
-		EnterTimes[7] = 19f;
+		EnterTimes[4] = 14f+4;
+		EnterTimes[5] = 16f+4;
+		EnterTimes[6] = 18f+4;
+		EnterTimes[7] = 19f+4;
 		//Wave 03
-		EnterTimes[8] = 14f+15;
-		EnterTimes[9] = 16f+15;
-		EnterTimes[10] = 18f+15;
-		EnterTimes[11] = 19f+15;
+		EnterTimes[8] = 14f+19;
+		EnterTimes[9] = 16f+19;
+		EnterTimes[10] = 18f+19;
+		EnterTimes[11] = 19f+19;
 		//Wave 04
-		EnterTimes[12] = 28f+15;
+		EnterTimes[12] = 28f+19;
 		//Wave 05
-		EnterTimes[13] = 41f+15;
-		EnterTimes[14] = 41f+15;
+		EnterTimes[13] = 41f+19;
+		EnterTimes[14] = 41f+19;
 		//Wave 06
-		EnterTimes[15] = 48f+15;
-		EnterTimes[16] = 48f+15;
+		EnterTimes[15] = 48f+19;
+		EnterTimes[16] = 48f+19;
 		//Wave 07
-		EnterTimes[17] = 58f+15;
-		EnterTimes[18] = 59f+15;
+		EnterTimes[17] = 58f+19;
+		EnterTimes[18] = 59f+19;
 		//Wave 08
-		EnterTimes[19] = 66f+15;
-		EnterTimes[20] = 67f+15;
+		EnterTimes[19] = 66f+19;
+		EnterTimes[20] = 67f+19;
 		//Wave 09
-		EnterTimes[21] = 75f+15;
-		EnterTimes[22] = 76f+15;
+		EnterTimes[21] = 75f+19;
+		EnterTimes[22] = 76f+19;
 		//Wave 10
-		EnterTimes[23] = 84f+15;
-		EnterTimes[24] = 85f+15;
-		EnterTimes[25] = 86f+15;
-		EnterTimes[26] = 87f+15;
+		EnterTimes[23] = 84f+19;
+		EnterTimes[24] = 85f+19;
+		EnterTimes[25] = 86f+19;
+		EnterTimes[26] = 87f+19;
 		//Wave 11
-		EnterTimes[27] = 97f+15;
-		EnterTimes[28] = 98f+15;
-		EnterTimes[29] = 99f+15;
-		EnterTimes[30] = 115f;
+		EnterTimes[27] = 97f+19;
+		EnterTimes[28] = 98f+19;
+		EnterTimes[29] = 99f+19;
+		EnterTimes[30] = 100f+19;
 		//Boss 1
-		EnterTimes[31] = 130f;
+		EnterTimes[31] = 138f;
 
 		//  LEVEL 2 //
 		EnterTimes2 = new float[40];

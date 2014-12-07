@@ -32,7 +32,7 @@ public class PKShield : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.position = new Vector3(transform.parent.renderer.bounds.center.x, transform.parent.renderer.bounds.center.y + transform.parent.renderer.bounds.extents.y + transform.renderer.bounds.extents.y);
-		Vector3 scale = new Vector3(.0002f, .0002f);
+		Vector3 scale = new Vector3(.0004f, .0004f);
 		Vector3 finalScale = new Vector3(.5f, .5f);
 		if (transform.localScale.x > finalScale.x && transform.localScale.y > finalScale.y) transform.localScale -= scale;
 		

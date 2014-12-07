@@ -102,6 +102,12 @@ public class GUIManager : MonoBehaviour {
 	Transform charaSelect;
 	Transform tiScre;
 	Transform tutBG;
+	
+	//Left, right, down, up for boundaries for cursors
+	GameObject left;
+	GameObject right;
+	GameObject down;
+	GameObject up;
 
 	//Instantiation position vector
 	Vector3 pos;
@@ -134,6 +140,12 @@ public class GUIManager : MonoBehaviour {
 		player2Cursor.renderer.sortingOrder = 1;
 
 		pos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+		
+		left = GameObject.Find ("Left");
+		right = GameObject.Find ("Right");
+		up = GameObject.Find ("Up");
+		down = GameObject.Find ("Down");
+		
 		
 		
 	}
@@ -250,7 +262,7 @@ public class GUIManager : MonoBehaviour {
 			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && DTIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 3) player2Select = 3;
 			if (Input.GetKey (KeyCode.S))
 			{
-				player1Select = 1;
+				player1Select = 0;
 				player2Select = 2;
 			}
 			if (player1Select != -1 && player2Select != -1)
@@ -376,8 +388,16 @@ public class GUIManager : MonoBehaviour {
 		}
 		if (mode < 2)
 		{
-			player1Cursor.position += new Vector3(Input.GetAxis ("XboxHorizontal1")*Time.deltaTime*10, Input.GetAxis ("XboxVertical1")*Time.deltaTime*10, 0);
-			player2Cursor.position += new Vector3 (Input.GetAxis ("XboxHorizontal2")*Time.deltaTime*10, Input.GetAxis ("XboxVertical2")*Time.deltaTime*10, 0);
+			float speed = Time.deltaTime*10;
+			if (player1Cursor.position.x > left.transform.position.x && Input.GetAxis("XboxHorizontal1") < 0) player1Cursor.position += new Vector3(Input.GetAxis("XboxHorizontal1")*speed, 0, 0);
+			if (player1Cursor.position.x < right.transform.position.x && Input.GetAxis("XboxHorizontal1") > 0) player1Cursor.position += new Vector3(Input.GetAxis("XboxHorizontal1")*speed, 0, 0);
+			if (player1Cursor.position.y < up.transform.position.y && Input.GetAxis("XboxVertical1") > 0) player1Cursor.position += new Vector3(0, Input.GetAxis("XboxVertical1")*speed, 0);
+			if (player1Cursor.position.y > down.transform.position.y && Input.GetAxis("XboxVertical1") < 0) player1Cursor.position += new Vector3(0,Input.GetAxis("XboxVertical1")*speed, 0);
+			
+			if (player2Cursor.position.x > left.transform.position.x && Input.GetAxis("XboxHorizontal2") < 0) player2Cursor.position += new Vector3(Input.GetAxis("XboxHorizontal2")*speed, 0, 0);
+			if (player2Cursor.position.x < right.transform.position.x && Input.GetAxis("XboxHorizontal2") > 0) player2Cursor.position += new Vector3(Input.GetAxis("XboxHorizontal2")*speed, 0, 0);
+			if (player2Cursor.position.y > up.transform.position.y && Input.GetAxis("XboxVertical2") > 0) player2Cursor.position += new Vector3(0, Input.GetAxis("XboxVertical2")*speed, 0);
+			if (player2Cursor.position.y < down.transform.position.y && Input.GetAxis("XboxVertical2") < 0) player2Cursor.position += new Vector3(0, Input.GetAxis("XboxVertical2")*speed, 0);
 			if (Input.GetKey(KeyCode.UpArrow)) player2Cursor.transform.Translate(Vector3.up*Time.deltaTime*10);
 			if (Input.GetKey(KeyCode.LeftArrow)) player2Cursor.transform.Translate(Vector3.left*Time.deltaTime*10);
 			if (Input.GetKey(KeyCode.DownArrow)) player2Cursor.transform.Translate(Vector3.down*Time.deltaTime*10);

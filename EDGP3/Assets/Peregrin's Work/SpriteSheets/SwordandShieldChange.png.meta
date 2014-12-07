@@ -12,6 +12,9 @@ TextureImporter:
     21300014: SwordandShieldChange_7
     21300016: SwordandShieldChange_8
     21300018: SwordandShieldChange_9
+    21300020: SwordandShieldChange_10
+    21300022: SwordandShieldChange_11
+    21300024: SwordandShieldChange_12
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -56,102 +59,102 @@ TextureImporter:
     - name: SwordandShieldChange_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 100
-        width: 100
-        height: 100
+        x: 28
+        y: 118
+        width: 44
+        height: 64
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SwordandShieldChange_1
       rect:
         serializedVersion: 2
-        x: 100
-        y: 100
-        width: 100
-        height: 100
+        x: 120
+        y: 120
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SwordandShieldChange_2
       rect:
         serializedVersion: 2
-        x: 200
-        y: 100
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: SwordandShieldChange_3
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 100
-        width: 100
-        height: 100
+        x: 216
+        y: 132
+        width: 70
+        height: 50
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SwordandShieldChange_4
       rect:
         serializedVersion: 2
-        x: 400
-        y: 100
-        width: 100
-        height: 100
+        x: 328
+        y: 122
+        width: 44
+        height: 68
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SwordandShieldChange_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 100
-        height: 100
+        x: 430
+        y: 118
+        width: 40
+        height: 78
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SwordandShieldChange_6
       rect:
         serializedVersion: 2
-        x: 100
-        y: 0
-        width: 100
-        height: 100
+        x: 28
+        y: 24
+        width: 44
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: SwordandShieldChange_7
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SwordandShieldChange_8
       rect:
         serializedVersion: 2
-        x: 300
-        y: 0
-        width: 100
-        height: 100
+        x: 120
+        y: 26
+        width: 60
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: SwordandShieldChange_9
+    - name: SwordandShieldChange_10
       rect:
         serializedVersion: 2
-        x: 400
-        y: 0
-        width: 100
-        height: 100
+        x: 216
+        y: 26
+        width: 70
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SwordandShieldChange_11
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 16
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SwordandShieldChange_12
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 12
+        width: 40
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
