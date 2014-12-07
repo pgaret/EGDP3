@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PlayerStats : MonoBehaviour {
-
+	
 	//Basic stats
 	public int ammo;
 	public int lives;
@@ -20,13 +20,13 @@ public class PlayerStats : MonoBehaviour {
 	//Speed and movement testing for animation purposes
 	public float speed;
 	bool isMoving;
-
+	
 	//Boundaries of the screen
 	GameObject top;
 	GameObject left;
 	GameObject right;
 	GameObject down;
-
+	
 	//Can we shoot?  How long has it been since we last shot?  Time to shoot!
 	public float shootCD;
 	public bool shootBool;
@@ -72,7 +72,10 @@ public class PlayerStats : MonoBehaviour {
 	bool coin1d = false;
 	bool coin2d = false;
 	bool coin3d = false;
-
+	
+	//Check whether its time to give additional lives based on points;
+	int pointChecker = 1000;
+	
 	// Use this for initialization
 	void Start () {
 		//Starting stats
@@ -137,17 +140,22 @@ public class PlayerStats : MonoBehaviour {
 	{
 		bar.transform.localScale += new Vector3(0, .01f, 0);
 		sound.GetComponent<SoundManager>().PlaySound("Powerup");
-		coinScore += 1.5f;
+		coinScore += 1;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-	
+		if (score > pointChecker)
+		{
+			lives += 1;
+			pointChecker += 1000;
+		}
+		
 		if (coinScore > 0) Debug.Log (transform.name+": "+coinScore);
 		if (transform.tag == "Player1") otherPlayer = GameObject.FindGameObjectWithTag("Player2");
 		else otherPlayer = GameObject.FindGameObjectWithTag("Player1");
-	
+		
 		if (coinScore >= coin1 && coin1d == false)
 		{
 			coin1d = true;
@@ -156,7 +164,7 @@ public class PlayerStats : MonoBehaviour {
 			power.parent = transform;
 			power.renderer.sortingOrder = 1;
 		}
-	
+		
 		if (Time.time > pointTimer)
 		{
 			pointTimer = Time.time + pointCD;
@@ -259,7 +267,7 @@ public class PlayerStats : MonoBehaviour {
 			if (Input.GetAxis ("Horizontal") < 0 && transform.position.x > left.transform.position.x) transform.Translate(Vector3.left*Time.deltaTime*speed);
 			if (Input.GetAxis ("Vertical") < 0 && transform.position.y > down.transform.position.y) transform.Translate(Vector3.down*Time.deltaTime*speed);
 			if (Input.GetAxis ("Horizontal") > 0 && transform.position.x < right.transform.position.x) transform.Translate(Vector3.right*Time.deltaTime*speed);
-		
+			
 			//Movement
 			if (Input.GetAxis("XboxVertical1") > 0 && transform.position.y < top.transform.position.y) transform.Translate(Vector3.up*Time.deltaTime*speed);
 			if (Input.GetAxis ("XboxHorizontal1") < 0 && transform.position.x > left.transform.position.x) transform.Translate(Vector3.left*Time.deltaTime*speed);
@@ -283,7 +291,7 @@ public class PlayerStats : MonoBehaviour {
 				theSwap.parent = otherPlayer.transform;
 				swap = true;
 			}
-
+			
 			//Attacker inputs
 			if (role == "Attacker")
 			{
@@ -298,10 +306,6 @@ public class PlayerStats : MonoBehaviour {
 				{
 					specialBool = true;
 					specialTimer = Time.time + specialCD;
-				}
-				if (transform.name == "PunchKnight(Clone)")
-				{
-					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
 				}
 			}
 			//Defender inputs
