@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: 365ff2a3afd20534fa2b124af6146ae2
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: KnightSprite_flinch_0
+    21300002: KnightSprite_flinch_3
+    21300004: KnightSprite_flinch_4
+    21300006: KnightSprite_flinch_5
+    21300008: KnightSprite_flinch_6
+    21300010: KnightSprite_flinch_7
+    21300012: KnightSprite_flinch_8
+    21300014: KnightSprite_flinch_7
+    21300016: KnightSprite_flinch_8
+    21300018: KnightSprite_flinch_9
+    21300020: KnightSprite_flinch_10
+    21300022: KnightSprite_flinch_11
+    21300024: KnightSprite_flinch_12
+    21300026: KnightSprite_flinch_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: KnightSprite_flinch_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 212
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KnightSprite_flinch_3
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 144
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KnightSprite_flinch_4
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 144
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KnightSprite_flinch_5
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 76
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KnightSprite_flinch_6
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 76
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KnightSprite_flinch_7
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 10
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KnightSprite_flinch_8
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 10
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KnightSprite_flinch_7
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 212
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KnightSprite_flinch_8
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 144
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KnightSprite_flinch_9
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 144
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KnightSprite_flinch_10
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 76
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KnightSprite_flinch_11
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 76
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KnightSprite_flinch_12
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 12
+        width: 36
+        height: 55
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KnightSprite_flinch_13
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 10
+        width: 35
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

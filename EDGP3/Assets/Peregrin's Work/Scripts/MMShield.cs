@@ -4,6 +4,7 @@ using System.Collections;
 public class MMShield : MonoBehaviour {
 
 	GameObject myParent;
+	GameObject sound;
 
 	// Use this for initialization
 	void Start ()
@@ -13,6 +14,8 @@ public class MMShield : MonoBehaviour {
 		else transform.parent = GameObject.FindGameObjectWithTag("Player2").transform;
 		
 // 		Debug.Log (transform.parent.name);
+
+		sound = GameObject.Find("Sound");
 	}
 	
 	// Update is called once per frame
@@ -31,6 +34,7 @@ public class MMShield : MonoBehaviour {
 				{
 					transform.parent.GetComponent<PlayerStats>().ammo += 1;
 					Destroy (bullet);
+					sound.GetComponent<SoundManager>().PlaySound("absorb");
 				}
 				
 			}
@@ -44,6 +48,7 @@ public class MMShield : MonoBehaviour {
 				{
 					transform.parent.GetComponent<PlayerStats>().ammo += 1;
 					Destroy(bullet);
+					sound.GetComponent<SoundManager>().PlaySound("absorb");
 				}
 				
 			}
