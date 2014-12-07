@@ -13,9 +13,7 @@ public class PlayerStats : MonoBehaviour {
 	public string role;
 	public float damage;
 	
-	//Affinity swapping stuff (A vs B)
-	public Texture AffinityA;
-	public Texture AffinityB;
+	public Transform swapTransition;
 	
 	//Speed and movement testing for animation purposes
 	public float speed;
@@ -43,6 +41,7 @@ public class PlayerStats : MonoBehaviour {
 	public string swapRole;
 	public float swapCD = .5f;
 	public bool tutSwap = false;
+	public bool swap = false;
 	float swapTimer = 2f;
 	
 	// Affinity timer
@@ -58,6 +57,8 @@ public class PlayerStats : MonoBehaviour {
 	private Animator anim;
 	private GameObject bar;
 	private GameObject sound;
+	
+	GameObject otherPlayer;
 	
 	public float coin1 = 50;
 	public float coin2 = 100;
@@ -134,6 +135,9 @@ public class PlayerStats : MonoBehaviour {
 	{
 	
 //		Debug.Log (transform.name+": "+coinScore);
+		if (transform.tag == "Player1") otherPlayer = GameObject.FindGameObjectWithTag("Player2");
+		else otherPlayer = GameObject.FindGameObjectWithTag("Player1");
+		
 	
 		if (Time.time > pointTimer)
 		{
@@ -248,10 +252,18 @@ public class PlayerStats : MonoBehaviour {
 			//Swap
 			if ((Input.GetButtonUp("XboxFire1Y") || Input.GetKeyUp(KeyCode.P)) && Time.time > swapTimer)
 			{
-				GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
-				Swap();
-				player2.transform.GetComponent<PlayerStats>().Swap();
-				swapTimer = Time.time + swapCD;	
+				swapTimer = Time.time + swapCD;
+				Transform theSwap = Instantiate(swapTransition, transform.position, Quaternion.identity) as Transform;
+				theSwap.parent = transform;
+				theSwap.GetComponent<Animator>().speed -= .1f;
+				if (role == "Attacker") theSwap.GetComponent<Animator>().SetBool("TowardsOffense", false);
+				else theSwap.GetComponent<Animator>().SetBool("TowardsOffense", true);
+				theSwap = Instantiate(swapTransition, otherPlayer.transform.position, Quaternion.identity) as Transform;
+				theSwap.GetComponent<Animator>().speed -= .1f;
+				if (otherPlayer.GetComponent<PlayerStats>().role == "Attacker") theSwap.GetComponent<Animator>().SetBool("TowardsOffense", false);
+				else theSwap.GetComponent<Animator>().SetBool("TowardsOffense", true);
+				theSwap.parent = otherPlayer.transform;
+				swap = true;
 			}
 
 			//Attacker inputs
@@ -306,10 +318,14 @@ public class PlayerStats : MonoBehaviour {
 			
 			if ((Input.GetButtonUp("XboxFire2Y") || Input.GetKeyUp(KeyCode.O)) && Time.time > swapTimer)
 			{
-				GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
-				Swap();
-				player1.transform.GetComponent<PlayerStats>().Swap();	
-				swapTimer = Time.time + swapCD;	
+				swapTimer = Time.time + swapCD;
+				Transform theSwap = Instantiate(swapTransition, transform.position, Quaternion.identity) as Transform;
+				theSwap.parent = transform;
+				theSwap.GetComponent<Animator>().speed -= .1f;
+				theSwap = Instantiate(swapTransition, otherPlayer.transform.position, Quaternion.identity) as Transform;
+				theSwap.parent = otherPlayer.transform;
+				theSwap.GetComponent<Animator>().speed -= .1f;
+				swap = true;
 			}
 			if (role == "Attacker")
 			{
@@ -349,6 +365,14 @@ public class PlayerStats : MonoBehaviour {
 			else anim.SetBool("moveshoot", false);
 		}
 		
+		if (swap == true && Time.time > swapTimer)
+		{
+			Swap ();
+			otherPlayer.transform.GetComponent<PlayerStats>().Swap();
+			swap = false;
+			GameObject[] swaps = GameObject.FindGameObjectsWithTag("swap");
+			foreach (GameObject aSwap in swaps) Destroy (aSwap);
+		}
 		
 	}
 }

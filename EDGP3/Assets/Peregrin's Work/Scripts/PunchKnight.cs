@@ -71,7 +71,7 @@ public class PunchKnight : MonoBehaviour {
 			GetComponent<PlayerStats>().specialBool = false;
 		}
 		
-if (specialTimer - Time.time <= specialCounter  && Time.time > specialTimer && specialCounter > 0)
+		if (specialTimer - Time.time <= specialCounter  && Time.time > specialTimer && specialCounter > 0)
 		{
 			Transform instance;
 			for (float i = 0; i < specialCounter; i += .5f)
