@@ -80,10 +80,10 @@ public class MirrorMage : MonoBehaviour {
 		topLeft = left.transform.GetChild(1).gameObject.AddComponent<LineRenderer>();
 		topRight = right.transform.GetChild(1).gameObject.AddComponent<LineRenderer>();
 		//Narrow the beams
-		topLeft.SetWidth(width, width); topLeft.SetColors(color, color); topLeft.materials[0] = lazor;
-		topRight.SetWidth(width, width); topRight.SetColors(color, color); topRight.materials[0] = lazor;
-		leftSide.SetWidth(width, width); leftSide.SetColors(color, color); leftSide.materials[0] = lazor;
-		rightSide.SetWidth(width, width); rightSide.SetColors(color, color); rightSide.materials[0] = lazor;
+		topLeft.SetWidth(width, width); topLeft.SetColors(color, color); topLeft.material = lazor;
+		topRight.SetWidth(width, width); topRight.SetColors(color, color); topRight.material = lazor;
+		leftSide.SetWidth(width, width); leftSide.SetColors(color, color); leftSide.material = lazor;
+		rightSide.SetWidth(width, width); rightSide.SetColors(color, color); rightSide.material = lazor;
 	}
 	
 	void NotLazerTime()
