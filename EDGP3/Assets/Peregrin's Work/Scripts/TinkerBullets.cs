@@ -33,37 +33,43 @@ public class TinkerBullets : MonoBehaviour {
 			for (int i = 0; i < enemies1.Length; i++) enemies.Add (enemies1[i]);
 			if (GameObject.FindGameObjectWithTag("Boss1")) enemies.Add (GameObject.FindGameObjectWithTag("Boss1"));
 			if (GameObject.FindGameObjectWithTag("Boss2")) enemies.Add(GameObject.FindGameObjectWithTag("Boss2"));
-			if (GameObject.FindGameObjectWithTag("Boss3")) enemies.Add (boss = GameObject.FindGameObjectWithTag("Boss3"));
+			if (GameObject.FindGameObjectWithTag("Boss3")) enemies.Add (GameObject.FindGameObjectWithTag("Boss3"));
 			if (type != 1) transform.Translate(Vector3.up*Time.deltaTime*speed);
 			
 			if (type == 0) //Bomb
 			{
 				foreach (GameObject enemy in enemies)
 				{
-					if (enemy.renderer.bounds.Intersects(renderer.bounds))
+					if (enemy != null)
 					{
-						explosion = true;
+						if (enemy.renderer.bounds.Intersects(renderer.bounds))
+						{
+							explosion = true;
+						}
 					}
 				}
 				if (explosion == true)
 				{
 					foreach (GameObject enemy in enemies)
 					{
-						if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "EnemyShipA")
+						if (enemy != null)
 						{
-							enemy.GetComponent<Enemy>().health -= damage;
-						}
-						else if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "Boss1")
-						{
-							enemy.GetComponent<Boss1>().subhealth(damage);
-						}
-						else if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "Boss2")
-						{
-							enemy.GetComponent<Boss2>().subhealth(damage);
-						}
-						else if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "Boss3")
-						{
-							enemy.GetComponent<Boss3>().subhealth(damage);
+							if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "EnemyShipA")
+							{
+								enemy.GetComponent<Enemy>().health -= damage;
+							}
+							else if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "Boss1")
+							{
+								enemy.GetComponent<Boss1>().subhealth(damage);
+							}
+							else if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "Boss2")
+							{
+								enemy.GetComponent<Boss2>().subhealth(damage);
+							}
+							else if (enemy.renderer.bounds.Intersects(collider2D.bounds) && enemy.tag == "Boss3")
+							{
+								enemy.GetComponent<Boss3>().subhealth(damage);
+							}
 						}
 					}
 					type = 4;
@@ -80,11 +86,14 @@ public class TinkerBullets : MonoBehaviour {
 					if (hasHit) Destroy(gameObject);
 					for (int i = 0; i < enemies.Count; i++)
 					{
-						float test = Vector3.Distance(enemies[i].transform.position, transform.position);
-						if (test < dist)
+						if (enemies[i] != null)
 						{
-							dist = test;
-							index = i;
+							float test = Vector3.Distance(enemies[i].transform.position, transform.position);
+							if (test < dist)
+							{
+								dist = test;
+								index = i;
+							}
 						}
 					}
 					transform.position = Vector3.MoveTowards(transform.position, enemies[index].transform.position, Time.deltaTime*speed);
@@ -120,25 +129,28 @@ public class TinkerBullets : MonoBehaviour {
 				List<GameObject> haveHit = new List<GameObject>();
 				foreach (GameObject enemy in enemies)
 				{
-					if (enemy.renderer.bounds.Intersects(renderer.bounds) && !haveHit.Contains(enemy))
+					if (enemy != null)
 					{
-						if (enemies[index].tag == "EnemyShipA")
+						if (enemy.renderer.bounds.Intersects(renderer.bounds) && !haveHit.Contains(enemy))
 						{
-							enemies[index].GetComponent<Enemy>().health -= damage;
+							if (enemies[index].tag == "EnemyShipA")
+							{
+								enemies[index].GetComponent<Enemy>().health -= damage;
+							}
+							else if (enemies[index].tag == "Boss1")
+							{
+								enemies[index].GetComponent<Boss1>().subhealth(damage);
+							}
+							else if (enemies[index].tag == "Boss2")
+							{
+								enemies[index].GetComponent<Boss2>().subhealth(damage);
+							}
+							else if (enemies[index].tag == "Boss3")
+							{
+								enemies[index].GetComponent<Boss3>().subhealth(damage);
+							}
+							haveHit.Add (enemy);
 						}
-						else if (enemies[index].tag == "Boss1")
-						{
-							enemies[index].GetComponent<Boss1>().subhealth(damage);
-						}
-						else if (enemies[index].tag == "Boss2")
-						{
-							enemies[index].GetComponent<Boss2>().subhealth(damage);
-						}
-						else if (enemies[index].tag == "Boss3")
-						{
-							enemies[index].GetComponent<Boss3>().subhealth(damage);
-						}
-						haveHit.Add (enemy);
 					}
 				}
 			}
