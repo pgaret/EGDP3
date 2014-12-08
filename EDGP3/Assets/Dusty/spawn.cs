@@ -68,7 +68,7 @@ public class spawn : MonoBehaviour {
 		EnterTimes[29] = 99f+19;
 		EnterTimes[30] = 100f+19;
 		//Boss 1
-		EnterTimes[31] = 138f;
+		EnterTimes[31] = 140f;
 
 		//  LEVEL 2 //
 		EnterTimes2 = new float[40];
@@ -147,7 +147,7 @@ public class spawn : MonoBehaviour {
 		EnterTimes3[15] = 42f;
 		EnterTimes3[16] = 44f;
 		//Boss 3
-		EnterTimes3[17] = 52f;
+		EnterTimes3[17] = 53f;
 	}
 	
 	// Update is called once per frame
@@ -591,34 +591,34 @@ public class spawn : MonoBehaviour {
 		//Wave 04
 		if (i == 09){
 			Setpath(1,-4,3,7,0,4, false);
-			Setpath(1,-4,1,5,0,0, true);
+			//Setpath(1,-4,1,5,0,0, true);
 		}
 		if (i == 10){
 			Setpath(1,-4,2,10,3,8, true);
-			Setpath(1,-4,2,10,3,12, false);
+			//Setpath(1,-4,2,10,3,12, false);
 		}
 		if (i == 11){
 			Setpath(1,-4,3,7,0,4, false);
 		}
 		if (i == 12){
 			Setpath(1,4,2,11,3,12, false);
-			Setpath(1,4,2,6,0,0, true);
+			//Setpath(1,4,2,6,0,0, true);
 		}
 		//Wave 05
 		if (i == 13){
 			Setpath(1,-4,3,7,0,5, false);
-			Setpath(1,-4,1,5,0,2, true);
+			//Setpath(1,-4,1,5,0,2, true);
 		}
 		if (i == 14){
 			Setpath(1,-4,2,10,3,11, true);
-			Setpath(1,-4,2,10,3,14, false);
+			//Setpath(1,-4,2,10,3,14, false);
 		}
 		if (i == 15){
 			Setpath(1,-4,3,7,0,5, false);
 		}
 		if (i == 16){
 			Setpath(1,4,2,11,3,14, false);
-			Setpath(1,4,2,6,0,2, true);
+			//Setpath(1,4,2,6,0,2, true);
 		}
 		//Boss 3
 		if (i == 17){

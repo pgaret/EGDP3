@@ -9,18 +9,20 @@
 -------------------
 KEYBOARD
 -------------------
-Shoot: I
-Swap Shield: I
-Swap Role: O
-Special: P
+Shoot - - - - - I
+Swap Shield - - I
+Swap Role - - - O
+Special - - - - P
+Movement- - - - Arrow Keys
 -------------------
 
 CONTROLLER
 -------------------
-Shoot: X or A
-Swap Shield: X or A
-Swap Role: Y
-Special: B
+Shoot - - - - - X or A
+Swap Shield - - X or A
+Swap Role - - - Y
+Special - - - - B
+Movement- - - - Left Stick
 -------------------
 
 -------------------------------------------------------------------------
@@ -30,18 +32,20 @@ Special: B
 -------------------
 KEYBOARD
 -------------------
-Shoot: C
-Swap Shield: C
-Swap Role: V
-Special: B
+Shoot - - - - - C
+Swap Shield - - C
+Swap Role - - - V
+Special - - - - B
+Movement- - - - WASD
 -------------------
 
 CONTROLLER
 -------------------
-Shoot: X or A
-Swap Shield: X or A
-Swap Role: Y
-Special: B
+Shoot - - - - - X or A
+Swap Shield - - X or A
+Swap Role - - - Y
+Special - - - - B
+Movement- - - - Left Stick
 -------------------
 
 ///////////////////////////////////////////////////////////////////////////
@@ -52,7 +56,7 @@ Special: B
                  ATTACKING PLAYER
 -------------------------------------------------------------------------
 
-Shoot bullets at enemies to destroy them
+Shoot bullets at enemies to destroy them.
 Each character has a different special that can be used based on a time or ammo limit.
 
 
@@ -69,7 +73,7 @@ Swap shield affinities to block the different incoming bullets.
 -------------------------------------------------------------------------
 
 Gather coins from fallen enemies to earn character-specific power ups.
-Earn points based on vertical screen location and destroying enemies.
+Earn points based on vertical screen location and collecting coins.
 
 ///////////////////////////////////////////////////////////////////////////
 ///                    CHARACTERS                          ///
@@ -98,19 +102,19 @@ Each dragon carries its own shield, though all dragons share shield type.
                  TINKER
 -------------------------------------------------------------------------
 Attack with any of three bullet patterns.
-Bomb (blue) deals an AoE explosion on contact with an enemy.
+Bomb (blue) deals a circular explosion on contact with an enemy.
 Homing (red) goes to the nearest enemy.
 Piercing (yellow) goes through enemies to hit those beyond.
 Special swaps which bullet pattern you're currently using.
-Drop shields using your special move while in Defence.
+Drop shields using your special move while in Defense.
 
 -------------------------------------------------------------------------
                  MIRROR MAGE
 -------------------------------------------------------------------------
 Attack using four lasers connected to mirror nodes at various points on your screen.
 Use a limit amount of ammo per second while lasers are in play.
-When all ammo is gone, the laser will vanish, until ammo is replenished via defence mode.
-Defence mode features two shields on either side of the player.
+When all ammo is gone, the laser will vanish, until ammo is replenished via Defense mode.
+Defense mode features two shields on either side of the player.
 Special fires a projectile straight up into your blind spot.
 
 ///////////////////////////////////////////////////////////////////////////

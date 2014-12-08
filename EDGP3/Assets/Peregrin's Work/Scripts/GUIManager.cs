@@ -169,7 +169,7 @@ public class GUIManager : MonoBehaviour {
 				sound.GetComponent<SoundManager>().LoopSound("CharSelect");
 			}
 			if (tiScre == null) tiScre = Instantiate(titleScreen) as Transform;
-			if (Input.GetButton ("XboxFire1A") || Input.GetButton ("XboxFire1B") || Input.GetButton ("XboxFire1X") || Input.GetButton ("XboxFire1Y") || Input.GetButton ("XboxFire2A") || Input.GetButton ("XboxFire2B") || Input.GetButton ("XboxFire2X") || Input.GetButton ("XboxFire2Y") || Input.GetKey(KeyCode.S))
+			if (Input.GetButton ("XboxFire1A") || Input.GetButton ("XboxFire1B") || Input.GetButton ("XboxFire1X") || Input.GetButton ("XboxFire1Y") || Input.GetButton ("XboxFire2A") || Input.GetButton ("XboxFire2B") || Input.GetButton ("XboxFire2X") || Input.GetButton ("XboxFire2Y") || Input.GetKey(KeyCode.Space))
 			{
 				//We're entering character select here
 				mode = 1;
@@ -246,11 +246,15 @@ public class GUIManager : MonoBehaviour {
 			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && MMIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 1 && player1Select != 1) player2Select = 1;
 			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && TKIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 2) player2Select = 2;
 			if ((Input.GetButtonDown("XboxFire2A") || Input.GetKey(KeyCode.KeypadEnter)) && DTIcon.renderer.bounds.Contains(player2Cursor.position) && player2Select != 3) player2Select = 3;
-			if (Input.GetKey (KeyCode.S))
-			{
-				player1Select = 0;
-				player2Select = 1;
-			}
+			if (Input.GetKey (KeyCode.Q)) player1Select = 0;
+			if (Input.GetKey (KeyCode.W)) player1Select = 1;
+			if (Input.GetKey (KeyCode.E)) player1Select = 2;
+			if (Input.GetKey (KeyCode.R)) player1Select = 3;
+			if (Input.GetKey (KeyCode.T)) player2Select = 0;
+			if (Input.GetKey (KeyCode.Y)) player2Select = 1;
+			if (Input.GetKey (KeyCode.U)) player2Select = 2;
+			if (Input.GetKey (KeyCode.I)) player2Select = 3;
+			
 			if (player1Select != -1 && player2Select != -1)
 			{
 				sButton.GetComponent<SpriteRenderer>().sprite = startButtonNormal;
@@ -264,6 +268,7 @@ public class GUIManager : MonoBehaviour {
 					sButton.GetComponent<SpriteRenderer>().sprite = startButtonHover;
 					if (Input.GetButtonUp("XboxFire2A")) begin = true;
 				}
+				if (Input.GetKey(KeyCode.Space)) begin = true;
 			}
 			
 //			if (player1Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds) || player2Cursor.renderer.bounds.Intersects(tutButton.renderer.bounds))
@@ -305,7 +310,7 @@ public class GUIManager : MonoBehaviour {
 //			}
 //			else tutButton.GetComponent<SpriteRenderer>().sprite = tutButtonNormal;
 			
-			if (player1Select != -1 && player2Select != -1 && begin == true || Input.GetKey(KeyCode.D))
+			if (player1Select != -1 && player2Select != -1 && begin == true)
 			{
 				level1BG = (Transform)Instantiate (Background);
 				level1BG.transform.localScale = new Vector3(1.6f, 1.6f);
@@ -382,10 +387,6 @@ public class GUIManager : MonoBehaviour {
 			if (player2Cursor.position.x < right.transform.position.x && Input.GetAxis("XboxHorizontal2") > 0) player2Cursor.position += new Vector3(Input.GetAxis("XboxHorizontal2")*speed, 0, 0);
 			if (player2Cursor.position.y < up.transform.position.y && Input.GetAxis("XboxVertical2") > 0) player2Cursor.position += new Vector3(0, Input.GetAxis("XboxVertical2")*speed, 0);
 			if (player2Cursor.position.y > down.transform.position.y && Input.GetAxis("XboxVertical2") < 0) player2Cursor.position += new Vector3(0, Input.GetAxis("XboxVertical2")*speed, 0);
-			if (Input.GetKey(KeyCode.UpArrow)) player2Cursor.transform.Translate(Vector3.up*Time.deltaTime*10);
-			if (Input.GetKey(KeyCode.LeftArrow)) player2Cursor.transform.Translate(Vector3.left*Time.deltaTime*10);
-			if (Input.GetKey(KeyCode.DownArrow)) player2Cursor.transform.Translate(Vector3.down*Time.deltaTime*10);
-			if (Input.GetKey(KeyCode.RightArrow)) player2Cursor.transform.Translate(Vector3.right*Time.deltaTime*10);
 		}
 	}
 }
