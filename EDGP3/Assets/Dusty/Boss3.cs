@@ -141,6 +141,7 @@ public class Boss3 : MonoBehaviour {
 			Instantiate(transition);
 			Master.GetComponent<spawn>().starter();
 			Master.GetComponent<spawn>().killall();
+			Destroy (GameObject.FindGameObjectWithTag("lightn"));
 			Destroy(gameObject);
 
 		}

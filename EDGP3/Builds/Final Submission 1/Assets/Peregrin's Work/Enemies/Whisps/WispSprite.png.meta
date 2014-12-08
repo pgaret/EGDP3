@@ -1,0 +1,1433 @@
+fileFormatVersion: 2
+guid: 699d0358af984a544b60beb979f53b0e
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: WispSprite_0
+    21300002: WispSprite_1
+    21300004: WispSprite_2
+    21300006: WispSprite_3
+    21300008: WispSprite_4
+    21300010: WispSprite_5
+    21300012: WispSprite_6
+    21300014: WispSprite_7
+    21300016: WispSprite_8
+    21300018: WispSprite_9
+    21300020: WispSprite_10
+    21300022: WispSprite_11
+    21300024: WispSprite_12
+    21300026: WispSprite_13
+    21300028: WispSprite_14
+    21300030: WispSprite_15
+    21300032: WispSprite_16
+    21300034: WispSprite_17
+    21300036: WispSprite_18
+    21300038: WispSprite_19
+    21300040: WispSprite_20
+    21300042: WispSprite_21
+    21300044: WispSprite_22
+    21300046: WispSprite_23
+    21300048: WispSprite_24
+    21300050: WispSprite_25
+    21300052: WispSprite_26
+    21300054: WispSprite_27
+    21300056: WispSprite_28
+    21300058: WispSprite_29
+    21300060: WispSprite_30
+    21300062: WispSprite_31
+    21300064: WispSprite_32
+    21300066: WispSprite_33
+    21300068: WispSprite_34
+    21300070: WispSprite_35
+    21300072: WispSprite_36
+    21300074: WispSprite_37
+    21300076: WispSprite_38
+    21300078: WispSprite_39
+    21300080: WispSprite_40
+    21300082: WispSprite_41
+    21300084: WispSprite_42
+    21300086: WispSprite_43
+    21300088: WispSprite_44
+    21300090: WispSprite_45
+    21300092: WispSprite_46
+    21300094: WispSprite_47
+    21300096: WispSprite_48
+    21300098: WispSprite_49
+    21300100: WispSprite_50
+    21300102: WispSprite_51
+    21300104: WispSprite_52
+    21300106: WispSprite_53
+    21300108: WispSprite_54
+    21300110: WispSprite_55
+    21300112: WispSprite_56
+    21300114: WispSprite_57
+    21300116: WispSprite_58
+    21300118: WispSprite_59
+    21300120: WispSprite_60
+    21300122: WispSprite_61
+    21300124: WispSprite_62
+    21300126: WispSprite_63
+    21300128: WispSprite_64
+    21300130: WispSprite_65
+    21300132: WispSprite_66
+    21300134: WispSprite_67
+    21300136: WispSprite_68
+    21300138: WispSprite_69
+    21300140: WispSprite_70
+    21300142: WispSprite_71
+    21300144: WispSprite_72
+    21300146: WispSprite_73
+    21300148: WispSprite_74
+    21300150: WispSprite_75
+    21300152: WispSprite_76
+    21300154: WispSprite_77
+    21300156: WispSprite_78
+    21300158: WispSprite_79
+    21300160: WispSprite_80
+    21300162: WispSprite_81
+    21300164: WispSprite_82
+    21300166: WispSprite_83
+    21300168: WispSprite_84
+    21300170: WispSprite_85
+    21300172: WispSprite_86
+    21300174: WispSprite_87
+    21300176: WispSprite_88
+    21300178: WispSprite_89
+    21300180: WispSprite_90
+    21300182: WispSprite_91
+    21300184: WispSprite_92
+    21300186: WispSprite_93
+    21300188: WispSprite_94
+    21300190: WispSprite_95
+    21300192: WispSprite_96
+    21300194: WispSprite_97
+    21300196: WispSprite_98
+    21300198: WispSprite_99
+    21300200: WispSprite_100
+    21300202: WispSprite_101
+    21300204: WispSprite_102
+    21300206: WispSprite_103
+    21300208: WispSprite_104
+    21300210: WispSprite_105
+    21300212: WispSprite_106
+    21300214: WispSprite_107
+    21300216: WispSprite_108
+    21300218: WispSprite_109
+    21300220: WispSprite_110
+    21300222: WispSprite_111
+    21300224: WispSprite_112
+    21300226: WispSprite_113
+    21300228: WispSprite_114
+    21300230: WispSprite_115
+    21300232: WispSprite_116
+    21300234: WispSprite_117
+    21300236: WispSprite_118
+    21300238: WispSprite_119
+    21300240: WispSprite_120
+    21300242: WispSprite_121
+    21300244: WispSprite_122
+    21300246: WispSprite_123
+    21300248: WispSprite_124
+    21300250: WispSprite_125
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: WispSprite_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 204
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 204
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_2
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 204
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_3
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 204
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_4
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 204
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_5
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 204
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_6
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 204
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_7
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 208
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_8
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 208
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_9
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 204
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_10
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 208
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_11
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 210
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_12
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 208
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_13
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 208
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_14
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 208
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_15
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 208
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_16
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 204
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_17
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 208
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_18
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 210
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_19
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 208
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_20
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 208
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_21
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 166
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_22
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 166
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_23
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 162
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_24
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 166
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_25
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 168
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_26
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 166
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_27
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 166
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_28
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 166
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_29
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 166
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_30
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 162
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_31
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 166
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_32
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 168
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_33
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 166
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_34
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 166
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_35
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 166
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_36
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 166
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_37
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 162
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_38
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 166
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_39
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 168
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_40
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 166
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_41
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 166
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_42
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 128
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_43
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 128
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_44
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 124
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_45
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 128
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_46
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 130
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_47
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 128
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_48
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 128
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_49
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 128
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_50
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 128
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_51
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 124
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_52
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 128
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_53
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 130
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_54
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 128
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_55
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 128
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_56
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 128
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_57
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 128
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_58
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 124
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_59
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 128
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_60
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 130
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_61
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 128
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_62
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 128
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_63
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 88
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_64
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 88
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_65
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 84
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_66
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 88
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_67
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 90
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_68
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 88
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_69
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 88
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_70
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 88
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_71
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 88
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_72
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 84
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_73
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 88
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_74
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 90
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_75
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 88
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_76
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 88
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_77
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 88
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_78
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 88
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_79
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 84
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_80
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 88
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_81
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 90
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_82
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 88
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_83
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 88
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_84
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 46
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_85
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 46
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_86
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 42
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_87
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 46
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_88
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 48
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_89
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 46
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_90
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 46
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_91
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 46
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_92
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 46
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_93
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 42
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_94
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 46
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_95
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 48
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_96
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 46
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_97
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 46
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_98
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 46
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_99
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 46
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_100
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 42
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_101
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 46
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_102
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 48
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_103
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 46
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_104
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 46
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_105
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 8
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_106
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 8
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_107
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 4
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_108
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 8
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_109
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 10
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_110
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 8
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_111
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 8
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_112
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 8
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_113
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 8
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_114
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 4
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_115
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 8
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_116
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 10
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_117
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 8
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_118
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 8
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_119
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 8
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_120
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 8
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_121
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 4
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_122
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 8
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_123
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 10
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_124
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 8
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WispSprite_125
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 8
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
