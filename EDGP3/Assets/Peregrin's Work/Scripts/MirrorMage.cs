@@ -4,7 +4,6 @@ using System.Collections;
 public class MirrorMage : MonoBehaviour {
 	
 	public Transform projectile;
-	public Transform special;
 	public Transform shield;
 	public string shipType;
 	public float damage;
@@ -13,6 +12,7 @@ public class MirrorMage : MonoBehaviour {
 	public Color color = Color.white;
 	
 	public Material lazor;
+	public Sprite special;
 	public Sprite mirrorL;
 	public Sprite mirrorR;
 	public Sprite node;
@@ -116,6 +116,15 @@ public class MirrorMage : MonoBehaviour {
 			width = .3f;
 			topLeft.SetWidth(width, width); topRight.SetWidth(width, width); leftSide.SetWidth(width, width); rightSide.SetWidth(width, width);
 			
+		}
+		
+		if (GetComponent<PlayerStats>().specialBool == true && GetComponent<PlayerStats>().ammo >= 5)
+		{
+			Transform theSpecal = Instantiate(projectile, transform.position, Quaternion.identity) as Transform;
+			theSpecal.GetComponent<SpriteRenderer>().sprite = special;
+			theSpecal.GetComponent<PlayerBullet>().damage = 3;
+			GetComponent<PlayerStats>().specialBool = false;
+			GetComponent<PlayerStats>().ammo -= 5;
 		}
 		
 		if (GetComponent<PlayerStats>().role == "Defender" && GameObject.FindGameObjectsWithTag("MMShield").Length == 0)
