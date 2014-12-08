@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Tutorial : MonoBehaviour {
 
-	public Transform TutKnight;
+/*	public Transform TutKnight;
 	
 	public GUIStyle style1;
 	
@@ -203,4 +203,5 @@ public class Tutorial : MonoBehaviour {
 		
 	
 	}
+	*/
 }
