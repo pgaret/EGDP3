@@ -202,13 +202,7 @@ public class GUIManager : MonoBehaviour {
 		{
 			player1 = GameObject.FindGameObjectWithTag("Player1").transform;
 			player2 = GameObject.FindGameObjectWithTag("Player2").transform;
-			
-			//Check for death
-//			if (player1.GetComponent<PlayerStats>().lives <= 0 || player2.GetComponent<PlayerStats>().lives <= 0)
-//			{
-//				Instantiate (gameOver);
-//				mode = 3;
-//			}
+
 			
 			//Player 1 HUD
 			style.fontSize = 24;
@@ -226,22 +220,14 @@ public class GUIManager : MonoBehaviour {
 			GUI.Box (new Rect(Screen.width * 5.9f / 8, Screen.height * 7.15f / 8, Screen.width / 8, Screen.height / 8), player2.GetComponent<PlayerStats>().ammo.ToString(), style);
 			GUI.Box (new Rect(Screen.width * 82 / 100, Screen.height * 2.75f / 8, Screen.width / 8, Screen.height / 8), Mathf.RoundToInt(player2.GetComponent<PlayerStats>().score).ToString(), style);	
 		}
-		if(death == true){
-			Application.LoadLevel("Peregrin's Scene");
 
-		}
-
-
-		
 	}
 
 	// Update is called once per frame
 	void Update () {
 		Screen.showCursor = false;
 		if(death){
-			if(Input.anyKey){
-				Application.LoadLevel ("Peregrin's Scene");
-			}
+			Application.LoadLevel ("Reginald's Scene");
 		}
 		if(start){
 			if(!debug && (player1.GetComponent<PlayerStats>().lives < 0 || player2.GetComponent<PlayerStats>().lives < 0)){
@@ -383,8 +369,6 @@ public class GUIManager : MonoBehaviour {
 				sound.GetComponent<SoundManager>().PlaySound("MainTheme");
 				sound.GetComponent<SoundManager>().LoopSound("MainTheme");
 			}
-			//			int playerOne;
-			//			int playerTwo;
 		}
 		if (mode < 2)
 		{

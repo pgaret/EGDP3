@@ -53,6 +53,9 @@ public class PlayerStats : MonoBehaviour {
 	public float deathCD;
 	float deathTimer;
 	
+	public float flinchCD;
+	bool flinchBool = false;
+	
 	public float pointCD;
 	float pointTimer;
 	
@@ -258,7 +261,19 @@ public class PlayerStats : MonoBehaviour {
 			}
 		}
 		
-		if (Time.time > deathTimer) GetComponent<Animator>().SetBool("dead", false);
+		if (Time.time > deathTimer && GetComponent<Animator>().GetBool("dead") == true)
+		{
+			GetComponent<Animator>().SetBool("dead", false);
+			GetComponent<Animator>().SetBool("flinch", true);
+			deathTimer += flinchCD;
+			flinchBool = true;
+		}
+		if (Time.time > deathTimer && flinchBool)
+		{
+			GetComponent<Animator>().SetBool("flinch", false);
+			flinchBool = false;
+		}
+		Debug.Log (flinchBool);
 		//Input shenanigans
 		if (transform.tag == "Player1")
 		{
