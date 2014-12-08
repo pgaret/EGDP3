@@ -1,0 +1,476 @@
+fileFormatVersion: 2
+guid: 1031b3d6ae078ef409fda0ab84647bb4
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: TinkerSpriteSheet_0
+    21300002: TinkerSpriteSheet_1
+    21300004: TinkerSpriteSheet_2
+    21300006: TinkerSpriteSheet_3
+    21300008: TinkerSpriteSheet_4
+    21300010: TinkerSpriteSheet_5
+    21300012: TinkerSpriteSheet_6
+    21300014: TinkerSpriteSheet_7
+    21300016: TinkerSpriteSheet_8
+    21300018: TinkerSpriteSheet_9
+    21300020: TinkerSpriteSheet_10
+    21300022: TinkerSpriteSheet_11
+    21300024: TinkerSpriteSheet_12
+    21300026: TinkerSpriteSheet_13
+    21300028: TinkerSpriteSheet_14
+    21300030: TinkerSpriteSheet_15
+    21300032: TinkerSpriteSheet_16
+    21300034: TinkerSpriteSheet_17
+    21300036: TinkerSpriteSheet_18
+    21300038: TinkerSpriteSheet_19
+    21300040: TinkerSpriteSheet_20
+    21300042: TinkerSpriteSheet_21
+    21300044: TinkerSpriteSheet_22
+    21300046: TinkerSpriteSheet_23
+    21300048: TinkerSpriteSheet_24
+    21300050: TinkerSpriteSheet_25
+    21300052: TinkerSpriteSheet_26
+    21300054: TinkerSpriteSheet_27
+    21300056: TinkerSpriteSheet_28
+    21300058: TinkerSpriteSheet_29
+    21300060: TinkerSpriteSheet_30
+    21300062: TinkerSpriteSheet_31
+    21300064: TinkerSpriteSheet_32
+    21300066: TinkerSpriteSheet_33
+    21300068: TinkerSpriteSheet_34
+    21300070: TinkerSpriteSheet_35
+    21300072: TinkerSpriteSheet_36
+    21300074: TinkerSpriteSheet_37
+    21300076: TinkerSpriteSheet_38
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: TinkerSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 616
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 614
+        width: 22
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 614
+        width: 22
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 614
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 614
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 616
+        width: 26
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 616
+        width: 26
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 558
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 558
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 558
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 558
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 496
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 496
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 496
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 496
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 416
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 416
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 416
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 416
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 336
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 336
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 336
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 256
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 256
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 256
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 176
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 176
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 176
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 96
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 96
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 96
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 16
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 16
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TinkerSpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 16
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
