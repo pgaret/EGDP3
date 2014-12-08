@@ -8,6 +8,8 @@ public class TinkerShield : MonoBehaviour {
 
 	GameObject[] bullets;
 	GameObject parent;
+	
+	GameObject sound;
 
 	// Use this for initialization
 	void Start ()
@@ -17,6 +19,8 @@ public class TinkerShield : MonoBehaviour {
 		else parent = GameObject.FindGameObjectWithTag("Player2");
 		
 		timer = cd + Time.time;
+		
+		sound = GameObject.Find("Sound");
 	}
 	
 	// Update is called once per frame
@@ -31,6 +35,7 @@ public class TinkerShield : MonoBehaviour {
 			{
 				Destroy (bullet);
 				parent.GetComponent<PlayerStats>().ammo += 2;
+				sound.GetComponent<SoundManager>().PlaySound("absorb");
 			}
 		}
 		bullets = GameObject.FindGameObjectsWithTag("BulletB");
@@ -40,6 +45,7 @@ public class TinkerShield : MonoBehaviour {
 			{
 				Destroy (bullet);
 				parent.GetComponent<PlayerStats>().ammo += 2;
+				sound.GetComponent<SoundManager>().PlaySound("absorb");
 			}
 		}
 		
