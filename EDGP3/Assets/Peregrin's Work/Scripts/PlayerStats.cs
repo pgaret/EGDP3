@@ -1,4 +1,4 @@
-﻿	using UnityEngine;
+	using UnityEngine;
 using System.Collections;
 
 public class PlayerStats : MonoBehaviour {
@@ -293,7 +293,7 @@ public class PlayerStats : MonoBehaviour {
 			if (Input.GetAxis("XboxHorizontal1") != 0 || Input.GetAxis("XboxVertical1") != 0) isMoving = true;
 			else isMoving = false;
 			//Swap
-			if ((Input.GetButtonUp("XboxFire1Y") || Input.GetKeyUp(KeyCode.P)) && Time.time > swapTimer)
+			if ((Input.GetButtonUp("XboxFire1Y") || Input.GetKeyUp(KeyCode.O)) && Time.time > swapTimer)
 			{
 				swapTimer = Time.time + swapCD;
 				Transform theSwap = Instantiate(swapTransition, transform.position, Quaternion.identity) as Transform;
@@ -319,7 +319,7 @@ public class PlayerStats : MonoBehaviour {
 					shootTimer = Time.time + shootCD;
 				}
 				//Special
-				if ((Input.GetButtonUp("XboxFire1B") || Input.GetKeyUp(KeyCode.T)) && Time.time > specialTimer && specialBool == false && tutSpecial == false)
+				if ((Input.GetButtonUp("XboxFire1B") || Input.GetKeyUp(KeyCode.P)) && Time.time > specialTimer && specialBool == false && tutSpecial == false)
 				{
 					specialBool = true;
 					specialTimer = Time.time + specialCD;
@@ -330,7 +330,7 @@ public class PlayerStats : MonoBehaviour {
 				}
 			}
 			//Defender inputs
-			else if ((Input.GetButtonUp("XboxFire1X") || Input.GetButton("XboxFire1A") || Input.GetKeyUp(KeyCode.T)) && Time.time > affinityTimer)
+			else if ((Input.GetButtonUp("XboxFire1X") || Input.GetButton("XboxFire1A") || Input.GetKeyUp(KeyCode.I)) && Time.time > affinityTimer)
 			{
 				if (affinity == 'A') affinity = 'B';
 				else affinity = 'A';
@@ -356,6 +356,13 @@ public class PlayerStats : MonoBehaviour {
 		}
 		else
 		{
+			//Keyboard
+			if (Input.GetAxis("Vertical2") > 0 && transform.position.y < top.transform.position.y) transform.Translate(Vector3.up*Time.deltaTime*speed);
+			if (Input.GetAxis ("Horizontal2") < 0 && transform.position.x > left.transform.position.x) transform.Translate(Vector3.left*Time.deltaTime*speed);
+			if (Input.GetAxis ("Vertical2") < 0 && transform.position.y > down.transform.position.y) transform.Translate(Vector3.down*Time.deltaTime*speed);
+			if (Input.GetAxis ("Horizontal2") > 0 && transform.position.x < right.transform.position.x) transform.Translate(Vector3.right*Time.deltaTime*speed);
+			
+		
 			//Movement
 			if (Input.GetAxis("XboxVertical2") > 0 && transform.position.y < top.transform.position.y) transform.Translate(Vector3.up*Time.deltaTime*speed);
 			if (Input.GetAxis ("XboxHorizontal2") < 0 && transform.position.x > left.transform.position.x) transform.Translate(Vector3.left*Time.deltaTime*speed);
@@ -364,7 +371,7 @@ public class PlayerStats : MonoBehaviour {
 			if (Input.GetAxis("XboxVertical2") != 0 ||  Input.GetAxis ("XboxHorizontal2") != 0) isMoving = true;
 			else isMoving = false;
 			
-			if ((Input.GetButtonUp("XboxFire2Y") || Input.GetKeyUp(KeyCode.O)) && Time.time > swapTimer)
+			if ((Input.GetButtonUp("XboxFire2Y") || Input.GetKeyUp(KeyCode.V)) && Time.time > swapTimer)
 			{
 				swapTimer = Time.time + swapCD;
 				Transform theSwap = Instantiate(swapTransition, transform.position, Quaternion.identity) as Transform;
@@ -378,13 +385,13 @@ public class PlayerStats : MonoBehaviour {
 			if (role == "Attacker")
 			{
 				//Shooting
-				if ((Input.GetButton("XboxFire2X") || Input.GetButton("XboxFire2A")) && Time.time > shootTimer && shootBool == false && ammo > 0)
+				if ((Input.GetButton("XboxFire2X") || Input.GetButton("XboxFire2A") ||Input.GetKey(KeyCode.C)) && Time.time > shootTimer && shootBool == false && ammo > 0)
 				{
 					shootBool = true;
 					shootTimer = Time.time + shootCD;
 				}
 				//Special
-				if (Input.GetButton("XboxFire2B") && Time.time > specialTimer && specialBool == false && tutSpecial == false)
+				if ((Input.GetButton("XboxFire2B") || Input.GetKey(KeyCode.B)) && Time.time > specialTimer && specialBool == false && tutSpecial == false)
 				{
 					specialBool = true;
 					specialTimer = Time.time + specialCD;
@@ -395,7 +402,7 @@ public class PlayerStats : MonoBehaviour {
 				}
 			}
 			//Defender inputs
-			else if ((Input.GetButtonUp ("XboxFire2X") || Input.GetButtonUp ("XboxFire2A")) && Time.time > affinityTimer)
+			else if ((Input.GetButtonUp ("XboxFire2X") || Input.GetButtonUp ("XboxFire2A") || Input.GetKey(KeyCode.C)) && Time.time > affinityTimer)
 			{
 				if (affinity == 'A') affinity = 'B';
 				else affinity = 'A';
