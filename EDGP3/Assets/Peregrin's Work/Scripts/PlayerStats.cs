@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿	using UnityEngine;
 using System.Collections;
 
 public class PlayerStats : MonoBehaviour {
@@ -153,6 +153,7 @@ public class PlayerStats : MonoBehaviour {
 		{
 			lives += 1;
 			pointChecker += 1000;
+			score += 20;
 		}
 		
 		if (coinScore > 0) Debug.Log (transform.name+": "+coinScore);
@@ -257,7 +258,8 @@ public class PlayerStats : MonoBehaviour {
 				points += 1;
 				coin.GetComponent<Coin>().MoveTowards(bar.transform.position, transform);
 				sound.GetComponent<SoundManager>().PlaySound("coin");
-				
+				//Change animation when picked up
+				coin.GetComponent<Animator>().SetBool("Obtain", true);
 			}
 		}
 		
@@ -322,6 +324,10 @@ public class PlayerStats : MonoBehaviour {
 					specialBool = true;
 					specialTimer = Time.time + specialCD;
 				}
+				if (transform.name == "PunchKnight(Clone)")
+				{
+					if(GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
+				}
 			}
 			//Defender inputs
 			else if ((Input.GetButtonUp("XboxFire1X") || Input.GetButton("XboxFire1A") || Input.GetKeyUp(KeyCode.T)) && Time.time > affinityTimer)
@@ -383,6 +389,10 @@ public class PlayerStats : MonoBehaviour {
 					specialBool = true;
 					specialTimer = Time.time + specialCD;
 				}
+				if (transform.name == "PunchKnight(Clone)")
+				{
+					if(GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
+				}
 			}
 			//Defender inputs
 			else if ((Input.GetButtonUp ("XboxFire2X") || Input.GetButtonUp ("XboxFire2A")) && Time.time > affinityTimer)
@@ -397,6 +407,46 @@ public class PlayerStats : MonoBehaviour {
 				{
 					GetComponent<Tinker>().Shield();
 					tinkerTimer = Time.time + tinkerCD;
+				}
+				if (transform.name == "PunchKnight(Clone)")
+				{
+					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
+				}
+				if (transform.name == "PunchKnight(Clone)")
+				{
+					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
+				}
+				if (transform.name == "PunchKnight(Clone)")
+				{
+					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
+				}
+				if (transform.name == "PunchKnight(Clone)")
+				{
+					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
+				}
+				if (transform.name == "PunchKnight(Clone)")
+				{
+					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
+				}
+				if (transform.name == "PunchKnight(Clone)")
+				{
+					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
+				}
+				if (transform.name == "PunchKnight(Clone)")
+				{
+					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
+				}
+				if (transform.name == "PunchKnight(Clone)")
+				{
+					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
+				}
+				if (transform.name == "PunchKnight(Clone)")
+				{
+					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
+				}
+				if (transform.name == "PunchKnight(Clone)")
+				{
+					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
 				}
 			}
 			//Animation stuff
