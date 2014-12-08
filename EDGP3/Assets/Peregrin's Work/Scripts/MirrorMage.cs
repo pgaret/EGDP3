@@ -36,6 +36,8 @@ public class MirrorMage : MonoBehaviour {
 	float bulletTimer;
 	float bulletFloat = 1;
 	
+	bool hitSomething = false;
+	
 	// Use this for initialization
 	void Start () {
 	
@@ -97,6 +99,8 @@ public class MirrorMage : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		hitSomething = false;
+	
 		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin1 && width == .1f){
 			damage = .05f;
 			width = .15f;
@@ -114,7 +118,6 @@ public class MirrorMage : MonoBehaviour {
 			
 		}
 		
-	
 		if (GetComponent<PlayerStats>().role == "Defender" && GameObject.FindGameObjectsWithTag("MMShield").Length == 0)
 		{
 			Shield ();
@@ -135,32 +138,44 @@ public class MirrorMage : MonoBehaviour {
 	
 			if (Physics.Raycast(transform.position, leftSide.transform.position - transform.position, out hit,  Vector3.Distance(transform.position, leftSide.transform.position)))
 			{
+				hitSomething = true;
 				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= damage*2;
 				else if (hit.transform.tag == "Boss1") hit.transform.gameObject.GetComponent<Boss1>().subhealth(damage);
 				else if (hit.transform.tag == "Boss2") hit.transform.gameObject.GetComponent<Boss2>().subhealth(damage);
 				else if (hit.transform.tag == "Boss3") hit.transform.gameObject.GetComponent<Boss3>().subhealth(damage);
+				else hitSomething = false;
 			}
+			Debug.Log ("Hit 1: "+hitSomething);
 			if (Physics.Raycast(transform.position, rightSide.transform.position - transform.position, out hit,  Vector3.Distance(transform.position, rightSide.transform.position)))
 			{
+				hitSomething = true;
 				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= damage*2;
 				else if (hit.transform.tag == "Boss1") hit.transform.gameObject.GetComponent<Boss1>().subhealth(damage);
 				else if (hit.transform.tag == "Boss2") hit.transform.gameObject.GetComponent<Boss2>().subhealth(damage);
 				else if (hit.transform.tag == "Boss3") hit.transform.gameObject.GetComponent<Boss3>().subhealth(damage);
+				else hitSomething = false;
 			}
+			Debug.Log ("Hit 2: "+hitSomething);
 			if (Physics.Raycast(leftSide.transform.position, topLeft.transform.position - leftSide.transform.position, out hit, Vector3.Distance(leftSide.transform.position, topLeft.transform.position)))
 			{
+				hitSomething = true;
 				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= damage;
 				else if (hit.transform.tag == "Boss1") hit.transform.gameObject.GetComponent<Boss1>().subhealth(damage);
 				else if (hit.transform.tag == "Boss2") hit.transform.gameObject.GetComponent<Boss2>().subhealth(damage);
 				else if (hit.transform.tag == "Boss3") hit.transform.gameObject.GetComponent<Boss3>().subhealth(damage);
+				else hitSomething = false;
 			}
+			Debug.Log ("Hit 3: "+hitSomething);
 			if (Physics.Raycast(rightSide.transform.position, topRight.transform.position - rightSide.transform.position, out hit, Vector3.Distance(rightSide.transform.position, topRight.transform.position)))
 			{
+				hitSomething = true;
 				if (hit.transform.tag == "EnemyShipA") hit.transform.gameObject.GetComponent<Enemy>().health -= damage;
 				else if (hit.transform.tag == "Boss1") hit.transform.gameObject.GetComponent<Boss1>().subhealth(damage);
 				else if (hit.transform.tag == "Boss2") hit.transform.gameObject.GetComponent<Boss2>().subhealth(damage);
 				else if (hit.transform.tag == "Boss3") hit.transform.gameObject.GetComponent<Boss3>().subhealth(damage);
-			}
+				else hitSomething = false;
+			}		
+			Debug.Log ("Hit 4: "+hitSomething);
 			
 			//Beam follows the player
 			Vector3 pos = transform.position;
@@ -197,7 +212,15 @@ public class MirrorMage : MonoBehaviour {
 			
 			if (GetComponent<PlayerStats>().ammo == 0) NotLazerTime();
 		}
-		
-		
+		else hitSomething = false;
+		if (!sound.GetComponent<SoundManager>().IsPlaying("MirrorLaser") && hitSomething == true)
+		{
+			sound.GetComponent<SoundManager>().PlaySound("MirrorLaser");
+			sound.GetComponent<SoundManager>().LoopSound("MirrorLaser");
+		}
+		else if (sound.GetComponent<SoundManager>().IsPlaying("MirrorLaser") && hitSomething == false)
+		{
+			sound.GetComponent<SoundManager>().StopSound("MirrorLaser");
+		}
 	}
 }
