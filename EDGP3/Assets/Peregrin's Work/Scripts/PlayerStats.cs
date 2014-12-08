@@ -141,15 +141,14 @@ public class PlayerStats : MonoBehaviour {
 	
 	public void GotCoin()
 	{
-		bar.transform.localScale += new Vector3(0, .01f, 0);
+		bar.transform.localScale += new Vector3(0, .1f, 0);
 		sound.GetComponent<SoundManager>().PlaySound("Powerup");
-		coinScore += 1;
+		coinScore += 10;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		Debug.Log(transform.name+" "+coinScore);
 	
 		if (score > pointChecker)
 		{
@@ -158,7 +157,6 @@ public class PlayerStats : MonoBehaviour {
 			score += 20;
 		}
 		
-		if (coinScore > 0) Debug.Log (transform.name+": "+coinScore);
 		if (transform.tag == "Player1") otherPlayer = GameObject.FindGameObjectWithTag("Player2");
 		else otherPlayer = GameObject.FindGameObjectWithTag("Player1");
 		
@@ -270,7 +268,6 @@ public class PlayerStats : MonoBehaviour {
 			GetComponent<Animator>().SetBool("flinch", false);
 			flinchBool = false;
 		}
-		Debug.Log (flinchBool);
 		//Input shenanigans
 		if (transform.tag == "Player1")
 		{

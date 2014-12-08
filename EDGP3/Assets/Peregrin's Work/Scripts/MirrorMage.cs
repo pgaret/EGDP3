@@ -99,15 +99,19 @@ public class MirrorMage : MonoBehaviour {
 	{
 		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin1 && width == .1f){
 			damage = .05f;
-			width = .15f;			
+			width = .15f;
+			topLeft.SetWidth(width, width); topRight.SetWidth(width, width); leftSide.SetWidth(width, width); rightSide.SetWidth(width, width);
 		}
 		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin2 && damage == .05f){
 			damage = .1f;
 			width = .2f;
+			topLeft.SetWidth(width, width); topRight.SetWidth(width, width); leftSide.SetWidth(width, width); rightSide.SetWidth(width, width);
 		}
 		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin3 && width == .2f){
-			damage = .25f;
-			width = .3f;			
+			damage = .3f;
+			width = .3f;
+			topLeft.SetWidth(width, width); topRight.SetWidth(width, width); leftSide.SetWidth(width, width); rightSide.SetWidth(width, width);
+			
 		}
 		
 	
