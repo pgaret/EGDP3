@@ -47,8 +47,7 @@ public class Dragon : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-//		Debug.Log (Time.time+"  "+startTime+" "+lifeSpan);
-		if (Time.time - lifeSpan >= startTime && specialDragon == false) dead = true;
+//		if (Time.time - lifeSpan >= startTime && specialDragon == false) dead = true;
 		
 		if (parent.GetComponent<PlayerStats>().role == "Defender")
 		{

@@ -29,6 +29,7 @@ public class DragonTamer : MonoBehaviour {
 	
 	void Dragon()
 	{
+		
 		transform.GetComponent<PlayerStats>().ammo -= dragCost;
 		Vector3 position = transform.position;
 		position.x -= (special.transform.renderer.bounds.extents.x*dragons.Count*3 + 1)* dragSpawn;
@@ -37,6 +38,15 @@ public class DragonTamer : MonoBehaviour {
 		if (dragons.Count == minDrag)
 		{
 			for (int i = 0; i < minDrag; i++) dragons[i].GetComponent<Dragon>().specialDragon = true;
+		}
+	}
+	
+	public void DestroyDragon()
+	{
+		if (dragons[dragons.Count - 1].GetComponent<Dragon>().specialDragon == false)
+		{
+			Destroy(dragons[dragons.Count - 1].gameObject);
+			dragons.RemoveAt(dragons.Count - 1);
 		}
 	}
 	

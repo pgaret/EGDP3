@@ -97,9 +97,18 @@ public class MirrorMage : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin1 && width == .1f) width = .2f;
-		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin2 && damage == .05f) damage = .1f;
-		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin3 && width == .2f) width = .3f;
+		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin1 && width == .1f){
+			damage = .05f;
+			width = .15f;			
+		}
+		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin2 && damage == .05f){
+			damage = .1f;
+			width = .2f;
+		}
+		if (GetComponent<PlayerStats>().coinScore >= GetComponent<PlayerStats>().coin3 && width == .2f){
+			damage = .25f;
+			width = .3f;			
+		}
 		
 	
 		if (GetComponent<PlayerStats>().role == "Defender" && GameObject.FindGameObjectsWithTag("MMShield").Length == 0)

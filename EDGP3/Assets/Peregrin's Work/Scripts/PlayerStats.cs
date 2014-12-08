@@ -149,6 +149,8 @@ public class PlayerStats : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		Debug.Log(transform.name+" "+coinScore);
+	
 		if (score > pointChecker)
 		{
 			lives += 1;
@@ -176,13 +178,12 @@ public class PlayerStats : MonoBehaviour {
 		}
 		//If hit with bullets, lose life
 		GameObject[] bullets = GameObject.FindGameObjectsWithTag("BulletA");
+		int currentLives = lives;
 		foreach (GameObject bullet in bullets)
 		{
 			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds) && Time.time > deathTimer)
 			{
 				lives -= 1;
-				GetComponent<Animator>().SetBool("dead", true);
-				deathTimer = Time.time + deathCD;
 				Destroy (bullet.gameObject);
 			}
 		}
@@ -192,8 +193,6 @@ public class PlayerStats : MonoBehaviour {
 			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds) && Time.time > deathTimer)
 			{
 				lives -= 1;
-				GetComponent<Animator>().SetBool("dead", true);
-				deathTimer = Time.time + deathCD;
 			}
 		}
 		bullets = GameObject.FindGameObjectsWithTag("BulletB");
@@ -202,8 +201,6 @@ public class PlayerStats : MonoBehaviour {
 			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds) && Time.time > deathTimer)
 			{
 				lives -= 1;
-				GetComponent<Animator>().SetBool("dead", true);
-				deathTimer = Time.time + deathCD;
 				Destroy (bullet.gameObject);
 			}
 		}
@@ -213,8 +210,6 @@ public class PlayerStats : MonoBehaviour {
 			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds) && Time.time > deathTimer)
 			{
 				lives -= 1;
-				GetComponent<Animator>().SetBool("dead", true);
-				deathTimer = Time.time + deathCD;
 				Destroy (bullet.gameObject);
 			}
 		}
@@ -224,8 +219,6 @@ public class PlayerStats : MonoBehaviour {
 			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds) && Time.time > deathTimer)
 			{
 				lives -= 1;
-				GetComponent<Animator>().SetBool("dead", true);
-				deathTimer = Time.time + deathCD;
 			}
 		}
 		bullets = GameObject.FindGameObjectsWithTag("blaze");
@@ -234,8 +227,6 @@ public class PlayerStats : MonoBehaviour {
 			if (bullet.GetComponent<Wings>().on == true && GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<BoxCollider>().bounds) && Time.time > deathTimer)
 			{
 				lives -= 1;
-				GetComponent<Animator>().SetBool("dead", true);
-				deathTimer = Time.time + deathCD;
 			}
 		}
 		bullets = GameObject.FindGameObjectsWithTag("lightn");
@@ -244,9 +235,13 @@ public class PlayerStats : MonoBehaviour {
 			if (GetComponent<BoxCollider2D>().bounds.Intersects(bullet.GetComponent<SphereCollider>().bounds) && Time.time > deathTimer)
 			{
 				lives -= 1;
-				GetComponent<Animator>().SetBool("dead", true);
-				deathTimer = Time.time + deathCD;
 			}
+		}
+		if (currentLives == lives + 1)
+		{
+			GetComponent<Animator>().SetBool("dead", true);
+			deathTimer = Time.time + deathCD;
+			if (transform.name == "DragonTamer(Clone)") GetComponent<DragonTamer>().DestroyDragon();
 		}
 		
 		//If find coin, gain points
@@ -339,7 +334,7 @@ public class PlayerStats : MonoBehaviour {
 			}
 			else if (transform.name == "Tinker(Clone)" && Time.time > tinkerTimer)
 			{
-				if (Input.GetButtonUp("XboxFire1B"))
+				if (Input.GetButtonUp("XboxFire1B") || Input.GetKey(KeyCode.P))
 				{
 					GetComponent<Tinker>().Shield();
 					tinkerTimer = Time.time + tinkerCD;
@@ -410,46 +405,10 @@ public class PlayerStats : MonoBehaviour {
 			}
 			else if (transform.name == "Tinker(Clone)" && Time.time > tinkerTimer)
 			{
-				if (Input.GetButtonUp("XboxFire2B"))
+				if (Input.GetButtonUp("XboxFire2B") || Input.GetKey(KeyCode.B))
 				{
 					GetComponent<Tinker>().Shield();
 					tinkerTimer = Time.time + tinkerCD;
-				}
-				if (transform.name == "PunchKnight(Clone)")
-				{
-					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
-				}
-				if (transform.name == "PunchKnight(Clone)")
-				{
-					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
-				}
-				if (transform.name == "PunchKnight(Clone)")
-				{
-					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
-				}
-				if (transform.name == "PunchKnight(Clone)")
-				{
-					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
-				}
-				if (transform.name == "PunchKnight(Clone)")
-				{
-					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
-				}
-				if (transform.name == "PunchKnight(Clone)")
-				{
-					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
-				}
-				if (transform.name == "PunchKnight(Clone)")
-				{
-					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
-				}
-				if (transform.name == "PunchKnight(Clone)")
-				{
-					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
-				}
-				if (transform.name == "PunchKnight(Clone)")
-				{
-					if (GetComponent<PunchKnight>().specialCounter != 0) shootBool = true;
 				}
 				if (transform.name == "PunchKnight(Clone)")
 				{
