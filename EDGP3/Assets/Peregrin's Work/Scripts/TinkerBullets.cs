@@ -158,9 +158,13 @@ public class TinkerBullets : MonoBehaviour {
 		
 		if (type == 4 && bombTimer == -1) //Bomb explosion
 		{
-			transform.position = enemies[index].transform.position;
-			GetComponent<SpriteRenderer>().sprite = bombSprite;
-			bombTimer = Time.time + bombCD;
+			if (enemies[index] != null)
+			{
+				transform.position = enemies[index].transform.position;
+				GetComponent<SpriteRenderer>().sprite = bombSprite;
+				bombTimer = Time.time + bombCD;
+			}
+			else Destroy(gameObject);
 		}
 		if (type == 4 && bombTimer != -1 && bombTimer < Time.time)
 		{
