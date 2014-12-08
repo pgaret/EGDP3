@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Peregrin's Work\Scripts\GUIManager.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Peregrin's Work\Scripts\PlayerStats.cs">
     <Files>
-      <File FileName="Assets\Peregrin's Work\Scripts\GUIManager.cs" Line="234" Column="29" />
-      <File FileName="Assets\Peregrin's Work\Scripts\PlayerStats.cs" Line="259" Column="4" />
+      <File FileName="Assets\Peregrin's Work\Scripts\GUIManager.cs" Line="352" Column="9" />
+      <File FileName="Assets\Peregrin's Work\Scripts\PlayerStats.cs" Line="7" Column="18" />
+      <File FileName="Assets\Peregrin's Work\Scripts\End.cs" Line="12" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
