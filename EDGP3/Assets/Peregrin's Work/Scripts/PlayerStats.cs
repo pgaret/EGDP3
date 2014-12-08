@@ -141,9 +141,9 @@ public class PlayerStats : MonoBehaviour {
 	
 	public void GotCoin()
 	{
-		bar.transform.localScale += new Vector3(0, .1f, 0);
+		bar.transform.localScale += new Vector3(0, .01f, 0);
 		sound.GetComponent<SoundManager>().PlaySound("Powerup");
-		coinScore += 10;
+		coinScore += 1;
 	}
 	
 	// Update is called once per frame
